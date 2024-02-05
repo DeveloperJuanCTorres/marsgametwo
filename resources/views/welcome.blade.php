@@ -265,13 +265,126 @@
 
 
         <!-- Most Populer News Start -->
-        <div class="container-fluid populer-news py-5">
-            <div class="container py-5">
+        <div class="populer-news">
+            <div class="py-5">
                 <div class="tab-class mb-4">
                     <div class="row g-4">
-                        <div class="col-lg-8 col-xl-9">
-                            <div class="d-flex flex-column flex-md-row justify-content-md-between border-bottom mb-4">
-                                <h1 class="mb-4">What’s New</h1>
+                    <div class="col-lg-3 col-xl-2">
+                            <div class="row g-4">
+                                <div class="col-12">
+                                    <div class="p-3 rounded border">
+                                        <h4 class="mb-4">Opciones</h4>
+                                        <div class="row g-4">
+                                            <div class="col-12">
+                                                <a href="#" class="w-100 rounded btn btn-primary d-flex align-items-center p-3 mb-2">
+                                                    <i class="fab fa-facebook-f btn btn-light btn-square rounded-circle me-3"></i>
+                                                    <span class="text-white">13,977 Fans</span>
+                                                </a>
+                                                <a href="#" class="w-100 rounded btn btn-danger d-flex align-items-center p-3 mb-2">
+                                                    <i class="fab fa-twitter btn btn-light btn-square rounded-circle me-3"></i>
+                                                    <span class="text-white">21,798 Follower</span>
+                                                </a>
+                                                <a href="#" class="w-100 rounded btn btn-warning d-flex align-items-center p-3 mb-2">
+                                                    <i class="fab fa-youtube btn btn-light btn-square rounded-circle me-3"></i>
+                                                    <span class="text-white">7,999 Subscriber</span>
+                                                </a>
+                                                <a href="#" class="w-100 rounded btn btn-dark d-flex align-items-center p-3 mb-2">
+                                                    <i class="fab fa-instagram btn btn-light btn-square rounded-circle me-3"></i>
+                                                    <span class="text-white">19,764 Follower</span>
+                                                </a>
+                                                <a href="#" class="w-100 rounded btn btn-secondary d-flex align-items-center p-3 mb-2">
+                                                    <i class="bi-cloud btn btn-light btn-square rounded-circle me-3"></i>
+                                                    <span class="text-white">31,999 Subscriber</span>
+                                                </a>
+                                                <a href="#" class="w-100 rounded btn btn-warning d-flex align-items-center p-3 mb-4">
+                                                    <i class="fab fa-dribbble btn btn-light btn-square rounded-circle me-3"></i>
+                                                    <span class="text-white">37,999 Subscriber</span>
+                                                </a>
+                                            </div>
+                                        </div>                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-xl-7">
+                            
+                            <div class="border-bottom mb-4">
+                                <h2 class="my-4">Juegos de apuesta</h2>
+                            </div>
+                            <div class="whats-carousel owl-carousel">
+                                <div class="latest-news-item">
+                                    <div class="bg-light rounded">
+                                        <div class="rounded-top overflow-hidden">
+                                            <img src="img/news-7.jpg" class="img-zoomin img-fluid rounded-top w-100" alt="">
+                                        </div>
+                                        <div class="d-flex flex-column p-4">
+                                            <a href="#" class="h4">There are many variations of passages of Lorem Ipsum available,</a>
+                                            <div class="d-flex justify-content-between">
+                                                <a href="#" class="small text-body link-hover">by Willium Smith</a>
+                                                <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> Dec 9, 2024</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="whats-item">
+                                    <div class="bg-light rounded">
+                                        <div class="rounded-top overflow-hidden">
+                                            <img src="img/news-6.jpg" class="img-zoomin img-fluid rounded-top w-100" alt="">
+                                        </div>
+                                        <div class="d-flex flex-column p-4">
+                                            <a href="#" class="h4">There are many variations of passages of Lorem Ipsum available,</a>
+                                            <div class="d-flex justify-content-between">
+                                                <a href="#" class="small text-body link-hover">by Willium Smith</a>
+                                                <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> Dec 9, 2024</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="whats-item">
+                                    <div class="bg-light rounded">
+                                        <div class="rounded-top overflow-hidden">
+                                            <img src="img/news-3.jpg" class="img-zoomin img-fluid rounded-top w-100" alt="">
+                                        </div>
+                                        <div class="d-flex flex-column p-4">
+                                            <a href="#" class="h4">There are many variations of passages of Lorem Ipsum available,</a>
+                                            <div class="d-flex justify-content-between">
+                                                <a href="#" class="small text-body link-hover">by Willium Smith</a>
+                                                <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> Dec 9, 2024</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="whats-item">
+                                    <div class="bg-light rounded">
+                                        <div class="rounded-top overflow-hidden">
+                                            <img src="img/news-4.jpg" class="img-zoomin img-fluid rounded-top w-100" alt="">
+                                        </div>
+                                        <div class="d-flex flex-column p-4">
+                                            <a href="#" class="h4">There are many variations of passages of Lorem Ipsum available,</a>
+                                            <div class="d-flex justify-content-between">
+                                                <a href="#" class="small text-body link-hover">by Willium Smith</a>
+                                                <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> Dec 9, 2024</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="whats-item">
+                                    <div class="bg-light rounded">
+                                        <div class="rounded-top overflow-hidden">
+                                            <img src="img/news-5.jpg" class="img-zoomin img-fluid rounded-top w-100" alt="">
+                                        </div>
+                                        <div class="d-flex flex-column p-4">
+                                            <a href="#" class="h4">There are many variations of passages of Lorem Ipsum available,</a>
+                                            <div class="d-flex justify-content-between">
+                                                <a href="#" class="small text-body link-hover">by Willium Smith</a>
+                                                <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> Dec 9, 2024</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-column flex-md-row justify-content-md-between border-bottom mt-4">
+                                <h1 class="mt-2">What’s New</h1>
                                 <ul class="nav nav-pills d-inline-flex text-center">
                                     <li class="nav-item mb-3">
                                         <a class="d-flex py-2 bg-light rounded-pill active me-2" data-bs-toggle="pill" href="#tab-1">
@@ -300,7 +413,7 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div class="tab-content mb-4">
+                            <div class="tab-content mt-4">
                                 <div id="tab-1" class="tab-pane fade show p-0 active">
                                     <div class="row g-4">
                                         <div class="col-lg-8">
@@ -837,82 +950,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="border-bottom mb-4">
-                                <h2 class="my-4">Most Views News</h2>
-                            </div>
-                            <div class="whats-carousel owl-carousel">
-                                <div class="latest-news-item">
-                                    <div class="bg-light rounded">
-                                        <div class="rounded-top overflow-hidden">
-                                            <img src="img/news-7.jpg" class="img-zoomin img-fluid rounded-top w-100" alt="">
-                                        </div>
-                                        <div class="d-flex flex-column p-4">
-                                            <a href="#" class="h4">There are many variations of passages of Lorem Ipsum available,</a>
-                                            <div class="d-flex justify-content-between">
-                                                <a href="#" class="small text-body link-hover">by Willium Smith</a>
-                                                <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> Dec 9, 2024</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="whats-item">
-                                    <div class="bg-light rounded">
-                                        <div class="rounded-top overflow-hidden">
-                                            <img src="img/news-6.jpg" class="img-zoomin img-fluid rounded-top w-100" alt="">
-                                        </div>
-                                        <div class="d-flex flex-column p-4">
-                                            <a href="#" class="h4">There are many variations of passages of Lorem Ipsum available,</a>
-                                            <div class="d-flex justify-content-between">
-                                                <a href="#" class="small text-body link-hover">by Willium Smith</a>
-                                                <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> Dec 9, 2024</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="whats-item">
-                                    <div class="bg-light rounded">
-                                        <div class="rounded-top overflow-hidden">
-                                            <img src="img/news-3.jpg" class="img-zoomin img-fluid rounded-top w-100" alt="">
-                                        </div>
-                                        <div class="d-flex flex-column p-4">
-                                            <a href="#" class="h4">There are many variations of passages of Lorem Ipsum available,</a>
-                                            <div class="d-flex justify-content-between">
-                                                <a href="#" class="small text-body link-hover">by Willium Smith</a>
-                                                <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> Dec 9, 2024</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="whats-item">
-                                    <div class="bg-light rounded">
-                                        <div class="rounded-top overflow-hidden">
-                                            <img src="img/news-4.jpg" class="img-zoomin img-fluid rounded-top w-100" alt="">
-                                        </div>
-                                        <div class="d-flex flex-column p-4">
-                                            <a href="#" class="h4">There are many variations of passages of Lorem Ipsum available,</a>
-                                            <div class="d-flex justify-content-between">
-                                                <a href="#" class="small text-body link-hover">by Willium Smith</a>
-                                                <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> Dec 9, 2024</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="whats-item">
-                                    <div class="bg-light rounded">
-                                        <div class="rounded-top overflow-hidden">
-                                            <img src="img/news-5.jpg" class="img-zoomin img-fluid rounded-top w-100" alt="">
-                                        </div>
-                                        <div class="d-flex flex-column p-4">
-                                            <a href="#" class="h4">There are many variations of passages of Lorem Ipsum available,</a>
-                                            <div class="d-flex justify-content-between">
-                                                <a href="#" class="small text-body link-hover">by Willium Smith</a>
-                                                <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> Dec 9, 2024</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="mt-5 lifestyle">
+                            <div class="mt-6 lifestyle">
                                 <div class="border-bottom mb-4">
                                     <h1 class="mb-4">Life Style</h1>
                                 </div>
@@ -951,37 +989,8 @@
                         <div class="col-lg-4 col-xl-3">
                             <div class="row g-4">
                                 <div class="col-12">
-                                    <div class="p-3 rounded border">
-                                        <h4 class="mb-4">Stay Connected</h4>
-                                        <div class="row g-4">
-                                            <div class="col-12">
-                                                <a href="#" class="w-100 rounded btn btn-primary d-flex align-items-center p-3 mb-2">
-                                                    <i class="fab fa-facebook-f btn btn-light btn-square rounded-circle me-3"></i>
-                                                    <span class="text-white">13,977 Fans</span>
-                                                </a>
-                                                <a href="#" class="w-100 rounded btn btn-danger d-flex align-items-center p-3 mb-2">
-                                                    <i class="fab fa-twitter btn btn-light btn-square rounded-circle me-3"></i>
-                                                    <span class="text-white">21,798 Follower</span>
-                                                </a>
-                                                <a href="#" class="w-100 rounded btn btn-warning d-flex align-items-center p-3 mb-2">
-                                                    <i class="fab fa-youtube btn btn-light btn-square rounded-circle me-3"></i>
-                                                    <span class="text-white">7,999 Subscriber</span>
-                                                </a>
-                                                <a href="#" class="w-100 rounded btn btn-dark d-flex align-items-center p-3 mb-2">
-                                                    <i class="fab fa-instagram btn btn-light btn-square rounded-circle me-3"></i>
-                                                    <span class="text-white">19,764 Follower</span>
-                                                </a>
-                                                <a href="#" class="w-100 rounded btn btn-secondary d-flex align-items-center p-3 mb-2">
-                                                    <i class="bi-cloud btn btn-light btn-square rounded-circle me-3"></i>
-                                                    <span class="text-white">31,999 Subscriber</span>
-                                                </a>
-                                                <a href="#" class="w-100 rounded btn btn-warning d-flex align-items-center p-3 mb-4">
-                                                    <i class="fab fa-dribbble btn btn-light btn-square rounded-circle me-3"></i>
-                                                    <span class="text-white">37,999 Subscriber</span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <h4 class="my-4">Popular News</h4>
+                                    <div class="p-3 rounded border">                                        
+                                        <h4 class="my-4">Contactos</h4>
                                         <div class="row g-4">
                                             <div class="col-12">
                                                 <div class="row g-4 align-items-center features-item">
