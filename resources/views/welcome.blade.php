@@ -28,14 +28,12 @@
                         <div class="top-link flex-lg-wrap">
                             <i class="fas fa-calendar-alt text-white border-end border-secondary pe-2 me-2"> <span class="text-body">Tuesday, Sep 12, 2024</span></i>
                             <div class="d-flex icon">
-                                <p class="mb-0 text-white me-2">Follow Us:</p>
+                                <p class="mb-0 text-white me-2">Síguenos:</p>
                                 <a href="" class="me-2"><i class="fab fa-facebook-f text-body link-hover"></i></a>
-                                <a href="" class="me-2"><i class="fab fa-twitter text-body link-hover"></i></a>
                                 <a href="" class="me-2"><i class="fab fa-instagram text-body link-hover"></i></a>
                                 <a href="" class="me-2"><i class="fab fa-youtube text-body link-hover"></i></a>
-                                <a href="" class="me-2"><i class="fab fa-linkedin-in text-body link-hover"></i></a>
-                                <a href="" class="me-2"><i class="fab fa-skype text-body link-hover"></i></a>
-                                <a href="" class=""><i class="fab fa-pinterest-p text-body link-hover"></i></a>
+                                <!-- <a href="" class="me-2"><i class="fab fa-skype text-body link-hover"></i></a>
+                                <a href="" class=""><i class="fab fa-pinterest-p text-body link-hover"></i></a> -->
                             </div>
                         </div>
                     </div>
@@ -45,15 +43,16 @@
                 <div class="container px-0">
                     <nav class="navbar navbar-light navbar-expand-xl">
                         <a href="index.html" class="navbar-brand mt-3">
-                            <p class="text-primary display-6 mb-2" style="line-height: 0;">Newsers</p>
-                            <small class="text-body fw-normal" style="letter-spacing: 12px;">Nespaper</small>
+                            <img src="{{asset('img/logo.png')}}" width="250" alt="marsgame">
+                            <!-- <p class="text-primary display-6 mb-2" style="line-height: 0;">Newsers</p>
+                            <small class="text-body fw-normal" style="letter-spacing: 12px;">Nespaper</small> -->
                         </a>
                         <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                             <span class="fa fa-bars text-primary"></span>
                         </button>
                         <div class="collapse navbar-collapse bg-light py-3" id="navbarCollapse">
                             <div class="navbar-nav mx-auto border-top">
-                                <a href="index.html" class="nav-item nav-link active">Home</a>
+                                <a href="index.html" class="nav-item nav-link active">Inicio</a>
                                 <a href="detail-page.html" class="nav-item nav-link">Detail  Page</a>
                                 <a href="404.html" class="nav-item nav-link">404 Page</a>
                                 <div class="nav-item dropdown">
@@ -140,6 +139,8 @@
                                         </div>
                                     </div>
                                 </div>
+                                @else
+                                <a href="/login" class="nav-item nav-link">Login</a>
                                 @endauth                                
                             </div>                                             
                         </div>
@@ -265,11 +266,11 @@
 
 
         <!-- Most Populer News Start -->
-        <div class="populer-news">
+        <div class="populer-news container">
             <div class="py-5">
                 <div class="tab-class mb-4">
                     <div class="row g-4">
-                    <div class="col-lg-3 col-xl-2">
+                    <div class="col-lg-3 col-xl-2 scroll container">
                             <div class="row g-4">
                                 <div class="col-12">
                                     <div class="p-3 rounded border">
@@ -383,9 +384,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="d-flex flex-column flex-md-row justify-content-md-between border-bottom mt-4">
+                            <div class="d-flex flex-column flex-md-row justify-content-md-between border-bottom mt-8">
                                 <h1 class="mt-2">What’s New</h1>
-                                <ul class="nav nav-pills d-inline-flex text-center">
+                                <ul class="nav nav-pills d-inline-flex text-center mt-2">
                                     <li class="nav-item mb-3">
                                         <a class="d-flex py-2 bg-light rounded-pill active me-2" data-bs-toggle="pill" href="#tab-1">
                                             <span class="text-dark" style="width: 100px;">Sports</span>
@@ -986,7 +987,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-xl-3">
+                        <div class="col-lg-4 col-xl-3 scroll container">
                             <div class="row g-4">
                                 <div class="col-12">
                                     <div class="p-3 rounded border">                                        
@@ -1155,8 +1156,9 @@
                     <div class="row g-4">
                         <div class="col-lg-3">
                             <a href="#" class="d-flex flex-column flex-wrap">
-                                <p class="text-white mb-0 display-6">Newsers</p>
-                                <small class="text-light" style="letter-spacing: 11px; line-height: 0;">Newspaper</small>
+                                <img src="{{asset('img/logoblanco.png')}}" width="200" alt="marsgame">
+                                <!-- <p class="text-white mb-0 display-6">Newsers</p>
+                                <small class="text-light" style="letter-spacing: 11px; line-height: 0;">Newspaper</small> -->
                             </a>
                         </div>
                         <div class="col-lg-9">
@@ -1185,7 +1187,7 @@
                     <div class="col-lg-6 col-xl-3">
                         <div class="footer-item-2">
                             <div class="d-flex flex-column mb-4">
-                                <h4 class="mb-4 text-white">Recent Posts</h4>
+                                <h4 class="mb-4 text-white">Post recientes</h4>
                                 <a href="#">
                                     <div class="d-flex align-items-center">
                                         <div class="rounded-circle border border-2 border-primary overflow-hidden">
@@ -1221,7 +1223,7 @@
                     </div>
                     <div class="col-lg-6 col-xl-3">
                         <div class="d-flex flex-column text-start footer-item-3">
-                            <h4 class="mb-4 text-white">Categories</h4>
+                            <h4 class="mb-4 text-white">Categorías</h4>
                             <a class="btn-link text-white" href=""><i class="fas fa-angle-right text-white me-2"></i> Sports</a>
                             <a class="btn-link text-white" href=""><i class="fas fa-angle-right text-white me-2"></i> Magazine</a>
                             <a class="btn-link text-white" href=""><i class="fas fa-angle-right text-white me-2"></i> Lifestyle</a>
@@ -1232,7 +1234,7 @@
                     </div>
                     <div class="col-lg-6 col-xl-3">
                         <div class="footer-item-4">
-                            <h4 class="mb-4 text-white">Our Gallary</h4>
+                            <h4 class="mb-4 text-white">Nuestra Galería</h4>
                             <div class="row g-2">
                                 <div class="col-4">
                                     <div class="rounded overflow-hidden">
@@ -1278,13 +1280,13 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        <span class="text-light"><a href="#"><i class="fas fa-copyright text-light me-2"></i>Your Site Name</a>, All right reserved.</span>
+                        <span class="text-light"><a href="/"><i class="fas fa-copyright text-light me-2"></i>MarsGame</a>, Todos los derechos reservados.</span>
                     </div>
                     <div class="col-md-6 my-auto text-center text-md-end text-white">
                         <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
                         <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
                         <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
-                        Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a> Distributed By <a href="https://themewagon.com">ThemeWagon</a>
+                        Diseñado por <a href="https://grupotyg.pe" target="_blank">Grupo TyG Ingenieros</a>
                     </div>
                 </div>
             </div>

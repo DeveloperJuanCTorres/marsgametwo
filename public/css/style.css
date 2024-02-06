@@ -215,6 +215,9 @@
     }
 }
 
+.collapse{
+    visibility: visible;
+}
 #searchModal .modal-content {
     background: rgba(255, 255, 255, .8);
 }
@@ -427,5 +430,39 @@
 }
 /*** Footer End ***/
 
+div.scroll {
+    height: 700px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    text-align: center;
+    padding: 20px;
+  }
 
+  /*Inicia cambio de estilo de scroll bar*/
+::-webkit-scrollbar{
+    background: #fff;
+    width: 8px;
+  height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+  background: #f4f6f8 ;
+  border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+  background: #00983A;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+  }
+  ::-webkit-scrollbar-thumb:active {
+  background-color: #00983A;
+  }
+  ::-webkit-scrollbar-thumb {
+  background: #00983A;
+  border-radius: 4px;
+  }
+  /*Finaliza cambio de estilo scroll bar*/
 
+/* .container1 {
+    width: 100% !important;
+    margin: 15px;
+    padding: 0px;
+} */
