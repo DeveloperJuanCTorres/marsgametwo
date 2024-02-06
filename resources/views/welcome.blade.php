@@ -267,7 +267,7 @@
 
         <!-- Most Populer News Start -->
         <div class="populer-news container">
-            <div class="py-5">
+            <div class="py-0">
                 <div class="tab-class mb-4">
                     <div class="row g-4">
                     <div class="col-lg-3 col-xl-2 scroll container">
@@ -987,7 +987,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-xl-3 scroll container">
+                        <div class="col-lg-4 col-xl-3 scroll container" id="div-right">
                             <div class="row g-4">
                                 <div class="col-12">
                                     <div class="p-3 rounded border">                                        
@@ -1296,4 +1296,15 @@
 
         <!-- Back to Top -->
         <a href="#" class="btn btn-primary border-2 border-white rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>  
-</x-app-layout>
+
+        <script type="text/javascript">
+
+        $(document).ready(function(){
+
+            var height = $(window).height();
+
+            $('#div-right').height(height);
+        });
+
+        </script>
+    </x-app-layout>

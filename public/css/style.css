@@ -431,12 +431,35 @@
 /*** Footer End ***/
 
 div.scroll {
-    height: 700px;
+    height: 600px;
     overflow-x: hidden;
     overflow-y: auto;
     text-align: center;
     padding: 20px;
   }
+
+/* div.scroll-right {
+    height: 500px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    text-align: center;
+    padding: 20px;
+    z-index: 10;
+    right: 0;
+    position: fixed;
+  }
+
+  div.scroll-left {
+    height: 400px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    text-align: center;
+    padding: 20px;
+    z-index: 10;
+    left: 0;
+    position: fixed;
+    flex-direction: column;
+  } */
 
   /*Inicia cambio de estilo de scroll bar*/
 ::-webkit-scrollbar{
