@@ -11,8 +11,12 @@
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
+        <?php
+            $version = '1993.0.1';
+        ?>
         <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
+        <!-- @ite(['resources/css/app.css', 'resources/js/app.js']) -->
+        <link href="{{asset('css/app.css')}}?v=<?php echo $version ?>" rel="stylesheet">
 
         <!-- Styles -->
         @livewireStyles
@@ -23,5 +27,6 @@
         </div>
 
         @livewireScripts
+        <script src="{{asset('js/app.js')}}?v=<?php echo $version ?>"></script>
     </body>
 </html>
