@@ -172,7 +172,7 @@
 
 
         <!-- Features Start -->
-        <div class="container-fluid features mb-5">
+        <!-- <div class="container-fluid features mb-5">
             <div class="container py-5">
                 <div class="row g-4">
                     <div class="col-md-6 col-lg-6 col-xl-3">
@@ -261,7 +261,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- Features End -->        
 
 
@@ -316,13 +316,13 @@
                                 <div class="latest-news-item">
                                     <div class="bg-light rounded">
                                         <div class="rounded-top overflow-hidden">
-                                            <img src="img/news-7.jpg" class="img-zoomin img-fluid rounded-top w-100" alt="">
+                                            <img src="img/ajedrez.jpg" class="img-zoomin img-fluid rounded-top w-100" alt="">
                                         </div>
                                         <div class="d-flex flex-column p-4">
-                                            <a href="#" class="h4">There are many variations of passages of Lorem Ipsum available,</a>
+                                            <a href="https://chess.marsgame.pe" class="h4">Únete y disfruta con este increible juego retro y gánale a tus amigos</a>
                                             <div class="d-flex justify-content-between">
-                                                <a href="#" class="small text-body link-hover">by Willium Smith</a>
-                                                <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> Dec 9, 2024</small>
+                                                <a href="#" class="small text-body link-hover">AJEDREZ</a>
+                                                <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> En todo momento</small>
                                             </div>
                                         </div>
                                     </div>
@@ -330,18 +330,18 @@
                                 <div class="whats-item">
                                     <div class="bg-light rounded">
                                         <div class="rounded-top overflow-hidden">
-                                            <img src="img/news-6.jpg" class="img-zoomin img-fluid rounded-top w-100" alt="">
+                                            <img src="img/damas.jpg" class="img-zoomin img-fluid rounded-top w-100" alt="">
                                         </div>
                                         <div class="d-flex flex-column p-4">
-                                            <a href="#" class="h4">There are many variations of passages of Lorem Ipsum available,</a>
+                                            <a href="#" class="h4">Únete y disfruta con este increible juego retro y gánale a tus amigos</a>
                                             <div class="d-flex justify-content-between">
-                                                <a href="#" class="small text-body link-hover">by Willium Smith</a>
-                                                <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> Dec 9, 2024</small>
+                                                <a href="#" class="small text-body link-hover">DAMAS</a>
+                                                <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> Próximamente</small>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="whats-item">
+                                <!-- <div class="whats-item">
                                     <div class="bg-light rounded">
                                         <div class="rounded-top overflow-hidden">
                                             <img src="img/news-3.jpg" class="img-zoomin img-fluid rounded-top w-100" alt="">
@@ -382,7 +382,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                             <div class="d-flex flex-column flex-md-row justify-content-md-between border-bottom mt-8">
                                 <h1 class="mt-2">What’s New</h1>
@@ -951,7 +951,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="mt-6 lifestyle">
+                            <!-- <div class="mt-6 lifestyle">
                                 <div class="border-bottom mb-4">
                                     <h1 class="mb-4">Life Style</h1>
                                 </div>
@@ -985,7 +985,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="col-lg-4 col-xl-3 scroll container" id="div-right">
                             <div class="row g-4">
