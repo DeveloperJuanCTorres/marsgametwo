@@ -333,7 +333,7 @@
                                             <img src="img/damas.jpg" class="img-zoomin img-fluid rounded-top w-100" alt="">
                                         </div>
                                         <div class="d-flex flex-column p-4">
-                                            <a href="#" class="h4">Únete y disfruta con este increible juego retro y gánale a tus amigos</a>
+                                            <a href="https://checker.marsgame.pe" class="h4">Únete y disfruta con este increible juego retro y gánale a tus amigos</a>
                                             <div class="d-flex justify-content-between">
                                                 <a href="#" class="small text-body link-hover">DAMAS</a>
                                                 <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> Próximamente</small>
