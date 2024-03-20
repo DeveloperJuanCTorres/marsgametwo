@@ -121,7 +121,6 @@
     .sticky-top .top-link {
         display: none;
     }
-    
 }
 
 .topbar .top-link a {
@@ -489,3 +488,41 @@ div.scroll {
     margin: 15px;
     padding: 0px;
 } */
+
+
+/* MOBILE */
+.mobile_bottombar .header_icon {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+}
+
+.mobile_bottombar {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: #fff;
+    border-top: 1px solid #cacaca;
+    padding: 12px 0px;
+    z-index: 8;
+}
+
+.mobile_bottombar .header_icon a.icon_wrp {
+    padding: 0;
+}
+
+@media (max-width: 991px) {
+    .m-none{
+        display: none !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .m-block{
+        display: block !important;
+    }
+}

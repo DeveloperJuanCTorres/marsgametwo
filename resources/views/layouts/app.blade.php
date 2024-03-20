@@ -8,7 +8,7 @@
         <title>{{ config('app.name', 'Laravel') }}</title>
 
         <?php
-            $version = '1993.0.1';
+            $version = '1993.0.2';
         ?>
 
         <!-- Fonts -->
@@ -17,7 +17,11 @@
 
         <!-- Scripts -->
         <!-- vite(['resources/css/app.css', 'resources/js/app.js']) -->
+        
         <link href="{{asset('css/app.css')}}?v=<?php echo $version ?>" rel="stylesheet">
+
+        
+        
 
         <!-- Icon Font Stylesheet -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
@@ -34,6 +38,11 @@
         <!-- Template Stylesheet -->
         <link href="{{asset('css/style.css')}}?v=<?php echo $version ?>" rel="stylesheet">
 
+        <link href="{{asset('css/style1.css')}}?v=<?php echo $version ?>" rel="stylesheet">
+        <link href="{{asset('css/jquery-ui.css')}}?v=<?php echo $version ?>" rel="stylesheet">
+        <link href="{{asset('css/line-awesome.css')}}?v=<?php echo $version ?>" rel="stylesheet">
+        <link href="{{asset('css/nice-select.css')}}?v=<?php echo $version ?>" rel="stylesheet">
+        <link href="{{asset('css/responsive.css')}}?v=<?php echo $version ?>" rel="stylesheet">
         
 
         <!-- Styles -->
@@ -74,5 +83,12 @@
 
         <!-- Template Javascript -->
         <script src="{{asset('js/main.js')}}?v=<?php echo $version ?>"></script>
+
+        <!-- <script src="{{asset('js/bootstrap.bundle.min.js')}}?v=<?php echo $version ?>"></script> -->
+        <script src="{{asset('js/jquery-3.5.1.min.js')}}?v=<?php echo $version ?>"></script>
+        <script src="{{asset('js/jquery-ui.min.js')}}?v=<?php echo $version ?>"></script>
+        <script src="{{asset('js/slick.min.js')}}?v=<?php echo $version ?>"></script>
+        <script src="{{asset('js/jquery.nice-select.min.js')}}?v=<?php echo $version ?>"></script>
+        <script src="{{asset('js/app1.js')}}?v=<?php echo $version ?>"></script>
     </body>
 </html>
