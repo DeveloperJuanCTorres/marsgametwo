@@ -270,7 +270,7 @@
             <div class="py-0">
                 <div class="tab-class mb-4">
                     <div class="row g-4">
-                        <div class="col-lg-3 col-xl-2 scroll container m-block m-none">
+                        <div class="col-lg-3 col-xl-2 scroll container m-block m-none bg-light" style="position: fixed;z-index: 9;">
                             <div class="row g-4">
                                 <div class="col-12">
                                     <div class="p-3 rounded border">
@@ -307,36 +307,68 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="col-lg-3 col-xl-2"></div>
+
                         <div class="col-lg-6 col-xl-7">
                             
                             <div class="border-bottom mb-4">
                                 <h2 class="my-4">Juegos de apuesta</h2>
                             </div>
-                            <div class="whats-carousel owl-carousel">
-                                <div class="latest-news-item">
+                            <!-- <div class="whats-carousel owl-carousel"> -->
+                            <div class="row">
+                                <div class="whats-item col-md-4 col-6">
                                     <div class="bg-light rounded">
                                         <div class="rounded-top overflow-hidden">
                                             <img src="img/ajedrez.jpg" class="img-zoomin img-fluid rounded-top w-100" alt="">
                                         </div>
                                         <div class="d-flex flex-column p-4">
-                                            <a href="https://ajedrez.marsgame.pe" class="h4">Únete y disfruta con este increible juego retro y gánale a tus amigos</a>
+                                            <!-- <a href="https://ajedrez.marsgame.pe" class="h4 m-none">Únete y disfruta con este increible juego retro y gánale a tus amigos</a> -->
                                             <div class="d-flex justify-content-between">
                                                 <a href="#" class="small text-body link-hover">AJEDREZ</a>
-                                                <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> En todo momento</small>
+                                                <small class="text-body d-block m-none"><i class="fas fa-calendar-alt me-1"></i> En todo momento</small>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="whats-item">
+                                <div class="whats-item col-md-4 col-6">
                                     <div class="bg-light rounded">
                                         <div class="rounded-top overflow-hidden">
                                             <img src="img/damas.jpg" class="img-zoomin img-fluid rounded-top w-100" alt="">
                                         </div>
                                         <div class="d-flex flex-column p-4">
-                                            <a href="https://checker.marsgame.pe" class="h4">Únete y disfruta con este increible juego retro y gánale a tus amigos</a>
+                                            <!-- <a href="https://checker.marsgame.pe" class="h4 m-none">Únete y disfruta con este increible juego retro y gánale a tus amigos</a> -->
                                             <div class="d-flex justify-content-between">
                                                 <a href="#" class="small text-body link-hover">DAMAS</a>
-                                                <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> Próximamente</small>
+                                                <small class="text-body d-block m-none"><i class="fas fa-calendar-alt me-1"></i> Próximamente</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="whats-item col-md-4 col-6">
+                                    <div class="bg-light rounded">
+                                        <div class="rounded-top overflow-hidden">
+                                            <img src="img/ajedrez.jpg" class="img-zoomin img-fluid rounded-top w-100" alt="">
+                                        </div>
+                                        <div class="d-flex flex-column p-4">
+                                            <!-- <a href="https://ajedrez.marsgame.pe" class="h4 m-none">Únete y disfruta con este increible juego retro y gánale a tus amigos</a> -->
+                                            <div class="d-flex justify-content-between">
+                                                <a href="#" class="small text-body link-hover">AJEDREZ</a>
+                                                <small class="text-body d-block m-none"><i class="fas fa-calendar-alt me-1"></i> En todo momento</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="whats-item col-md-4 col-6">
+                                    <div class="bg-light rounded">
+                                        <div class="rounded-top overflow-hidden">
+                                            <img src="img/damas.jpg" class="img-zoomin img-fluid rounded-top w-100" alt="">
+                                        </div>
+                                        <div class="d-flex flex-column p-4">
+                                            <!-- <a href="https://checker.marsgame.pe" class="h4 m-none">Únete y disfruta con este increible juego retro y gánale a tus amigos</a> -->
+                                            <div class="d-flex justify-content-between">
+                                                <a href="#" class="small text-body link-hover">DAMAS</a>
+                                                <small class="text-body d-block m-none"><i class="fas fa-calendar-alt me-1"></i> Próximamente</small>
                                             </div>
                                         </div>
                                     </div>
@@ -987,7 +1019,7 @@
                                 </div>
                             </div> -->
                         </div>
-                        <div class="col-lg-4 col-xl-3 scroll container m-block m-none" id="div-right">
+                        <div class="col-lg-4 col-xl-3 scroll container m-block m-none bg-light" style="position: fixed;z-index: 9;right:0;" id="div-right">
                             <div class="row g-4">
                                 <div class="col-12">
                                     <div class="p-3 rounded border">                                        
@@ -1150,7 +1182,7 @@
         
 
     <!-- mobile bottom bar -->
-    <div class="mobile_bottombar d-block d-lg-none">
+    <div class="mobile_bottombar d-block d-lg-none" style="z-index: 9999;">
         <div class="header_icon">
             <a href="javascript:void(0)" class="icon_wrp text-center open_menu">
                 <span class="icon">
@@ -1181,8 +1213,8 @@
     </div>
 
     <!-- mobile opciones -->
-    <div class="mobile_menwrap d-lg-none" id="mobile_menwrap">
-        <div class="mobile_menu_2" style="padding-top: 100px;">
+    <div class="mobile_menwrap d-lg-none" id="mobile_menwrap" style="z-index: 9999;">
+        <div class="mobile_menu_2">
             <h5 class="mobile_title">
                 Opciones
                 <span class="sidebarclose" id="menuclose">
@@ -1221,11 +1253,11 @@
     </div>
 
     <!-- Mobile Contactos -->
-    <div class="mobile_menwrap d-lg-none" id="mobile_catwrap">
-        <div class="mobile_menu_2" style="padding-top: 100px;">
+    <div class="mobile_menwrap d-lg-none" id="mobile_catwrap" style="z-index: 9999;">
+        <div class="mobile_menu_2">
             <h5 class="mobile_title">
                 Contactos
-                <span class="sidebarclose" id="menuclose">
+                <span class="sidebarclose" id="catclose">
                     <i class="las la-times"></i>
                 </span>
             </h5>
@@ -1381,7 +1413,7 @@
   
 
         <!-- Footer Start -->
-        <div class="container-fluid bg-dark footer py-5">
+        <div class="container-fluid bg-dark footer py-5" style="position: absolute;z-index: 999;">
             <div class="container py-5">
                 <div class="pb-4 mb-4" style="border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
                     <div class="row g-4">
