@@ -278,29 +278,17 @@
                                         <div class="row g-4">
                                             <div class="col-12">
                                                 <a href="#" class="w-100 rounded btn btn-primary d-flex align-items-center p-3 mb-2">
-                                                    <i class="fab fa-facebook-f btn btn-light btn-square rounded-circle me-3"></i>
-                                                    <span class="text-white">13,977 Fans</span>
+                                                    <i class="fab fa-fantasy-flight-games btn btn-light btn-square me-3"></i>
+                                                    <span class="text-white">Crear Sala</span>
                                                 </a>
                                                 <a href="#" class="w-100 rounded btn btn-danger d-flex align-items-center p-3 mb-2">
-                                                    <i class="fab fa-twitter btn btn-light btn-square rounded-circle me-3"></i>
-                                                    <span class="text-white">21,798 Follower</span>
+                                                    <i class="fab fa-fantasy-flight-games btn btn-light btn-square me-3 p-2"></i>
+                                                    <span class="text-white">Salas Disponibles</span>
                                                 </a>
                                                 <a href="#" class="w-100 rounded btn btn-warning d-flex align-items-center p-3 mb-2">
-                                                    <i class="fab fa-youtube btn btn-light btn-square rounded-circle me-3"></i>
-                                                    <span class="text-white">7,999 Subscriber</span>
-                                                </a>
-                                                <a href="#" class="w-100 rounded btn btn-dark d-flex align-items-center p-3 mb-2">
-                                                    <i class="fab fa-instagram btn btn-light btn-square rounded-circle me-3"></i>
-                                                    <span class="text-white">19,764 Follower</span>
-                                                </a>
-                                                <a href="#" class="w-100 rounded btn btn-secondary d-flex align-items-center p-3 mb-2">
-                                                    <i class="bi-cloud btn btn-light btn-square rounded-circle me-3"></i>
-                                                    <span class="text-white">31,999 Subscriber</span>
-                                                </a>
-                                                <a href="#" class="w-100 rounded btn btn-warning d-flex align-items-center p-3 mb-4">
-                                                    <i class="fab fa-dribbble btn btn-light btn-square rounded-circle me-3"></i>
-                                                    <span class="text-white">37,999 Subscriber</span>
-                                                </a>
+                                                    <i class="fab fa-buromobelexperte btn btn-light btn-square me-3"></i>
+                                                    <span class="text-white">Tienda</span>
+                                                </a>                                                
                                             </div>
                                         </div>                                        
                                     </div>
@@ -320,9 +308,11 @@
                                 <div class="whats-item col-md-4 col-6">
                                     <div class="bg-light rounded">
                                         <div class="rounded-top overflow-hidden">
-                                            <img src="img/ajedrez.jpg" class="img-zoomin img-fluid rounded-top w-100" alt="">
+                                            <a href="#">
+                                                <img src="img/ajedrez1.png" class="img-zoomin img-fluid rounded-top w-100" alt="">
+                                            </a>
                                         </div>
-                                        <div class="d-flex flex-column p-4">
+                                        <div class="d-flex flex-column p-2">
                                             <!-- <a href="https://ajedrez.marsgame.pe" class="h4 m-none">Únete y disfruta con este increible juego retro y gánale a tus amigos</a> -->
                                             <div class="d-flex justify-content-between">
                                                 <a href="#" class="small text-body link-hover">AJEDREZ</a>
@@ -334,9 +324,11 @@
                                 <div class="whats-item col-md-4 col-6">
                                     <div class="bg-light rounded">
                                         <div class="rounded-top overflow-hidden">
-                                            <img src="img/damas.jpg" class="img-zoomin img-fluid rounded-top w-100" alt="">
+                                            <a href="#">
+                                                <img src="img/damas1.png" class="img-zoomin img-fluid rounded-top w-100" alt="">
+                                            </a>
                                         </div>
-                                        <div class="d-flex flex-column p-4">
+                                        <div class="d-flex flex-column p-2">
                                             <!-- <a href="https://checker.marsgame.pe" class="h4 m-none">Únete y disfruta con este increible juego retro y gánale a tus amigos</a> -->
                                             <div class="d-flex justify-content-between">
                                                 <a href="#" class="small text-body link-hover">DAMAS</a>
@@ -348,13 +340,15 @@
                                 <div class="whats-item col-md-4 col-6">
                                     <div class="bg-light rounded">
                                         <div class="rounded-top overflow-hidden">
-                                            <img src="img/ajedrez.jpg" class="img-zoomin img-fluid rounded-top w-100" alt="">
+                                            <a href="#">
+                                                <img src="img/bingo.png" class="img-zoomin img-fluid rounded-top w-100" alt="">
+                                            </a>
                                         </div>
-                                        <div class="d-flex flex-column p-4">
+                                        <div class="d-flex flex-column p-2">
                                             <!-- <a href="https://ajedrez.marsgame.pe" class="h4 m-none">Únete y disfruta con este increible juego retro y gánale a tus amigos</a> -->
                                             <div class="d-flex justify-content-between">
-                                                <a href="#" class="small text-body link-hover">AJEDREZ</a>
-                                                <small class="text-body d-block m-none"><i class="fas fa-calendar-alt me-1"></i> En todo momento</small>
+                                                <a href="#" class="small text-body link-hover">BINGO</a>
+                                                <small class="text-body d-block m-none"><i class="fas fa-calendar-alt me-1"></i> Próximamente</small>
                                             </div>
                                         </div>
                                     </div>
@@ -362,12 +356,30 @@
                                 <div class="whats-item col-md-4 col-6">
                                     <div class="bg-light rounded">
                                         <div class="rounded-top overflow-hidden">
-                                            <img src="img/damas.jpg" class="img-zoomin img-fluid rounded-top w-100" alt="">
+                                            <a href="#">
+                                                <img src="img/serpientes.png" class="img-zoomin img-fluid rounded-top w-100" alt="">
+                                            </a>
                                         </div>
-                                        <div class="d-flex flex-column p-4">
+                                        <div class="d-flex flex-column p-2">
                                             <!-- <a href="https://checker.marsgame.pe" class="h4 m-none">Únete y disfruta con este increible juego retro y gánale a tus amigos</a> -->
                                             <div class="d-flex justify-content-between">
-                                                <a href="#" class="small text-body link-hover">DAMAS</a>
+                                                <a href="#" class="small text-body link-hover">ESCALERAS</a>
+                                                <small class="text-body d-block m-none"><i class="fas fa-calendar-alt me-1"></i> Próximamente</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="whats-item col-md-4 col-6">
+                                    <div class="bg-light rounded">
+                                        <div class="rounded-top overflow-hidden">
+                                            <a href="#">
+                                                <img src="img/ludo.png" class="img-zoomin img-fluid rounded-top w-100" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="d-flex flex-column p-2">
+                                            <!-- <a href="https://ajedrez.marsgame.pe" class="h4 m-none">Únete y disfruta con este increible juego retro y gánale a tus amigos</a> -->
+                                            <div class="d-flex justify-content-between">
+                                                <a href="#" class="small text-body link-hover">LUDO</a>
                                                 <small class="text-body d-block m-none"><i class="fas fa-calendar-alt me-1"></i> Próximamente</small>
                                             </div>
                                         </div>
@@ -1032,16 +1044,14 @@
                                                             <div class="overflow-hidden rounded-circle">
                                                                 <img src="img/features-sports-1.jpg" class="img-zoomin img-fluid rounded-circle w-100" alt="">
                                                             </div>
-                                                            <span class="rounded-circle border border-2 border-white bg-primary btn-sm-square text-white position-absolute" style="top: 10%; right: -10px;">3</span>
                                                         </div>
                                                     </div>
                                                     <div class="col-8">
                                                         <div class="features-content d-flex flex-column">
-                                                            <p class="text-uppercase mb-2">Sports</p>
-                                                            <a href="#" class="h6">
-                                                                Get the best speak market, news.
+                                                            <a href="#" class="h6" style="text-align: justify;">
+                                                                Juan Carlos Torres del Castillo
                                                             </a>
-                                                            <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> December 9, 2024</small>
+                                                            <small class="text-body d-block" style="text-align: justify;"><i class="fas fa-calendar-alt me-1"></i> December 9, 2024</small>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1051,18 +1061,16 @@
                                                     <div class="col-4">
                                                         <div class="rounded-circle position-relative">
                                                             <div class="overflow-hidden rounded-circle">
-                                                                <img src="img/features-technology.jpg" class="img-zoomin img-fluid rounded-circle w-100" alt="">
+                                                                <img src="img/features-sports-1.jpg" class="img-zoomin img-fluid rounded-circle w-100" alt="">
                                                             </div>
-                                                            <span class="rounded-circle border border-2 border-white bg-primary btn-sm-square text-white position-absolute" style="top: 10%; right: -10px;">3</span>
                                                         </div>
                                                     </div>
                                                     <div class="col-8">
                                                         <div class="features-content d-flex flex-column">
-                                                            <p class="text-uppercase mb-2">Technology</p>
-                                                            <a href="#" class="h6">
-                                                                Get the best speak market, news.
+                                                            <a href="#" class="h6" style="text-align: justify;">
+                                                                Juan Carlos Torres del Castillo
                                                             </a>
-                                                            <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> December 9, 2024</small>
+                                                            <small class="text-body d-block" style="text-align: justify;"><i class="fas fa-calendar-alt me-1"></i> December 9, 2024</small>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1072,18 +1080,16 @@
                                                     <div class="col-4">
                                                         <div class="rounded-circle position-relative">
                                                             <div class="overflow-hidden rounded-circle">
-                                                                <img src="img/features-fashion.jpg" class="img-zoomin img-fluid rounded-circle w-100" alt="">
+                                                                <img src="img/features-sports-1.jpg" class="img-zoomin img-fluid rounded-circle w-100" alt="">
                                                             </div>
-                                                            <span class="rounded-circle border border-2 border-white bg-primary btn-sm-square text-white position-absolute" style="top: 10%; right: -10px;">3</span>
                                                         </div>
                                                     </div>
                                                     <div class="col-8">
                                                         <div class="features-content d-flex flex-column">
-                                                            <p class="text-uppercase mb-2">Fashion</p>
-                                                            <a href="#" class="h6">
-                                                                Get the best speak market, news.
+                                                            <a href="#" class="h6" style="text-align: justify;">
+                                                                Juan Carlos Torres del Castillo
                                                             </a>
-                                                            <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> December 9, 2024</small>
+                                                            <small class="text-body d-block" style="text-align: justify;"><i class="fas fa-calendar-alt me-1"></i> December 9, 2024</small>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1093,22 +1099,21 @@
                                                     <div class="col-4">
                                                         <div class="rounded-circle position-relative">
                                                             <div class="overflow-hidden rounded-circle">
-                                                                <img src="img/features-life-style.jpg" class="img-zoomin img-fluid rounded-circle w-100" alt="">
+                                                                <img src="img/features-sports-1.jpg" class="img-zoomin img-fluid rounded-circle w-100" alt="">
                                                             </div>
-                                                            <span class="rounded-circle border border-2 border-white bg-primary btn-sm-square text-white position-absolute" style="top: 10%; right: -10px;">3</span>
                                                         </div>
                                                     </div>
                                                     <div class="col-8">
                                                         <div class="features-content d-flex flex-column">
-                                                            <p class="text-uppercase mb-2">Life Style</p>
-                                                            <a href="#" class="h6">
-                                                                Get the best speak market, news.
+                                                            <a href="#" class="h6" style="text-align: justify;">
+                                                                Juan Carlos Torres del Castillo
                                                             </a>
-                                                            <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> December 9, 2024</small>
+                                                            <small class="text-body d-block" style="text-align: justify;"><i class="fas fa-calendar-alt me-1"></i> December 9, 2024</small>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
+
                                             <div class="col-lg-12">
                                                 <a href="#" class="link-hover btn border border-primary rounded-pill text-dark w-100 py-3 mb-4">View More</a>
                                             </div>
@@ -1158,17 +1163,7 @@
                                                         </a>
                                                     </li>
                                                 </ul>
-                                            </div>
-                                            <div class="col-lg-12">
-                                                <div class="position-relative banner-2">
-                                                    <img src="img/banner-2.jpg" class="img-fluid w-100 rounded" alt="">
-                                                    <div class="text-center banner-content-2">
-                                                        <h6 class="mb-2">The Most Populer</h6>
-                                                        <p class="text-white mb-2">News & Magazine WP Theme</p>
-                                                        <a href="#" class="btn btn-primary text-white px-4">Shop Now</a>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            </div>                                            
                                         </div>
                                     </div>
                                 </div>
@@ -1224,29 +1219,17 @@
             <div class="row bg-white p-4">
                 <div class="col-12">
                     <a href="#" class="w-100 rounded btn btn-primary d-flex align-items-center p-3 mb-2">
-                        <i class="fab fa-facebook-f btn btn-light btn-square rounded-circle me-3"></i>
-                        <span class="text-white">13,977 Fans</span>
+                        <i class="fab fa-fantasy-flight-games btn btn-light btn-square me-3"></i>
+                        <span class="text-white">Crear Sala</span>
                     </a>
                     <a href="#" class="w-100 rounded btn btn-danger d-flex align-items-center p-3 mb-2">
-                        <i class="fab fa-twitter btn btn-light btn-square rounded-circle me-3"></i>
-                        <span class="text-white">21,798 Follower</span>
+                        <i class="fab fa-fantasy-flight-games btn btn-light btn-square me-3 p-2"></i>
+                        <span class="text-white">Salas Disponibles</span>
                     </a>
                     <a href="#" class="w-100 rounded btn btn-warning d-flex align-items-center p-3 mb-2">
-                        <i class="fab fa-youtube btn btn-light btn-square rounded-circle me-3"></i>
-                        <span class="text-white">7,999 Subscriber</span>
-                    </a>
-                    <a href="#" class="w-100 rounded btn btn-dark d-flex align-items-center p-3 mb-2">
-                        <i class="fab fa-instagram btn btn-light btn-square rounded-circle me-3"></i>
-                        <span class="text-white">19,764 Follower</span>
-                    </a>
-                    <a href="#" class="w-100 rounded btn btn-secondary d-flex align-items-center p-3 mb-2">
-                        <i class="bi-cloud btn btn-light btn-square rounded-circle me-3"></i>
-                        <span class="text-white">31,999 Subscriber</span>
-                    </a>
-                    <a href="#" class="w-100 rounded btn btn-warning d-flex align-items-center p-3 mb-4">
-                        <i class="fab fa-dribbble btn btn-light btn-square rounded-circle me-3"></i>
-                        <span class="text-white">37,999 Subscriber</span>
-                    </a>
+                        <i class="fab fa-buromobelexperte btn btn-light btn-square me-3"></i>
+                        <span class="text-white">Tienda</span>
+                    </a>                                                
                 </div>
             </div>  
         </div>
@@ -1262,155 +1245,87 @@
                 </span>
             </h5>
             <div class="row bg-white p-4">
-                <div class="col-12">
-                    <div class="row g-4 align-items-center features-item">
-                        <div class="col-4">
-                            <div class="rounded-circle position-relative">
-                                <div class="overflow-hidden rounded-circle">
-                                    <img src="img/features-sports-1.jpg" class="img-zoomin img-fluid rounded-circle w-100" alt="">
-                                </div>
-                                <span class="rounded-circle border border-2 border-white bg-primary btn-sm-square text-white position-absolute" style="top: 10%; right: -10px;">3</span>
-                            </div>
-                        </div>
-                        <div class="col-8">
-                            <div class="features-content d-flex flex-column">
-                                <p class="text-uppercase mb-2">Sports</p>
-                                <a href="#" class="h6">
-                                    Get the best speak market, news.
-                                </a>
-                                <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> December 9, 2024</small>
+            <div class="col-12">
+                <div class="row g-4 align-items-center features-item">
+                    <div class="col-4">
+                        <div class="rounded-circle position-relative">
+                            <div class="overflow-hidden rounded-circle">
+                                <img src="img/features-sports-1.jpg" class="img-zoomin img-fluid rounded-circle w-100" alt="">
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-12">
-                    <div class="row g-4 align-items-center features-item">
-                        <div class="col-4">
-                            <div class="rounded-circle position-relative">
-                                <div class="overflow-hidden rounded-circle">
-                                    <img src="img/features-technology.jpg" class="img-zoomin img-fluid rounded-circle w-100" alt="">
-                                </div>
-                                <span class="rounded-circle border border-2 border-white bg-primary btn-sm-square text-white position-absolute" style="top: 10%; right: -10px;">3</span>
-                            </div>
-                        </div>
-                        <div class="col-8">
-                            <div class="features-content d-flex flex-column">
-                                <p class="text-uppercase mb-2">Technology</p>
-                                <a href="#" class="h6">
-                                    Get the best speak market, news.
-                                </a>
-                                <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> December 9, 2024</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12">
-                    <div class="row g-4 align-items-center features-item">
-                        <div class="col-4">
-                            <div class="rounded-circle position-relative">
-                                <div class="overflow-hidden rounded-circle">
-                                    <img src="img/features-fashion.jpg" class="img-zoomin img-fluid rounded-circle w-100" alt="">
-                                </div>
-                                <span class="rounded-circle border border-2 border-white bg-primary btn-sm-square text-white position-absolute" style="top: 10%; right: -10px;">3</span>
-                            </div>
-                        </div>
-                        <div class="col-8">
-                            <div class="features-content d-flex flex-column">
-                                <p class="text-uppercase mb-2">Fashion</p>
-                                <a href="#" class="h6">
-                                    Get the best speak market, news.
-                                </a>
-                                <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> December 9, 2024</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12">
-                    <div class="row g-4 align-items-center features-item">
-                        <div class="col-4">
-                            <div class="rounded-circle position-relative">
-                                <div class="overflow-hidden rounded-circle">
-                                    <img src="img/features-life-style.jpg" class="img-zoomin img-fluid rounded-circle w-100" alt="">
-                                </div>
-                                <span class="rounded-circle border border-2 border-white bg-primary btn-sm-square text-white position-absolute" style="top: 10%; right: -10px;">3</span>
-                            </div>
-                        </div>
-                        <div class="col-8">
-                            <div class="features-content d-flex flex-column">
-                                <p class="text-uppercase mb-2">Life Style</p>
-                                <a href="#" class="h6">
-                                    Get the best speak market, news.
-                                </a>
-                                <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> December 9, 2024</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-12">
-                    <a href="#" class="link-hover btn border border-primary rounded-pill text-dark w-100 py-3 mb-4">View More</a>
-                </div>
-                <div class="col-lg-12">
-                    <div class="border-bottom my-3 pb-3">
-                        <h4 class="mb-0">Trending Tags</h4>
-                    </div>
-                    <ul class="nav nav-pills d-inline-flex text-center mb-4">
-                        <li class="nav-item mb-3">
-                            <a class="d-flex py-2 bg-light rounded-pill me-2" href="#">
-                                <span class="text-dark link-hover" style="width: 90px;">Lifestyle</span>
+                    <div class="col-8">
+                        <div class="features-content d-flex flex-column">
+                            <a href="#" class="h6">
+                                Juan Carlos Torres del Castillo
                             </a>
-                        </li>
-                        <li class="nav-item mb-3">
-                            <a class="d-flex py-2 bg-light rounded-pill me-2" href="#">
-                                <span class="text-dark link-hover" style="width: 90px;">Sports</span>
-                            </a>
-                        </li>
-                        <li class="nav-item mb-3">
-                            <a class="d-flex py-2 bg-light rounded-pill me-2" href="#">
-                                <span class="text-dark link-hover" style="width: 90px;">Politics</span>
-                            </a>
-                        </li>
-                        <li class="nav-item mb-3">
-                            <a class="d-flex py-2 bg-light rounded-pill me-2" href="#">
-                                <span class="text-dark link-hover" style="width: 90px;">Magazine</span>
-                            </a>
-                        </li>
-                        <li class="nav-item mb-3">
-                            <a class="d-flex py-2 bg-light rounded-pill me-2" href="#">
-                                <span class="text-dark link-hover" style="width: 90px;">Game</span>
-                            </a>
-                        </li>
-                        <li class="nav-item mb-3">
-                            <a class="d-flex py-2 bg-light rounded-pill me-2" href="#">
-                                <span class="text-dark link-hover" style="width: 90px;">Movie</span>
-                            </a>
-                        </li>
-                        <li class="nav-item mb-3">
-                            <a class="d-flex py-2 bg-light rounded-pill me-2" href="#">
-                                <span class="text-dark link-hover" style="width: 90px;">Travel</span>
-                            </a>
-                        </li>
-                        <li class="nav-item mb-3">
-                            <a class="d-flex py-2 bg-light rounded-pill me-2" href="#">
-                                <span class="text-dark link-hover" style="width: 90px;">World</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-lg-12">
-                    <div class="position-relative banner-2">
-                        <img src="img/banner-2.jpg" class="img-fluid w-100 rounded" alt="">
-                        <div class="text-center banner-content-2">
-                            <h6 class="mb-2">The Most Populer</h6>
-                            <p class="text-white mb-2">News & Magazine WP Theme</p>
-                            <a href="#" class="btn btn-primary text-white px-4">Shop Now</a>
+                            <small class="text-body d-block" style="text-align: justify;"><i class="fas fa-calendar-alt me-1"></i> December 9, 2024</small>
                         </div>
                     </div>
                 </div>
             </div>
-            </h5>
+            <div class="col-12">
+                <div class="row g-4 align-items-center features-item">
+                    <div class="col-4">
+                        <div class="rounded-circle position-relative">
+                            <div class="overflow-hidden rounded-circle">
+                                <img src="img/features-sports-1.jpg" class="img-zoomin img-fluid rounded-circle w-100" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-8">
+                        <div class="features-content d-flex flex-column">
+                            <a href="#" class="h6">
+                                Juan Carlos Torres del Castillo
+                            </a>
+                            <small class="text-body d-block" style="text-align: justify;"><i class="fas fa-calendar-alt me-1"></i> December 9, 2024</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="row g-4 align-items-center features-item">
+                    <div class="col-4">
+                        <div class="rounded-circle position-relative">
+                            <div class="overflow-hidden rounded-circle">
+                                <img src="img/features-sports-1.jpg" class="img-zoomin img-fluid rounded-circle w-100" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-8">
+                        <div class="features-content d-flex flex-column">
+                            <a href="#" class="h6">
+                                Juan Carlos Torres del Castillo
+                            </a>
+                            <small class="text-body d-block" style="text-align: justify;"><i class="fas fa-calendar-alt me-1"></i> December 9, 2024</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="row g-4 align-items-center features-item">
+                    <div class="col-4">
+                        <div class="rounded-circle position-relative">
+                            <div class="overflow-hidden rounded-circle">
+                                <img src="img/features-sports-1.jpg" class="img-zoomin img-fluid rounded-circle w-100" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-8">
+                        <div class="features-content d-flex flex-column">
+                            <a href="#" class="h6">
+                                Juan Carlos Torres del Castillo
+                            </a>
+                            <small class="text-body d-block" style="text-align: justify;"><i class="fas fa-calendar-alt me-1"></i> December 9, 2024</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                
+            </div>
+            
         </div>
-    </div>
-  
+    </div>  
 
         <!-- Footer Start -->
         <div class="container-fluid bg-dark footer py-5" style="position: absolute;z-index: 999;">
