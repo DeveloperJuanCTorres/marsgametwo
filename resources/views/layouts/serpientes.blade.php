@@ -17,7 +17,7 @@
         <link rel="stylesheet" href="{{asset('css/serpientes.css')}}">
         <script>
             window.PUSHER_APP_KEY = '{{ config('broadcasting.connections.pusher.key') }}';
-            window.APP_ENV = {{ config('app.env') == 'local' ? true : false }};
+            window.APP_ENV = {{ config('app.env') == 'production' ? true : false }};
         </script>
         @stack('game')
     </head>

@@ -9,9 +9,9 @@ class AdminController extends Controller
 {
     public function websocket(){
         try {
-            return Artisan::call('websockets:serve');
+            return Artisan::call('websocket:serve');
         } catch (\Throwable $th) {
-        return ['error'=>'Error! websockets:serve'];
+            return ['error'=>'Error! websocket:serve'.$th->getMessage()];
         }
     }
 
