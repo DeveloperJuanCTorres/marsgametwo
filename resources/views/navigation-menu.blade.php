@@ -6,16 +6,17 @@
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
-                        <x-application-mark class="block h-9 w-auto" />
+                       
+                        <img src="http://127.0.0.1:8000/img/logo.png" class="block h-9 w-auto" alt="logo">
                     </a>
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                <!-- <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                        Inicio
                     </x-nav-link>
-                </div>
+                </div> -->
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ms-6">
