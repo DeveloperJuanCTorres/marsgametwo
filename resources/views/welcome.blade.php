@@ -277,7 +277,7 @@
                                         <h4 class="mb-4">Opciones</h4>
                                         <div class="row g-4">
                                             <div class="col-12">
-                                                <a href="#" class="w-100 rounded btn btn-primary d-flex align-items-center p-3 mb-2">
+                                                <a href="/hall" class="w-100 rounded btn btn-primary d-flex align-items-center p-3 mb-2">
                                                     <i class="fab fa-fantasy-flight-games btn btn-light btn-square me-3"></i>
                                                     <span class="text-white">Crear Sala</span>
                                                 </a>
