@@ -1,0 +1,96 @@
+.bg-gamer{
+	background: url('/img/papel_tapiz.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+
+}
+.container-damas {
+    max-width:550px;
+    margin: 5% auto;
+    padding: 0;
+  }
+
+.responsive-box {
+    position: relative;
+    height: 0;
+    padding-bottom: 100%; /*scale 1:1*/
+  }
+  
+  .checkers-table {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    background: #F0F0F0;
+  }
+  
+  .checkers-table td {
+  /*   border: 1px solid #606060; */
+  }
+  
+  .checkers-table tr:nth-child(odd) td:nth-child(even),
+  .checkers-table tr:nth-child(even) td:nth-child(odd) {
+    background-color: #606060;
+  }
+  
+  .black-figures-block {
+    position: relative;
+    width: 100%;
+    margin-bottom: 25%;
+  }
+  
+  .black-figures-block:after {
+    content: '';
+    display: table;
+    clear:both;
+  }
+  
+  .white-figures-block {
+    position: relative;
+    width: 100%;
+    margin-top: 25%;
+  }
+  
+  .white-figures-block:after {
+    content: '';
+    display: table;
+    clear:both;
+  }
+  
+  .figure {
+    position: relative;
+    width: 10%;
+    padding-bottom: 10%; /* 10% of (responsive-box > padding-bottom: 100%) */
+    border-radius: 50%;
+    margin: 1.25%;
+  }
+  
+  .black {
+      background: url("http://res.cloudinary.com/drvstnszp/image/upload/v1499955382/sabre-black_uuflsd.png") 100% no-repeat;
+    background-size: cover;
+  }
+  
+  .white {
+      background: url("http://res.cloudinary.com/drvstnszp/image/upload/v1499955382/sabre-white_cdyz39.png") 100% no-repeat;
+    background-size: cover;
+  }
+  
+  .figure.black {
+    float:left;
+  }
+  
+  .figure.white {
+    float: right;
+  }
+  
+  .figure.black:not(:nth-child(5)) {
+      margin-left: 13.75%; /*12.5% + 1.25%*/
+  }
+  
+  .figure.white:not(:nth-child(5)) {
+      margin-right: 13.75%; /*12.5% + 1.25%*/
+  }

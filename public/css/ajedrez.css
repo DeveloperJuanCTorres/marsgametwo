@@ -1,0 +1,38 @@
+/* Definimos los estilos del tablero*/
+.bg-gamer{
+	background: url('/img/papel_tapiz.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+
+}
+
+.cont-tablero{
+    width: 560px;
+    height: 560px;
+    margin: 40px auto;
+    box-shadow: 0px 0px 6px 8px rgb(5, 98, 141),
+                0px 0px 0px 16px rgb(6, 55, 83);
+    box-sizing: content-box;
+    cursor: pointer;
+}
+
+.cont-tablero .tab-fila{
+    display: flex;
+}
+
+/* Definimos los estilos para cada casilla(cuadrado)*/
+.cont-tablero .tab-fila .tab-col{
+    background-color: white;
+    width: 70px;
+    height: 70px;
+    text-align: center;
+    user-select: none;
+    font-size: 55px;
+    color: rgb(9, 31, 46);
+    text-shadow: 0px .5px rgb(4, 50, 82);
+}
+
+.cont-tablero .tab-fila .black{
+    background-color: rgb(107, 146, 155);
+}

@@ -1,9 +1,7 @@
 <div  class="bg-gray-100 shadow border border-gray-300 overflow-hidden ">
 
-
     <div class="grid grid-cols-6 divide-x divide-gray-200">
-        
-        <div class="col-span-4 bg-white bg-gamer" >
+        <div class="col-span-6 sm:col-span-4 bg-white bg-gamer" >
              <div class="snakesBoard" id="snakesBoardOuter">
                 <div id="snakesBoard" class="snakesBoardInner">
                   <svg width="600" height="600" style="fill: black;">
@@ -106,7 +104,7 @@
             </div>
         </div>
 
-        <div class="col-span-2 bg-white">
+        <div class="col-span-6 sm:col-span-2 bg-white">
                 <div class="bg-gray-50 h-16 flex items-center px-4 border-b-2 border-gray-200 justify-between">
                     <img src="{{asset('img/logo.png')}}"  alt="logo" class="max-w-40">
                     <a href="/" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Salir del juego</a>
@@ -142,17 +140,17 @@
                 </div>
                 
                 <div class="py-2 px-4 bg-gray-200">
-                    <span class="mx-2" onclick="copiarEmoji('😀')">😀</span>
-                    <span class="mx-2"  onclick="copiarEmoji('😁')">😁</span>
-                    <span class="mx-2"  onclick="copiarEmoji('😂')">😂</span>
-                    <span class="mx-2"  onclick="copiarEmoji('😅')">😅</span>
-                    <span class="mx-2" onclick="copiarEmoji('😍')">😍</span>
-                    <span class="mx-2" onclick="copiarEmoji('😈')">😈</span>
-                    <span class="mx-2" onclick="copiarEmoji('😉')">😉</span>
-                    <span class="mx-2" onclick="copiarEmoji('😡')">😡</span>
-                    <span class="mx-2" onclick="copiarEmoji('😭')">😭</span>
-                    <span class="mx-2" onclick="copiarEmoji('🤑')">🤑</span>
-                    <span class="mx-2" onclick="copiarEmoji('🤩')">🤩</span>
+                    <span class="mx-2 cursor-pointer" onclick="copiarEmoji('😀')">😀</span>
+                    <span class="mx-2 cursor-pointer"  onclick="copiarEmoji('😁')">😁</span>
+                    <span class="mx-2 cursor-pointer"  onclick="copiarEmoji('😂')">😂</span>
+                    <span class="mx-2 cursor-pointer"  onclick="copiarEmoji('😅')">😅</span>
+                    <span class="mx-2 cursor-pointer" onclick="copiarEmoji('😍')">😍</span>
+                    <span class="mx-2 cursor-pointer" onclick="copiarEmoji('😈')">😈</span>
+                    <span class="mx-2 cursor-pointer" onclick="copiarEmoji('😉')">😉</span>
+                    <span class="mx-2 cursor-pointer" onclick="copiarEmoji('😡')">😡</span>
+                    <span class="mx-2 cursor-pointer" onclick="copiarEmoji('😭')">😭</span>
+                    <span class="mx-2 cursor-pointer" onclick="copiarEmoji('🤑')">🤑</span>
+                    <span class="mx-2 cursor-pointer" onclick="copiarEmoji('🤩')">🤩</span>
                 </div>
                 <form class="bg-gray-100 h-16 flex items-center px-4" wire:submit.prevent="sendMessage()">
                     

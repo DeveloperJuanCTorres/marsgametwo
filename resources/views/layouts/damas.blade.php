@@ -14,7 +14,7 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         <link rel="stylesheet" href="{{asset('assets/css/line-awesome.css')}}">
-        <link rel="stylesheet" href="{{asset('css/serpientes.css')}}">
+        <link rel="stylesheet" href="{{asset('css/damas.css')}}">
         <script>
             window.PUSHER_APP_KEY = '{{ config('broadcasting.connections.pusher.key') }}';
             window.APP_ENV = {{ config('app.env') == 'production' ? true : false }};
@@ -24,7 +24,7 @@
     <body class="font-sans antialiased">
         <x-banner />
             <div class="min-h-screen bg-gray-100">
-                @livewire('navigation-menu')
+              
                 {{ $slot }}
             </div>
         @stack('modals')

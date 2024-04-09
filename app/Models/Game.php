@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Casts\Attribute;
 class Game extends Model
 {
     use HasFactory;
-    protected $fillable =  ['winer','active'];
+    protected $fillable =  ['type','winer','active'];
 
     //Mutadores
     public function adversary(): Attribute
