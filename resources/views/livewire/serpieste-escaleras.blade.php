@@ -107,25 +107,20 @@
         </div>
 
         <div class="col-span-2 bg-white">
+                <div class="bg-gray-50 h-16 flex items-center px-4 border-b-2 border-gray-200 justify-between">
+                    <img src="{{asset('img/logo.png')}}"  alt="logo" class="max-w-40">
+                    <a href="/" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Salir del juego</a>
+                </div>
                 <div class="bg-gray-100 h-16 flex items-center px-3">
                     <img class="w-10 h-10 object-cover object-center rounded-full" src="{{ $adversary->profile_photo_url }}" alt="{{ $adversary->name }}">
                     <div class="ml-4">
                         <p class="text-gray-800">
                             {{ $adversary->name }}
-                            <!-- if ($this->active)   
-                                <p class="text-green-500 text-xs"  wire:key="online">
-                                    Conectado
-                                </p>
-                            else
-                                <p class="text-xs"  wire:key="offline">
-                                    Desconectado
-                                </p>
-                            endif -->
                         </p>
                     </div>
                 </div>
 
-                <div class="h-[calc(90vh-11rem)] px-3 py-2 overflow-auto">
+                <div class="h-[calc(92vh-11rem)] px-3 py-2 overflow-auto">
                     {{-- El contenido de nuestro chat --}}
                     @foreach ($this->messages as $message)
                         <div class="flex {{ $message->user_id == auth()->id() ? 'justify-end' : '' }} mb-2">
@@ -152,7 +147,12 @@
                     <span class="mx-2"  onclick="copiarEmoji('😂')">😂</span>
                     <span class="mx-2"  onclick="copiarEmoji('😅')">😅</span>
                     <span class="mx-2" onclick="copiarEmoji('😍')">😍</span>
-                    <span class="mx-2" onclick="copiarEmoji('💗')">💗</span>
+                    <span class="mx-2" onclick="copiarEmoji('😈')">😈</span>
+                    <span class="mx-2" onclick="copiarEmoji('😉')">😉</span>
+                    <span class="mx-2" onclick="copiarEmoji('😡')">😡</span>
+                    <span class="mx-2" onclick="copiarEmoji('😭')">😭</span>
+                    <span class="mx-2" onclick="copiarEmoji('🤑')">🤑</span>
+                    <span class="mx-2" onclick="copiarEmoji('🤩')">🤩</span>
                 </div>
                 <form class="bg-gray-100 h-16 flex items-center px-4" wire:submit.prevent="sendMessage()">
                     

@@ -1,5 +1,5 @@
 .bg-gamer{
-	background: url('/images/serpientes-y-escales.jpg');
+	background: url('/img/papel_tapiz.png');
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
@@ -9,7 +9,7 @@
 	width: 624px;
 	height: auto;
 	overflow: hidden;
-	margin: 1px auto 0 auto;
+	margin: 15px auto 0 auto;
 	overflow: hidden;
   }
   .snakesBoard > .snakesBoardInner {
