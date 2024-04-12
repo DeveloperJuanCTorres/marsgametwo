@@ -1,9 +1,9 @@
 <x-app-layout>
     <!-- Spinner Start -->
     <div id="spinner" class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
-            <div class="spinner-grow text-primary" role="status"></div>
-        </div>
-        <!-- Spinner End -->
+        <div class="spinner-grow text-primary" role="status"></div>
+    </div>
+    <!-- Spinner End -->
 
 
         <!-- Navbar start -->
@@ -287,7 +287,7 @@
                                                 </a>
                                                 <a href="#" class="w-100 rounded btn btn-warning d-flex align-items-center p-3 mb-2">
                                                     <i class="fab fa-buromobelexperte btn btn-light btn-square me-3"></i>
-                                                    <span class="text-white">Tienda</span>
+                                                    <span class="text-white">Tienda</span>  
                                                 </a>                                                
                                             </div>
                                         </div>                                        
@@ -1485,4 +1485,8 @@
         });
 
         </script>
+
+        @push('css')
+        <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
+        @endpush
     </x-app-layout>

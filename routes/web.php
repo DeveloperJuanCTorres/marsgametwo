@@ -37,6 +37,7 @@ Route::get('/work', [AdminController::class, 'work']);
 Route::get('/websocket', [AdminController::class, 'websocket']);
 Route::get('login/{provider}', [LoginController::class, 'redirectToProvider']);
 Route::get('{provider}/callback', [LoginController::class, 'handleProviderCallback']);
+Route::get('/store',[AdminController::class, 'store']);
 
 Route::middleware(['auth'])->group(function(){
     Route::get('/hall',Hall::class)->name('hall');

@@ -22,4 +22,8 @@ class AdminController extends Controller
         return ['error'=>'Error! queue work'];
         }
     }
+
+    public function store(){
+        return view('store');
+    }
 }

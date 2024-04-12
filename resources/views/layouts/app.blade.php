@@ -33,17 +33,21 @@
 
 
         <!-- Customized Bootstrap Stylesheet -->
-        <link href="{{asset('css/bootstrap.min.css')}}?v=<?php echo $version ?>" rel="stylesheet">
+        <!-- <link href="{{asset('css/bootstrap.min.css')}}?v=<?php echo $version ?>" rel="stylesheet"> -->
 
         <!-- Template Stylesheet -->
         <link href="{{asset('css/style.css')}}?v=<?php echo $version ?>" rel="stylesheet">
+
+        
 
         <link href="{{asset('css/style1.css')}}?v=<?php echo $version ?>" rel="stylesheet">
         <link href="{{asset('css/jquery-ui.css')}}?v=<?php echo $version ?>" rel="stylesheet">
         <link href="{{asset('css/line-awesome.css')}}?v=<?php echo $version ?>" rel="stylesheet">
         <link href="{{asset('css/nice-select.css')}}?v=<?php echo $version ?>" rel="stylesheet">
         <link href="{{asset('css/responsive.css')}}?v=<?php echo $version ?>" rel="stylesheet">
+
         
+        @stack('css')
 
         <!-- Styles -->
         @livewireStyles
@@ -51,7 +55,7 @@
     <body class="font-sans antialiased">
         <x-banner />
 
-        <div class="min-h-screen bg-gray-100">
+        <div class="">
            
 
             <!-- Page Heading -->
