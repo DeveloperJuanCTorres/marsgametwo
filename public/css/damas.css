@@ -5,92 +5,88 @@
 	background-size: cover;
 
 }
-.container-damas {
-    max-width:550px;
-    margin: 5% auto;
-    padding: 0;
-  }
 
-.responsive-box {
-    position: relative;
-    height: 0;
-    padding-bottom: 100%; /*scale 1:1*/
-  }
-  
-  .checkers-table {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-collapse: collapse;
-    border-spacing: 0;
-    background: #F0F0F0;
-  }
-  
-  .checkers-table td {
-  /*   border: 1px solid #606060; */
-  }
-  
-  .checkers-table tr:nth-child(odd) td:nth-child(even),
-  .checkers-table tr:nth-child(even) td:nth-child(odd) {
-    background-color: #606060;
-  }
-  
-  .black-figures-block {
-    position: relative;
-    width: 100%;
-    margin-bottom: 25%;
-  }
-  
-  .black-figures-block:after {
-    content: '';
-    display: table;
-    clear:both;
-  }
-  
-  .white-figures-block {
-    position: relative;
-    width: 100%;
-    margin-top: 25%;
-  }
-  
-  .white-figures-block:after {
-    content: '';
-    display: table;
-    clear:both;
-  }
-  
-  .figure {
-    position: relative;
-    width: 10%;
-    padding-bottom: 10%; /* 10% of (responsive-box > padding-bottom: 100%) */
-    border-radius: 50%;
-    margin: 1.25%;
-  }
-  
-  .black {
-      background: url("http://res.cloudinary.com/drvstnszp/image/upload/v1499955382/sabre-black_uuflsd.png") 100% no-repeat;
-    background-size: cover;
-  }
-  
-  .white {
-      background: url("http://res.cloudinary.com/drvstnszp/image/upload/v1499955382/sabre-white_cdyz39.png") 100% no-repeat;
-    background-size: cover;
-  }
-  
-  .figure.black {
-    float:left;
-  }
-  
-  .figure.white {
-    float: right;
-  }
-  
-  .figure.black:not(:nth-child(5)) {
-      margin-left: 13.75%; /*12.5% + 1.25%*/
-  }
-  
-  .figure.white:not(:nth-child(5)) {
-      margin-right: 13.75%; /*12.5% + 1.25%*/
-  }
+#playModeDiv {
+	text-align: center;
+	margin: 10px 0 0;
+}
+.playModeButton {
+	padding: 10px;
+	margin: 0 10px;
+	border-radius: 5px;
+	border: 2px solid #566;
+	background: linear-gradient(#3E3F8A,#3E3F8A);
+	color: white;
+	font-size: 20px;
+	font-weight: bold;
+	vertical-align: top;
+}
+.selectedPlayMode {
+	background: linear-gradient(#00983A,#00983A);
+}
+#infoDiv {
+	text-align: center;
+	font-family: Verdana, sans-serif;
+	font-size: 30px;
+	margin: 30px 0;
+}
+#boardDiv {
+	width: 500px;
+	margin: 0 auto 30px;
+	border: 10px solid #803E04;
+	cursor: default;
+}
+.draughtsSquare {
+	display: inline-block;
+	width: 60px;
+	height: 60px;
+	vertical-align: top;
+	background-color: #FFCE9E;
+}
+.draughtsRow:nth-child(odd) .draughtsSquare:nth-child(even), .draughtsRow:nth-child(even) .draughtsSquare:nth-child(odd) {
+	background-color: #D18B47;
+}
+.draughtsSquare.clickable {
+	box-shadow: inset 0 0 5px 4px #a7cf92;
+}
+.draughtsSquare.aiOption {
+	box-shadow: inset 0 0 5px 4px #99f;
+}
+.draughtsPiece {
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	font-size: 30px;
+	border-width: 4px;
+	border-style: solid;
+	margin: 6px;
+	border-radius: 50%;
+}
+.draughtsPiece.w, .draughtsPiece.W {
+	border-color: #666;
+	background: linear-gradient(#ffe,#ccb);
+}
+.draughtsPiece.b, .draughtsPiece.B {
+	border-color: #ddd;
+	background: linear-gradient(black,#444);
+	color: white;
+}
+.draughtsPiece.selected {
+	border-color: red;
+}
+#optionsDiv {
+	width: 500px;
+	margin: 0 auto;
+	font-family: Verdana, sans-serif;
+	font-size: 18px;
+}
+#colourModeDiv {
+	margin-top: 20px;
+}
+#note {
+	font-size: 15px;
+	color: #666;
+	text-align: center;
+	margin-top: 30px;
+}

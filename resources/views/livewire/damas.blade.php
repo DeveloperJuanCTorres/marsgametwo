@@ -2,122 +2,14 @@
 
     <div class="grid grid-cols-6 divide-x divide-gray-200">
         <div class="col-span-6 sm:col-span-4 bg-white bg-gamer" >
-            <div class="container-damas">
-        <div class="responsive-box">
-  <table class="checkers-table">
-   <tr>
-     <td></td>
-     <td></td>
-     <td></td>
-     <td></td>
-     <td></td>
-     <td></td>
-     <td></td>
-     <td></td>
-   </tr>
-   <tr>
-     <td></td>
-     <td></td>
-     <td></td>
-     <td></td>
-     <td></td>
-     <td></td>
-     <td></td>
-     <td></td>
-   </tr>
-   <tr>
-     <td></td>
-     <td></td>
-     <td></td>
-     <td></td>
-     <td></td>
-     <td></td>
-     <td></td>
-     <td></td>
-   </tr>
-   <tr>
-     <td></td>
-     <td></td>
-     <td></td>
-     <td></td>
-     <td></td>
-     <td></td>
-     <td></td>
-     <td></td>
-   </tr>
-   <tr>
-     <td></td>
-     <td></td>
-     <td></td>
-     <td></td>
-     <td></td>
-     <td></td>
-     <td></td>
-     <td></td>
-   </tr>
-   <tr>
-     <td></td>
-     <td></td>
-     <td></td>
-     <td></td>
-     <td></td>
-     <td></td>
-     <td></td>
-     <td></td>
-   </tr>
-   <tr>
-     <td></td>
-     <td></td>
-     <td></td>
-     <td></td>
-     <td></td>
-     <td></td>
-     <td></td>
-     <td></td>
-   </tr>
-   <tr>
-     <td></td>
-     <td></td>
-     <td></td>
-     <td></td>
-     <td></td>
-     <td></td>
-     <td></td>
-     <td></td>
-   </tr>
- </table>
-<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-  <div class="black-figures-block">
-  <div class="figure black"></div>
-  <div class="figure black"></div>
-  <div class="figure black"></div>
-  <div class="figure black"></div>
-  <div class="figure black"></div>
-  <div class="figure black"></div>
-  <div class="figure black"></div>
-  <div class="figure black"></div>
-  <div class="figure black"></div>
-  <div class="figure black"></div>
-  <div class="figure black"></div>
-  <div class="figure black"></div>
-  </div>
-   <div class="white-figures-block">
-  <div class="figure white"></div>
-  <div class="figure white"></div>
-  <div class="figure white"></div>
-  <div class="figure white"></div>
-  <div class="figure white"></div>
-  <div class="figure white"></div>
-  <div class="figure white"></div>
-  <div class="figure white"></div>
-  <div class="figure white"></div>
-  <div class="figure white"></div>
-  <div class="figure white"></div>
-  <div class="figure white"></div>
-  </div>  
-  </div>      
- </div><!-- responsive-box -->
-      
+           <div wire:ignore>
+            <div id="playModeDiv" wire:ignore>
+                <button id="button2player" onclick="setPlayMode(2)">2 player game</button>
+                <button id="button1player" onclick="setPlayMode(1)">game against AI</button>
+            </div>
+            <div id="infoDiv"></div>
+            <div id="boardDiv"></div>
+        </div>
 
         </div>
 
@@ -179,8 +71,10 @@
         </div>
     </div>
 
+ 
     
     @push('js')
+    <script src="{{asset('js/damas.js')}}"></script>
         <script>
 
             function copiarEmoji(emoji) {

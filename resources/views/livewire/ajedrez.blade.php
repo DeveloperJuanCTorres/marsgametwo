@@ -3,105 +3,164 @@
     <div class="grid grid-cols-6 divide-x divide-gray-200">
         <div class="col-span-6 sm:col-span-4 bg-white bg-gamer" >
             
-
-        <div class="cont-tablero">
-        <!-- FILA NRO-1 -->
-        <div class="tab-fila"> <!-- PIEZAS NEGRAS -->
-            <div class="tab-col"> &#9820; </div> 
-            <div class="tab-col black"> &#9822; </div>
-            <div class="tab-col"> &#9821; </div>
-            <div class="tab-col black"> &#9819; </div>
-            <div class="tab-col"> &#9818; </div>
-            <div class="tab-col black"> &#9821; </div>
-            <div class="tab-col"> &#9822; </div>
-            <div class="tab-col black"> &#9820; </div>
-        </div>
-
-        <!-- FILA NRO-2 -->
-        <div class="tab-fila"> <!-- PIEZAS NEGRAS -->
-            <div class="tab-col black"> &#9823; </div>
-            <div class="tab-col"> &#9823; </div>
-            <div class="tab-col black"> &#9823; </div>
-            <div class="tab-col"> &#9823; </div>
-            <div class="tab-col black"> &#9823; </div>
-            <div class="tab-col"> &#9823; </div>
-            <div class="tab-col black"> &#9823; </div>
-            <div class="tab-col"> &#9823; </div>
-        </div>
-
-        <!-- FILA NRO-3 -->
-        <div class="tab-fila">
-            <div class="tab-col"></div>
-            <div class="tab-col black"></div>
-            <div class="tab-col"></div>
-            <div class="tab-col black"></div>
-            <div class="tab-col"></div>
-            <div class="tab-col black"></div>
-            <div class="tab-col"></div>
-            <div class="tab-col black"></div>
-        </div>
-
-        <!-- FILA NRO-4 -->
-        <div class="tab-fila">
-            <div class="tab-col black"></div>
-            <div class="tab-col"></div>
-            <div class="tab-col black"></div>
-            <div class="tab-col"></div>
-            <div class="tab-col black"></div>
-            <div class="tab-col"></div>
-            <div class="tab-col black"></div>
-            <div class="tab-col"></div>
-        </div>
-
-        <!-- FILA NRO-5 -->
-        <div class="tab-fila">
-            <div class="tab-col"></div>
-            <div class="tab-col black"></div>
-            <div class="tab-col"></div>
-            <div class="tab-col black"></div>
-            <div class="tab-col"></div>
-            <div class="tab-col black"></div>
-            <div class="tab-col"></div>
-            <div class="tab-col black"></div>
-        </div>
-
-        <!-- FILA NRO-6 -->
-        <div class="tab-fila">
-            <div class="tab-col black"></div>
-            <div class="tab-col"></div>
-            <div class="tab-col black"></div>
-            <div class="tab-col"></div>
-            <div class="tab-col black"></div>
-            <div class="tab-col"></div>
-            <div class="tab-col black"></div>
-            <div class="tab-col"></div>
-        </div>
-
-        <!-- FILA NRO-7 -->
-        <div class="tab-fila"> <!-- PIEZAS BLANCAS -->
-            <div class="tab-col"> &#9817; </div>
-            <div class="tab-col black"> &#9817; </div>
-            <div class="tab-col"> &#9817; </div>
-            <div class="tab-col black"> &#9817; </div>
-            <div class="tab-col"> &#9817; </div>
-            <div class="tab-col black"> &#9817; </div>
-            <div class="tab-col"> &#9817; </div>
-            <div class="tab-col black"> &#9817; </div>
-        </div>
- 
-        <!-- FILA NRO-8 -->
-        <div class="tab-fila"> <!-- PIEZAS BLANCAS -->
-            <div class="tab-col black"> &#9814; </div>
-            <div class="tab-col"> &#9816; </div>
-            <div class="tab-col black"> &#9815; </div>
-            <div class="tab-col"> &#9813; </div>
-            <div class="tab-col black"> &#9812; </div>
-            <div class="tab-col"> &#9815; </div>
-            <div class="tab-col black"> &#9816; </div>
-            <div class="tab-col"> &#9814; </div>
-        </div>
-    </div>
-
+                <div wire:ignore>
+                    <div class="container">
+                        <div class="extra-zone">
+                          <div class="captured-zone" id="czblack"></div>
+                          <div class="countdown-timer" id="ctblack">05:00</div>
+                        </div>
+                        <div class="chessboard">
+                          <div class="line l8">
+                            <div class="square c1">
+                              <div class="black rook">♜</div>
+                            </div>
+                            <div class="square c2">
+                              <div class="black knight">♞</div>
+                            </div>
+                            <div class="square c3">
+                              <div class="black bishop">♝</div>
+                            </div>
+                            <div class="square c4">
+                              <div class="black queen">♛</div>
+                            </div>
+                            <div class="square c5">
+                              <div class="black king">♚</div>
+                            </div>
+                            <div class="square c6">
+                              <div class="black bishop">♝</div>
+                            </div>
+                            <div class="square c7">
+                              <div class="black knight">♞</div>
+                            </div>
+                            <div class="square c8">
+                              <div class="black rook">♜</div>
+                            </div>
+                          </div>
+                          <div class="line l7">
+                            <div class="square c1">
+                              <div class="black pawn">♙</div>
+                            </div>
+                            <div class="square c2">
+                              <div class="black pawn">♙</div>
+                            </div>
+                            <div class="square c3">
+                              <div class="black pawn">♙</div>
+                            </div>
+                            <div class="square c4">
+                              <div class="black pawn">♙</div>
+                            </div>
+                            <div class="square c5">
+                              <div class="black pawn">♙</div>
+                            </div>
+                            <div class="square c6">
+                              <div class="black pawn">♙</div>
+                            </div>
+                            <div class="square c7">
+                              <div class="black pawn">♙</div>
+                            </div>
+                            <div class="square c8">
+                              <div class="black pawn">♙</div>
+                            </div>
+                          </div>
+                          <div class="line l6">
+                            <div class="square c1"></div>
+                            <div class="square c2"></div>
+                            <div class="square c3"></div>
+                            <div class="square c4"></div>
+                            <div class="square c5"></div>
+                            <div class="square c6"></div>
+                            <div class="square c7"></div>
+                            <div class="square c8"></div>
+                          </div>
+                          <div class="line l5">
+                            <div class="square c1"></div>
+                            <div class="square c2"></div>
+                            <div class="square c3"></div>
+                            <div class="square c4"></div>
+                            <div class="square c5"></div>
+                            <div class="square c6"></div>
+                            <div class="square c7"></div>
+                            <div class="square c8"></div>
+                          </div>
+                          <div class="line l4">
+                            <div class="square c1"></div>
+                            <div class="square c2"></div>
+                            <div class="square c3"></div>
+                            <div class="square c4"></div>
+                            <div class="square c5"></div>
+                            <div class="square c6"></div>
+                            <div class="square c7"></div>
+                            <div class="square c8"></div>
+                          </div>
+                          <div class="line l3">
+                            <div class="square c1"></div>
+                            <div class="square c2"></div>
+                            <div class="square c3"></div>
+                            <div class="square c4"></div>
+                            <div class="square c5"></div>
+                            <div class="square c6"></div>
+                            <div class="square c7"></div>
+                            <div class="square c8"></div>
+                          </div>
+                          <div class="line l2">
+                            <div class="square c1">
+                              <div class="white pawn">♙</div>
+                            </div>
+                            <div class="square c2">
+                              <div class="white pawn">♙</div>
+                            </div>
+                            <div class="square c3">
+                              <div class="white pawn">♙</div>
+                            </div>
+                            <div class="square c4">
+                              <div class="white pawn">♙</div>
+                            </div>
+                            <div class="square c5">
+                              <div class="white pawn">♙</div>
+                            </div>
+                            <div class="square c6">
+                              <div class="white pawn">♙</div>
+                            </div>
+                            <div class="square c7">
+                              <div class="white pawn">♙</div>
+                            </div>
+                            <div class="square c8">
+                              <div class="white pawn">♙</div>
+                            </div>
+                          </div>
+                          <div class="line l1">
+                            <div class="square c1">
+                              <div class="white rook">♜</div>
+                            </div>
+                            <div class="square c2">
+                              <div class="white knight">♞</div>
+                            </div>
+                            <div class="square c3">
+                              <div class="white bishop">♝</div>
+                            </div>
+                            <div class="square c4">
+                              <div class="white queen">♛</div>
+                            </div>
+                            <div class="square c5">
+                              <div class="white king">♚</div>
+                            </div>
+                            <div class="square c6">
+                              <div class="white bishop">♝</div>
+                            </div>
+                            <div class="square c7">
+                              <div class="white knight">♞</div>
+                            </div>
+                            <div class="square c8">
+                              <div class="white rook">♜</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="extra-zone">
+                          <div class="captured-zone" id="czwhite"></div>
+                          <div class="countdown-timer" id="ctwhite">05:00</div>
+                        </div>
+                        </div> 
+                </div>
 
         </div>
 
@@ -163,8 +222,17 @@
         </div>
     </div>
 
+    @push('game')
+
+
+
+    @endpush
     
     @push('js')
+
+    <script src="{{asset('js/ajedrez.js')}}"></script>
+
+    
         <script>
 
             function copiarEmoji(emoji) {
