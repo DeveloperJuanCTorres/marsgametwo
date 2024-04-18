@@ -6,9 +6,9 @@
     <!-- Spinner End -->
 
 
-        <!-- Navbar start -->
-        <div class="container-fluid sticky-top px-0">
-            <div class="container-fluid topbar bg-dark d-none d-lg-block">
+        <!-- Navbar Movil start -->
+        <div class="container-fluid sticky-top px-0 m-block my-2">
+            <!-- <div class="container-fluid topbar bg-dark d-none d-lg-block">
                 <div class="container px-0">
                     <div class="topbar-top d-flex justify-content-between flex-lg-wrap">
                         <div class="top-info flex-grow-0">
@@ -32,14 +32,14 @@
                                 <a href="" class="me-2"><i class="fab fa-facebook-f text-body link-hover"></i></a>
                                 <a href="" class="me-2"><i class="fab fa-instagram text-body link-hover"></i></a>
                                 <a href="" class="me-2"><i class="fab fa-youtube text-body link-hover"></i></a>
-                                <!-- <a href="" class="me-2"><i class="fab fa-skype text-body link-hover"></i></a>
-                                <a href="" class=""><i class="fab fa-pinterest-p text-body link-hover"></i></a> -->
+                                
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="container-fluid bg-light">
+            </div> -->
+
+            <div class="container-fluid bg-white" style="position: fixed;z-index: 9;">
                 <div class="container px-0">
                     <nav class="navbar navbar-light navbar-expand-xl">
                         <a href="/" class="navbar-brand mt-3">
@@ -50,7 +50,7 @@
                         <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                             <span class="fa fa-bars text-primary"></span>
                         </button>
-                        <div class="collapse navbar-collapse bg-light py-3" id="navbarCollapse">
+                        <div class="collapse navbar-collapse bg-white py-3" id="navbarCollapse">
                             <div class="navbar-nav mx-auto border-top">
                                 <a href="/" class="nav-item nav-link active">Inicio</a>
                                 <a href="#" class="nav-item nav-link">Nosotros</a>
@@ -143,6 +143,151 @@
                                 <a href="/login" class="nav-item nav-link">Login</a>
                                 @endauth                                
                             </div>                                             
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!-- Navbar End -->
+
+        <!-- Navbar Web start -->
+        <div class="container-fluid sticky-top px-0 m-none my-2">
+            <!-- <div class="container-fluid topbar bg-dark d-none d-lg-block">
+                <div class="container px-0">
+                    <div class="topbar-top d-flex justify-content-between flex-lg-wrap">
+                        <div class="top-info flex-grow-0">
+                            <span class="rounded-circle btn-sm-square bg-primary me-2">
+                                <i class="fas fa-bolt text-white"></i>
+                            </span>
+                            <div class="pe-2 me-3 border-end border-white d-flex align-items-center">
+                                <p class="mb-0 text-white fs-6 fw-normal">Noticia</p>
+                            </div>
+                            <div class="overflow-hidden" style="width: 735px;">
+                                <div id="note" class="ps-2">
+                                    <img src="img/features-fashion.jpg" class="img-fluid rounded-circle border border-3 border-primary me-2" style="width: 30px; height: 30px;" alt="">
+                                    <a href="#"><p class="text-white mb-0 link-hover">Próximamente la web que revolucionará los juegos de apuestas.</p></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="top-link flex-lg-wrap">
+                            <i class="fas fa-calendar-alt text-white border-end border-secondary pe-2 me-2"> <span class="text-body">Tuesday, Sep 12, 2024</span></i>
+                            <div class="d-flex icon">
+                                <p class="mb-0 text-white me-2">Síguenos:</p>
+                                <a href="" class="me-2"><i class="fab fa-facebook-f text-body link-hover"></i></a>
+                                <a href="" class="me-2"><i class="fab fa-instagram text-body link-hover"></i></a>
+                                <a href="" class="me-2"><i class="fab fa-youtube text-body link-hover"></i></a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            
+            <div class="col-9 container-fluid bg-white" style="position: fixed;z-index: 9;">
+                <div class="container px-0">
+                    <nav class="navbar navbar-light navbar-expand-xl">
+                        <a href="/" class="navbar-brand mt-3">
+                            <img src="{{asset('img/logo.png')}}" width="250" alt="marsgame">
+                        </a>
+                        <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                            <span class="fa fa-bars text-primary"></span>
+                        </button>
+                        <!-- <div class="collapse navbar-collapse bg-white py-3" id="navbarCollapse">
+                            <div class="navbar-nav mx-auto border-top">
+                                <a href="/" class="nav-item nav-link active">Inicio</a>
+                                <a href="#" class="nav-item nav-link">Nosotros</a>
+                                <a href="#" class="nav-item nav-link">Contactanos</a>  
+                                @auth
+                                <div class="nav-item dropdown ml-0">
+                                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">{{ Auth::user()->name }}</a>
+                                    <div class="dropdown-menu m-0 bg-secondary rounded-0">
+                                        <div class="flex items-center px-4">
+                                            @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
+                                                <div class="shrink-0 me-3">
+                                                    <img class="h-10 w-10 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
+                                                </div>
+                                            @endif
+
+                                            <div>
+                                                <div class="font-medium text-base text-gray-800">{{ Auth::user()->name }}</div>
+                                                <div class="font-medium text-sm text-gray-500">{{ Auth::user()->email }}</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="mt-3 space-y-1">
+                                           
+                                            <x-responsive-nav-link href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
+                                                {{ __('Profile') }}
+                                            </x-responsive-nav-link>
+
+                                            @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
+                                                <x-responsive-nav-link href="{{ route('api-tokens.index') }}" :active="request()->routeIs('api-tokens.index')">
+                                                    {{ __('API Tokens') }}
+                                                </x-responsive-nav-link>
+                                            @endif
+
+                                           
+                                            <form method="POST" action="{{ route('logout') }}" x-data>
+                                                @csrf
+
+                                                <x-responsive-nav-link href="{{ route('logout') }}"
+                                                            @click.prevent="$root.submit();">
+                                                    {{ __('Log Out') }}
+                                                </x-responsive-nav-link>
+                                            </form>
+
+                                         
+                                            @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
+                                                <div class="border-t border-gray-200"></div>
+
+                                                <div class="block px-4 py-2 text-xs text-gray-400">
+                                                    {{ __('Manage Team') }}
+                                                </div>
+
+                                             
+                                                <x-responsive-nav-link href="{{ route('teams.show', Auth::user()->currentTeam->id) }}" :active="request()->routeIs('teams.show')">
+                                                    {{ __('Team Settings') }}
+                                                </x-responsive-nav-link>
+
+                                                @can('create', Laravel\Jetstream\Jetstream::newTeamModel())
+                                                    <x-responsive-nav-link href="{{ route('teams.create') }}" :active="request()->routeIs('teams.create')">
+                                                        {{ __('Create New Team') }}
+                                                    </x-responsive-nav-link>
+                                                @endcan
+
+                                               
+                                                @if (Auth::user()->allTeams()->count() > 1)
+                                                    <div class="border-t border-gray-200"></div>
+
+                                                    <div class="block px-4 py-2 text-xs text-gray-400">
+                                                        {{ __('Switch Teams') }}
+                                                    </div>
+
+                                                    @foreach (Auth::user()->allTeams() as $team)
+                                                        <x-switchable-team :team="$team" component="responsive-nav-link" />
+                                                    @endforeach
+                                                @endif
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
+                                @else
+                                <a href="/login" class="nav-item nav-link">Login</a>
+                                @endauth                                
+                            </div>                                             
+                        </div> -->
+                        <div class="btn-group mx-auto" role="group" aria-label="Basic radio toggle button group">
+                            <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+                            <label style="width: 100px;" class="btn btn-outline-mars" for="btnradio1"><i style="font-size: 32px;" class="las la-house-damage"></i></label>
+
+                            <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+                            <label style="width: 100px;" class="btn btn-outline-mars" for="btnradio2"><i style="font-size: 32px;" class="las la-building"></i></label>
+
+                            <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+                            <label style="width: 100px;" class="btn btn-outline-mars" for="btnradio3"><i style="font-size: 32px;" class="las la-address-book"></i></label>
+
+                            <input type="radio" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off">
+                            <label style="width: 100px;" class="btn btn-outline-mars" for="btnradio4"><a href="/login"><i style="font-size: 32px;" class="las la-user"></i></a></label>
                         </div>
                     </nav>
                 </div>
@@ -270,7 +415,7 @@
             <div class="py-0">
                 <div class="tab-class mb-4">
                     <div class="row g-4">
-                        <div class="col-lg-3 col-xl-2 scroll container m-block m-none bg-light" style="position: fixed;z-index: 9;">
+                        <div class="col-lg-3 col-xl-2 scroll container m-block m-none bg-white" style="position: fixed;z-index: 9;margin-top: 100px;">
                             <div class="row g-4">
                                 <div class="col-12">
                                     <div class="p-3 rounded border">
@@ -306,7 +451,7 @@
 
                         <div class="col-lg-3 col-xl-2"></div>
 
-                        <div class="col-lg-6 col-xl-7">
+                        <div class="col-lg-6 col-xl-7" style="margin-top: 100px;">
                             
                             <div class="border-bottom mb-4">
                                 <h2 class="my-4">Juegos de apuesta</h2>
@@ -1059,7 +1204,7 @@
                                 </div>
                             </div> -->
                         </div>
-                        <div class="col-lg-4 col-xl-3 scroll container m-block m-none bg-light" style="position: fixed;z-index: 9;right:0;" id="div-right">
+                        <div class="col-lg-4 col-xl-3 scroll container m-block m-none bg-white" style="position: fixed;z-index: 9999;right:0;" id="div-right">
                             <div class="row g-4">
                                 <div class="col-12">
                                     <div class="p-3 rounded border">                                        
@@ -1364,15 +1509,14 @@
     </div>  
 
         <!-- Footer Start -->
-        <div class="container-fluid bg-dark footer py-5" style="position: absolute;z-index: 999;">
+        <!-- <div class="container-fluid bg-dark footer py-5" style="position: absolute;z-index: 999;">
             <div class="container py-5">
                 <div class="pb-4 mb-4" style="border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
                     <div class="row g-4">
                         <div class="col-lg-3">
                             <a href="#" class="d-flex flex-column flex-wrap">
                                 <img src="{{asset('img/logoblanco.png')}}" width="200" alt="marsgame">
-                                <!-- <p class="text-white mb-0 display-6">Newsers</p>
-                                <small class="text-light" style="letter-spacing: 11px; line-height: 0;">Newspaper</small> -->
+                                
                             </a>
                         </div>
                         <div class="col-lg-9">
@@ -1485,26 +1629,24 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- Footer End -->
 
 
         <!-- Copyright Start -->
-        <div class="container-fluid copyright bg-dark py-4">
+        <!-- <div class="container-fluid copyright bg-dark py-4">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
                         <span class="text-light"><a href="/"><i class="fas fa-copyright text-light me-2"></i>MarsGame</a>, Todos los derechos reservados.</span>
                     </div>
                     <div class="col-md-6 my-auto text-center text-md-end text-white">
-                        <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
-                        <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
-                        <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
+                     
                         Diseñado por <a href="https://grupotyg.pe" target="_blank">Grupo TyG Ingenieros</a>
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- Copyright End -->
 
 

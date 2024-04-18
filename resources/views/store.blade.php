@@ -465,7 +465,7 @@
 
 @push('css')
 <?php
-    $version = '1993.0.3';
+    $version = '1993.0.4';
 ?>
 <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
 <link href="{{asset('css/store.css')}}?v=<?php echo $version ?>" rel="stylesheet">
