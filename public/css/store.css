@@ -12,7 +12,8 @@
   margin-right: auto;
 }
 .card .banner {
-  background-image: url("https://images.unsplash.com/photo-1545703549-7bdb1d01b734?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ");
+  /* background-image: url("https://images.unsplash.com/photo-1545703549-7bdb1d01b734?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ"); */
+  background-image: url("/img/banner-mars.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -37,8 +38,8 @@
 }
 .card .menu {
   width: 100%;
-  height: 5.5rem;
-  padding: 1rem;
+  /* height: 5.5rem; */
+  padding: 15px;
   display: flex;
   align-items: flex-start;
   justify-content: flex-end;
@@ -82,7 +83,7 @@
   color: #a0a0a0;
   font-size: 1.85rem;
   text-align: center;
-  padding: 0 2rem 1.2rem;
+  /* padding: 0 2rem 1.2rem; */
 }
 .card .actions {
   padding: 0 2rem 1.2rem;

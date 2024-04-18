@@ -323,8 +323,8 @@
                                         <div class="d-flex flex-column p-2">
                                             <!-- <a href="https://ajedrez.marsgame.pe" class="h4 m-none">Únete y disfruta con este increible juego retro y gánale a tus amigos</a> -->
                                             <div class="d-flex justify-content-between">
-                                                <a href="#" class="small text-body link-hover">AJEDREZ</a>
-                                                <small class="text-body d-block m-none"><i class="fas fa-calendar-alt me-1"></i> En todo momento</small>
+                                                <!-- <a href="#" class="small text-body link-hover">AJEDREZ</a> -->
+                                                <small class="text-body d-block m-none"><i class="fas fa-calendar-alt me-1"></i> Ajedrez</small>
                                             </div>
                                         </div>
                                     </div>
@@ -339,8 +339,8 @@
                                         <div class="d-flex flex-column p-2">
                                             <!-- <a href="https://checker.marsgame.pe" class="h4 m-none">Únete y disfruta con este increible juego retro y gánale a tus amigos</a> -->
                                             <div class="d-flex justify-content-between">
-                                                <a href="#" class="small text-body link-hover">DAMAS</a>
-                                                <small class="text-body d-block m-none"><i class="fas fa-calendar-alt me-1"></i> Próximamente</small>
+                                                <!-- <a href="#" class="small text-body link-hover">DAMAS</a> -->
+                                                <small class="text-body d-block m-none"><i class="fas fa-calendar-alt me-1"></i> Damas</small>
                                             </div>
                                         </div>
                                     </div>
@@ -355,8 +355,8 @@
                                         <div class="d-flex flex-column p-2">
                                             <!-- <a href="https://ajedrez.marsgame.pe" class="h4 m-none">Únete y disfruta con este increible juego retro y gánale a tus amigos</a> -->
                                             <div class="d-flex justify-content-between">
-                                                <a href="#" class="small text-body link-hover">BINGO</a>
-                                                <small class="text-body d-block m-none"><i class="fas fa-calendar-alt me-1"></i> Próximamente</small>
+                                                <!-- <a href="#" class="small text-body link-hover">BINGO</a> -->
+                                                <small class="text-body d-block m-none"><i class="fas fa-calendar-alt me-1"></i> Bingo</small>
                                             </div>
                                         </div>
                                     </div>
@@ -371,8 +371,8 @@
                                         <div class="d-flex flex-column p-2">
                                             <!-- <a href="https://checker.marsgame.pe" class="h4 m-none">Únete y disfruta con este increible juego retro y gánale a tus amigos</a> -->
                                             <div class="d-flex justify-content-between">
-                                                <a href="#" class="small text-body link-hover">ESCALERAS</a>
-                                                <small class="text-body d-block m-none"><i class="fas fa-calendar-alt me-1"></i> Próximamente</small>
+                                                <!-- <a href="#" class="small text-body link-hover">ESCALERAS</a> -->
+                                                <small class="text-body d-block m-none"><i class="fas fa-calendar-alt me-1"></i> Escaleras</small>
                                             </div>
                                         </div>
                                     </div>
@@ -387,8 +387,8 @@
                                         <div class="d-flex flex-column p-2">
                                             <!-- <a href="https://ajedrez.marsgame.pe" class="h4 m-none">Únete y disfruta con este increible juego retro y gánale a tus amigos</a> -->
                                             <div class="d-flex justify-content-between">
-                                                <a href="#" class="small text-body link-hover">LUDO</a>
-                                                <small class="text-body d-block m-none"><i class="fas fa-calendar-alt me-1"></i> Próximamente</small>
+                                                <!-- <a href="#" class="small text-body link-hover">LUDO</a> -->
+                                                <small class="text-body d-block m-none"><i class="fas fa-calendar-alt me-1"></i> Ludo</small>
                                             </div>
                                         </div>
                                     </div>
@@ -403,8 +403,8 @@
                                         <div class="d-flex flex-column p-2">
                                             <!-- <a href="https://ajedrez.marsgame.pe" class="h4 m-none">Únete y disfruta con este increible juego retro y gánale a tus amigos</a> -->
                                             <div class="d-flex justify-content-between">
-                                                <a href="#" class="small text-body link-hover">Ocho Loco</a>
-                                                <small class="text-body d-block m-none"><i class="fas fa-calendar-alt me-1"></i> Próximamente</small>
+                                                <!-- <a href="#" class="small text-body link-hover">Ocho Loco</a> -->
+                                                <small class="text-body d-block m-none"><i class="fas fa-calendar-alt me-1"></i> Ocho Loco</small>
                                             </div>
                                         </div>
                                     </div>

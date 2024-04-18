@@ -165,12 +165,12 @@
         <div class="menu">
           <div class="opener"><span></span><span></span><span></span></div>
         </div>
-        <h2 class="name px-2 text-center">Plan Básico</h2>
-        <div class="title">S/. 10</div>
+        <h2 class="name px-2 text-center">Básico 1</h2>
+        <div class="title">S/. 1.00</div>
         <div class="actions">
           <div class="follow-info">
-            <h2><a href="#"><span>12</span><small>Followers</small></a></h2>
-            <h2><a href="#"><span>1000</span><small>MarsPoint</small></a></h2>
+            <h2><a href="#"><span>1</span><small>Tickets</small></a></h2>
+            <h2><a href="#"><span>20</span><small>Marscoin</small></a></h2>
           </div>
           <div class="follow-btn">
             <button>Comprar</button>
@@ -192,12 +192,12 @@
         <div class="menu">
           <div class="opener"><span></span><span></span><span></span></div>
         </div>
-        <h4 class="name px-2 text-center">Morgan Sweeney</h4>
-        <div class="title">Ant Collector</div>
+        <h4 class="name px-2 text-center">Básico 2</h4>
+        <div class="title">S/. 2.00</div>
         <div class="actions">
           <div class="follow-info">
-            <h2><a href="#"><span>12</span><small>Followers</small></a></h2>
-            <h2><a href="#"><span>1000</span><small>Following</small></a></h2>
+            <h2><a href="#"><span>3</span><small>Tickets</small></a></h2>
+            <h2><a href="#"><span>60</span><small>Marscoin</small></a></h2>
           </div>
           <div class="follow-btn">
             <button>Comprar</button>
@@ -219,12 +219,12 @@
         <div class="menu">
           <div class="opener"><span></span><span></span><span></span></div>
         </div>
-        <h4 class="name px-2 text-center">Morgan Sweeney</h4>
-        <div class="title">Ant Collector</div>
+        <h4 class="name px-2 text-center">Estándar 1</h4>
+        <div class="title">S/. 5.00</div>
         <div class="actions">
           <div class="follow-info">
-            <h2><a href="#"><span>12</span><small>Followers</small></a></h2>
-            <h2><a href="#"><span>1000</span><small>Following</small></a></h2>
+            <h2><a href="#"><span>8</span><small>Tickets</small></a></h2>
+            <h2><a href="#"><span>160</span><small>Marscoin</small></a></h2>
           </div>
           <div class="follow-btn">
             <button>Comprar</button>
@@ -246,12 +246,12 @@
         <div class="menu">
           <div class="opener"><span></span><span></span><span></span></div>
         </div>
-        <h4 class="name px-2 text-center">Morgan Sweeney</h4>
-        <div class="title">Ant Collector</div>
+        <h4 class="name px-2 text-center">Estándar 2</h4>
+        <div class="title">S/. 10.00</div>
         <div class="actions">
           <div class="follow-info">
-            <h2><a href="#"><span>12</span><small>Followers</small></a></h2>
-            <h2><a href="#"><span>1000</span><small>Following</small></a></h2>
+            <h2><a href="#"><span>18</span><small>Tickets</small></a></h2>
+            <h2><a href="#"><span>360</span><small>Marscoin</small></a></h2>
           </div>
           <div class="follow-btn">
             <button>Comprar</button>
@@ -273,12 +273,12 @@
         <div class="menu">
           <div class="opener"><span></span><span></span><span></span></div>
         </div>
-        <h4 class="name px-2 text-center">Morgan Sweeney</h4>
-        <div class="title">Ant Collector</div>
+        <h4 class="name px-2 text-center">Premium 1</h4>
+        <div class="title">S/. 20.00</div>
         <div class="actions">
           <div class="follow-info">
-            <h2><a href="#"><span>12</span><small>Followers</small></a></h2>
-            <h2><a href="#"><span>1000</span><small>Following</small></a></h2>
+            <h2><a href="#"><span>40</span><small>Tickets</small></a></h2>
+            <h2><a href="#"><span>800</span><small>Marscoin</small></a></h2>
           </div>
           <div class="follow-btn">
             <button>Comprar</button>
@@ -300,12 +300,12 @@
         <div class="menu">
           <div class="opener"><span></span><span></span><span></span></div>
         </div>
-        <h4 class="name px-2 text-center">Morgan Sweeney</h4>
-        <div class="title">Ant Collector</div>
+        <h4 class="name px-2 text-center">Premium 2</h4>
+        <div class="title">S/. 50.00</div>
         <div class="actions">
           <div class="follow-info">
-            <h2><a href="#"><span>12</span><small>Followers</small></a></h2>
-            <h2><a href="#"><span>1000</span><small>Following</small></a></h2>
+            <h2><a href="#"><span>100</span><small>Tickets</small></a></h2>
+            <h2><a href="#"><span>2000</span><small>Marscoin</small></a></h2>
           </div>
           <div class="follow-btn">
             <button>Comprar</button>
