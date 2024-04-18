@@ -16,12 +16,12 @@
                         <i class="fas fa-bolt text-white"></i>
                     </span>
                     <div class="pe-2 me-3 border-end border-white d-flex align-items-center">
-                        <p class="mb-0 text-white fs-6 fw-normal">Trending</p>
+                        <p class="mb-0 text-white fs-6 fw-normal">Noticia</p>
                     </div>
                     <div class="overflow-hidden" style="width: 735px;">
                         <div id="note" class="ps-2">
                             <img src="img/features-fashion.jpg" class="img-fluid rounded-circle border border-3 border-primary me-2" style="width: 30px; height: 30px;" alt="">
-                            <a href="#"><p class="text-white mb-0 link-hover">Newsan unknown printer took a galley of type andscrambled Newsan.</p></a>
+                            <a href="#"><p class="text-white mb-0 link-hover">Próximamente la web que revolucionará los juegos de apuestas.</p></a>
                         </div>
                     </div>
                 </div>
@@ -42,7 +42,7 @@
     <div class="container-fluid bg-light">
         <div class="container px-0">
             <nav class="navbar navbar-light navbar-expand-xl">
-                <a href="index.html" class="navbar-brand mt-3">
+                <a href="/" class="navbar-brand mt-3">
                     <img src="{{asset('img/logo.png')}}" width="250" alt="marsgame">
                     <!-- <p class="text-primary display-6 mb-2" style="line-height: 0;">Newsers</p>
                     <small class="text-body fw-normal" style="letter-spacing: 12px;">Nespaper</small> -->
@@ -52,9 +52,9 @@
                 </button>
                 <div class="collapse navbar-collapse bg-light py-3" id="navbarCollapse">
                     <div class="navbar-nav mx-auto border-top">
-                        <a href="index.html" class="nav-item nav-link active">Inicio</a>
-                        <a href="detail-page.html" class="nav-item nav-link">Detail  Page</a>
-                        <a href="404.html" class="nav-item nav-link">404 Page</a>
+                        <a href="/" class="nav-item nav-link active">Inicio</a>
+                        <a href="#" class="nav-item nav-link">Nosotros</a>
+                        <!-- <a href="404.html" class="nav-item nav-link">404 Page</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Dropdown</a>
                             <div class="dropdown-menu m-0 bg-secondary rounded-0">
@@ -63,8 +63,8 @@
                                 <a href="#" class="dropdown-item">Dropdown 3</a>
                                 <a href="#" class="dropdown-item">Dropdown 4</a>
                             </div>
-                        </div>
-                        <a href="contact.html" class="nav-item nav-link">Contact Us</a>  
+                        </div> -->
+                        <a href="#" class="nav-item nav-link">Contactanos</a>  
                         @auth
                         <div class="nav-item dropdown ml-0">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">{{ Auth::user()->name }}</a>
