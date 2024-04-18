@@ -52,9 +52,9 @@
                         </button>
                         <div class="collapse navbar-collapse bg-light py-3" id="navbarCollapse">
                             <div class="navbar-nav mx-auto border-top">
-                                <a href="index.html" class="nav-item nav-link active">Inicio</a>
-                                <a href="detail-page.html" class="nav-item nav-link">Detail  Page</a>
-                                <a href="404.html" class="nav-item nav-link">404 Page</a>
+                                <a href="/" class="nav-item nav-link active">Inicio</a>
+                                <a href="#" class="nav-item nav-link">Nosotros</a>
+                                <!-- <a href="404.html" class="nav-item nav-link">404 Page</a>
                                 <div class="nav-item dropdown">
                                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Dropdown</a>
                                     <div class="dropdown-menu m-0 bg-secondary rounded-0">
@@ -63,8 +63,8 @@
                                         <a href="#" class="dropdown-item">Dropdown 3</a>
                                         <a href="#" class="dropdown-item">Dropdown 4</a>
                                     </div>
-                                </div>
-                                <a href="contact.html" class="nav-item nav-link">Contact Us</a>  
+                                </div> -->
+                                <a href="#" class="nav-item nav-link">Contactanos</a>  
                                 @auth
                                 <div class="nav-item dropdown ml-0">
                                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">{{ Auth::user()->name }}</a>
@@ -285,10 +285,18 @@
                                                     <i class="fab fa-fantasy-flight-games btn btn-light btn-square me-3 p-2"></i>
                                                     <span class="text-white">Salas Disponibles</span>
                                                 </a>
-                                                <a href="#" class="w-100 rounded btn btn-warning d-flex align-items-center p-3 mb-2">
+                                                <a href="/store" class="w-100 rounded btn btn-warning d-flex align-items-center p-3 mb-2">
                                                     <i class="fab fa-buromobelexperte btn btn-light btn-square me-3"></i>
                                                     <span class="text-white">Tienda</span>  
-                                                </a>                                                
+                                                </a>     
+                                                <a href="#" class="w-100 rounded btn btn-secondary d-flex align-items-center p-3 mb-2">
+                                                    <i class="fab fa-buromobelexperte btn btn-light btn-square me-3"></i>
+                                                    <span class="text-white">Loby</span>  
+                                                </a>  
+                                                <a href="#" class="w-100 rounded btn btn-info d-flex align-items-center p-3 mb-2">
+                                                    <i class="fab fa-buromobelexperte btn btn-light btn-square me-3"></i>
+                                                    <span class="text-white">Por definir</span>  
+                                                </a>                                             
                                             </div>
                                         </div>                                        
                                     </div>
@@ -385,6 +393,22 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="whats-item col-md-4 col-6">
+                                    <div class="bg-light rounded">
+                                        <div class="rounded-top overflow-hidden">
+                                            <a href="#">
+                                                <img src="img/ocholoco.jpg" class="img-zoomin img-fluid rounded-top w-100" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="d-flex flex-column p-2">
+                                            <!-- <a href="https://ajedrez.marsgame.pe" class="h4 m-none">Únete y disfruta con este increible juego retro y gánale a tus amigos</a> -->
+                                            <div class="d-flex justify-content-between">
+                                                <a href="#" class="small text-body link-hover">Ocho Loco</a>
+                                                <small class="text-body d-block m-none"><i class="fas fa-calendar-alt me-1"></i> Próximamente</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 <!-- <div class="whats-item">
                                     <div class="bg-light rounded">
                                         <div class="rounded-top overflow-hidden">
@@ -428,7 +452,9 @@
                                     </div>
                                 </div> -->
                             </div>
-                            <div class="d-flex flex-column flex-md-row justify-content-md-between border-bottom mt-8">
+
+                            <!-- COMENTANDO BARRA FASHION Y DEMAS -->
+                            <!-- <div class="d-flex flex-column flex-md-row justify-content-md-between border-bottom mt-8">
                                 <h1 class="mt-2">What’s New</h1>
                                 <ul class="nav nav-pills d-inline-flex text-center mt-2">
                                     <li class="nav-item mb-3">
@@ -457,8 +483,8 @@
                                         </a>
                                     </li>
                                 </ul>
-                            </div>
-                            <div class="tab-content mt-4">
+                            </div> -->
+                            <!-- <div class="tab-content mt-4">
                                 <div id="tab-1" class="tab-pane fade show p-0 active">
                                     <div class="row g-4">
                                         <div class="col-lg-8">
@@ -994,7 +1020,9 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
+                            <!-- FIN DE BARRA FASION -->
+
                             <!-- <div class="mt-6 lifestyle">
                                 <div class="border-bottom mb-4">
                                     <h1 class="mb-4">Life Style</h1>
@@ -1218,7 +1246,7 @@
             </h5>
             <div class="row bg-white p-4">
                 <div class="col-12">
-                    <a href="#" class="w-100 rounded btn btn-primary d-flex align-items-center p-3 mb-2">
+                    <a href="/hall" class="w-100 rounded btn btn-primary d-flex align-items-center p-3 mb-2">
                         <i class="fab fa-fantasy-flight-games btn btn-light btn-square me-3"></i>
                         <span class="text-white">Crear Sala</span>
                     </a>
@@ -1226,10 +1254,18 @@
                         <i class="fab fa-fantasy-flight-games btn btn-light btn-square me-3 p-2"></i>
                         <span class="text-white">Salas Disponibles</span>
                     </a>
-                    <a href="#" class="w-100 rounded btn btn-warning d-flex align-items-center p-3 mb-2">
+                    <a href="/store" class="w-100 rounded btn btn-warning d-flex align-items-center p-3 mb-2">
                         <i class="fab fa-buromobelexperte btn btn-light btn-square me-3"></i>
                         <span class="text-white">Tienda</span>
-                    </a>                                                
+                    </a>      
+                    <a href="#" class="w-100 rounded btn btn-secondary d-flex align-items-center p-3 mb-2">
+                        <i class="fab fa-buromobelexperte btn btn-light btn-square me-3"></i>
+                        <span class="text-white">Loby</span>  
+                    </a>  
+                    <a href="#" class="w-100 rounded btn btn-info d-flex align-items-center p-3 mb-2">
+                        <i class="fab fa-buromobelexperte btn btn-light btn-square me-3"></i>
+                        <span class="text-white">Por definir</span>  
+                    </a>                                               
                 </div>
             </div>  
         </div>
