@@ -464,8 +464,11 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
 
 @push('css')
+<?php
+    $version = '1993.0.3';
+?>
 <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
-<link href="{{asset('css/store.css')}}" rel="stylesheet">
+<link href="{{asset('css/store.css')}}?v=<?php echo $version ?>" rel="stylesheet">
 
 @endpush
 </x-app-layout>
