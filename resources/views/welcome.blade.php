@@ -440,7 +440,7 @@
                                                 </a>  
                                                 <a href="#" class="w-100 rounded btn btn-info d-flex align-items-center p-3 mb-2">
                                                     <i class="fab fa-buromobelexperte btn btn-light btn-square me-3"></i>
-                                                    <span class="text-white">Por definir</span>  
+                                                    <span class="text-white">Premios</span>  
                                                 </a>                                             
                                             </div>
                                         </div>                                        
@@ -1409,7 +1409,7 @@
                     </a>  
                     <a href="#" class="w-100 rounded btn btn-info d-flex align-items-center p-3 mb-2">
                         <i class="fab fa-buromobelexperte btn btn-light btn-square me-3"></i>
-                        <span class="text-white">Por definir</span>  
+                        <span class="text-white">Premios</span>  
                     </a>                                               
                 </div>
             </div>  

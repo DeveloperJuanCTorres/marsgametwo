@@ -546,3 +546,16 @@ div.scroll {
 .btn-check:checked+.btn-outline-mars,.btn-check:active+.btn-outline-mars,.btn-outline-mars:active,.btn-outline-mars.active,.btn-outline-mars.dropdown-toggle.show{color:#fff !important;background-color:#2D2E83 !important;border-color:#2D2E83 !important}
 .btn-check:checked+.btn-outline-mars:focus,.btn-check:active+.btn-outline-mars:focus,.btn-outline-mars:active:focus,.btn-outline-mars.active:focus,.btn-outline-mars.dropdown-toggle.show:focus{box-shadow:0 0 0 .25rem rgba(255,193,7,.5) !important}
 .btn-outline-mars:disabled,.btn-outline-mars.disabled{color:#fff;background-color:rgba(0,0,0,0) !important}
+
+
+
+::-webkit-scrollbar { width: 5px; height: 9px;}
+::-webkit-scrollbar-button { width: 0px; height: 0px;}
+::-webkit-scrollbar-thumb { background: transparent; border: 0px none #fff; border-radius: 0px;}
+::-webkit-scrollbar-thumb:hover { background: #3d6077;}
+::-webkit-scrollbar-thumb:active { background: #8dd0d8;}
+::-webkit-scrollbar-track {background: transparent;border: 0px solid #aaa; border-radius: 5px;}
+::-webkit-scrollbar-track:hover { background: #e4e4e4;}
+::-webkit-scrollbar-track:active { background: #d2d2d2;}
+::-webkit-scrollbar-corner { background: transparent;}
+
