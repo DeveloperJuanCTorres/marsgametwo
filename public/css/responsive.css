@@ -957,6 +957,23 @@
         transition: .4s;
     }
 
+    .mobile_perwrap {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 9;
+        height: 100%;
+        overflow: hidden;
+        background: #00000070;
+        cursor: default;
+        opacity: 0;
+        visibility: hidden;
+        -webkit-transition: .4s;
+        -o-transition: .4s;
+        transition: .4s;
+    }
+
     .sub_categories_wrp .subcats_title {
         background: #FD3D57;
         text-align: center;
@@ -966,6 +983,11 @@
     }
 
     .mobile_menwrap.active{
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .mobile_perwrap.active{
         opacity: 1;
         visibility: visible;
     }
@@ -994,7 +1016,7 @@
         transition: .4s;
     }
 
-    .mobile_menwrap.active .sub_categories, .mobile_menwrap.active .mobile_menu_2, .mobile_menwrap.active .mobile_cart_wrap{
+    .mobile_menwrap.active .sub_categories, .mobile_menwrap.active .mobile_menu_2, .mobile_menwrap.active .mobile_cart_wrap, .mobile_perwrap.active .mobile_menu_2{
         left: 0;
         visibility: visible !important;
     }

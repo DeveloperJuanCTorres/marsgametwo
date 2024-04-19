@@ -285,6 +285,15 @@
         $('#mobile_menwrap').removeClass('active')
     })
 
+    // Perfil
+    $('.open_perfil').click(function () {
+        $('#mobile_perwrap').addClass('active')
+    })
+
+    $('#perfilclose').click(function () {
+        $('#mobile_perwrap').removeClass('active')
+    })
+
     // mobile cart
     $('#openCart').click(function () {
         $('#mobileCart').addClass('active')
@@ -298,6 +307,9 @@
     $(document).on('click', function(e){
         if(e.target.id==='mobile_menwrap'){
             $('#mobile_menwrap').removeClass('active')
+        }
+        if(e.target.id==='mobile_perwrap'){
+            $('#mobile_perwrap').removeClass('active')
         }
         if(e.target.id==='mobile_catwrap'){
             $('#mobile_catwrap').removeClass('active')

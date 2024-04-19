@@ -3006,6 +3006,8 @@ span.sidebarclose {
 
 .mobile_bottombar .header_icon a.icon_wrp {
     padding: 0;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .banner_slider ul.slick-dots {

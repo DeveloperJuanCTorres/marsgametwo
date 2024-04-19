@@ -1364,6 +1364,12 @@
                 </span>
                 <span class="icon_text">Contactos</span>
             </a>
+            <a href="javascript:void(0)" class="icon_wrp text-center open_perfil">
+                <span class="icon">
+                    <i class="las la-user"></i>
+                </span>
+                <span class="icon_text">Perfil</span>
+            </a>
             <!-- <a href="javascript:void(0)" class="icon_wrp text-center" id="src_icon">
                 <span class="icon">
                    <i class="icon-search-left"></i>
@@ -1507,6 +1513,42 @@
             
         </div>
     </div>  
+
+    <!-- mobile Perfil -->
+    <div class="mobile_perwrap d-lg-none" id="mobile_perwrap" style="z-index: 9999;">
+        <div class="mobile_menu_2">
+            <h5 class="mobile_title">
+                Perfil
+                <span class="sidebarclose" id="perfilclose">
+                    <i class="las la-times"></i>
+                </span>
+            </h5>
+            <div class="row bg-white p-4">
+                <div class="col-12">
+                    <a href="/hall" class="w-100 rounded btn btn-primary d-flex align-items-center p-3 mb-2">
+                        <i class="fab fa-fantasy-flight-games btn btn-light btn-square me-3"></i>
+                        <span class="text-white">Crear Sala</span>
+                    </a>
+                    <a href="#" class="w-100 rounded btn btn-danger d-flex align-items-center p-3 mb-2">
+                        <i class="fab fa-fantasy-flight-games btn btn-light btn-square me-3 p-2"></i>
+                        <span class="text-white">Salas Disponibles</span>
+                    </a>
+                    <a href="/store" class="w-100 rounded btn btn-warning d-flex align-items-center p-3 mb-2">
+                        <i class="fab fa-buromobelexperte btn btn-light btn-square me-3"></i>
+                        <span class="text-white">Tienda</span>
+                    </a>      
+                    <a href="#" class="w-100 rounded btn btn-secondary d-flex align-items-center p-3 mb-2">
+                        <i class="fab fa-buromobelexperte btn btn-light btn-square me-3"></i>
+                        <span class="text-white">Loby</span>  
+                    </a>  
+                    <a href="#" class="w-100 rounded btn btn-info d-flex align-items-center p-3 mb-2">
+                        <i class="fab fa-buromobelexperte btn btn-light btn-square me-3"></i>
+                        <span class="text-white">Premios</span>  
+                    </a>                                               
+                </div>
+            </div>  
+        </div>
+    </div>
 
         <!-- Footer Start -->
         <!-- <div class="container-fluid bg-dark footer py-5" style="position: absolute;z-index: 999;">
