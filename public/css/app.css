@@ -19,6 +19,13 @@
   --tw-content: '';
 }
 
+@font-face {
+  font-family: "higtmount";
+  src: url("../fonts/HighMount.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 /*
 1. Use a consistent sensible line-height in all browsers.
 2. Prevent adjustments of font size after orientation changes in iOS.
@@ -1814,7 +1821,8 @@ select {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 .font-sans {
-  font-family: Figtree, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: "higtmount";
+  /* font-family: Figtree, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; */
 }
 .text-2xl {
   font-size: 1.5rem;
@@ -2795,3 +2803,14 @@ select {
     color: rgb(209 213 219 / var(--tw-text-opacity));
   }
 }
+
+.claseh2{
+font-family: "higtmount";
+}
+
+.clase-font{
+  font-family: sans-serif,cursive;
+  }
+/* .img-fondo{
+  background-image: url("/images/fondo.png") !important;
+} */

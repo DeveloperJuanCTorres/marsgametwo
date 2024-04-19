@@ -166,7 +166,7 @@
           <div class="opener"><span></span><span></span><span></span></div>
         </div>
         <h2 class="name px-2 text-center">Básico 1</h2>
-        <div class="title">S/. 1.00</div>
+        <div class="title clase-font">S/. 1.00</div>
         <div class="actions">
           <div class="follow-info">
             <h2><a href="#"><span>1</span><small>Tickets</small></a></h2>
@@ -192,8 +192,8 @@
         <div class="menu">
           <div class="opener"><span></span><span></span><span></span></div>
         </div>
-        <h4 class="name px-2 text-center">Básico 2</h4>
-        <div class="title">S/. 2.00</div>
+        <h2 class="name px-2 text-center">Básico 2</h2>
+        <div class="title clase-font">S/. 2.00</div>
         <div class="actions">
           <div class="follow-info">
             <h2><a href="#"><span>3</span><small>Tickets</small></a></h2>
@@ -219,8 +219,8 @@
         <div class="menu">
           <div class="opener"><span></span><span></span><span></span></div>
         </div>
-        <h4 class="name px-2 text-center">Estándar 1</h4>
-        <div class="title">S/. 5.00</div>
+        <h2 class="name px-2 text-center">Estándar 1</h2>
+        <div class="title clase-font">S/. 5.00</div>
         <div class="actions">
           <div class="follow-info">
             <h2><a href="#"><span>8</span><small>Tickets</small></a></h2>
@@ -246,8 +246,8 @@
         <div class="menu">
           <div class="opener"><span></span><span></span><span></span></div>
         </div>
-        <h4 class="name px-2 text-center">Estándar 2</h4>
-        <div class="title">S/. 10.00</div>
+        <h2 class="name px-2 text-center">Estándar 2</h2>
+        <div class="title clase-font">S/. 10.00</div>
         <div class="actions">
           <div class="follow-info">
             <h2><a href="#"><span>18</span><small>Tickets</small></a></h2>
@@ -273,8 +273,8 @@
         <div class="menu">
           <div class="opener"><span></span><span></span><span></span></div>
         </div>
-        <h4 class="name px-2 text-center">Premium 1</h4>
-        <div class="title">S/. 20.00</div>
+        <h2 class="name px-2 text-center">Premium 1</h2>
+        <div class="title clase-font">S/. 20.00</div>
         <div class="actions">
           <div class="follow-info">
             <h2><a href="#"><span>40</span><small>Tickets</small></a></h2>
@@ -300,8 +300,8 @@
         <div class="menu">
           <div class="opener"><span></span><span></span><span></span></div>
         </div>
-        <h4 class="name px-2 text-center">Premium 2</h4>
-        <div class="title">S/. 50.00</div>
+        <h2 class="name px-2 text-center h2 claseh2">Premium 2</h2>
+        <div class="title clase-font">S/. 50.00</div>
         <div class="actions">
           <div class="follow-info">
             <h2><a href="#"><span>100</span><small>Tickets</small></a></h2>

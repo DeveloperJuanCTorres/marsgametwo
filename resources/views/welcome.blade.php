@@ -52,8 +52,8 @@
                         </button>
                         <div class="collapse navbar-collapse bg-white py-3" id="navbarCollapse">
                             <div class="navbar-nav mx-auto border-top">
-                                <a href="/" class="nav-item nav-link active">Inicio</a>
-                                <a href="#" class="nav-item nav-link">Nosotros</a>
+                                <a href="/" class="nav-item nav-link active claseh2">Inicio</a>
+                                <a href="#" class="nav-item nav-link claseh2">Nosotros</a>
                                 <!-- <a href="404.html" class="nav-item nav-link">404 Page</a>
                                 <div class="nav-item dropdown">
                                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Dropdown</a>
@@ -64,10 +64,10 @@
                                         <a href="#" class="dropdown-item">Dropdown 4</a>
                                     </div>
                                 </div> -->
-                                <a href="#" class="nav-item nav-link">Contactanos</a>  
+                                <a href="#" class="nav-item nav-link claseh2">Contactanos</a>  
                                 @auth
                                 <div class="nav-item dropdown ml-0">
-                                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">{{ Auth::user()->name }}</a>
+                                    <a href="#" class="nav-link dropdown-toggle claseh2" data-bs-toggle="dropdown">{{ Auth::user()->name }}</a>
                                     <div class="dropdown-menu m-0 bg-secondary rounded-0">
                                         <div class="flex items-center px-4">
                                             @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
@@ -419,7 +419,7 @@
                             <div class="row g-4">
                                 <div class="col-12">
                                     <div class="p-3 rounded border">
-                                        <h4 class="mb-4">Opciones</h4>
+                                        <h4 class="mb-4 claseh2">Opciones</h4>
                                         <div class="row g-4">
                                             <div class="col-12">
                                                 <a href="/hall" class="w-100 rounded btn btn-primary d-flex align-items-center p-3 mb-2">
@@ -454,7 +454,7 @@
                         <div class="col-lg-6 col-xl-7" style="margin-top: 100px;">
                             
                             <div class="border-bottom mb-4">
-                                <h2 class="my-4">Juegos de apuesta</h2>
+                                <h2 class="my-4 claseh2">Juegos de apuesta</h2>
                             </div>
                             <!-- <div class="whats-carousel owl-carousel"> -->
                             <div class="row">
@@ -1208,7 +1208,7 @@
                             <div class="row g-4">
                                 <div class="col-12">
                                     <div class="p-3 rounded border">                                        
-                                        <h4 class="my-4">Contactos</h4>
+                                        <h4 class="my-4 claseh2">Contactos</h4>
                                         <div class="row g-4">
                                             <div class="col-12">
                                                 <div class="row g-4 align-items-center features-item">
@@ -1224,7 +1224,7 @@
                                                             <a href="#" class="h6" style="text-align: justify;">
                                                                 Juan Carlos Torres del Castillo
                                                             </a>
-                                                            <small class="text-body d-block" style="text-align: justify;"><i class="fas fa-calendar-alt me-1"></i> December 9, 2024</small>
+                                                            <small class="text-body d-block clase-font" style="text-align: justify;"><i class="fas fa-calendar-alt me-1"></i> December 9, 2024</small>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1243,7 +1243,7 @@
                                                             <a href="#" class="h6" style="text-align: justify;">
                                                                 Juan Carlos Torres del Castillo
                                                             </a>
-                                                            <small class="text-body d-block" style="text-align: justify;"><i class="fas fa-calendar-alt me-1"></i> December 9, 2024</small>
+                                                            <small class="text-body d-block clase-font" style="text-align: justify;"><i class="fas fa-calendar-alt me-1"></i> December 9, 2024</small>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1262,7 +1262,7 @@
                                                             <a href="#" class="h6" style="text-align: justify;">
                                                                 Juan Carlos Torres del Castillo
                                                             </a>
-                                                            <small class="text-body d-block" style="text-align: justify;"><i class="fas fa-calendar-alt me-1"></i> December 9, 2024</small>
+                                                            <small class="text-body d-block clase-font" style="text-align: justify;"><i class="fas fa-calendar-alt me-1"></i> December 9, 2024</small>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1281,7 +1281,7 @@
                                                             <a href="#" class="h6" style="text-align: justify;">
                                                                 Juan Carlos Torres del Castillo
                                                             </a>
-                                                            <small class="text-body d-block" style="text-align: justify;"><i class="fas fa-calendar-alt me-1"></i> December 9, 2024</small>
+                                                            <small class="text-body d-block clase-font" style="text-align: justify;"><i class="fas fa-calendar-alt me-1"></i> December 9, 2024</small>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1389,7 +1389,7 @@
     <!-- mobile opciones -->
     <div class="mobile_menwrap d-lg-none" id="mobile_menwrap" style="z-index: 9999;">
         <div class="mobile_menu_2">
-            <h5 class="mobile_title">
+            <h5 class="mobile_title claseh2">
                 Opciones
                 <span class="sidebarclose" id="menuclose">
                     <i class="las la-times"></i>
@@ -1425,7 +1425,7 @@
     <!-- Mobile Contactos -->
     <div class="mobile_menwrap d-lg-none" id="mobile_catwrap" style="z-index: 9999;">
         <div class="mobile_menu_2">
-            <h5 class="mobile_title">
+            <h5 class="mobile_title claseh2">
                 Contactos
                 <span class="sidebarclose" id="catclose">
                     <i class="las la-times"></i>
@@ -1517,7 +1517,7 @@
     <!-- mobile Perfil -->
     <div class="mobile_perwrap d-lg-none" id="mobile_perwrap" style="z-index: 9999;">
         <div class="mobile_menu_2">
-            <h5 class="mobile_title">
+            <h5 class="mobile_title claseh2">
                 Perfil
                 <span class="sidebarclose" id="perfilclose">
                     <i class="las la-times"></i>
