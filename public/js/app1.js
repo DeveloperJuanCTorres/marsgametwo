@@ -290,13 +290,62 @@
         $('#mobile_perwrap').addClass('active')
     })
 
+    // Juegos
+    $('.open_juegos').click(function () {
+        $('#juegos_nav').addClass('active')
+        $('#nosotros_nav').removeClass('active')
+        $('#contactanos_nav').removeClass('active')
+        $('#juegos').removeClass('d-none')
+        $('#juegos').addClass('d-block')
+        $('#loby').removeClass('d-block')
+        $('#loby').addClass('d-none')        
+        $('#nosotros').removeClass('d-block')
+        $('#nosotros').addClass('d-none')
+        $('#contactanos').removeClass('d-block')
+        $('#contactanos').addClass('d-none')
+    })
+
     // Loby
     $('.open_loby').click(function () {
         $('#loby').removeClass('d-none')
         $('#loby').addClass('d-block')
+        $('#mobile_menwrap').removeClass('active')
         $('#juegos').removeClass('d-block')
         $('#juegos').addClass('d-none')
-        $('#mobile_menwrap').removeClass('active')
+        $('#nosotros').removeClass('d-block')
+        $('#nosotros').addClass('d-none')
+        $('#contactanos').removeClass('d-block')
+        $('#contactanos').addClass('d-none')
+    })
+
+    // Nosotros
+    $('.open_nosotros').click(function () {
+        $('#nosotros_nav').addClass('active')
+        $('#contactanos_nav').removeClass('active')
+        $('#juegos_nav').removeClass('active')
+        $('#nosotros').removeClass('d-none')
+        $('#nosotros').addClass('d-block')
+        $('#loby').removeClass('d-block')
+        $('#loby').addClass('d-none')
+        $('#juegos').removeClass('d-block')
+        $('#juegos').addClass('d-none')
+        $('#contactanos').removeClass('d-block')
+        $('#contactanos').addClass('d-none')
+    })
+
+    // Contactanos
+    $('.open_contactanos').click(function () {
+        $('#contactanos_nav').addClass('active')
+        $('#nosotros_nav').removeClass('active')
+        $('#juegos_nav').removeClass('active')
+        $('#contactanos').removeClass('d-none')
+        $('#contactanos').addClass('d-block')
+        $('#loby').removeClass('d-block')
+        $('#loby').addClass('d-none')
+        $('#juegos').removeClass('d-block')
+        $('#juegos').addClass('d-none')
+        $('#nosotros').removeClass('d-block')
+        $('#nosotros').addClass('d-none')
     })
 
     $('#perfilclose').click(function () {

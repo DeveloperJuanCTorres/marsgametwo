@@ -299,6 +299,32 @@ import "/resources/js/bootstrap.js";
         $('#lobi').addClass('d-block')
         $('#juegos').removeClass('d-block')
         $('#juegos').addClass('d-none')
+        $('#nosotros').removeClass('d-block')
+        $('#nosotros').addClass('d-none')
+        $('#contactanos').removeClass('d-block')
+        $('#contactanos').addClass('d-none')
+    })
+
+    // Nosotros
+    $('.open_nosotros').click(function () {
+        $('#nosotros').addClass('d-block')
+        $('#loby').removeClass('d-block')
+        $('#loby').addClass('d-none')
+        $('#juegos').removeClass('d-block')
+        $('#juegos').addClass('d-none')
+        $('#contactanos').removeClass('d-block')
+        $('#contactanos').addClass('d-none')
+    })
+
+    // Contactanos
+    $('.open_contactanos').click(function () {
+        $('#contactanos').addClass('d-block')
+        $('#loby').removeClass('d-block')
+        $('#loby').addClass('d-none')
+        $('#juegos').removeClass('d-block')
+        $('#juegos').addClass('d-none')
+        $('#nosotros').removeClass('d-block')
+        $('#nosotros').addClass('d-none')
     })
 
     $('#perfilclose').click(function () {

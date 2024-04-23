@@ -52,8 +52,8 @@
                         </button>
                         <div class="collapse navbar-collapse bg-white py-3" id="navbarCollapse">
                             <div class="navbar-nav mx-auto border-top">
-                                <a href="/" class="nav-item nav-link active claseh2">Inicio</a>
-                                <a href="#" class="nav-item nav-link claseh2">Nosotros</a>
+                                <a href="javascript:void(0)" class="nav-item nav-link active claseh2 open_juegos juegos_nav" id="juegos_nav">Inicio</a>
+                                <a href="javascript:void(0)" class="nav-item nav-link claseh2 open_nosotros nosotros_nav" id="nosotros_nav">Nosotros</a>
                                 <!-- <a href="404.html" class="nav-item nav-link">404 Page</a>
                                 <div class="nav-item dropdown">
                                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Dropdown</a>
@@ -64,7 +64,7 @@
                                         <a href="#" class="dropdown-item">Dropdown 4</a>
                                     </div>
                                 </div> -->
-                                <a href="#" class="nav-item nav-link claseh2">Contactanos</a>  
+                                <a href="#" class="nav-item nav-link claseh2 open_contactanos contactanos_nav" id="contactanos_nav">Contactanos</a>  
                                 @auth
                                 <div class="nav-item dropdown ml-0">
                                     <a href="#" class="nav-link dropdown-toggle claseh2" data-bs-toggle="dropdown">{{ Auth::user()->name }}</a>
@@ -277,13 +277,13 @@
                             </div>                                             
                         </div> -->
                         <div class="btn-group mx-auto" role="group" aria-label="Basic radio toggle button group">
-                            <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+                            <input type="radio" class="btn-check open_juegos" name="btnradio" id="btnradio1" autocomplete="off" checked>
                             <label style="width: 100px;" class="btn btn-outline-mars" for="btnradio1"><i style="font-size: 32px;" class="las la-house-damage"></i></label>
 
-                            <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+                            <input type="radio" class="btn-check open_nosotros" name="btnradio" id="btnradio2" autocomplete="off">
                             <label style="width: 100px;" class="btn btn-outline-mars" for="btnradio2"><i style="font-size: 32px;" class="las la-building"></i></label>
 
-                            <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+                            <input type="radio" class="btn-check open_contactanos" name="btnradio" id="btnradio3" autocomplete="off">
                             <label style="width: 100px;" class="btn btn-outline-mars" for="btnradio3"><i style="font-size: 32px;" class="las la-address-book"></i></label>
 
                             <input type="radio" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off">
@@ -1263,6 +1263,30 @@
                             </div>
                         </div>
                         <!-- FIN DEL CONTENIDO DE LOBY -->
+
+                        <!-- CONTENIDO DE NOSOTROS -->
+                        <div class="col-lg-6 col-xl-7 nosotros d-none" id="nosotros" style="margin-top: 100px;">
+                            
+                            <div class="border-bottom mb-4">
+                                <h2 class="my-4 claseh2 text-azul">Nosotros</h2>
+                            </div>
+                            <div class="row">
+
+                            </div>
+                        </div>
+                        <!-- FIN DEL CONTENIDO DE NOSOTROS -->
+
+                        <!-- CONTENIDO DE CONTACTANOS -->
+                        <div class="col-lg-6 col-xl-7 contactanos d-none" id="contactanos" style="margin-top: 100px;">
+                            
+                            <div class="border-bottom mb-4">
+                                <h2 class="my-4 claseh2 text-azul">Contactanos</h2>
+                            </div>
+                            <div class="row">
+                            
+                            </div>
+                        </div>
+                        <!-- FIN DEL CONTENIDO DE CONTACTANOS -->
                         <div class="col-lg-4 col-xl-3 scroll container m-block m-none bg-white" style="position: fixed;z-index: 9999;right:0;" id="div-right">
                             <div class="row g-4">
                                 <div class="col-12">
