@@ -521,7 +521,7 @@ div.scroll {
         display: none !important;
     }
     .chat-mobil{
-        height: 400px;
+        height: 380px;
     }
 }
 
@@ -530,7 +530,7 @@ div.scroll {
         display: block !important;
     }
     .chat-mobil{
-        height: 650px;
+        height: 480px;
     }
 }
 
