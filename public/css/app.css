@@ -2805,7 +2805,7 @@ select {
 }
 
 .claseh2{
-font-family: "higtmount";
+font-family: "higtmount" !important;
 }
 
 .clase-font{

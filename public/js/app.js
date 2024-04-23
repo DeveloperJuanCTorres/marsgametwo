@@ -294,6 +294,13 @@ import "/resources/js/bootstrap.js";
         $('#mobile_perwrap').addClass('active')
     })
 
+    // Loby
+    $('.open_loby').click(function () {
+        $('#lobi').addClass('d-block')
+        $('#juegos').removeClass('d-block')
+        $('#juegos').addClass('d-none')
+    })
+
     $('#perfilclose').click(function () {
         $('#mobile_perwrap').removeClass('active')
     })

@@ -520,11 +520,17 @@ div.scroll {
     .m-none{
         display: none !important;
     }
+    .chat-mobil{
+        height: 400px;
+    }
 }
 
 @media (min-width: 992px) {
     .m-block{
         display: block !important;
+    }
+    .chat-mobil{
+        height: 650px;
     }
 }
 
@@ -538,6 +544,13 @@ div.scroll {
     color: #00983A !important;
     background-color: #fff !important;
     border-color: 00983A !important;
+}
+
+.estilos-img{
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 100px !important;
+    display: inline;
 }
 
 .btn-outline-mars{color:#00983A !important;border-color:#00983A !important}

@@ -140,7 +140,7 @@
                                     </div>
                                 </div>
                                 @else
-                                <a href="/login" class="nav-item nav-link">Login</a>
+                                <a href="/login" class="nav-item nav-link claseh2">Login</a>
                                 @endauth                                
                             </div>                                             
                         </div>
@@ -411,7 +411,7 @@
 
 
         <!-- Most Populer News Start -->
-        <div class="populer-news container">
+        <div class="populer-news container" style="padding-bottom: 50px;">
             <div class="py-0">
                 <div class="tab-class mb-4">
                     <div class="row g-4">
@@ -419,27 +419,27 @@
                             <div class="row g-4">
                                 <div class="col-12">
                                     <div class="p-3 rounded border">
-                                        <h4 class="mb-4 claseh2">Opciones</h4>
+                                        <h4 class="mb-4 claseh2 text-azul">Opciones</h4>
                                         <div class="row g-4">
                                             <div class="col-12">
-                                                <a href="/hall" class="w-100 rounded btn btn-primary d-flex align-items-center p-3 mb-2">
-                                                    <i class="fab fa-fantasy-flight-games btn btn-light btn-square me-3"></i>
+                                                <a href="/hall" class="w-100 rounded btn btn-white-web d-flex align-items-center p-3 mb-2">
+                                                    <i class="lab la-playstation text-white mx-4" style="font-size: 30px;"></i>
                                                     <span class="text-white">Crear Sala</span>
                                                 </a>
-                                                <a href="#" class="w-100 rounded btn btn-danger d-flex align-items-center p-3 mb-2">
-                                                    <i class="fab fa-fantasy-flight-games btn btn-light btn-square me-3 p-2"></i>
+                                                <a href="#" class="w-100 rounded btn btn-white-web d-flex align-items-center p-3 mb-2">
+                                                    <i class="las la-chess text-white mx-4" style="font-size: 30px;"></i>
                                                     <span class="text-white">Salas Disponibles</span>
                                                 </a>
-                                                <a href="/store" class="w-100 rounded btn btn-warning d-flex align-items-center p-3 mb-2">
-                                                    <i class="fab fa-buromobelexperte btn btn-light btn-square me-3"></i>
+                                                <a href="/store" class="w-100 rounded btn btn-white-web d-flex align-items-center p-3 mb-2">
+                                                    <i class="las la-store-alt text-white mx-4" style="font-size: 30px;"></i>
                                                     <span class="text-white">Tienda</span>  
                                                 </a>     
-                                                <a href="#" class="w-100 rounded btn btn-secondary d-flex align-items-center p-3 mb-2">
-                                                    <i class="fab fa-buromobelexperte btn btn-light btn-square me-3"></i>
+                                                <a href="javascript:void(0)" class="w-100 rounded btn btn-white-web d-flex align-items-center p-3 mb-2 open_loby">
+                                                    <i class="lab la-rocketchat text-white mx-4" style="font-size: 30px;"></i>
                                                     <span class="text-white">Loby</span>  
                                                 </a>  
-                                                <a href="#" class="w-100 rounded btn btn-info d-flex align-items-center p-3 mb-2">
-                                                    <i class="fab fa-buromobelexperte btn btn-light btn-square me-3"></i>
+                                                <a href="#" class="w-100 rounded btn btn-white-web d-flex align-items-center p-3 mb-2">
+                                                    <i class="las la-award text-white mx-4" style="font-size: 30px;"></i>
                                                     <span class="text-white">Premios</span>  
                                                 </a>                                             
                                             </div>
@@ -451,10 +451,10 @@
 
                         <div class="col-lg-3 col-xl-2"></div>
 
-                        <div class="col-lg-6 col-xl-7" style="margin-top: 100px;">
+                        <div class="col-lg-6 col-xl-7 juegos" id="juegos" style="margin-top: 100px;">
                             
                             <div class="border-bottom mb-4">
-                                <h2 class="my-4 claseh2">Juegos de apuesta</h2>
+                                <h2 class="my-4 claseh2 text-azul">Juegos de apuesta</h2>
                             </div>
                             <!-- <div class="whats-carousel owl-carousel"> -->
                             <div class="row">
@@ -1204,6 +1204,65 @@
                                 </div>
                             </div> -->
                         </div>
+                        <!-- CONTENIDO DE LOBY -->
+                        <div class="col-lg-6 col-xl-7 loby d-none" id="loby" style="margin-top: 100px;">
+                            
+                            <div class="border-bottom mb-4">
+                                <h2 class="my-4 claseh2 text-azul">Loby</h2>
+                            </div>
+                            <div class="row">
+                            <section class="msger chat-mobil" style="font-family: Helvetica, sans-serif">
+                                <header class="msger-header">
+                                    <div class="msger-header-title">
+                                        <i class="fas fa-comment-alt"></i> MarsChat
+                                    </div>
+                                    <div class="msger-header-options">
+                                        <span><i class="fas fa-cog"></i></span>
+                                    </div>
+                                </header>
+
+                                <main class="msger-chat">
+                                    <div class="msg left-msg">
+                                        <div class="msg-img" style="background-image: url(/img/icono-marsgame.jpg)">
+                                        </div>
+
+                                        <div class="msg-bubble">
+                                            <div class="msg-info">
+                                                <div class="msg-info-name">BOT</div>
+                                                <div class="msg-info-time">12:45</div>
+                                            </div>
+
+                                            <div class="msg-text">
+                                                Hola, Bienvenido a MarsChat! Adelante y envíame un mensaj. 😄
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- <div class="msg right-msg">
+                                        <div class="msg-img" style="background-image: url(https://image.flaticon.com/icons/svg/145/145867.svg)">
+                                        </div>
+
+                                        <div class="msg-bubble">
+                                            <div class="msg-info">
+                                            <div class="msg-info-name">Sajad</div>
+                                            <div class="msg-info-time">12:46</div>
+                                            </div>
+
+                                            <div class="msg-text">
+                                            You can change your name in JS section!
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                </main>
+
+                                <form class="msger-inputarea">
+                                    <input type="text" class="msger-input" placeholder="Enter your message...">
+                                    <button type="submit" class="msger-send-btn">Send</button>
+                                </form>
+                                </section>
+                            </div>
+                        </div>
+                        <!-- FIN DEL CONTENIDO DE LOBY -->
                         <div class="col-lg-4 col-xl-3 scroll container m-block m-none bg-white" style="position: fixed;z-index: 9999;right:0;" id="div-right">
                             <div class="row g-4">
                                 <div class="col-12">
@@ -1215,7 +1274,7 @@
                                                     <div class="col-4">
                                                         <div class="rounded-circle position-relative">
                                                             <div class="overflow-hidden rounded-circle">
-                                                                <img src="img/features-sports-1.jpg" class="img-zoomin img-fluid rounded-circle w-100" alt="">
+                                                                <img src="img/features-sports-1.jpg" class="img-zoomin img-fluid rounded-circle estilos-img" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1234,7 +1293,7 @@
                                                     <div class="col-4">
                                                         <div class="rounded-circle position-relative">
                                                             <div class="overflow-hidden rounded-circle">
-                                                                <img src="img/features-sports-1.jpg" class="img-zoomin img-fluid rounded-circle w-100" alt="">
+                                                                <img src="img/features-sports-1.jpg" class="img-zoomin img-fluid rounded-circle estilos-img" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1253,7 +1312,7 @@
                                                     <div class="col-4">
                                                         <div class="rounded-circle position-relative">
                                                             <div class="overflow-hidden rounded-circle">
-                                                                <img src="img/features-sports-1.jpg" class="img-zoomin img-fluid rounded-circle w-100" alt="">
+                                                                <img src="img/features-sports-1.jpg" class="img-zoomin img-fluid rounded-circle estilos-img" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1272,7 +1331,83 @@
                                                     <div class="col-4">
                                                         <div class="rounded-circle position-relative">
                                                             <div class="overflow-hidden rounded-circle">
-                                                                <img src="img/features-sports-1.jpg" class="img-zoomin img-fluid rounded-circle w-100" alt="">
+                                                                <img src="img/features-sports-1.jpg" class="img-zoomin img-fluid rounded-circle estilos-img" alt="">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-8">
+                                                        <div class="features-content d-flex flex-column">
+                                                            <a href="#" class="h6" style="text-align: justify;">
+                                                                Juan Carlos Torres del Castillo
+                                                            </a>
+                                                            <small class="text-body d-block clase-font" style="text-align: justify;"><i class="fas fa-calendar-alt me-1"></i> December 9, 2024</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="row g-4 align-items-center features-item">
+                                                    <div class="col-4">
+                                                        <div class="rounded-circle position-relative">
+                                                            <div class="overflow-hidden rounded-circle">
+                                                                <img src="img/features-sports-1.jpg" class="img-zoomin img-fluid rounded-circle estilos-img" alt="">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-8">
+                                                        <div class="features-content d-flex flex-column">
+                                                            <a href="#" class="h6" style="text-align: justify;">
+                                                                Juan Carlos Torres del Castillo
+                                                            </a>
+                                                            <small class="text-body d-block clase-font" style="text-align: justify;"><i class="fas fa-calendar-alt me-1"></i> December 9, 2024</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="row g-4 align-items-center features-item">
+                                                    <div class="col-4">
+                                                        <div class="rounded-circle position-relative">
+                                                            <div class="overflow-hidden rounded-circle">
+                                                                <img src="img/features-sports-1.jpg" class="img-zoomin img-fluid rounded-circle estilos-img" alt="">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-8">
+                                                        <div class="features-content d-flex flex-column">
+                                                            <a href="#" class="h6" style="text-align: justify;">
+                                                                Juan Carlos Torres del Castillo
+                                                            </a>
+                                                            <small class="text-body d-block clase-font" style="text-align: justify;"><i class="fas fa-calendar-alt me-1"></i> December 9, 2024</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="row g-4 align-items-center features-item">
+                                                    <div class="col-4">
+                                                        <div class="rounded-circle position-relative">
+                                                            <div class="overflow-hidden rounded-circle">
+                                                                <img src="img/features-sports-1.jpg" class="img-zoomin img-fluid rounded-circle estilos-img" alt="">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-8">
+                                                        <div class="features-content d-flex flex-column">
+                                                            <a href="#" class="h6" style="text-align: justify;">
+                                                                Juan Carlos Torres del Castillo
+                                                            </a>
+                                                            <small class="text-body d-block clase-font" style="text-align: justify;"><i class="fas fa-calendar-alt me-1"></i> December 9, 2024</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="row g-4 align-items-center features-item">
+                                                    <div class="col-4">
+                                                        <div class="rounded-circle position-relative">
+                                                            <div class="overflow-hidden rounded-circle">
+                                                                <img src="img/features-sports-1.jpg" class="img-zoomin img-fluid rounded-circle estilos-img" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1350,25 +1485,25 @@
         
 
     <!-- mobile bottom bar -->
-    <div class="mobile_bottombar d-block d-lg-none" style="z-index: 9999;">
+    <div class="mobile_bottombar d-block d-lg-none" style="z-index: 9999;background-color: #2D2E83;">
         <div class="header_icon">
             <a href="javascript:void(0)" class="icon_wrp text-center open_menu">
                 <span class="icon">
-                    <i class="las la-bars"></i>
+                    <i class="las la-bars text-white"></i>
                 </span>
-                <span class="icon_text">Opciones</span>
+                <span class="icon_text text-white">Opciones</span>
             </a>
             <a href="javascript:void(0)" class="icon_wrp text-center open_category">
                 <span class="icon">
-                    <i class="icon-list-ul"></i>
+                    <i class="icon-list-ul text-white"></i>
                 </span>
-                <span class="icon_text">Contactos</span>
+                <span class="icon_text text-white">Contactos</span>
             </a>
             <a href="javascript:void(0)" class="icon_wrp text-center open_perfil">
                 <span class="icon">
-                    <i class="las la-user"></i>
+                    <i class="las la-user text-white"></i>
                 </span>
-                <span class="icon_text">Perfil</span>
+                <span class="icon_text text-white">Perfil</span>
             </a>
             <!-- <a href="javascript:void(0)" class="icon_wrp text-center" id="src_icon">
                 <span class="icon">
@@ -1387,35 +1522,35 @@
     </div>
 
     <!-- mobile opciones -->
-    <div class="mobile_menwrap d-lg-none" id="mobile_menwrap" style="z-index: 9999;">
-        <div class="mobile_menu_2">
+    <div class="mobile_menwrap d-lg-none" id="mobile_menwrap" style="z-index: 9999">
+        <div class="mobile_menu_2" style="background-color: #2D2E83;">
             <h5 class="mobile_title claseh2">
                 Opciones
                 <span class="sidebarclose" id="menuclose">
                     <i class="las la-times"></i>
                 </span>
             </h5>
-            <div class="row bg-white p-4">
+            <div class="row p-4" style="--bs-gutter-x: 0rem !important;">
                 <div class="col-12">
-                    <a href="/hall" class="w-100 rounded btn btn-primary d-flex align-items-center p-3 mb-2">
-                        <i class="fab fa-fantasy-flight-games btn btn-light btn-square me-3"></i>
-                        <span class="text-white">Crear Sala</span>
+                    <a href="/hall" class="w-100 rounded btn btn-white d-flex align-items-center p-3 mb-2">
+                        <i class="lab la-playstation text-azul mx-4" style="font-size: 30px;"></i>
+                        <span class="text-azul">Crear Sala</span>
                     </a>
-                    <a href="#" class="w-100 rounded btn btn-danger d-flex align-items-center p-3 mb-2">
-                        <i class="fab fa-fantasy-flight-games btn btn-light btn-square me-3 p-2"></i>
-                        <span class="text-white">Salas Disponibles</span>
+                    <a href="#" class="w-100 rounded btn btn-white d-flex align-items-center p-3 mb-2">
+                        <i class="las la-chess text-azul mx-4" style="font-size: 30px;"></i>
+                        <span class="text-azul">Salas Disponibles</span>
                     </a>
-                    <a href="/store" class="w-100 rounded btn btn-warning d-flex align-items-center p-3 mb-2">
-                        <i class="fab fa-buromobelexperte btn btn-light btn-square me-3"></i>
-                        <span class="text-white">Tienda</span>
+                    <a href="/store" class="w-100 rounded btn btn-white d-flex align-items-center p-3 mb-2">
+                        <i class="las la-store-alt text-azul mx-4" style="font-size: 30px;"></i>
+                        <span class="text-azul">Tienda</span>
                     </a>      
-                    <a href="#" class="w-100 rounded btn btn-secondary d-flex align-items-center p-3 mb-2">
-                        <i class="fab fa-buromobelexperte btn btn-light btn-square me-3"></i>
-                        <span class="text-white">Loby</span>  
+                    <a href="javascript:void(0)" class="w-100 rounded btn btn-white d-flex align-items-center p-3 mb-2 open_loby">
+                        <i class="lab la-rocketchat text-azul mx-4" style="font-size: 30px;"></i>
+                        <span class="text-azul">Loby</span>  
                     </a>  
-                    <a href="#" class="w-100 rounded btn btn-info d-flex align-items-center p-3 mb-2">
-                        <i class="fab fa-buromobelexperte btn btn-light btn-square me-3"></i>
-                        <span class="text-white">Premios</span>  
+                    <a href="#" class="w-100 rounded btn btn-white d-flex align-items-center p-3 mb-2">
+                        <i class="las la-award text-azul mx-4" style="font-size: 30px;"></i>
+                        <span class="text-azul">Premios</span>  
                     </a>                                               
                 </div>
             </div>  
@@ -1446,7 +1581,7 @@
                             <a href="#" class="h6">
                                 Juan Carlos Torres del Castillo
                             </a>
-                            <small class="text-body d-block" style="text-align: justify;"><i class="fas fa-calendar-alt me-1"></i> December 9, 2024</small>
+                            <small class="text-body d-block clase-font" style="text-align: justify;"><i class="fas fa-calendar-alt me-1"></i> December 9, 2024</small>
                         </div>
                     </div>
                 </div>
@@ -1465,7 +1600,7 @@
                             <a href="#" class="h6">
                                 Juan Carlos Torres del Castillo
                             </a>
-                            <small class="text-body d-block" style="text-align: justify;"><i class="fas fa-calendar-alt me-1"></i> December 9, 2024</small>
+                            <small class="text-body d-block clase-font" style="text-align: justify;"><i class="fas fa-calendar-alt me-1"></i> December 9, 2024</small>
                         </div>
                     </div>
                 </div>
@@ -1484,7 +1619,7 @@
                             <a href="#" class="h6">
                                 Juan Carlos Torres del Castillo
                             </a>
-                            <small class="text-body d-block" style="text-align: justify;"><i class="fas fa-calendar-alt me-1"></i> December 9, 2024</small>
+                            <small class="text-body d-block clase-font" style="text-align: justify;"><i class="fas fa-calendar-alt me-1"></i> December 9, 2024</small>
                         </div>
                     </div>
                 </div>
@@ -1503,7 +1638,7 @@
                             <a href="#" class="h6">
                                 Juan Carlos Torres del Castillo
                             </a>
-                            <small class="text-body d-block" style="text-align: justify;"><i class="fas fa-calendar-alt me-1"></i> December 9, 2024</small>
+                            <small class="text-body d-block clase-font" style="text-align: justify;"><i class="fas fa-calendar-alt me-1"></i> December 9, 2024</small>
                         </div>
                     </div>
                 </div>
