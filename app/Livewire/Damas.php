@@ -25,9 +25,10 @@ class Damas extends Component
     #[On('move')] 
     public function move($move){
         $now = date('H:i:s');
+        $jsonString = json_encode($move);
         $this->game->moves()->create([
             'user_id'=> auth()->user()->id,
-            'move'=>$move,
+            'move'=>$jsonString,
             'timer_end'=>$now,
         ]);
         // Notification::send($this->rival, new \App\Notifications\NewMove());
@@ -87,6 +88,8 @@ class Damas extends Component
         $pop = rand(1,6);
         $this->dispatch('dados',pop: $pop);
     }
+
+   
 
     public function render()
     {

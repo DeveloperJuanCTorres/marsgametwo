@@ -1,22 +1,4 @@
-/*
-move = {r: row of moving piece,
-		c: column of moving piece,
-		moveSequence: array of {r,c} coordinates showing the squares moved to during a single move (usually one, but is more than one when taking multiple pieces in a single move)
-	   }
 
-
-findLegalMoves() populates the legalMoves array with all possible moves given the current board and player state.
-renderBoard: creates the board in the DOM. Squares have onclick attributes to allow interactions when the current active player is not the AI.
-
-	*click* OR aiMove()
-		=>
-			selectPiece: saves a piece to the 'selected' variable.
-			placePiece: updates the game state and calls findLegalMoves and renderBoard
-
-
-aiMove calls mcMove which runs mcts (monte carlo tree search) many times. mcts runs mcSelection, mcExpansion, mcSimulation and mcBackpropagation. The best move according to its win:play ratio is chosen.
-
-*/
 
 var draughtsInitial = [ // ' ' is an empty square, 'b' a black piece, 'w' a white piece; 'B' and 'W' are kings.
 	[' ','b',' ','b',' ','b',' ','b'],
@@ -64,12 +46,14 @@ function initialise() {
 	draughts = draughtsInitial.map(r => r.slice()); // copy draughtsInitial to draughts
 	selected = false;
 	legalMoves = findLegalMoves(draughts,player);
+	console.log('render 5');
 	renderBoard();
 	
 	// MCTS AI
 	mcTree = {r: -1, c: -1, moveSequence: [], player: 'B', wins: 0, plays: 0, parent: null, children: []};
 	mcState = draughts.map(r => r.slice()); // copy array
 	if (!humans[player]) aiMove();
+
 }
 
 function renderBoard() {
@@ -109,11 +93,13 @@ function renderBoard() {
 	if (humans.B && humans.W) infoDiv.innerHTML = ((player == 'W') ? "white" : "black")+"'s move";
 	else infoDiv.innerHTML = humans[player] ? "your move" : "AI thinking...";
 	if (legalMoves.length === 0) infoDiv.innerHTML = ((player == 'W') ? "BLACK" : "WHITE")+" WINS";
+
 }
 
 function selectPiece(r,c) { // r = row, c = column
 	if (selected && selected.r == r && selected.c == c) selected = false;
 	else selected = {r: r, c: c};
+	console.log('render 2');
 	renderBoard();
 }
 
@@ -135,8 +121,13 @@ function placePiece(r,c) { // r = row, c = column
 		player = (player == 'W') ? 'B' : 'W';
 		legalMoves = findLegalMoves(draughts,player);
 	}
+	console.log('Se vuelve a dibujar despues del moviemiento');
 	renderBoard();
 	if (!humans[player] && !selected && legalMoves.length > 0) aiMove();
+
+
+	Livewire.dispatch('move', { move: draughts })
+
 }
 
 function updateState(board,pieceR,pieceC,destinationR,destinationC) { // p = player
@@ -154,6 +145,8 @@ function updateState(board,pieceR,pieceC,destinationR,destinationC) { // p = pla
 }
 
 function findLegalMoves(board,p) { // p = player
+	console.log('movimiento ');
+
 	var possibleCaptures = [];
 	var possibleSteps = []; // non-capturing moves
 	board.forEach((row,r) => {
@@ -173,8 +166,16 @@ function findLegalMoves(board,p) { // p = player
 			}
 		});
 	});
-	if (possibleCaptures.length > 0) return possibleCaptures;
-	else return possibleSteps;
+
+	if (possibleCaptures.length > 0){
+		console.log('movimiento comer:');
+		console.log(possibleCaptures);
+		return possibleCaptures;
+	} else { 
+		console.log('*movimiento normal:');
+		console.log(possibleSteps);
+		return possibleSteps;
+	}
 }
 
 function findPossibleCaptures(board,r,c,p,king) { // r = row, c = column, p = player
@@ -255,6 +256,7 @@ function findPossibleSteps(board,r,c,p) { // r = row, c = column, p = player
 
 function toggleHighlight() {
 	highlightOptions = !highlightOptions;
+	console.log('salto ficha');
 	renderBoard();
 }
 
@@ -288,10 +290,12 @@ var mcState; // set by initialise()
 
 
 function aiMove() {
+	console.log('movimeinto dante 12121212');
 	setTimeout(aiMoveMaker,100); // allow DOM to render before mcMove processing freezes it
 }
 
 function aiMoveMaker() {
+	console.log('movimeinto dante 11qwqw1111');
 	var then = Date.now();
 	var move = mcMove();
 	var elapsed = Date.now()-then;
@@ -306,61 +310,27 @@ function aiMoveMaker() {
 }
 
 function delayMove(moveSequence) {
+	console.log('movimeinto dante 101010');
 	setTimeout(function(){
 		placePiece(moveSequence[0].r,moveSequence[0].c);
 		if (moveSequence.length > 1) delayMove(moveSequence.slice(1));}, 600);
 }
 
 function randomMove() {
+	console.log('movimeinto dante 9999');
 	return legalMoves[Math.floor(Math.random()*legalMoves.length)];
 }
 
-function mcMove() {
-	if (mcTree.children.length === 0) mcTree.children = findLegalMoves(mcState,mcTree.player).map(m =>
-		({r: m.r, c: m.c, moveSequence: m.moveSequence,
-			player: (mcTree.player == 'W') ? 'B' : 'W', wins: 0, plays: 0, parent: mcTree, children: []}));
-	if (mcTree.player != player) {
-		// The opponent has made a move since mcMove() was last run (or has made the opening move) so the board state has changed.
-		// Find which of the mcTree.children was played and prune mcTree accordingly.
-		var board, move;
-		for (var i = 0, lim = mcTree.children.length; i < lim; i++) {
-			move = mcTree.children[i];
-			board = simulateMoveSequence(mcState, move);
-			if (board.toString() == draughts.toString()) {
-				mcTree = move;
-				mcTree.parent = null;
-				mcState = board;
-				break;
-			}
-		}
-		if (i >= lim) {console.log("error: mcTree not updated"); console.log(mcTree); return false;}
-	}
-	var then = Date.now();
-	var i = 0;
-	while (Date.now()-then < 1000 && i < 1500) {  // runs mcts for at most 1 second or 1500 iterations
-		mcts();
-		i++;
-	}
-	var score, maxI;
-	var maxScore = -1;
-	mcTree.children.forEach((c,i) => {
-		score = c.wins/c.plays;
-		if (score >= maxScore) {
-			maxScore = score;
-			maxI = i;}});
-	mcTree = mcTree.children[maxI];
-	mcTree.parent = null;
-	mcState = simulateMoveSequence(mcState, mcTree);
-	return mcTree;
-}
 
 function simulateMoveSequence(board, move) {
+	console.log('movimeinto dante 666');
 	return move.moveSequence.reduce((a,b) =>
 		({board:updateState(a.board,a.r,a.c,b.r,b.c),r:b.r,c:b.c}),
 		{board: board.map(r => r.slice()), r: move.r, c: move.c}).board;
 }
 
 function mcts() {
+	console.log('movimeinto dante 5555');
 	var leafNode = mcSelection();
 	// Choose the best sequence of moves according to UCT until we find a node that has not been fully explored. Recreate the game state as we go down the tree.
 	
@@ -375,6 +345,7 @@ function mcts() {
 }
 
 function mcSelection() {
+	console.log('movimeinto dante 4444');
 	var node = mcTree;
 	var board = mcState.map(r => r.slice()); // copy array
 	var totalPlays, uct, uctMax, uctMaxI;
@@ -392,6 +363,7 @@ function mcSelection() {
 }
 
 function mcExpansion(node, board) {
+	console.log('movimeinto dante 3333');
 	if (node.children.length === 0) {
 		node.children = findLegalMoves(board,node.player).map(m =>
 			({r: m.r, c: m.c, moveSequence: m.moveSequence,
@@ -405,26 +377,9 @@ function mcExpansion(node, board) {
 	}
 }
 
-function mcSimulation(board,p) { // p = player
-	var depth = 40;
-	var loser = false;
-	var moves, chosenMove;
-	while (!loser && depth > 0) {
-		moves = findLegalMoves(board,p);
-		if (moves.length === 0) {
-			loser = (p == 'W') ? 'B' : 'W';
-//		} else if (moves.some(m => findLegalMoves(simulateMoveSequence(board,m),(p == 'W') ? 'B' : 'W').length === 0)) { // check if any moves result in a win
-		} else {
-			chosenMove = moves[Math.floor(Math.random()*moves.length)];
-			board = simulateMoveSequence(board,chosenMove);
-			p = (p == 'W') ? 'B' : 'W';
-			depth--;
-		}
-	}
-	return loser;
-}
-
 function mcBackpropagation(node, loser) {
+	console.log('movimeinto dante 13113131');
+	
 	while (node !== null) {
 		node.plays++;
 		if (loser) {
