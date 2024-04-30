@@ -20,12 +20,18 @@ var legalMoves = []; // array of all possible moves given the current board and 
 var highlightOptions = true;
 
 
-function setPlayMode(n,tableto) {
+
+function setPlayMode(n,tableto,playercolor) {
 	playMode = n;
 	// button1player.className = "playModeButton";
 	// button2player.className = "playModeButton";
-	document.getElementById("button"+n+"player").className += " selectedPlayMode";
-	initialise(tableto);
+	//document.getElementById("button"+n+"player").className += " selectedPlayMode";
+	initialise(tableto,playercolor);
+}
+
+function tester(n,tableto,playercolor) {
+	playMode = n;
+	initialise(tableto,playercolor);
 }
 
 // function setColourMode(c) {
@@ -33,8 +39,9 @@ function setPlayMode(n,tableto) {
 // 	if (playMode == 1) initialise();
 // }
 
-function initialise(tableto) {
-	player = 'B';
+function initialise(tableto,playercolor) {
+	//player = 'B';
+	player = playercolor;
 	humans.W = true;
 	humans.B = true;
 	if (playMode == 1) { // game against AI

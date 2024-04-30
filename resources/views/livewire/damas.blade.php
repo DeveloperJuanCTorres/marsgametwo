@@ -3,7 +3,8 @@
         <div class="col-span-6 sm:col-span-4 bg-white bg-gamer" >
             <div wire:ignore>
                 <div id="playModeDiv" wire:ignore>
-                    <button id="button2player" onclick="setPlayMode(2)">2 player game</button>
+                    <button id="button2player" >2 player game</button>
+                    COLOR:{{$player}}
                     <!-- <button id="button1player" onclick="setPlayMode(1)">game against AI</button> -->
                 </div>
                 <div id="infoDiv"></div>
@@ -67,12 +68,15 @@
 
     @push('js')
         <script src="{{asset('js/damas.js')}}"></script>
+
+
         <script>
               document.addEventListener('livewire:initialized', function () {
                     var tablero = @this.draughts;
-                    setPlayMode(2,tablero);
+                    var playercolor = @this.player;
+                    setPlayMode(2,tablero,playercolor);
                 })
-        </script>
+        </script> 
         <script>
             function copiarEmoji(emoji) {
                 if(@this.bodyMessage){
@@ -81,8 +85,13 @@
                     @this.bodyMessage =  emoji;
                 }
             }
+
+            Livewire.on('notificateEchoJs', (event) => {
+                console.log('movimiento del oponente desde js');
+                tester(2,event[0],event[1]);
+            });
+
             Livewire.on('scrollIntoView', function() {
-                
                 var aux = document.getElementById('final');
                 if(aux){
                     aux.scrollIntoView(true);

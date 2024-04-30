@@ -17,7 +17,6 @@ class Damas extends Component
     public $draughts;
     public $player;
 
-
     public $contact_id;
 
     public function mount(Game $game){
@@ -39,7 +38,7 @@ class Damas extends Component
             ['w',' ','w',' ','w',' ','w',' '],
             [' ','w',' ','w',' ','w',' ','w'],
             ['w',' ','w',' ','w',' ','w',' ']];
-        //consulto el ultimo movimiento si para dibujar el tablero si no hay moviemeos agrego el tablero inicial
+        //consulto el ultimo movimiento para dibujar el tablero si no hay moviemeos agrego el tablero inicial
         $stringMove = $this->game->moves()->get()->last()?? [];
         if($stringMove) {
             $this->draughts = json_decode($stringMove->move);
@@ -61,7 +60,8 @@ class Damas extends Component
             'color'=>$color,
             'timer_end'=>$now,
         ]);
-        // Notification::send($this->rival, new \App\Notifications\NewMove());
+        Notification::send($this->userAdversary, new \App\Notifications\NewMove());
+        $this->reset('bodyMessage');
     }
 
     //Oyentes
@@ -98,7 +98,7 @@ class Damas extends Component
         ]);
         
         Notification::send($this->userAdversary, new \App\Notifications\NewMessage());
-        $this->reset('bodyMessage');
+        //$this->reset('draughts');
     }
 
 
@@ -125,6 +125,9 @@ class Damas extends Component
 
     public function render()
     {
+        $this->InitBoard();
+        $this->dispatch('notificateEchoJs',$this->draughts, $this->player);
+        //$this->dispatch('notificateEchoJs');
         return view('livewire.damas')->layout('layouts.damas');
     }
 }
