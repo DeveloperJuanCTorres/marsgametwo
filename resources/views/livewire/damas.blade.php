@@ -1,4 +1,4 @@
-<div  class="bg-gray-100 shadow border border-gray-300 overflow-hidden ">
+<div   class="bg-gray-100 shadow border border-gray-300 overflow-hidden ">
 
     <div class="grid grid-cols-6 divide-x divide-gray-200">
         <div class="col-span-6 sm:col-span-4 bg-white bg-gamer" >

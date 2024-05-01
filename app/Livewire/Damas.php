@@ -13,14 +13,22 @@ class Damas extends Component
     public $chat;
     public $users;
     public $bodyMessage;
+    public $draughts;
 
     public function mount(Game $game){
         $this->game = $game;
         $this->adversary = $game->users->where('id', '!=', auth()->id())->first();
         $this->users = collect();
         $this->chat = $this->game->messages()->get();
+        
         $this->dispatch('playgame');
     }
+
+    // public function data()
+    // {
+    //     $this->draughts = $this->game->moves()->get()->last()->move;
+    //     $this->emit("valorData");
+    // }
 
     #[On('move')] 
     public function move($move){
@@ -93,6 +101,7 @@ class Damas extends Component
 
     public function render()
     {
+        
         return view('livewire.damas')->layout('layouts.damas');
     }
 }

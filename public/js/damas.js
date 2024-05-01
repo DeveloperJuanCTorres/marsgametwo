@@ -1,5 +1,8 @@
 
 
+
+
+
 var draughtsInitial = [ // ' ' is an empty square, 'b' a black piece, 'w' a white piece; 'B' and 'W' are kings.
 	[' ','b',' ','b',' ','b',' ','b'],
 	['b',' ','b',' ','b',' ','b',' '],
@@ -19,10 +22,13 @@ var legalMoves = []; // array of all possible moves given the current board and 
 var highlightOptions = true;
 
 function setPlayMode(n) {
+	
+	console.log('primero');
 	playMode = n;
 	button1player.className = "playModeButton";
 	button2player.className = "playModeButton";
 	document.getElementById("button"+n+"player").className += " selectedPlayMode";
+	
 	initialise();
 }
 
@@ -32,6 +38,7 @@ function setColourMode(c) {
 }
 
 function initialise() {
+	console.log('inicio function initialise');
 	player = 'B';
 	humans.W = true;
 	humans.B = true;
