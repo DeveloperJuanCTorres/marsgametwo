@@ -66,8 +66,9 @@ class Damas extends Component
             'color'=>$color,
             'timer_end'=>$now,
         ]);
+        // $this->reset('bodyMessage');
         Notification::send($this->userAdversary, new \App\Notifications\NewMove());
-        $this->reset('bodyMessage');
+        
     }
 
     //Oyentes
@@ -104,7 +105,7 @@ class Damas extends Component
         ]);
         
         Notification::send($this->userAdversary, new \App\Notifications\NewMessage());
-        //$this->reset('draughts');
+        $this->reset('bodyMessage');
     }
 
 
