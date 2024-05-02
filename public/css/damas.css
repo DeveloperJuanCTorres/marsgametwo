@@ -1,10 +1,9 @@
 .bg-gamer{
-	background: url('/img/papel_tapiz.png');
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover;
-
+	background: #37cf71;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #5051a4, #37cf71);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #5051a4, #37cf71); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
+
 .elementor-toggle {
     pointer-events: none;
 }

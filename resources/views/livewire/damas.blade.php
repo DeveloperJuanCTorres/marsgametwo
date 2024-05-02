@@ -89,8 +89,10 @@
             function copiarEmoji(emoji) {
                 if(@this.bodyMessage){
                     @this.bodyMessage =  @this.bodyMessage + emoji;
+                    document.getElementById("message").focus();
                 }else{
                     @this.bodyMessage =  emoji;
+                    document.getElementById("message").focus();
                 }
             }
             Livewire.on('notificateEchoJs', (event) => {
