@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class GameMove extends Model
 {
     use HasFactory;
-    protected $fillable = ['id','user_id','game_id','move','timer_end'];
+    protected $fillable = ['id','user_id','game_id','move','color','timer_end'];
 
     public function game(){
         return $this->hasOne(Game::class);

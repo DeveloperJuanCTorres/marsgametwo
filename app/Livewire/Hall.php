@@ -24,7 +24,9 @@ class Hall extends Component
             'type'=>$type,
             'active'=>1
         ]);
-        $game->users()->attach([auth()->user()->id, $user_id]);
+
+        $game->users()->attach([auth()->user()->id =>['color'=>'B'], $user_id=>['color'=>'W']]);
+        //$game->users()->attach([auth()->user()->id, $user_id]);
     }
 
     public function render()

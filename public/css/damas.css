@@ -5,6 +5,9 @@
 	background-size: cover;
 
 }
+.elementor-toggle {
+    pointer-events: none;
+}
 
 #playModeDiv {
 	text-align: center;

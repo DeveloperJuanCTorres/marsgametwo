@@ -22,8 +22,28 @@ class Game extends Model
         );
     }
 
+    public function userAdversary(): Attribute
+    {
+        return new Attribute(
+            get: function($value){
+               $user = $this->users->where('id', '!=', auth()->id())->first();
+               return  $user;
+            }
+        );
+    }
+
+    public function myUser(): Attribute
+    {
+        return new Attribute(
+            get: function($value){
+               $user = $this->users->where('id', auth()->id())->first();
+               return  $user;
+            }
+        );
+    }
+
    public function users(){
-       return $this->belongsToMany(User::class);
+       return $this->belongsToMany(User::class)->withPivot('color');
    }
 
     public function moves(){
