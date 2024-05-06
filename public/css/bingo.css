@@ -1,0 +1,216 @@
+.bg-gamer{
+	background: #37cf71;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #5051a4, #37cf71);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #5051a4, #37cf71); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+:root {
+  --col-background--dark: #2c3e50;
+  --col-background--light: #ecf0f1;
+  --step: 8px;
+  --bingo-ball-size: calc(7 * var(--step));
+  --bingo-balls-per-col: 5;
+  --bingo-balls-padding: var(--step);
+  --col-bingo1: #9b59b6;
+  --col-bingo2: #3498db;
+  --col-bingo3: #2ecc71;
+  --col-bingo4: #f1c40f;
+  --col-bingo5: #e74c3c;
+  --col-bingo-text: var(--col-background--dark);
+  --col-bingo-back: var(--col-background--light);
+}
+
+html,
+body {
+  background-color: var(--col-background--dark);
+  width: 100%;
+  height: 100%;
+}
+
+* {
+  font-family: "Fredoka One", cursive;
+}
+
+.container {
+  min-height: 100%;
+  max-width: 750px;
+  margin: auto;
+  background-color: var(--col-background--light);
+  box-shadow: 0px 0px 14px -2px rgba(0, 0, 0, 0.75);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container #header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* padding: calc(6 * var(--step)) 0;
+  padding-bottom: var(--step); */
+}
+.container #header h1 {
+  margin: 0;
+  font-size: 3rem;
+  color: var(--col-background--dark);
+}
+.container #current {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(2 * var(--bingo-ball-size));
+}
+.container #current.hidden {
+  display: none;
+}
+.container #current .current__display {
+  color: var(--col-background--dark);
+}
+.container #next {
+  min-width: 200px;
+  width: 50%;
+  height: 3rem;
+  font-size: 1.5rem;
+  margin-top: calc(2 * var(--step));
+  background-color: var(--col-background--dark);
+  color: var(--col-background--light);
+  box-shadow: 0px 5px 11px -5px rgba(0, 0, 0, 0.55);
+  border: none;
+  font-family: "Fredoka One", cursive;
+  text-transform: capitalize;
+  letter-spacing: 2px;
+  outline: none;
+  cursor: pointer;
+}
+.container .card-link {
+  color: #34495e !important;
+  font-size: 0.8rem;
+  padding-bottom: calc(2 * var(--step));
+}
+.container #history {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: calc( var(--bingo-balls-per-col) * (var(--bingo-ball-size) + (var(--bingo-balls-padding) * 10)) );
+  margin: calc(4 * var(--step)) auto;
+}
+
+.bingo-ball {
+  animation: example 0.5s linear;
+  border-radius: 50%;
+  width: var(--bingo-ball-size);
+  height: var(--bingo-ball-size);
+  background-color: var(--col-bingo1);
+  margin: var(--bingo-balls-padding);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 9px 14px -8px var(--col-bingo1);
+}
+.bingo-ball__text {
+  font-variant-numeric: tabular-nums slashed-zero;
+  background-color: var(--col-bingo-back);
+  border-radius: 50%;
+  color: var(--col-bingo-text);
+  padding: calc(var(--step) / 2);
+  margin: 0;
+}
+.bingo-ball--teens {
+  background-color: var(--col-bingo2);
+  box-shadow: 0px 9px 14px -8px var(--col-bingo2);
+}
+.bingo-ball--twenties {
+  background-color: var(--col-bingo3);
+  box-shadow: 0px 9px 14px -8px var(--col-bingo3);
+}
+.bingo-ball--thirties {
+  background-color: var(--col-bingo4);
+  box-shadow: 0px 9px 14px -8px var(--col-bingo4);
+}
+.bingo-ball--fourties {
+  background-color: var(--col-bingo5);
+  box-shadow: 0px 9px 14px -8px var(--col-bingo5);
+}
+
+
+.container .title {
+  color: var(--col-background--light);
+  font-size: 3rem;
+}
+.container #bingo-grid-title {
+  box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.4);
+  background-color: var(--col-background--light);
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+}
+
+.container #bingo-grid-title .bingo-ball__container {
+  border: var(--col-background--dark) solid 2px;
+}
+
+.container #bingo-grid {
+  box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.4);
+  background-color: var(--col-background--light);
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+}
+.container #bingo-grid .bingo-ball__container {
+  border: var(--col-background--dark) solid 2px;
+}
+.container #bingo-grid .bingo-ball {
+  animation: example 0.5s linear;
+  border-radius: 50%;
+  width: var(--bingo-ball-size);
+  height: var(--bingo-ball-size);
+  background-color: var(--col-bingo1);
+  margin: var(--bingo-balls-padding);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 9px 14px -8px var(--col-bingo1);
+  grid-column: 1;
+  cursor: pointer;
+  transition: opacity 0.5s;
+}
+.container #bingo-grid .bingo-ball--selected {
+  opacity: 0.2;
+}
+.container #bingo-grid .bingo-ball__text {
+  font-variant-numeric: tabular-nums slashed-zero;
+  background-color: var(--col-bingo-back);
+  border-radius: 50%;
+  color: var(--col-bingo-text);
+  padding: calc(var(--step) / 2);
+  margin: 0;
+}
+.container #bingo-grid .bingo-ball--teens {
+  background-color: var(--col-bingo2);
+  box-shadow: 0px 9px 14px -8px var(--col-bingo2);
+  grid-column: 2;
+}
+.container #bingo-grid .bingo-ball--twenties {
+  background-color: var(--col-bingo3);
+  box-shadow: 0px 9px 14px -8px var(--col-bingo3);
+  grid-column: 3;
+}
+.container #bingo-grid .bingo-ball--thirties {
+  background-color: var(--col-bingo4);
+  box-shadow: 0px 9px 14px -8px var(--col-bingo4);
+  grid-column: 4;
+}
+.container #bingo-grid .bingo-ball--fourties {
+  background-color: var(--col-bingo5);
+  box-shadow: 0px 9px 14px -8px var(--col-bingo5);
+  grid-column: 5;
+}
+
+
+
+@keyframes example {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
