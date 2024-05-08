@@ -39,7 +39,7 @@
                 </div>
             </div> -->
 
-            <div class="container-fluid bg-white" style="position: fixed;z-index: 9;top: 0 !important;">
+            <div class="container-fluid bg-white" style="position: fixed;z-index: 9;top: -2px !important;">
                 <div class="container px-0">
                     <nav class="navbar navbar-light navbar-expand-xl">
                         <a href="/" class="navbar-brand mt-3">
@@ -415,7 +415,7 @@
             <div class="py-0">
                 <div class="tab-class mb-4">
                     <div class="row g-4">
-                        <div class="col-lg-3 col-xl-2 scroll container m-block m-none bg-white" style="position: fixed;z-index: 9;margin-top: 100px;left:0;">
+                        <div class="col-lg-3 col-xl-2 scroll container m-block m-none bg-white" style="position: fixed;z-index: 9;margin-top: 110px;left:0;">
                             <div class="row g-4">
                                 <div class="col-12">
                                     <div class="p-3 rounded border">
