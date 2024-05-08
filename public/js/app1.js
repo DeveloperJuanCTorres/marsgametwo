@@ -372,6 +372,7 @@
         $('#juegos').addClass('d-none')
         $('#nosotros').removeClass('d-block')
         $('#nosotros').addClass('d-none')
+        $('#mobile_menwrap').removeClass('active')
     })
 
     $('#perfilclose').click(function () {

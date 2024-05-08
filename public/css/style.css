@@ -611,6 +611,7 @@ ul {
   width: 100%;
   justify-content: space-evenly;
   overflow: auto;
+  padding-left: 0px !important;
 }
 
 .card-item {

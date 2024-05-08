@@ -1656,7 +1656,7 @@
                         <i class="lab la-rocketchat text-white mx-4" style="font-size: 30px;"></i>
                         <span class="text-white">Loby</span>  
                     </a>  
-                    <a href="#" class="w-100 rounded btn btn-info d-flex align-items-center p-3 mb-2">
+                    <a href="javascript:void(0)" class="w-100 rounded btn btn-info d-flex align-items-center p-3 mb-2 open_premios">
                         <i class="las la-award text-white mx-4" style="font-size: 30px;"></i>
                         <span class="text-white">Premios</span>  
                     </a>                                               
