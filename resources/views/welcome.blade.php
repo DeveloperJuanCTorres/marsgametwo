@@ -438,7 +438,7 @@
                                                     <i class="lab la-rocketchat text-white" style="font-size: 30px;"></i>
                                                     <span class="text-white ml-2">Loby</span>  
                                                 </a>  
-                                                <a href="#" class="w-100 rounded btn btn-info d-flex align-items-center p-3 mb-2">
+                                                <a href="javascript:void(0)" class="w-100 rounded btn btn-info d-flex align-items-center p-3 mb-2 open_premios">
                                                     <i class="las la-award text-white" style="font-size: 30px;"></i>   
                                                     <span class="text-white ml-2">Premios</span>  
                                                 </a>                                               
@@ -1287,6 +1287,90 @@
                             </div>
                         </div>
                         <!-- FIN DEL CONTENIDO DE CONTACTANOS -->
+
+                        <!-- CONTENIDO DE PREMIOS -->
+                        <div class="col-lg-6 col-xl-7 premios d-none" id="premios" style="margin-top: 100px;">
+                            <div class="border-bottom mb-4">
+                                <h2 class="my-4 claseh2 text-azul">Premios</h2>
+                            </div>
+                            <ul class="card-container">
+
+                            <li class="card-item">
+                                <div class="card">
+                                <img class="card-image"
+                                    src="https://images.blz-contentstack.com/v3/assets/blt2477dcaf4ebd440c/blt363a2e79218c1906/5cef225a578308e4094573d0/ashe-screenshot-002.jpg">
+                                </div>
+                                <div class="card-onhover">
+                                <div class="card-video">
+                                    <iframe src="https://www.youtube.com/embed/yvT9wKCrEyo" frameborder="0"
+                                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                                <div class="card-info">
+                                    <div class="card-title">ASHE</div>
+                                    <p class="card-text">Ashe quickly fires her rifle from the hip or uses her weapon’s aim-down sights to line
+                                    up
+                                    a high damage shot at the cost of fire-rate.</p>
+                                </div>
+                                </div>
+                            </li>
+
+                            <li class="card-item">
+                                <div class="card">
+                                <img class="card-image"
+                                    src="https://images.blz-contentstack.com/v3/assets/blt2477dcaf4ebd440c/bltfde27a4ba96fcb91/5cef227a7b48be290a7f87fa/dva-screenshot-001.jpg">
+                                </div>
+                                <div class="card-onhover">
+                                <div class="card-video">
+                                    <iframe src="https://www.youtube.com/embed/q7j2d6YCQbg" frameborder="0"
+                                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                                <div class="card-info">
+                                    <div class="card-title">D.Va</div>
+                                    <p class="card-text">D.Va is a former professional gamer who now uses her skills to pilot a state-of-the-art
+                                    mech in defense of her homeland.</p>
+                                </div>
+                                </div>
+                            </li>
+
+
+                            <li class="card-item">
+                                <div class="card">
+                                <img class="card-image"
+                                    src="https://images.blz-contentstack.com/v3/assets/blt2477dcaf4ebd440c/bltf18a64d8ec09ffdb/5cef22cd7b48be290a7f8830/moira-screenshot-004.jpg">
+                                </div>
+                                <div class="card-onhover">
+                                <div class="card-video">
+                                    <iframe src="https://www.youtube.com/embed/8tLopqeL9s8" frameborder="0"
+                                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                                <div class="card-info">
+                                    <div class="card-title">MOIRA</div>
+                                    <p class="card-text">Equal parts brilliant and controversial, scientist Moira O'Deorain is on the cutting
+                                    edge of genetic engineering, searching for a way to rewrite the fundamental building blocks of life.</p>
+                                </div>
+                                </div>
+                            </li>
+                            <li class="card-item">
+                                <div class="card">
+                                <img class="card-image"
+                                    src="https://images.blz-contentstack.com/v3/assets/blt2477dcaf4ebd440c/blt363a2e79218c1906/5cef225a578308e4094573d0/ashe-screenshot-002.jpg">
+                                </div>
+                                <div class="card-onhover">
+                                <div class="card-video">
+                                    <iframe src="https://www.youtube.com/embed/yvT9wKCrEyo" frameborder="0"
+                                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                                <div class="card-info">
+                                    <div class="card-title">ASHE</div>
+                                    <p class="card-text">Ashe quickly fires her rifle from the hip or uses her weapon’s aim-down sights to line
+                                    up
+                                    a high damage shot at the cost of fire-rate.</p>
+                                </div>
+                                </div>
+                            </li>
+                            </ul>
+                        </div>
+                        <!-- FIN CONTENIDO DE PREMIOS -->
                         <div class="col-lg-3 col-xl-3 scroll container m-block m-none bg-white" style="position: fixed;z-index: 9999;right:0;" id="div-right">
                             <div class="row g-4">
                                 <div class="col-12">
