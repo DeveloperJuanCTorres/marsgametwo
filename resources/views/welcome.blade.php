@@ -39,7 +39,7 @@
                 </div>
             </div> -->
 
-            <div class="container-fluid bg-white" style="position: fixed;z-index: 9;">
+            <div class="container-fluid bg-white" style="position: fixed;z-index: 9;top: 0 !important;">
                 <div class="container px-0">
                     <nav class="navbar navbar-light navbar-expand-xl">
                         <a href="/" class="navbar-brand mt-3">
