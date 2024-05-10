@@ -128,7 +128,7 @@
 
           <div>
               <div class="p-4 rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100 ">
-                <div class="h-[calc(50vh)] px-3 py-2 overflow-auto">
+                <div class="h-[calc(25vh)] px-3 py-2 overflow-auto">
                     {{-- El contenido de nuestro chat --}}
                     @foreach ($this->messages as $message)
                         <div class="flex {{ $message->user_id == auth()->id() ? 'justify-end' : '' }} mb-2">
