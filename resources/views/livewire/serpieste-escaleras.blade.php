@@ -126,7 +126,7 @@
           </div>
 
           <div>
-              <div class="p-4 rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100 ">
+              <div class="p-2 rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100 ">
                 <div class="h-[calc(25vh)] px-3 py-2 overflow-auto">
                     {{-- El contenido de nuestro chat --}}
                     @foreach ($this->messages as $message)
@@ -144,20 +144,17 @@
                             </div>
                         </div>
                     @endforeach
-                    <div style="height: 25px"></div>
+                    <div style="height: 30px"></div>
                     <span id="final-movil"></span>
                 </div>
                 <div class="py-2 px-4 bg-gray-200">
                     <span class="mx-2 cursor-pointer" onclick="copiarEmoji('😀')">😀</span>
-                    <span class="mx-2 cursor-pointer"  onclick="copiarEmoji('😁')">😁</span>
                     <span class="mx-2 cursor-pointer"  onclick="copiarEmoji('😂')">😂</span>
-                    <span class="mx-2 cursor-pointer"  onclick="copiarEmoji('😅')">😅</span>
                     <span class="mx-2 cursor-pointer" onclick="copiarEmoji('😍')">😍</span>
                     <span class="mx-2 cursor-pointer" onclick="copiarEmoji('😈')">😈</span>
                     <span class="mx-2 cursor-pointer" onclick="copiarEmoji('😉')">😉</span>
                     <span class="mx-2 cursor-pointer" onclick="copiarEmoji('😡')">😡</span>
                     <span class="mx-2 cursor-pointer" onclick="copiarEmoji('😭')">😭</span>
-                    <span class="mx-2 cursor-pointer" onclick="copiarEmoji('🤑')">🤑</span>
                     <span class="mx-2 cursor-pointer" onclick="copiarEmoji('🤩')">🤩</span>
                 </div>
                 
