@@ -190,7 +190,10 @@
                   desktop.scrollIntoView(true);
               }
               if(movil){
-                  movil.scrollIntoView(true);
+                  movil.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start",
+                    });
               }
           });
       </script>
