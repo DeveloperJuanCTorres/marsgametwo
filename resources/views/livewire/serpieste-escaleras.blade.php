@@ -1,7 +1,6 @@
 <div  class="bg-gray-100 shadow border border-gray-300 overflow-hidden ">
     <div class="grid grid-cols-6 divide-x divide-gray-200">
-        <div class="h-[calc(100vh)] col-span-6 xl:col-span-4 lg:col-span-4 sm:col-span-6 bg-white bg-gamer" wire:ignore>
-
+        <div class="h-[calc(98vh)] col-span-6 xl:col-span-4 lg:col-span-4 sm:col-span-6 bg-white bg-gamer" wire:ignore>
           <div class="gameBoard" id="gameBoardOuter">
             <div id="gameBoard" class="gameBoardInner"></div>
             <div class="gameInterface">
@@ -53,7 +52,7 @@
         </div>
 
         
-          <div class="col-span-6 xl:col-span-2 lg:col-span-2 sm:col-span-6 chat-desktop">
+        <div class="col-span-6 xl:col-span-2 lg:col-span-2 sm:col-span-6 chat-desktop">
             
                 <div class="bg-gray-50 h-16 flex items-center px-4 border-b-2 border-gray-200 justify-between">
                     <img src="{{asset('img/logo.png')}}"  alt="logo" class="max-w-40">
