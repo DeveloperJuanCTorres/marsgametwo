@@ -1,6 +1,6 @@
 <div  class="bg-gray-100 shadow border border-gray-300 overflow-hidden ">
     <div class="grid grid-cols-6 divide-x divide-gray-200">
-        <div class="h-[calc(100vh)] col-span-6 sm:col-span-4 bg-white bg-gamer" wire:ignore>
+        <div class="h-[calc(100vh)] col-span-6 xl:col-span-4 lg:col-span-4 sm:col-span-6 bg-white bg-gamer" wire:ignore>
 
           <div class="gameBoard" id="gameBoardOuter">
             <div id="gameBoard" class="gameBoardInner"></div>
@@ -50,14 +50,11 @@
               <button onclick="app.reset()">Play Again</button>
             </div>
           </div>
-
-
         </div>
 
-        <div class="col-span-6 sm:col-span-2 ">
-            <div class="hidden 2xl:block xl:block lg:block">
-                
-          
+        
+          <div class="col-span-6 xl:col-span-2 lg:col-span-2 sm:col-span-6 chat-desktop">
+            
                 <div class="bg-gray-50 h-16 flex items-center px-4 border-b-2 border-gray-200 justify-between">
                     <img src="{{asset('img/logo.png')}}"  alt="logo" class="max-w-40">
                     <a href="/" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Salir del juego</a>
@@ -111,12 +108,12 @@
                     </button>
                 </form>
 
-            </div>
-        </div>
+          
+      </div>
         
     </div>
 
-    <div class="2xl:hidden xl:hidden lg:hidden">
+    <div class="chat-mobil">
       <div id="drawer-swipe" class="fixed z-40 w-full overflow-y-auto bg-white border-t border-gray-300 rounded-t-lg  transition-transform bottom-0 left-0 right-0"
         :class="{'transform-none': sidebarOpen,'translate-y-full bottom-[60px]': !sidebarOpen}"> 
 
