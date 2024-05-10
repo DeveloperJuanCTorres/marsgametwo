@@ -144,8 +144,8 @@
                             </div>
                         </div>
                     @endforeach
-                    <div style="height: 55px"></div>
-                    <span id="final"></span>
+                    <div style="height: 25px"></div>
+                    <span id="final-movil"></span>
                 </div>
                 <div class="py-2 px-4 bg-gray-200">
                     <span class="mx-2 cursor-pointer" onclick="copiarEmoji('😀')">😀</span>
@@ -186,9 +186,14 @@
               
           }
           Livewire.on('scrollIntoView', function() {
-              var aux = document.getElementById('final');
-              if(aux){
-                  aux.scrollIntoView(true);
+            console.log('scrolll');
+              var desktop = document.getElementById('final');
+              var movil = document.getElementById('final-movil');
+              if(desktop){
+                  desktop.scrollIntoView(true);
+              }
+              if(movil){
+                  movil.scrollIntoView(true);
               }
           });
       </script>

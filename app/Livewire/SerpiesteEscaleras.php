@@ -67,6 +67,7 @@ class SerpiesteEscaleras extends Component
         
         Notification::send($this->adversary, new \App\Notifications\NewMessage());
         $this->reset('bodyMessage');
+        // $this->dispatch('scrollIntoView');
     }
 
     public function chatHere($users){
