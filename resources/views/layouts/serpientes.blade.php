@@ -32,7 +32,7 @@
         @stack('js')
         <div class="2xl:hidden xl:hidden lg:hidden"
         :class="{
-        'bg-gray-900/50 dark:bg-gray-900/80 fixed inset-0 z-30': sidebarOpen,
+        'bg-gray-900/50  fixed inset-0 z-30': sidebarOpen,
         '': !sidebarOpen
         }"></div>
     </body>
