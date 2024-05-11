@@ -23,15 +23,28 @@ class SerpiesteEscaleras extends Component
         $this->dispatch('playgame');
     }
 
+    // #[On('move')] 
+    // public function move($move){
+    //     $now = date('H:i:s');
+    //     $this->game->moves()->create([
+    //         'user_id'=> auth()->user()->id,
+    //         'move'=>$move,
+    //         'timer_end'=>$now,
+    //     ]);
+    //     // Notification::send($this->rival, new \App\Notifications\NewMove());
+    // }
+
     #[On('move')] 
-    public function move($move){
+    public function move($move,$color){
         $now = date('H:i:s');
+        $jsonString = json_encode($move);
         $this->game->moves()->create([
             'user_id'=> auth()->user()->id,
-            'move'=>$move,
+            'move'=>$jsonString,
+            'color'=>$color,
             'timer_end'=>$now,
         ]);
-        // Notification::send($this->rival, new \App\Notifications\NewMove());
+        //Notification::send($this->userAdversary, new \App\Notifications\NewMove());
     }
 
     //Oyentes

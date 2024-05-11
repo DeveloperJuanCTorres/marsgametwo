@@ -1,22 +1,3 @@
-/*
-Copyright 2014 David Bau.
-Permission is hereby granted, free of charge, to any person obtaining
-a copy of this software and associated documentation files (the
-"Software"), to deal in the Software without restriction, including
-without limitation the rights to use, copy, modify, merge, publish,
-distribute, sublicense, and/or sell copies of the Software, and to
-permit persons to whom the Software is furnished to do so, subject to
-the following conditions:
-The above copyright notice and this permission notice shall be
-included in all copies or substantial portions of the Software.
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-*/
 
 (function (pool, math) {
     //
@@ -237,6 +218,10 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
   Math    // math: package containing random, pow, and seedrandom
 );
 
+
+
+
+
 var app = (function() {
 
     var config = {
@@ -342,17 +327,19 @@ var app = (function() {
         {
             name: "Your Turn",
             win: "You Win!",
-            position: 0,
+            position: 10,
             element: null,
             color: 'cyan'
         },
         {
             name: "Computer",
             win: "Computer Wins!",
-            position: 0,
+            position: 10,
             element: null,
             color: 'red'
         }
+
+        
     ];
 
     function getRandom(n) {
@@ -425,7 +412,12 @@ var app = (function() {
 
         gridReference = [];
         buildGameBoard();
-
+        //agregé yo dante //insertar fichas de inicio
+        console.log('agregar fichas');
+        ficha1 = players[0];
+        buildMarker(ficha1);
+        ficha2 = players[1];
+        buildMarker(ficha2);
     }
 
     function fixPositionCollisions() {
@@ -863,7 +855,7 @@ var app = (function() {
 
         var startPoint = getPathPoints(path)[1].split(',');
         startPoint[1] = startPoint[1].split(/Q/)[0];
-
+        //revisar el eror
         marker.attr("transform", "translate(" + startPoint + ")");
         
         transition();
@@ -900,14 +892,21 @@ var app = (function() {
         if (inPlay) return;
         inPlay = true;
         button.className = "disabled";
-
         currentPlayer = players[currentPlayerIndex];
 
+        console.log('init el play');
+        console.log(currentPlayerIndex);
+        console.log('--------------');
         roll(function (n) {
             n = Math.min(endPosition - currentPlayer.position, n);
+            console.log('medio 1');
             doHop(n);
+            console.log('medio 2');
         });
-        
+
+        console.log('termino el play');
+        //  Livewire.dispatch('move', { move: currentPlayer,color:'red' });
+
     }
 
     function doHop(n) {
@@ -918,10 +917,13 @@ var app = (function() {
                 n--;
                 if (currentPlayer.position > 0) {
                     var path = buildHop(currentPlayer.position);
+                    console.log('----control-----');
+                    console.log(path);
                     currentPlayer.position++;
                     animate(path, currentPlayer.element, 300, -counterRadius, -counterRadius, function () { doHop(n) });
                 } else {
                     {
+                        console.log('construir ficha');
                         currentPlayer.position = 1;
                         buildMarker(currentPlayer);
                     }
