@@ -269,3 +269,25 @@
 	  }
 	}
   }
+
+  @media (min-width: 1000px) {
+	.chat-desktop{
+		display: block;
+	}
+	.chat-mobil{
+		display: none;
+	}
+
+
+  }
+
+  
+  @media (max-width: 999px) {
+	.chat-desktop{
+		display: none;
+	}
+	.chat-mobil{
+		display: block;
+	}
+
+  }

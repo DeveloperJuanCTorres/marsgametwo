@@ -8,8 +8,9 @@ use App\Models\User;
 use Illuminate\Support\Facades\Notification;
 use Livewire\Attributes\On; 
 
-class Damas extends Component
+class Bingo extends Component
 {
+
     public $game, $userAdversary;
     public $chat;
     public $users;
@@ -123,17 +124,9 @@ class Damas extends Component
         }); 
     }
 
-    //Game
-    // public function play(){
-    //     $pop = rand(1,6);
-    //     $this->dispatch('dados',pop: $pop);
-    // }
 
     public function render()
     {
-        $this->InitBoard();
-        $this->dispatch('notificateEchoJs',$this->draughts, $this->player,$this->myColor);
-        //$this->dispatch('notificateEchoJs');
-        return view('livewire.damas')->layout('layouts.damas');
+        return view('livewire.bingo')->layout('layouts.bingo');
     }
 }

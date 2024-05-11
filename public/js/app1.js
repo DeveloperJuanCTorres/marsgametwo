@@ -303,6 +303,8 @@
         $('#nosotros').addClass('d-none')
         $('#contactanos').removeClass('d-block')
         $('#contactanos').addClass('d-none')
+        $('#premios').removeClass('d-block')
+        $('#premios').addClass('d-none')
     })
 
     // Loby
@@ -316,6 +318,8 @@
         $('#nosotros').addClass('d-none')
         $('#contactanos').removeClass('d-block')
         $('#contactanos').addClass('d-none')
+        $('#premios').removeClass('d-block')
+        $('#premios').addClass('d-none')
     })
 
     // Nosotros
@@ -331,6 +335,8 @@
         $('#juegos').addClass('d-none')
         $('#contactanos').removeClass('d-block')
         $('#contactanos').addClass('d-none')
+        $('#premios').removeClass('d-block')
+        $('#premios').addClass('d-none')
     })
 
     // Contactanos
@@ -346,6 +352,27 @@
         $('#juegos').addClass('d-none')
         $('#nosotros').removeClass('d-block')
         $('#nosotros').addClass('d-none')
+        $('#premios').removeClass('d-block')
+        $('#premios').addClass('d-none')
+    })
+
+    // Premios
+    $('.open_premios').click(function () {
+        $('#juegos_nav').removeClass('active')
+        $('#contactanos_nav').removeClass('active')
+        $('#nosotros_nav').removeClass('active')
+
+        $('#premios').removeClass('d-none')
+        $('#premios').addClass('d-block')
+        $('#contactanos').removeClass('d-block')
+        $('#contactanos').addClass('d-none')
+        $('#loby').removeClass('d-block')
+        $('#loby').addClass('d-none')
+        $('#juegos').removeClass('d-block')
+        $('#juegos').addClass('d-none')
+        $('#nosotros').removeClass('d-block')
+        $('#nosotros').addClass('d-none')
+        $('#mobile_menwrap').removeClass('active')
     })
 
     $('#perfilclose').click(function () {

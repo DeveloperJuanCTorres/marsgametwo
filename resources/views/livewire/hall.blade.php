@@ -49,6 +49,9 @@
                                             @case('Ludo')
                                                 <a href="{{route('game.ludo',['game'=>$game])}}" class="btn btn-green"> Ir al Juego</a>
                                                 @break
+                                            @case('Bingo')
+                                                <a href="{{route('bingo.ludo',['game'=>$game])}}" class="btn btn-green"> Ir al Juego</a>
+                                                @break
                                         @endswitch
                                        
                                     </div>
@@ -89,6 +92,7 @@
                                         <button wire:click="create_hall({{$user->id}},'Ajedrez')" class="btn btn-blue" >Ajedrez</button>
                                         <button wire:click="create_hall({{$user->id}},'Damas')" class="btn btn-blue" >Damas</button>
                                         <button wire:click="create_hall({{$user->id}},'Ludo')" class="btn btn-blue" >Ludo</button>
+                                        <button wire:click="create_hall({{$user->id}},'Bingo')" class="btn btn-blue" >Bingo</button>
                                     </div>
                                 </td>
                             </tr>
