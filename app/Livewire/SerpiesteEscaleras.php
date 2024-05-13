@@ -17,7 +17,7 @@ class SerpiesteEscaleras extends Component
 
     public $draughts;
     public $player;
-    public $myColor="rosa";
+    public $myColor="red";
 
 
     public function mount(Game $game){
@@ -30,7 +30,7 @@ class SerpiesteEscaleras extends Component
     }
 
     public function InitBoard(){
-        $draughtsInitial = [];
+        $draughtsInitial = "[{'name':'Your Turn','win':'You Win!','position':0,'element':[[[]]],'color':'cyan'},{'name':'Computer','win':'Computer Wins!','position':0,'element':[[[]]],'color':'red'}]";
         //consulto el ultimo movimiento para dibujar el tablero si no hay moviemeos agrego el tablero inicial
         $stringMove = $this->game->moves()->get()->last()?? [];
         if($stringMove) {
@@ -39,21 +39,10 @@ class SerpiesteEscaleras extends Component
         } else{
             // $myUser = $this->game->myUser;
             //$this->player = $myUser->pivot->color; //obtengo el color que le corresponde en la tabla pivot
-            $this->player = 'W';
+            $this->player = 'red';
             $this->draughts = $draughtsInitial;
         }
     }
-
-    // #[On('move')] 
-    // public function move($move){
-    //     $now = date('H:i:s');
-    //     $this->game->moves()->create([
-    //         'user_id'=> auth()->user()->id,
-    //         'move'=>$move,
-    //         'timer_end'=>$now,
-    //     ]);
-    //     // Notification::send($this->rival, new \App\Notifications\NewMove());
-    // }
 
     #[On('move')] 
     public function move($move,$color){

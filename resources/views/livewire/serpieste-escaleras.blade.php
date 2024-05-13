@@ -43,6 +43,7 @@
               </div>
               {{-- <button id="play" onclick="app.play()">Roll</button> --}}
               <button id="play">Play USER</button>
+              <button id="computadoro">Computadora</button>
             </div>
             <!-- <p class="credits">Ing. Juan Carlos Torres del Castillo</p> -->
             <div class="dialog" id="dialog">
@@ -174,7 +175,6 @@
     @push('js')
       <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
       <script src="{{asset('js/serpientes.js')}}"></script>
-
       <script>
           document.addEventListener('livewire:initialized', function () {
                 var tablero = @this.draughts;
@@ -182,32 +182,42 @@
                 loadingTable(tablero,playercolor);
             })
       </script> 
-
-
       <script>
-         
+          let p = document.getElementById("play"); // Encuentra el elemento "p" en el sitio
+          p.onclick = iniciarSerpientes; // Agrega función onclick al elemento
+          
+          function iniciarSerpientes(evento) {
+            app.play();
+          }
+
+
+          let o = document.getElementById("computadoro");
+          o.onclick = computadoraPlay;
+
+          function computadoraPlay(evento){
+            console.log('xxxxxx----xxxxxx');
+            app.opponent();
+            
+          }
+
+
+          Livewire.on('notificateEchoJs', (event) => {
+                console.log('movimiento del oponente desde js');
+                // if(event[1] == event[2]){
+                //     //Activo el tablero para el turno que le coresponde
+                //     document.getElementById('boardDiv').classList.remove('elementor-toggle');
+                // }else{
+                //     document.getElementById('boardDiv').classList.add('elementor-toggle');
+                // }
+                app.opponent();
+            });
+
           function copiarEmoji(emoji) {
               if(@this.bodyMessage){
                   @this.bodyMessage =  @this.bodyMessage + emoji;
               }else{
                   @this.bodyMessage =  emoji;
               }
-              
-          }
-
-          // Livewire.on('notificateEchoJs', (event) => {
-          //       console.log('serpientes HTML');
-          //       loadingTable(event[0],event[1]);
-          // });
-
-
-          let p = document.getElementById("play"); // Encuentra el elemento "p" en el sitio
-          p.onclick = muestraAlerta; // Agrega función onclick al elemento
-            
-          function muestraAlerta(evento) {
-            app.play();
-            // var players = app.save();
-            // Livewire.dispatch('move', { move: players,color:'red' });
           }
 
           Livewire.on('scrollIntoView', function() {

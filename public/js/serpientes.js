@@ -225,8 +225,6 @@
 
 var app = (function() {
     
-  
-
     var config = {
         gameBoardSize: 600,
         tilesPerAxis: 10,
@@ -387,16 +385,15 @@ var app = (function() {
         gridReference[index] = { x: xPos, y: yPos };
     }
 
-    function run(fichas) {
+    function run(fichas,playercolor) {
 
-        console.log('crear tablero')
+        console.log('crear tablero');
         players = fichas;
         button = document.getElementById("play");
         dialog = document.getElementById("dialog");
         dialogText = document.getElementById("dialogText");
         // currentPlayerIndex = getRandom(2);
         currentPlayerIndex = 0; //Inicia el posciocion1 del array players
-
         setCurrentPlayer();
 
         basisInterpolator = d3.svg.line()
@@ -417,7 +414,7 @@ var app = (function() {
         gridReference = [];
         buildGameBoard();
         //agregé yo dante //insertar fichas de inicio
-        console.log('agregar fichas');
+        console.log('Dibujar Ficha');
         ficha1 = players[0];
         buildMarker(ficha1);
         ficha2 = players[1];
@@ -821,11 +818,12 @@ var app = (function() {
         if (players[currentPlayerIndex].name === "Computer") {
             var computerTimeout = setTimeout(function () {
                 inPlay = false;
-                console.log('compu play---2');
+                console.log('Compu play---0');
                 play();
                 clearTimeout(computerTimeout);
             }, 2000);
         } else {
+            console.log('Persona play---1');
             inPlay = false;
             button.className = "";
             if (pendingResize) {
@@ -892,8 +890,6 @@ var app = (function() {
     }
 
     function play() {
-
-        console.log('compu play---1');
         if (inPlay) return;
         inPlay = true;
         button.className = "disabled";
@@ -903,7 +899,6 @@ var app = (function() {
             n = Math.min(endPosition - currentPlayer.position, n);
             doHop(n);
         });
-        
     }
 
     function doHop(n) {
@@ -963,13 +958,15 @@ var app = (function() {
         //     }
         //     // setCurrentPlayer();
         // }
+
         console.log('cambiar de ficha');
-        Livewire.dispatch('move', { move: players,color:'red' })
+        // Livewire.dispatch('move', { move: players,color:'red' })
     }
 
-    function save(){
-        return players;
-    }
+   function opponent(){
+     //currentPlayerIndex = 1; 
+    // setCurrentPlayer();
+   }
 
     return {
         run: function (fichas) {
@@ -988,14 +985,13 @@ var app = (function() {
             }, 200);
         },
         play: play,
-        save: save
+        opponent: opponent
     }
 }());
 
 function loadingTable(fichas,playercolor) {
-    console.log(fichas);
     console.log('FUNCION js')
-    app.run(fichas);
+    app.run(fichas,playercolor);
 }
 
 //  app.run();
