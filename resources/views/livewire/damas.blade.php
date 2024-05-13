@@ -95,6 +95,7 @@
                     document.getElementById("message").focus();
                 }
             }
+            
             Livewire.on('notificateEchoJs', (event) => {
                 console.log('movimiento del oponente desde js');
                 if(event[1] == event[2]){
@@ -105,6 +106,7 @@
                 }
                 tester(2,event[0],event[1]);
             });
+
             Livewire.on('scrollIntoView', function() {
                 var aux = document.getElementById('final');
                 if(aux){

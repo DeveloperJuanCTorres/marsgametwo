@@ -15,12 +15,33 @@ class SerpiesteEscaleras extends Component
     public $users;
     public $bodyMessage;
 
+    public $draughts;
+    public $player;
+    public $myColor="rosa";
+
+
     public function mount(Game $game){
         $this->game = $game;
         $this->adversary = $game->users->where('id', '!=', auth()->id())->first();
         $this->users = collect();
         $this->chat = $this->game->messages()->get();
-        $this->dispatch('playgame');
+        // $this->dispatch('playgame');
+        $this->InitBoard();
+    }
+
+    public function InitBoard(){
+        $draughtsInitial = [];
+        //consulto el ultimo movimiento para dibujar el tablero si no hay moviemeos agrego el tablero inicial
+        $stringMove = $this->game->moves()->get()->last()?? [];
+        if($stringMove) {
+            $this->draughts = json_decode($stringMove->move);
+            $this->player =  $stringMove->color;
+        } else{
+            // $myUser = $this->game->myUser;
+            //$this->player = $myUser->pivot->color; //obtengo el color que le corresponde en la tabla pivot
+            $this->player = 'W';
+            $this->draughts = $draughtsInitial;
+        }
     }
 
     // #[On('move')] 
@@ -105,7 +126,8 @@ class SerpiesteEscaleras extends Component
     
     public function render()
     {
-        $this->dispatch('scrollIntoView');
+        // $this->dispatch('scrollIntoView');
+        $this->dispatch('notificateEchoJs',$this->draughts, $this->player,$this->myColor);
         return view('livewire.serpieste-escaleras')->layout('layouts.serpientes');
     }
 }

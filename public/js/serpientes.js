@@ -1,4 +1,5 @@
 
+
 (function (pool, math) {
     //
     // The following constants are related to IEEE 754 limits.
@@ -213,6 +214,8 @@
     }
 
     // End anonymous scope, and pass initial values.
+    
+
 })(
   [],     // pool: entropy pool starts empty
   Math    // math: package containing random, pow, and seedrandom
@@ -220,9 +223,9 @@
 
 
 
-
-
 var app = (function() {
+    
+  
 
     var config = {
         gameBoardSize: 600,
@@ -321,26 +324,24 @@ var app = (function() {
         seededRandom,
         inResize = false,
         pendingResize = false,
-        snakePositions;
-
-    var players = [
-        {
-            name: "Your Turn",
-            win: "You Win!",
-            position: 10,
-            element: null,
-            color: 'cyan'
-        },
-        {
-            name: "Computer",
-            win: "Computer Wins!",
-            position: 10,
-            element: null,
-            color: 'red'
-        }
-
-        
-    ];
+        snakePositions,
+        players;
+    // var players = [
+    //     {
+    //         name: "Your Turn",
+    //         win: "You Win!",
+    //         position: 10,
+    //         element: null,
+    //         color: 'cyan'
+    //     },
+    //     {
+    //         name: "Computer",
+    //         win: "Computer Wins!",
+    //         position: 8,
+    //         element: null,
+    //         color: 'red'
+    //     }  
+    // ];
 
     function getRandom(n) {
         return Math.floor(Math.random() * n);
@@ -386,13 +387,16 @@ var app = (function() {
         gridReference[index] = { x: xPos, y: yPos };
     }
 
-    function run() {
+    function run(fichas) {
 
+        console.log('crear tablero')
+        players = fichas;
         button = document.getElementById("play");
         dialog = document.getElementById("dialog");
         dialogText = document.getElementById("dialogText");
+        // currentPlayerIndex = getRandom(2);
+        currentPlayerIndex = 0; //Inicia el posciocion1 del array players
 
-        currentPlayerIndex = getRandom(2);
         setCurrentPlayer();
 
         basisInterpolator = d3.svg.line()
@@ -817,6 +821,7 @@ var app = (function() {
         if (players[currentPlayerIndex].name === "Computer") {
             var computerTimeout = setTimeout(function () {
                 inPlay = false;
+                console.log('compu play---2');
                 play();
                 clearTimeout(computerTimeout);
             }, 2000);
@@ -827,7 +832,7 @@ var app = (function() {
                 inResize = false;
                 resize();
             }
-        }
+        }  
     }
 
     function roll(callback) {
@@ -855,7 +860,6 @@ var app = (function() {
 
         var startPoint = getPathPoints(path)[1].split(',');
         startPoint[1] = startPoint[1].split(/Q/)[0];
-        //revisar el eror
         marker.attr("transform", "translate(" + startPoint + ")");
         
         transition();
@@ -889,24 +893,17 @@ var app = (function() {
 
     function play() {
 
+        console.log('compu play---1');
         if (inPlay) return;
         inPlay = true;
         button.className = "disabled";
         currentPlayer = players[currentPlayerIndex];
 
-        console.log('init el play');
-        console.log(currentPlayerIndex);
-        console.log('--------------');
         roll(function (n) {
             n = Math.min(endPosition - currentPlayer.position, n);
-            console.log('medio 1');
             doHop(n);
-            console.log('medio 2');
         });
-
-        console.log('termino el play');
-        //  Livewire.dispatch('move', { move: currentPlayer,color:'red' });
-
+        
     }
 
     function doHop(n) {
@@ -929,7 +926,7 @@ var app = (function() {
                     }
                     doHop(n);
                 }
-
+                console.log('----FINN 00000-----');
             } else {
 
                 var hotSpot = hotSpots[currentPlayer.position];
@@ -951,41 +948,36 @@ var app = (function() {
 
     function finishPlay() {
 
-        if (currentPlayer.position === endPosition) {
-            dialogText.innerText = currentPlayer.win;
-            dialog.className = "dialog show";
+        // En esta funcion se realiza el cambio de turno para la ficha 
 
-        } else {
+        // if (currentPlayer.position === endPosition) {
+        //     dialogText.innerText = currentPlayer.win;
+        //     dialog.className = "dialog show";
 
-            fixPositionCollisions();
-            currentPlayerIndex++;
-            if (currentPlayerIndex === players.length) {
-                currentPlayerIndex = 0;
-            }
-            setCurrentPlayer();
-        }
+        // } else {
+
+        //     fixPositionCollisions();
+        //     currentPlayerIndex++;
+        //     if (currentPlayerIndex === players.length) {
+        //         currentPlayerIndex = 0;
+        //     }
+        //     // setCurrentPlayer();
+        // }
+        console.log('cambiar de ficha');
+        Livewire.dispatch('move', { move: players,color:'red' })
     }
 
-    function reset() {
-        players.forEach(function (player) {
-            player.position = 0;
-            player.element.remove();
-            player.element = null;
-        });
-        currentPlayerIndex = getRandom(2);
-        setCurrentPlayer();
-        dialog.className = "dialog";
-        button.className = "";
-        inPlay = false;
+    function save(){
+        return players;
     }
 
     return {
-        run: function () {
+        run: function (fichas) {
             var maxTries = 20;
             var interval = setInterval(function () {
                 if (typeof d3 !== "undefined") {
                     clearInterval(interval);
-                    run();
+                    run(fichas);
                 } else {
                     maxTries--;
                     if (maxTries === 0) {
@@ -996,8 +988,14 @@ var app = (function() {
             }, 200);
         },
         play: play,
-        reset: reset
+        save: save
     }
 }());
 
-app.run();
+function loadingTable(fichas,playercolor) {
+    console.log(fichas);
+    console.log('FUNCION js')
+    app.run(fichas);
+}
+
+//  app.run();

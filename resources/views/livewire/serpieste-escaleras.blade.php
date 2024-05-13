@@ -41,7 +41,8 @@
                 <div id="player0" class="player0"><span>You</span></div>
                 <div id="player1" class="player1"><span>Computer</span></div>
               </div>
-              <button id="play" onclick="app.play()">Roll</button>
+              {{-- <button id="play" onclick="app.play()">Roll</button> --}}
+              <button id="play">Play USER</button>
             </div>
             <!-- <p class="credits">Ing. Juan Carlos Torres del Castillo</p> -->
             <div class="dialog" id="dialog">
@@ -173,7 +174,18 @@
     @push('js')
       <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
       <script src="{{asset('js/serpientes.js')}}"></script>
+
       <script>
+          document.addEventListener('livewire:initialized', function () {
+                var tablero = @this.draughts;
+                var playercolor = @this.player;
+                loadingTable(tablero,playercolor);
+            })
+      </script> 
+
+
+      <script>
+         
           function copiarEmoji(emoji) {
               if(@this.bodyMessage){
                   @this.bodyMessage =  @this.bodyMessage + emoji;
@@ -182,6 +194,22 @@
               }
               
           }
+
+          // Livewire.on('notificateEchoJs', (event) => {
+          //       console.log('serpientes HTML');
+          //       loadingTable(event[0],event[1]);
+          // });
+
+
+          let p = document.getElementById("play"); // Encuentra el elemento "p" en el sitio
+          p.onclick = muestraAlerta; // Agrega función onclick al elemento
+            
+          function muestraAlerta(evento) {
+            app.play();
+            // var players = app.save();
+            // Livewire.dispatch('move', { move: players,color:'red' });
+          }
+
           Livewire.on('scrollIntoView', function() {
             console.log('scrolll');
               var desktop = document.getElementById('final');
