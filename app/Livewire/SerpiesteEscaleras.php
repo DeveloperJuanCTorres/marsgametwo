@@ -17,11 +17,14 @@ class SerpiesteEscaleras extends Component
 
     public $draughts;
     public $player;
-    public $myColor="red";
+    public $jump;
 
+    public $userAdversary;
 
     public function mount(Game $game){
         $this->game = $game;
+        $this->userAdversary = $game->userAdversary; 
+
         $this->adversary = $game->users->where('id', '!=', auth()->id())->first();
         $this->users = collect();
         $this->chat = $this->game->messages()->get();
@@ -30,31 +33,35 @@ class SerpiesteEscaleras extends Component
     }
 
     public function InitBoard(){
-        $draughtsInitial = "[{'name':'Your Turn','win':'You Win!','position':0,'element':[[[]]],'color':'cyan'},{'name':'Computer','win':'Computer Wins!','position':0,'element':[[[]]],'color':'red'}]";
+        $draughtsInitial = '[{"name":"Your Turn","win":"You Win!","position":5,"element":[[[]]],"color":"cyan"},{"name":"Computer","win":"Computer Wins!","position":8,"element":[[[]]],"color":"red"}]';
         //consulto el ultimo movimiento para dibujar el tablero si no hay moviemeos agrego el tablero inicial
         $stringMove = $this->game->moves()->get()->last()?? [];
         if($stringMove) {
             $this->draughts = json_decode($stringMove->move);
-            $this->player =  $stringMove->color;
+            $this->player =  $stringMove->position;
+            $this->jump =  $stringMove->jump;
         } else{
             // $myUser = $this->game->myUser;
             //$this->player = $myUser->pivot->color; //obtengo el color que le corresponde en la tabla pivot
-            $this->player = 'red';
-            $this->draughts = $draughtsInitial;
+            $this->player = 1;
+            $this->draughts = json_decode($draughtsInitial);
+            $this->jump = 0;
         }
     }
 
     #[On('move')] 
-    public function move($move,$color){
+    public function move($move,$position,$jump){
         $now = date('H:i:s');
         $jsonString = json_encode($move);
         $this->game->moves()->create([
             'user_id'=> auth()->user()->id,
             'move'=>$jsonString,
-            'color'=>$color,
+            'color'=>'',
+            'position'=>$position,
+            'jump'=>$jump,
             'timer_end'=>$now,
         ]);
-        //Notification::send($this->userAdversary, new \App\Notifications\NewMove());
+        Notification::send($this->userAdversary, new \App\Notifications\NewMove());
     }
 
     //Oyentes
@@ -63,7 +70,7 @@ class SerpiesteEscaleras extends Component
         $user_id = auth()->user()->id;
 
         return [
-            "echo-notification:App.Models.User.{$user_id},notification" => 'render',
+            "echo-notification:App.Models.User.{$user_id},notification" => 'playGame',
             "echo-presence:chat.1,here" => 'chatHere',
             "echo-presence:chat.1,joining" => 'chatJoining',
             "echo-presence:chat.1,leaving" => 'chatLeaving',
@@ -108,15 +115,20 @@ class SerpiesteEscaleras extends Component
     }
 
     //Game
-    public function play(){
-        $pop = rand(1,6);
-        $this->dispatch('dados',pop: $pop);
+    // public function play(){
+    //     $pop = rand(1,6);
+    //     $this->dispatch('dados',pop: $pop);
+    // }
+
+    public function playGame(){
+        $this->InitBoard();
+        $this->dispatch('notificateEchoJs',$this->draughts, $this->player,$this->jump);
     }
     
     public function render()
     {
         // $this->dispatch('scrollIntoView');
-        $this->dispatch('notificateEchoJs',$this->draughts, $this->player,$this->myColor);
+        //$this->dispatch('notificateEchoJs',$this->draughts, $this->player,$this->jump);
         return view('livewire.serpieste-escaleras')->layout('layouts.serpientes');
     }
 }

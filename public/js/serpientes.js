@@ -324,6 +324,9 @@ var app = (function() {
         pendingResize = false,
         snakePositions,
         players;
+    var numberJumps = 0;
+
+
     // var players = [
     //     {
     //         name: "Your Turn",
@@ -385,7 +388,7 @@ var app = (function() {
         gridReference[index] = { x: xPos, y: yPos };
     }
 
-    function run(fichas,playercolor) {
+    function run(fichas,position) {
 
         console.log('crear tablero');
         players = fichas;
@@ -393,7 +396,9 @@ var app = (function() {
         dialog = document.getElementById("dialog");
         dialogText = document.getElementById("dialogText");
         // currentPlayerIndex = getRandom(2);
-        currentPlayerIndex = 0; //Inicia el posciocion1 del array players
+        currentPlayerIndex = position; //Inicia el posciocion1 del array players
+        console.log('xxxxxx---xxxxx--xxx--xxx');
+        console.log(position);
         setCurrentPlayer();
 
         basisInterpolator = d3.svg.line()
@@ -816,12 +821,17 @@ var app = (function() {
         document.getElementById('player').innerText = players[currentPlayerIndex].name;
 
         if (players[currentPlayerIndex].name === "Computer") {
-            var computerTimeout = setTimeout(function () {
-                inPlay = false;
-                console.log('Compu play---0');
-                play();
-                clearTimeout(computerTimeout);
-            }, 2000);
+            console.log('Persona play---0');
+            inPlay = false;
+            button.className = "";
+            currentPlayerIndex = 1;
+            // var computerTimeout = setTimeout(function () {
+            //     inPlay = false;
+            //     console.log('Compu play---0');
+            //     play();
+            //     clearTimeout(computerTimeout);
+            // }, 2000);
+            
         } else {
             console.log('Persona play---1');
             inPlay = false;
@@ -836,6 +846,9 @@ var app = (function() {
     function roll(callback) {
         var diceElement = document.getElementById('dice');
         var tumbles = 3 + getRandom(5);
+        console.log('CASILLA A MOVER');
+        console.log(tumbles);
+
         var sequence = [];
         for (var i = 0; i < tumbles; i++) {
             sequence.push(getRandom(6) + 1);
@@ -889,6 +902,7 @@ var app = (function() {
             "," + (position.y - counterRadius + (offsetY ? offsetY : 0)) + ")";
     }
 
+
     function play() {
         if (inPlay) return;
         inPlay = true;
@@ -897,10 +911,18 @@ var app = (function() {
 
         roll(function (n) {
             n = Math.min(endPosition - currentPlayer.position, n);
+
+            numberJumps = n;
+            console.log('*-*-*-*-*');
+            console.log(numberJumps);
+            console.log('*-*-*-*-*');
             doHop(n);
         });
+        console.log('dante------->');
+        
     }
 
+ 
     function doHop(n) {
 
         var hopInterval = setInterval(function () {
@@ -936,45 +958,111 @@ var app = (function() {
                     finishPlay();
                 }
             }
-
             clearInterval(hopInterval);
         }, 50);
     }
 
     function finishPlay() {
-
         // En esta funcion se realiza el cambio de turno para la ficha 
+        if (currentPlayer.position === endPosition) {
+            dialogText.innerText = currentPlayer.win;
+            dialog.className = "dialog show";
+        } else {
+            fixPositionCollisions();
+            currentPlayerIndex++;
+            if (currentPlayerIndex === players.length) {
+                currentPlayerIndex = 0;
+            }
+            setCurrentPlayer();
+        }
 
-        // if (currentPlayer.position === endPosition) {
-        //     dialogText.innerText = currentPlayer.win;
-        //     dialog.className = "dialog show";
-
-        // } else {
-
-        //     fixPositionCollisions();
-        //     currentPlayerIndex++;
-        //     if (currentPlayerIndex === players.length) {
-        //         currentPlayerIndex = 0;
-        //     }
-        //     // setCurrentPlayer();
-        // }
-
-        console.log('cambiar de ficha');
-        // Livewire.dispatch('move', { move: players,color:'red' })
+        console.log('Guardar cambios');
+        console.log(numberJumps);
+        Livewire.dispatch('move', { move: players,position: currentPlayerIndex,jump: numberJumps })
     }
 
-   function opponent(){
-     //currentPlayerIndex = 1; 
-    // setCurrentPlayer();
-   }
+    function reset() {
+        players.forEach(function (player) {
+            player.position = 0;
+            player.element.remove();
+            player.element = null;
+        });
+        currentPlayerIndex = getRandom(2);
+        setCurrentPlayer();
+        dialog.className = "dialog";
+        button.className = "";
+        inPlay = false;
+    }
+
+    function finishJump(){
+        // En esta funcion se realiza el cambio de turno para la ficha 
+        if (currentPlayer.position === endPosition) {
+            dialogText.innerText = currentPlayer.win;
+            dialog.className = "dialog show";
+        } else {
+            fixPositionCollisions();
+            currentPlayerIndex++;
+            if (currentPlayerIndex === players.length) {
+                currentPlayerIndex = 0;
+            }
+            setCurrentPlayer();
+        }
+    }
+
+
+
+    function jumps(n) {
+
+        var hopInterval = setInterval(function () {
+
+            if (n > 0) {
+                n--;
+                if (currentPlayer.position > 0) {
+                    var path = buildHop(currentPlayer.position);
+                    currentPlayer.position++;
+                    animate(path, currentPlayer.element, 300, -counterRadius, -counterRadius, function () { jumps(n) });
+                } else {
+                    {
+                        currentPlayer.position = 1;
+                        buildMarker(currentPlayer);
+                    }
+                    jumps(n);
+                }
+            } else {
+
+                var hotSpot = hotSpots[currentPlayer.position];
+                if (hotSpot) {
+                    var hotPath = gameBoard.select("#" + hotSpot.path);
+                    animate(hotPath, currentPlayer.element, 2000, -counterRadius + hotSpot.xOffset, -counterRadius - hotSpot.yOffset,
+                        function () {
+                            currentPlayer.position = hotSpot.endPosition;
+                            finishJump();
+                        });
+                } else {
+                    finishJump();
+                }
+            }
+            clearInterval(hopInterval);
+        }, 50);
+    }
+
+    function opponent(count){
+        if (inPlay) return;
+        inPlay = true;
+        button.className = "disabled";
+        currentPlayer = players[currentPlayerIndex];
+        // 3 cantidad de casilla que se movera
+        jumps(count);
+        console.log('move opoente ');
+    }
 
     return {
-        run: function (fichas) {
+        run: function (fichas,position) {
             var maxTries = 20;
             var interval = setInterval(function () {
                 if (typeof d3 !== "undefined") {
                     clearInterval(interval);
-                    run(fichas);
+                    run(fichas,position);
                 } else {
                     maxTries--;
                     if (maxTries === 0) {
@@ -985,13 +1073,16 @@ var app = (function() {
             }, 200);
         },
         play: play,
-        opponent: opponent
+        reset: reset,
+        opponent: function(count){
+            opponent(count);
+        } 
     }
 }());
 
-function loadingTable(fichas,playercolor) {
+function loadingTable(fichas,position) {
     console.log('FUNCION js')
-    app.run(fichas,playercolor);
+    app.run(fichas,position);
 }
 
 //  app.run();
