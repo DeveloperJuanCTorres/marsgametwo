@@ -6,6 +6,11 @@
 
 }
 
+.elementor-toggle {
+    pointer-events: none;
+	background: #2b88068c;
+}
+
 .gameBoard {
 	width: 624px;
 	height: auto;

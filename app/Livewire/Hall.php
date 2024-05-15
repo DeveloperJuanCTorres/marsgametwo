@@ -20,12 +20,18 @@ class Hall extends Component
     }
 
     public function create_hall($user_id,$type){
+
+        
         $game = Game::create([
             'type'=>$type,
             'active'=>1
         ]);
-
-        $game->users()->attach([auth()->user()->id =>['color'=>'B'], $user_id=>['color'=>'W']]);
+        if( $type== 'Serpientes'){
+            $game->users()->attach([auth()->user()->id =>['color'=>'cyan'], $user_id=>['color'=>'red']]);
+        }else{
+            $game->users()->attach([auth()->user()->id =>['color'=>'B'], $user_id=>['color'=>'W']]);
+        }
+        
         //$game->users()->attach([auth()->user()->id, $user_id]);
     }
 

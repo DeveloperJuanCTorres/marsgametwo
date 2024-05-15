@@ -2,11 +2,13 @@
 
 namespace App\Notifications;
 
+use Illuminate\Broadcasting\BroadcastEvent;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 use Illuminate\Notifications\Messages\BroadcastMessage;
+use Illuminate\Broadcasting\PrivateChannel;
 
 class NewMessage extends Notification implements ShouldQueue
 {
@@ -56,5 +58,6 @@ class NewMessage extends Notification implements ShouldQueue
     public function toBroadcast($notifiable)
     {
         return new BroadcastMessage([]);
+        //return new PrivateChannel([]);
     }
 }

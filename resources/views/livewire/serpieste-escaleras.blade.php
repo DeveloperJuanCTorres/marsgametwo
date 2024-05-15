@@ -1,57 +1,60 @@
-<div  class="bg-gray-100 shadow border border-gray-300 overflow-hidden ">
+<div x-data="data()" class="bg-gray-100 shadow border border-gray-300 overflow-hidden ">
     <div class="grid grid-cols-6 divide-x divide-gray-200">
         <div class="h-[calc(98vh)] col-span-6 xl:col-span-4 lg:col-span-4 sm:col-span-6 bg-white bg-gamer" wire:ignore>
-          <div class="gameBoard" id="gameBoardOuter">
-            <div id="gameBoard" class="gameBoardInner"></div>
-            <div class="gameInterface">
-              <div class="dice show3" id="dice">
-                <div><span></span></div>
-                <div><span></span><span></span></div>
-                <div><span></span><span></span><span></span></div>
-                <div>
-                  <div>
-                    <span></span><span></span>
+          
+          <div id="boardDiv">
+                <div class="gameBoard" id="gameBoardOuter">
+                  <div id="gameBoard" class="gameBoardInner"></div>
+                  <div class="gameInterface">
+                    <div class="dice show3" id="dice">
+                      <div><span></span></div>
+                      <div><span></span><span></span></div>
+                      <div><span></span><span></span><span></span></div>
+                      <div>
+                        <div>
+                          <span></span><span></span>
+                        </div>
+                        <div>
+                          <span></span><span></span>
+                        </div>
+                      </div>
+                      <div>
+                        <div>
+                          <span></span><span></span>
+                        </div>
+                        <div>
+                          <span></span>
+                        </div>
+                        <div>
+                          <span></span><span></span>
+                        </div>
+                      </div>
+                      <div>
+                        <div>
+                          <span></span><span></span><span></span>
+                        </div>
+                        <div>
+                          <span></span><span></span><span></span>
+                        </div>
+                      </div>
+                    </div>
+                    <div id="player" class="player"></div>
+                    <div class="players">
+                      <div id="player0" class="player0"><span>You</span></div>
+                      <div id="player1" class="player1"><span>Computer</span></div>
+                    </div>
+                    {{-- <button id="play" onclick="app.play()">Roll</button> --}}
+                    <button id="play">Play USER</button>
                   </div>
-                  <div>
-                    <span></span><span></span>
+                  <!-- <p class="credits">Ing. Juan Carlos Torres del Castillo</p> -->
+                  <div class="dialog" id="dialog">
+                    <h1 id="dialogText">Computer Wins!</h1>
+                    <button onclick="app.reset()">Play Again</button>
                   </div>
+                  <!-- <button onclick="app.opponent(4)">oponente</button> -->
                 </div>
-                <div>
-                  <div>
-                    <span></span><span></span>
-                  </div>
-                  <div>
-                    <span></span>
-                  </div>
-                  <div>
-                    <span></span><span></span>
-                  </div>
-                </div>
-                <div>
-                  <div>
-                    <span></span><span></span><span></span>
-                  </div>
-                  <div>
-                    <span></span><span></span><span></span>
-                  </div>
-                </div>
-              </div>
-              <div id="player" class="player"></div>
-              <div class="players">
-                <div id="player0" class="player0"><span>You</span></div>
-                <div id="player1" class="player1"><span>Computer</span></div>
-              </div>
-              {{-- <button id="play" onclick="app.play()">Roll</button> --}}
-              <button id="play">Play USER</button>
+
             </div>
-            <!-- <p class="credits">Ing. Juan Carlos Torres del Castillo</p> -->
-            <div class="dialog" id="dialog">
-              <h1 id="dialogText">Computer Wins!</h1>
-              <button onclick="app.reset()">Play Again</button>
-              
-            </div>
-            <button onclick="app.opponent(4)">oponente</button>
-          </div>
         </div>
 
         <div class="col-span-6 xl:col-span-2 lg:col-span-2 sm:col-span-6 chat-desktop">
@@ -174,27 +177,65 @@
       <script src="{{asset('js/serpientes.js')}}"></script>
       <script>
           document.addEventListener('livewire:initialized', function () {
+              //document.getElementById('boardDiv').classList.add('elementor-toggle');
                 var tablero = @this.draughts;
                 var playercolor = @this.player;
                 loadingTable(tablero,playercolor);
+
             })
       </script> 
+
+      <script>
+        function data(){
+            return{
+                init(){
+                  
+                  Echo.private('App.Models.User.' + {{ auth()->id() }}).notification((notification) => {
+
+                      if (notification.type == 'App\\Notifications\\NewMessage') {
+                          Livewire.dispatch('render')  
+                      }
+
+                      if (notification.type == 'App\\Notifications\\NewMove') {
+                        Livewire.dispatch('playGame')   
+                      }
+
+                  });
+                }
+            }    
+          }
+      </script>
+
       <script>
           let p = document.getElementById("play"); // Encuentra el elemento "p" en el sitio
           p.onclick = iniciarSerpientes; // Agrega función onclick al elemento
           function iniciarSerpientes(evento) {
             app.play();
           }
+
+          //
+
+          Livewire.on('iniliziateJs',function(event){
+            console.log('movimiento del oponente desde js ----OP2');
+              if(event[0] == event[1]){
+                console.log('js mover');
+                    document.getElementById('boardDiv').classList.remove('elementor-toggle');
+                }else{
+                  console.log('js no mover');
+                  document.getElementById('boardDiv').classList.add('elementor-toggle');
+              }
+          });
           
           Livewire.on('notificateEchoJs', (event) => {
-                console.log('movimiento del oponente desde js');
-                console.log(event[2]);
-                console.log('----- js');
-                // if(event[1] == event[2]){
-                //     //Activo el tablero para el turno que le coresponde
-                //     document.getElementById('boardDiv').classList.remove('elementor-toggle');
-                // }else{
-                //     document.getElementById('boardDiv').classList.add('elementor-toggle');
+                console.log('movimiento del oponente desde js ----OP1');
+                if(event[1] == event[3]){
+                    console.log('js Sin velo');
+                    //Activo el tablero para el turno que le coresponde
+                    document.getElementById('boardDiv').classList.remove('elementor-toggle');
+                }
+                // else{
+                //   console.log('js Con velo verde');
+                //   document.getElementById('boardDiv').classList.add('elementor-toggle');
                 // }
                 app.opponent(event[2]);
             });
@@ -208,7 +249,7 @@
           }
 
           Livewire.on('scrollIntoView', function() {
-            console.log('scrolll');
+            
               var desktop = document.getElementById('final');
               var movil = document.getElementById('final-movil');
               if(desktop){

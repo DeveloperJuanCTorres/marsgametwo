@@ -931,8 +931,6 @@ var app = (function() {
                 n--;
                 if (currentPlayer.position > 0) {
                     var path = buildHop(currentPlayer.position);
-                    console.log('----control-----');
-                    console.log(path);
                     currentPlayer.position++;
                     animate(path, currentPlayer.element, 300, -counterRadius, -counterRadius, function () { doHop(n) });
                 } else {
@@ -943,7 +941,7 @@ var app = (function() {
                     }
                     doHop(n);
                 }
-                console.log('----FINN 00000-----');
+
             } else {
 
                 var hotSpot = hotSpots[currentPlayer.position];
@@ -978,6 +976,7 @@ var app = (function() {
 
         console.log('Guardar cambios');
         console.log(numberJumps);
+        document.getElementById('boardDiv').classList.add('elementor-toggle'); //agregar la clase que desactiva el tablero
         Livewire.dispatch('move', { move: players,position: currentPlayerIndex,jump: numberJumps })
     }
 

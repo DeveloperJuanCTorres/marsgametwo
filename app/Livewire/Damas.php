@@ -74,7 +74,6 @@ class Damas extends Component
     public function getListeners()
     {
         $user_id = auth()->user()->id;
-
         return [
             "echo-notification:App.Models.User.{$user_id},notification" => 'render',
             "echo-presence:chat.1,here" => 'chatHere',
@@ -106,7 +105,6 @@ class Damas extends Component
         Notification::send($this->userAdversary, new \App\Notifications\NewMessage());
         $this->reset('bodyMessage');
     }
-
 
     //
     public function chatHere($users){
