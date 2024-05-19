@@ -48,7 +48,7 @@ class SerpiesteEscaleras extends Component
     }
 
     public function InitBoard(){
-        $draughtsInitial = '[{"name":"Your Turn","win":"You Win!","position":0,"element":[[[]]],"color":"cyan"},{"name":"Computer","win":"Computer Wins!","position":0,"element":[[[]]],"color":"red"}]';
+        $draughtsInitial = '[{"name":"Turno del Jugador 1","win":"El Jugador 1 a ganado!","position":0,"element":[[[]]],"color":"cyan"},{"name":"Turno del Jugador 2","win":"El Jugador 2 a ganado!","position":0,"element":[[[]]],"color":"red"}]';
         //consulto el ultimo movimiento para dibujar el tablero si no hay moviemeos agrego el tablero inicial
         $stringMove = $this->game->moves()->get()->last()?? [];
         if($stringMove) {

@@ -5,6 +5,9 @@
           <div id="boardDiv">
                 <div class="gameBoard" id="gameBoardOuter">
                   <div id="gameBoard" class="gameBoardInner"></div>
+
+                  
+
                   <div class="gameInterface">
                     <div class="dice show3" id="dice">
                       <div><span></span></div>
@@ -38,14 +41,25 @@
                         </div>
                       </div>
                     </div>
-                    <div id="player" class="player"></div>
+
                     <div class="players">
-                      <div id="player0" class="player0"><span>You</span></div>
-                      <div id="player1" class="player1"><span>Computer</span></div>
+                      <div id="player0" class="player0"><span>Jugador 1</span></div>
+                      <div id="player1" class="player1"><span>Jugador 2</span></div>
                     </div>
-                    {{-- <button id="play" onclick="app.play()">Roll</button> --}}
-                    <button id="play">Play USER</button>
+
+                    <div id="player" class="player"></div>
+
+                    <button id="play"> <span class="btn">Lanzar dados</span></button>
+                    
+
+                    
+
+                    
+                
+                    
+
                   </div>
+                
                   <!-- <p class="credits">Ing. Juan Carlos Torres del Castillo</p> -->
                   <div class="dialog" id="dialog">
                     <h1 id="dialogText">Computer Wins!</h1>
@@ -174,7 +188,7 @@
 </div>
     @push('js')
       <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
-      <script src="{{asset('js/serpientes.js')}}"></script>
+      <script src="{{asset('js/serpientes.js')}}?v=1993.1.8"></script>
       <script>
           document.addEventListener('livewire:initialized', function () {
               //document.getElementById('boardDiv').classList.add('elementor-toggle');

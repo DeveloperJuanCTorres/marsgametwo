@@ -820,7 +820,8 @@ var app = (function() {
     function setCurrentPlayer() {
         document.getElementById('player').innerText = players[currentPlayerIndex].name;
 
-        if (players[currentPlayerIndex].name === "Computer") {
+        // if (players[currentPlayerIndex].name === "Computer") {
+        if (players[currentPlayerIndex].color === "red") {
             console.log('Persona play---0');
             inPlay = false;
             button.className = "";
