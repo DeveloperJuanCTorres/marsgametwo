@@ -728,8 +728,7 @@
             @auth
             <a href="javascript:void(0)" class="icon_wrp text-center open_perfil">
             @else
-            <!-- <a href="login" class="icon_wrp text-center"> -->
-            <a href="javascript:void(0)" class="icon_wrp text-center open_perfil">
+            <a href="login" class="icon_wrp text-center">
             @endauth
                 <span class="icon">
                     <i class="las la-user text-white"></i>
@@ -901,7 +900,7 @@
                 </h4>
                 <p>
                     @auth
-                        {{Auth::user()->nick_name}}
+                        UserName
                     @else
                         UserName
                     @endauth
