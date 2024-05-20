@@ -375,6 +375,49 @@
         $('#mobile_menwrap').removeClass('active')
     })
 
+    //CREAR SALA
+    $('.crear_sala').click(function (){
+        $('#mobile_menwrap').removeClass('active')
+        $('#juego').val('0').selected
+        $('#exampleModal').modal('show')
+    })
+
+    //SALA AJEDREZ
+    $('.sala_ajedrez').click(function (){
+        $('#juego').val('1').selected
+        $('#exampleModal').modal('show')
+    })
+
+    //SALA DAMAS
+    $('.sala_damas').click(function (){
+        $('#juego').val('2').selected
+        $('#exampleModal').modal('show')
+    })
+
+    //SALA BINGO
+    $('.sala_bingo').click(function (){
+        $('#juego').val('3').selected
+        $('#exampleModal').modal('show')
+    })
+
+    //SALA SERPIENTES
+    $('.sala_serpientes').click(function (){
+        $('#juego').val('4').selected
+        $('#exampleModal').modal('show')
+    })
+
+    //SALA LUDO
+    $('.sala_ludo').click(function (){
+        $('#juego').val('5').selected
+        $('#exampleModal').modal('show')
+    })
+
+    //SALA OCHOLOCO
+    $('.sala_ocholoco').click(function (){
+        $('#juego').val('6').selected
+        $('#exampleModal').modal('show')
+    })
+
     $('#perfilclose').click(function () {
         $('#mobile_perwrap').removeClass('active')
     })
