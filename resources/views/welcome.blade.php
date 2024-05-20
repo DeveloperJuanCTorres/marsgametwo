@@ -725,12 +725,18 @@
                 </span>
                 <span class="icon_text text-white">Contactos</span>
             </a>
+            @auth
             <a href="javascript:void(0)" class="icon_wrp text-center open_perfil">
+            @else
+            <!-- <a href="login" class="icon_wrp text-center"> -->
+            <a href="javascript:void(0)" class="icon_wrp text-center open_perfil">
+            @endauth
                 <span class="icon">
                     <i class="las la-user text-white"></i>
                 </span>
                 <span class="icon_text text-white">Perfil</span>
             </a>
+
             <!-- <a href="javascript:void(0)" class="icon_wrp text-center" id="src_icon">
                 <span class="icon">
                    <i class="icon-search-left"></i>
@@ -877,8 +883,55 @@
 
     <!-- mobile Perfil -->
     <div class="mobile_perwrap d-lg-none" id="mobile_perwrap" style="z-index: 9999;">
-        <div class="mobile_menu_2">
+        <div class="mobile_menu_2 text-center">
             <h5 class="mobile_title claseh2">
+                Perfil
+                <span class="sidebarclose" id="perfilclose">
+                    <i class="las la-times"></i>
+                </span>
+            </h5>
+            <div class="img-perfil">
+                <img src="https://p.w3layouts.com/demos/june-2016/01-06-2016/model_profile_widget/web/images/p1.png" title="Aisha" alt="foto-perfil"></div>
+                <h4>
+                    @auth
+                        {{Auth::user()->name}}
+                    @else
+                        Name
+                    @endauth
+                </h4>
+                <p>
+                    @auth
+                        {{Auth::user()->nick_name}}
+                    @else
+                        UserName
+                    @endauth
+                </p>
+                <hr>
+                <h3>Nivel : 85%</h3>
+                <p>Lorem ipsum dolor sit amet consectetur</p>
+                <div class="caja-gris">
+                <div class="sobre">
+                    <img style="display: inline !important;" src="img/marscoin.png">
+                    <p style="margin-bottom: 0 !important;">1086</p> 
+                </div>
+                <div class="sobre">
+                    <img style="display: inline !important;" src="img/ticket.png">
+                    <p style="margin-bottom: 0 !important;">1582</p> 
+                </div>
+                <div class="sobre">
+                    <img style="display: inline !important;" src="img/level.png">
+                    <p style="margin-bottom: 0 !important;">1468</p> 
+                </div>
+                </div> 
+                
+                <div class="redes face"><a href="#"></a></div>
+                <div class="redes twitter"><a href="#"></a></div>
+                <div class="redes instagram"><a href="#"></a></div>
+                <div class="redes youtube"><a href="#"></a></div>
+                <div class="boton p-2">
+					<a href="#">Editar Perfil</a>
+			    </div> 
+            <!-- <h5 class="mobile_title claseh2">
                 Perfil
                 <span class="sidebarclose" id="perfilclose">
                     <i class="las la-times"></i>
@@ -897,10 +950,12 @@
                         <div class="col-12">
                             <div class="features-content d-flex flex-column text-center">
                                 <h6>
-                                    Juan Carlos Torres del Castillo
+                                    @auth
+                                    {{Auth::user()->name}}
+                                    @endauth
                                 </h6>
                                 <h6 class="text-body">
-                                    NickName
+                                    UserName
                                 </h6>
                                 <small class="text-body d-block clase-font">
                                     <i class="fas fa-envelope me-1"></i> jctorresdelcastillo@gmail.com</small>
@@ -912,7 +967,7 @@
                         </div>
                     </div>
                 </div>
-            </div>  
+            </div>   -->
         </div>
     </div>
 
