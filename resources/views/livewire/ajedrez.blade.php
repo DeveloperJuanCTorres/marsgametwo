@@ -12,54 +12,54 @@
                         <div class="chessboard">
                           <div class="line l8">
                             <div class="square c1">
-                              <div class="black rook">♜</div>
+                              
                             </div>
                             <div class="square c2">
-                              <div class="black knight">♞</div>
+                              
                             </div>
                             <div class="square c3">
-                              <div class="black bishop">♝</div>
+                             
                             </div>
                             <div class="square c4">
-                              <div class="black queen">♛</div>
+                             
                             </div>
                             <div class="square c5">
-                              <div class="black king">♚</div>
+                              
                             </div>
                             <div class="square c6">
-                              <div class="black bishop">♝</div>
+                              
                             </div>
                             <div class="square c7">
-                              <div class="black knight">♞</div>
+                              
                             </div>
                             <div class="square c8">
-                              <div class="black rook">♜</div>
+                              
                             </div>
                           </div>
                           <div class="line l7">
                             <div class="square c1">
-                              <div class="black pawn">♙</div>
+                             
                             </div>
                             <div class="square c2">
-                              <div class="black pawn">♙</div>
+                             
                             </div>
                             <div class="square c3">
-                              <div class="black pawn">♙</div>
+                              
                             </div>
                             <div class="square c4">
-                              <div class="black pawn">♙</div>
+                              
                             </div>
                             <div class="square c5">
-                              <div class="black pawn">♙</div>
+                              
                             </div>
                             <div class="square c6">
-                              <div class="black pawn">♙</div>
+                              
                             </div>
                             <div class="square c7">
-                              <div class="black pawn">♙</div>
+                              
                             </div>
                             <div class="square c8">
-                              <div class="black pawn">♙</div>
+                             
                             </div>
                           </div>
                           <div class="line l6">
@@ -104,54 +104,54 @@
                           </div>
                           <div class="line l2">
                             <div class="square c1">
-                              <div class="white pawn">♙</div>
+                             
                             </div>
                             <div class="square c2">
-                              <div class="white pawn">♙</div>
+                              
                             </div>
                             <div class="square c3">
-                              <div class="white pawn">♙</div>
+                              
                             </div>
                             <div class="square c4">
-                              <div class="white pawn">♙</div>
+                              
                             </div>
                             <div class="square c5">
-                              <div class="white pawn">♙</div>
+                             
                             </div>
                             <div class="square c6">
-                              <div class="white pawn">♙</div>
+                             
                             </div>
                             <div class="square c7">
-                              <div class="white pawn">♙</div>
+                              
                             </div>
                             <div class="square c8">
-                              <div class="white pawn">♙</div>
+                            
                             </div>
                           </div>
                           <div class="line l1">
                             <div class="square c1">
-                              <div class="white rook">♜</div>
+                              
                             </div>
                             <div class="square c2">
-                              <div class="white knight">♞</div>
+                             
                             </div>
                             <div class="square c3">
-                              <div class="white bishop">♝</div>
+                              
                             </div>
                             <div class="square c4">
-                              <div class="white queen">♛</div>
+                              
                             </div>
                             <div class="square c5">
-                              <div class="white king">♚</div>
+                              
                             </div>
                             <div class="square c6">
-                              <div class="white bishop">♝</div>
+                             
                             </div>
                             <div class="square c7">
-                              <div class="white knight">♞</div>
+                             
                             </div>
                             <div class="square c8">
-                              <div class="white rook">♜</div>
+                              
                             </div>
                           </div>
                         </div>
@@ -159,7 +159,7 @@
                           <div class="captured-zone" id="czwhite"></div>
                           <div class="countdown-timer" id="ctwhite">05:00</div>
                         </div>
-                        </div> 
+                      </div> 
                 </div>
 
         </div>
@@ -225,32 +225,35 @@
     @push('game')
 
 
-
     @endpush
     
     @push('js')
+      <script src="{{asset('js/ajedrez.js')}}?v=1993.1.1"></script> 
+      <script>
+         console.log('cargar tabla 0000');
+            document.addEventListener('livewire:initialized', function () {
+                console.log('cargar tabla 1111');
+                var pieces = @this.draughts;
+                var playercolor = @this.player;
+                playGame(pieces);
+              })
+      </script> 
 
-    <script src="{{asset('js/ajedrez.js')}}"></script>
-
-    
-        <script>
-
-            function copiarEmoji(emoji) {
-                if(@this.bodyMessage){
-                    @this.bodyMessage =  @this.bodyMessage + emoji;
-                }else{
-                    @this.bodyMessage =  emoji;
-                }
-                
-            }
-            Livewire.on('scrollIntoView', function() {
-                var aux = document.getElementById('final');
-                if(aux){
-                    aux.scrollIntoView(true);
-                }
-            });
-
-        </script>
+      <script>
+          function copiarEmoji(emoji) {
+              if(@this.bodyMessage){
+                  @this.bodyMessage =  @this.bodyMessage + emoji;
+              }else{
+                  @this.bodyMessage =  emoji;
+              }
+              
+          }
+          Livewire.on('scrollIntoView', function() {
+              var aux = document.getElementById('final');
+              if(aux){
+                  aux.scrollIntoView(true);
+              }
+          });
+      </script>
     @endpush
-
 </div>

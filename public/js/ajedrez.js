@@ -4,14 +4,14 @@ function otherColor(color) {
   }
   
   function enableDrag(chessPiece) {
-    console.log('chessPiece');
+    // console.log('enableDrag');
     chessPiece.setAttribute("draggable", true);
     chessPiece.classList.add("draggable");
    
   }
   
   function disableDrag(chessPiece) {
-    console.log('chessPiece');
+    // console.log('disableDrag');
     chessPiece.setAttribute("draggable", false);
     chessPiece.classList.remove("draggable");
   }
@@ -36,7 +36,7 @@ function otherColor(color) {
   }
   
   function applyPropOneChessPiece(chessPiece, chessboardPosition) {
-
+    // console.log('applyPropOneChessPiece');
      
     
     const chessPiecesProp = ["pawn", 0, 2, 0,
@@ -63,27 +63,18 @@ function otherColor(color) {
     
   }
   
+  //En esta funcio se inicializan las pieza
   function applyPropChessPieces(piecesColor, chessboardPosition) {
-
-    console.log('*********** position');
-    console.log(chessboardPosition);
-    console.log('***********');
-  
-    console.log('applyPropChessPieces');
-    
+    // console.log('applyPropChessPieces');
     const chessPiecesClass = document.querySelectorAll(`.${piecesColor}`);
     chessPiecesClass.forEach(chessPiece => {
       applyPropOneChessPiece(chessPiece, chessboardPosition);
     });
-
-    console.log('*********** positiona');
-    console.log(chessboardPosition);
-    console.log('***********');
-  
   }
   
   function clearZonesByClassName(...classNames) {
     console.log('clearZonesByClassName');
+
     classNames.forEach(className => {
       const zones = document.querySelectorAll(`.${className}`);
       const removeClassName = className.split(".");
@@ -116,6 +107,7 @@ function otherColor(color) {
   
   const showPossibleDropZones = function (el) {
     
+    console.log('showPossibleDropZones');
     console.log(el);
     console.log('-+-+-+-+-+-+-+-');
     clearZonesByClassName("dropzone", "capture");
@@ -228,8 +220,11 @@ function otherColor(color) {
     }
   }
   
+  //quitar y colocar la pize en la otra casilla
   function movePiece(chessPiece, currPosition, nextPosition) {
-    console.log('movePiece');
+    console.log('>>>>>  movePiece a extra zona');
+    console.log(nextPosition);
+
     currPosition.removeChild(chessPiece);
     nextPosition.appendChild(chessPiece);
   }
@@ -239,7 +234,6 @@ function otherColor(color) {
     console.log('captureOpponentPiece');
     // Check if drop occurs with a capture
     if (currSquare.firstElementChild) {
-  
       const capturedPiece = currSquare.firstElementChild;
       disableDrag(capturedPiece);
       
@@ -322,30 +316,76 @@ function otherColor(color) {
     }
   
   }
+
+  //funcion creado por Dante Para crear las piezas
+  function createParts(pieces){
+    for(i=0; i< pieces.length; i++){
+       const square = document.querySelector(`.${pieces[i].line} .${pieces[i].square}`);
+        var div = document.createElement("div");
+        div.classList.add(pieces[i].color)
+        div.classList.add(pieces[i].name)
+        div.innerHTML  = pieces[i].figure;
+        square.appendChild(div);
+    }
+  }
   
   /* 
     Main
   */
-  console.log('MAIN');
-  applyPropChessPieces("white", "bottom");
-  applyPropChessPieces("black", "top");
-  let draggedPiece = null;
-  
-  const whiteTurn = playerTurn("white");
-  const blackTurn = playerTurn("black");
-  
-  const startDelay = setTimeout(() => {
-    whiteTurn.start();
-    disableAndEnablePieces("black", "white");
-  }, 3000);
+    // var pieces = [
+    //     {name: "rook",line: "l1",square: "c1",figure: '♜',color: 'white',state: 1},
+    //     {name: "knight",line: "l1",square: "c2",figure: '♞',color: 'white',state: 1},
+    //     {name: "bishop",line: "l1",square: "c3",figure: '♝',color: 'white',state: 1},
+    //     {name: "queen",line: "l1",square: "c4",figure: '♛',color: 'white',state: 1},
+    //     {name: "king",line: "l1",square: "c5",figure: '♚',color: 'white',state: 1},
+    //     {name: "bishop",line: "l1",square: "c6",figure: '♝',color: 'white',state: 1},
+    //     {name: "knight",line: "l1",square: "c7",figure: '♞',color: 'white',state: 1},
+    //     {name: "rook",line: "l1",square: "c8",figure: '♜',color: 'white',state: 1},
+    //     {name: "pawn",line: "l2",square: "c1",figure: '♙',color: 'white',state: 1},
+    //     {name: "pawn",line: "l2",square: "c2",figure: '♙',color: 'white',state: 1},
+    //     {name: "pawn",line: "l2",square: "c3",figure: '♙',color: 'white',state: 1},
+    //     {name: "pawn",line: "l2",square: "c4",figure: '♙',color: 'white',state: 1},
+    //     {name: "pawn",line: "l2",square: "c5",figure: '♙',color: 'white',state: 1},
+    //     {name: "pawn",line: "l2",square: "c6",figure: '♙',color: 'white',state: 1},
+    //     {name: "pawn",line: "l2",square: "c7",figure: '♙',color: 'white',state: 1},
+    //     {name: "pawn",line: "l2",square: "c8",figure: '♙',color: 'white',state: 1},
+    //     {name: "pawn",line: "l7",square: "c1",figure: '♙',color: 'black',state: 1},
+    //     {name: "pawn",line: "l7",square: "c2",figure: '♙',color: 'black',state: 1},
+    //     {name: "pawn",line: "l7",square: "c3",figure: '♙',color: 'black',state: 1},
+    //     {name: "pawn",line: "l7",square: "c4",figure: '♙',color: 'black',state: 1},
+    //     {name: "pawn",line: "l7",square: "c5",figure: '♙',color: 'black',state: 1},
+    //     {name: "pawn",line: "l7",square: "c6",figure: '♙',color: 'black',state: 1},
+    //     {name: "pawn",line: "l7",square: "c7",figure: '♙',color: 'black',state: 1},
+    //     {name: "pawn",line: "l7",square: "c8",figure: '♙',color: 'black',state: 1},
+    //     {name: "rook",line: "l8",square: "c1",figure: '♜',color: 'black',state: 1},
+    //     {name: "knight",line: "l8",square: "c2",figure: '♞',color: 'black',state: 1},
+    //     {name: "bishop",line: "l8",square: "c3",figure: '♝',color: 'black',state: 1},
+    //     {name: "queen",line: "l8",square: "c4",figure: '♛',color: 'black',state: 1},
+    //     {name: "king",line: "l8",square: "c5",figure: '♚',color: 'black',state: 1},
+    //     {name: "bishop",line: "l8",square: "c6",figure: '♝',color: 'black',state: 1},
+    //     {name: "knight",line: "l8",square: "c7",figure: '♞',color: 'black',state: 1},
+    //     {name: "rook",line: "l8",square: "c8",figure: '♜',color: 'black',state: 1},
+    // ];
 
+    console.log('MAIN');
+  
+    const whiteTurn = playerTurn("white");
+    const blackTurn = playerTurn("black");
+
+    function playGame(pieces){
+      createParts(pieces);
+      applyPropChessPieces("white", "bottom");
+      applyPropChessPieces("black", "top");
+      let draggedPiece = null;
+      const startDelay = setTimeout(() => {
+        whiteTurn.start();
+        disableAndEnablePieces("black", "white");
+      }, 3000);
+   }
  
-  
-  
-  function endGame(color, endedByTime) {
 
-   
-  
+
+  function endGame(color, endedByTime) {
     whiteTurn.stop();
     blackTurn.stop();
     disableAll("white", "black");
@@ -361,7 +401,7 @@ function otherColor(color) {
   
   function changeTurn(color, isCheckmate, isKingCaptured) {
 
-
+    console.log('changeTurn');
     if (isKingCaptured) {
       endGame(color, false);
   
@@ -391,29 +431,28 @@ function otherColor(color) {
   }
   
   function verifyCheckmateAndChangeTurn(chessPiece, pieceColor, isKingCaptured) {
+    console.log('verifyCheckmateAndChangeTurn');
     const isCheckmate = checkmate(chessPiece, pieceColor);
     changeTurn(pieceColor, isCheckmate, isKingCaptured);
     clearZonesByClassName("dropzone", "capture");
   }
   
   function applyPawnExceptions(chessPiece, currSquare, pieceColor, isKingCaptured) {
+    console.log('applyPawnExceptions');
+    console.log(currSquare);
     // Update pawn movement 
     chessPiece.piece.v = 1;
-    console.log('----------***---');
-    console.log(chessPiece);
-    console.log('----------***---');
     // Check if pawn arrived at the other side of the chessboard
     const chessboardSide = chessPiece.piece.local;
     const opponentSide = chessboardSide === "bottom" ? "l8" : "l1";
 
-    console.log('*********** opo');
-    console.log(opponentSide);
+    console.log('*********** opo *******');
+    console.log(chessPiece);
     console.log(currSquare);
-    console.log('***********');
-  
+    console.log('***********-----');
   
     if (currSquare.parentNode.classList.contains(opponentSide)) {
-  
+
       let dropDownSelector = '<div id="piece-selector">';
       dropDownSelector += '<a name="knight">♞</a>';
       dropDownSelector += '<a name="queen">♛</a>';
@@ -445,56 +484,65 @@ function otherColor(color) {
     } else {
       verifyCheckmateAndChangeTurn(chessPiece, pieceColor, isKingCaptured);
     }
-
- 
-  
   }
   
   function finishMove(event, selectedPiece) {
-
+    console.log('finishMove<<<<<<<<');
+    console.log(selectedPiece);
+   
     const target = checkDropZones(event);
 
     if (target) {
-  
       const pieceColor = selectedPiece.classList[0];
-  
       const isKingCaptured = captureOpponentPiece(target, pieceColor);
   
       movePiece(selectedPiece, selectedPiece.parentNode, target);
-      
       if (selectedPiece.classList.contains("pawn")) {
+        
         applyPawnExceptions(selectedPiece, target, pieceColor, isKingCaptured);
       } else {
+        
         verifyCheckmateAndChangeTurn(selectedPiece, pieceColor, isKingCaptured);
       }
       
       selectedPiece.classList.remove("dragging");
       target.classList.remove("dragover");
+
+
+      console.log('Dante Dante Dante Guarda BD');
+      var line = target.parentElement.classList[1];
+      var square =  target.classList[1];
+      var key = selectedPiece.id;
+      // var color = selectedPiece.classList[0]; 
+      // var name = selectedPiece.classList[1]; 
+  
+      //Guardar en la BD 
+      //Livewire.dispatch('move', { line: line,square:square,key:key })
       
     }
-    
     clearZonesByClassName("dropzone", "capture");
   }
   
   
   /* Event Listeners */
   document.addEventListener("click", event => {
-
-    console.log('seleccionar ficha');
-
+    console.log('<-----------------click------------->');
     if (event.target.draggable) {
       if (event.target !== draggedPiece) {
+        console.log('showPossibleDropZones');
         draggedPiece = event.target;
         showPossibleDropZones(draggedPiece);
       }
     } else {
+      console.log('finishMove');
       finishMove(event, draggedPiece);
       draggedPiece = null;
     }
   });
   
   document.addEventListener("dragstart", event => {
-    console.log('addEventListener123');
+    console.log('dragstart');
+    // console.log(event.target);
 
     if (event.target.draggable) {
       draggedPiece = event.target;
@@ -504,6 +552,7 @@ function otherColor(color) {
   });
   
   document.addEventListener("dragover", event => {
+    console.log('dragover');
     event.preventDefault();
   }, false);
   
@@ -512,11 +561,9 @@ function otherColor(color) {
   document.addEventListener("dragleave", checkDropZones);
   
   document.addEventListener("drop", event => {
+    console.log('INICIO');
     event.preventDefault();
-
-    
     finishMove(event, draggedPiece);
     draggedPiece = null;
-
     console.log('FINAL');
   });
