@@ -108,8 +108,6 @@ function otherColor(color) {
   const showPossibleDropZones = function (el) {
     
     console.log('showPossibleDropZones');
-    console.log(el);
-    console.log('-+-+-+-+-+-+-+-');
     clearZonesByClassName("dropzone", "capture");
   
     const elColor = el.classList[0];
@@ -320,10 +318,11 @@ function otherColor(color) {
   //funcion creado por Dante Para crear las piezas
   function createParts(pieces){
     for(i=0; i< pieces.length; i++){
-       const square = document.querySelector(`.${pieces[i].line} .${pieces[i].square}`);
+        const square = document.querySelector(`.${pieces[i].line} .${pieces[i].square}`);
         var div = document.createElement("div");
         div.classList.add(pieces[i].color)
         div.classList.add(pieces[i].name)
+        div.setAttribute('id',i)
         div.innerHTML  = pieces[i].figure;
         square.appendChild(div);
     }
@@ -368,19 +367,38 @@ function otherColor(color) {
     // ];
 
     console.log('MAIN');
+    var draughts;
   
     const whiteTurn = playerTurn("white");
     const blackTurn = playerTurn("black");
 
-    function playGame(pieces){
+    function playGame(pieces,playercolor){
+      console.log('Turno color Dante');
+      console.log(playercolor);
+      
+      draughts = pieces;
       createParts(pieces);
       applyPropChessPieces("white", "bottom");
       applyPropChessPieces("black", "top");
       let draggedPiece = null;
-      const startDelay = setTimeout(() => {
+
+      if (playercolor === "white") {
+        console.log('Inicia fichas Negras');
+        whiteTurn.stop();
+        blackTurn.start();
+        disableAndEnablePieces("white", "black");
+  
+      } else if (playercolor === "black") {
+        console.log('Inicia fichas Blancas');
+        blackTurn.stop();
         whiteTurn.start();
         disableAndEnablePieces("black", "white");
-      }, 3000);
+      }
+
+      // const startDelay = setTimeout(() => {
+      //   whiteTurn.start();
+      //   disableAndEnablePieces("white", "black");
+      // }, 3000);
    }
  
 
@@ -401,7 +419,7 @@ function otherColor(color) {
   
   function changeTurn(color, isCheckmate, isKingCaptured) {
 
-    console.log('changeTurn');
+    console.log('changeTurn <--->');
     if (isKingCaptured) {
       endGame(color, false);
   
@@ -431,7 +449,7 @@ function otherColor(color) {
   }
   
   function verifyCheckmateAndChangeTurn(chessPiece, pieceColor, isKingCaptured) {
-    console.log('verifyCheckmateAndChangeTurn');
+    console.log('verifyCheckmateAnd  -ChangeTurn-');
     const isCheckmate = checkmate(chessPiece, pieceColor);
     changeTurn(pieceColor, isCheckmate, isKingCaptured);
     clearZonesByClassName("dropzone", "capture");
@@ -445,11 +463,6 @@ function otherColor(color) {
     // Check if pawn arrived at the other side of the chessboard
     const chessboardSide = chessPiece.piece.local;
     const opponentSide = chessboardSide === "bottom" ? "l8" : "l1";
-
-    console.log('*********** opo *******');
-    console.log(chessPiece);
-    console.log(currSquare);
-    console.log('***********-----');
   
     if (currSquare.parentNode.classList.contains(opponentSide)) {
 
@@ -487,8 +500,7 @@ function otherColor(color) {
   }
   
   function finishMove(event, selectedPiece) {
-    console.log('finishMove<<<<<<<<');
-    console.log(selectedPiece);
+    console.log('finish Move <<<<<<<<');
    
     const target = checkDropZones(event);
 
@@ -508,20 +520,21 @@ function otherColor(color) {
       selectedPiece.classList.remove("dragging");
       target.classList.remove("dragover");
 
-
-      console.log('Dante Dante Dante Guarda BD');
+      //Caprurar datos necesarios para guardar en la BDs
       var line = target.parentElement.classList[1];
       var square =  target.classList[1];
       var key = selectedPiece.id;
       // var color = selectedPiece.classList[0]; 
       // var name = selectedPiece.classList[1]; 
-  
       //Guardar en la BD 
-      //Livewire.dispatch('move', { line: line,square:square,key:key })
-      
+      draughts[key].line = line;
+      draughts[key].square = square;
+      Livewire.dispatch('move', {move: draughts,color:pieceColor})
     }
     clearZonesByClassName("dropzone", "capture");
   }
+
+
   
   
   /* Event Listeners */
@@ -534,7 +547,6 @@ function otherColor(color) {
         showPossibleDropZones(draggedPiece);
       }
     } else {
-      console.log('finishMove');
       finishMove(event, draggedPiece);
       draggedPiece = null;
     }

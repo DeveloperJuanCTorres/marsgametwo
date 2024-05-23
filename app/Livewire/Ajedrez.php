@@ -65,20 +65,23 @@ class Ajedrez extends Component
             $this->draughts = json_decode($stringMove->move);
             $this->player =  $stringMove->color;
         } else{
-            $this->player = 'W';
+            $this->player = 'black';
             $this->draughts = json_decode($draughtsInitial);
         }
     }
 
     #[On('move')] 
-    public function move($line,$square,$key){
-        dd($line);
-        // $now = date('H:i:s');
-        // $this->game->moves()->create([
-        //     'user_id'=> auth()->user()->id,
-        //     'move'=>$move,
-        //     'timer_end'=>$now,
-        // ]);
+    public function move($move,$color){
+        $now = date('H:i:s');
+        $jsonString = json_encode($move);
+        $this->game->moves()->create([
+            'user_id'=> auth()->user()->id,
+            'move'=>$jsonString,
+            'color'=>$color,
+            'timer_end'=>$now,
+        ]);
+       
+
         // Notification::send($this->rival, new \App\Notifications\NewMove());
     }
 

@@ -1,8 +1,6 @@
 <div  class="bg-gray-100 shadow border border-gray-300 overflow-hidden ">
-
     <div class="grid grid-cols-6 divide-x divide-gray-200">
         <div class="col-span-6 sm:col-span-4 bg-white bg-gamer" >
-            
                 <div wire:ignore>
                     <div class="container">
                         <div class="extra-zone">
@@ -213,7 +211,6 @@
                     <span class="mx-2 cursor-pointer" onclick="copiarEmoji('🤩')">🤩</span>
                 </div>
                 <form class="bg-gray-100 h-16 flex items-center px-4" wire:submit.prevent="sendMessage()">
-                    
                     <x-input wire:model.live="bodyMessage" type="text" class="flex-1" id="message" placeholder="Escriba un mensaje aquí" />
                     <button class="flex-shrink-0 ml-4 text-2xl text-gray-700">
                         <i class="las la-paper-plane"></i>
@@ -222,9 +219,7 @@
         </div>
     </div>
 
-    @push('game')
-
-
+    @push('game') 
     @endpush
     
     @push('js')
@@ -235,7 +230,7 @@
                 console.log('cargar tabla 1111');
                 var pieces = @this.draughts;
                 var playercolor = @this.player;
-                playGame(pieces);
+                playGame(pieces,playercolor);
               })
       </script> 
 
@@ -246,7 +241,6 @@
               }else{
                   @this.bodyMessage =  emoji;
               }
-              
           }
           Livewire.on('scrollIntoView', function() {
               var aux = document.getElementById('final');
