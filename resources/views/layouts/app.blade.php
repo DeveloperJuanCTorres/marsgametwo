@@ -8,7 +8,7 @@
         <title>{{ config('app.name', 'Laravel') }}</title>
 
         <?php
-            $version = '1993.1.3';
+            $version = '1993.1.6';
         ?>
 
         <!-- Fonts -->
@@ -97,6 +97,7 @@
         <script src="{{asset('js/app1.js')}}?v=<?php echo $version ?>"></script>
 
         <script src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         
     </body>
 </html>

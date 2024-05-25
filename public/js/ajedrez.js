@@ -4,14 +4,14 @@ function otherColor(color) {
   }
   
   function enableDrag(chessPiece) {
-    console.log('chessPiece');
+    // console.log('enableDrag');
     chessPiece.setAttribute("draggable", true);
     chessPiece.classList.add("draggable");
    
   }
   
   function disableDrag(chessPiece) {
-    console.log('chessPiece');
+    // console.log('disableDrag');
     chessPiece.setAttribute("draggable", false);
     chessPiece.classList.remove("draggable");
   }
@@ -63,11 +63,15 @@ function otherColor(color) {
     
   }
   
+  //En esta funcio se inicializan las pieza
   function applyPropChessPieces(piecesColor, chessboardPosition) {
 
+    console.log('*********** position');
+    console.log(chessboardPosition);
+    console.log('***********');
+  
     console.log('applyPropChessPieces');
-
-    //reemplazar por posiciones en la tabla
+    
     const chessPiecesClass = document.querySelectorAll(`.${piecesColor}`);
 
 
@@ -76,15 +80,14 @@ function otherColor(color) {
       applyPropOneChessPiece(chessPiece, chessboardPosition);
     });
 
-    console.log('*********** chessPiecesClass rey');
-    console.log(chessPiecesClass);
+    console.log('*********** positiona');
+    console.log(chessboardPosition);
     console.log('***********');
   
   }
   
   function clearZonesByClassName(...classNames) {
     console.log('clearZonesByClassName');
-    console.log(classNames);
     classNames.forEach(className => {
       const zones = document.querySelectorAll(`.${className}`);
       const removeClassName = className.split(".");
@@ -121,7 +124,7 @@ function otherColor(color) {
   const showPossibleDropZones = function (el) {
     
     console.log(el);
-    console.log('mover literal la pieza +-+--++');
+    console.log('-+-+-+-+-+-+-+-');
     clearZonesByClassName("dropzone", "capture");
   
     const elColor = el.classList[0];
@@ -232,8 +235,9 @@ function otherColor(color) {
     }
   }
   
+  //quitar y colocar la pize en la otra casilla
   function movePiece(chessPiece, currPosition, nextPosition) {
-    console.log('movePiece DANTE DANTE');
+    console.log('movePiece');
     currPosition.removeChild(chessPiece);
     nextPosition.appendChild(chessPiece);
   }
@@ -244,7 +248,6 @@ function otherColor(color) {
     // Check if drop occurs with a capture
 
     if (currSquare.firstElementChild) {
-  
       const capturedPiece = currSquare.firstElementChild;
       disableDrag(capturedPiece);
       
@@ -327,6 +330,19 @@ function otherColor(color) {
     }
   
   }
+
+  //funcion creado por Dante Para crear las piezas
+  function createParts(pieces){
+    for(i=0; i< pieces.length; i++){
+        const square = document.querySelector(`.${pieces[i].line} .${pieces[i].square}`);
+        var div = document.createElement("div");
+        div.classList.add(pieces[i].color)
+        div.classList.add(pieces[i].name)
+        div.setAttribute('id',i)
+        div.innerHTML  = pieces[i].figure;
+        square.appendChild(div);
+    }
+  }
   
   /* 
     Main
@@ -338,17 +354,15 @@ function otherColor(color) {
   
   const whiteTurn = playerTurn("white");
   const blackTurn = playerTurn("black");
-
-
+  
   const startDelay = setTimeout(() => {
     whiteTurn.start();
     disableAndEnablePieces("black", "white");
   }, 3000);
 
-  
  
-  
-  
+
+
   function endGame(color, endedByTime) {
     whiteTurn.stop();
     blackTurn.stop();
@@ -365,7 +379,7 @@ function otherColor(color) {
   
   function changeTurn(color, isCheckmate, isKingCaptured) {
 
-
+    console.log('changeTurn <--->');
     if (isKingCaptured) {
       endGame(color, false);
   
@@ -395,24 +409,32 @@ function otherColor(color) {
   }
   
   function verifyCheckmateAndChangeTurn(chessPiece, pieceColor, isKingCaptured) {
+    console.log('verifyCheckmateAnd  -ChangeTurn-');
     const isCheckmate = checkmate(chessPiece, pieceColor);
     changeTurn(pieceColor, isCheckmate, isKingCaptured);
     clearZonesByClassName("dropzone", "capture");
   }
   
   function applyPawnExceptions(chessPiece, currSquare, pieceColor, isKingCaptured) {
+    console.log('applyPawnExceptions');
+    console.log(currSquare);
     // Update pawn movement 
     chessPiece.piece.v = 1;
-
+    console.log('----------***---');
+    console.log(chessPiece);
+    console.log('----------***---');
     // Check if pawn arrived at the other side of the chessboard
     const chessboardSide = chessPiece.piece.local;
     const opponentSide = chessboardSide === "bottom" ? "l8" : "l1";
 
-
+    console.log('*********** opo');
+    console.log(opponentSide);
+    console.log(currSquare);
+    console.log('***********');
   
   
     if (currSquare.parentNode.classList.contains(opponentSide)) {
-  
+
       let dropDownSelector = '<div id="piece-selector">';
       dropDownSelector += '<a name="knight">♞</a>';
       dropDownSelector += '<a name="queen">♛</a>';
@@ -444,44 +466,51 @@ function otherColor(color) {
     } else {
       verifyCheckmateAndChangeTurn(chessPiece, pieceColor, isKingCaptured);
     }
-
- 
-  
   }
   
   function finishMove(event, selectedPiece) {
-
+    console.log('finish Move <<<<<<<<');
+   
     const target = checkDropZones(event);
     if (target) {
-  
       const pieceColor = selectedPiece.classList[0];
-  
       const isKingCaptured = captureOpponentPiece(target, pieceColor);
   
       movePiece(selectedPiece, selectedPiece.parentNode, target);
-      
       if (selectedPiece.classList.contains("pawn")) {
+        
         applyPawnExceptions(selectedPiece, target, pieceColor, isKingCaptured);
       } else {
+        
         verifyCheckmateAndChangeTurn(selectedPiece, pieceColor, isKingCaptured);
       }
       
       selectedPiece.classList.remove("dragging");
       target.classList.remove("dragover");
-      
+
+      //Caprurar datos necesarios para guardar en la BDs
+      var line = target.parentElement.classList[1];
+      var square =  target.classList[1];
+      var key = selectedPiece.id;
+      // var color = selectedPiece.classList[0]; 
+      // var name = selectedPiece.classList[1]; 
+      //Guardar en la BD 
+      draughts[key].line = line;
+      draughts[key].square = square;
+      Livewire.dispatch('move', {move: draughts,color:pieceColor})
     }
-    
     clearZonesByClassName("dropzone", "capture");
   }
+
+
   
   
   /* Event Listeners */
   document.addEventListener("click", event => {
-
-    console.log('seleccionar ficha');
-
+    console.log('<-----------------click------------->');
     if (event.target.draggable) {
       if (event.target !== draggedPiece) {
+        console.log('showPossibleDropZones');
         draggedPiece = event.target;
         showPossibleDropZones(draggedPiece);
       }
@@ -492,7 +521,7 @@ function otherColor(color) {
   });
   
   document.addEventListener("dragstart", event => {
-    console.log('Iniciar el movimiento');
+    console.log('addEventListener123');
 
     if (event.target.draggable) {
       draggedPiece = event.target;
@@ -503,6 +532,7 @@ function otherColor(color) {
   });
   
   document.addEventListener("dragover", event => {
+    console.log('dragover');
     event.preventDefault();
   }, false);
   
@@ -511,14 +541,10 @@ function otherColor(color) {
   document.addEventListener("dragleave", checkDropZones);
   
   document.addEventListener("drop", event => {
+    console.log('INICIO');
     event.preventDefault();
-
-    
     finishMove(event, draggedPiece);
     draggedPiece = null;
 
-    console.log('----FINAL-----');
-    // const dante = document.querySelectorAll('.white');
-    // console.log(JSON.stringify(dante));
     console.log('FINAL');
   });
