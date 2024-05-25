@@ -37,7 +37,7 @@ function otherColor(color) {
   
   function applyPropOneChessPiece(chessPiece, chessboardPosition) {
 
-     
+    console.log('applyPropOneChessPiece');
     
     const chessPiecesProp = ["pawn", 0, 2, 0,
                              "rook", 7, 7, 0,
@@ -65,29 +65,33 @@ function otherColor(color) {
   
   function applyPropChessPieces(piecesColor, chessboardPosition) {
 
-    console.log('*********** position');
-    console.log(chessboardPosition);
-    console.log('***********');
-  
     console.log('applyPropChessPieces');
-    
+
+    //reemplazar por posiciones en la tabla
     const chessPiecesClass = document.querySelectorAll(`.${piecesColor}`);
+
+
+
     chessPiecesClass.forEach(chessPiece => {
       applyPropOneChessPiece(chessPiece, chessboardPosition);
     });
 
-    console.log('*********** positiona');
-    console.log(chessboardPosition);
+    console.log('*********** chessPiecesClass rey');
+    console.log(chessPiecesClass);
     console.log('***********');
   
   }
   
   function clearZonesByClassName(...classNames) {
     console.log('clearZonesByClassName');
+    console.log(classNames);
     classNames.forEach(className => {
       const zones = document.querySelectorAll(`.${className}`);
       const removeClassName = className.split(".");
       zones.forEach(zone => zone.classList.remove(removeClassName[0]));
+
+      console.log('zones xsxsxsxsxsxs');
+      console.log(zones);
     });
   }
   
@@ -117,7 +121,7 @@ function otherColor(color) {
   const showPossibleDropZones = function (el) {
     
     console.log(el);
-    console.log('-+-+-+-+-+-+-+-');
+    console.log('mover literal la pieza +-+--++');
     clearZonesByClassName("dropzone", "capture");
   
     const elColor = el.classList[0];
@@ -229,7 +233,7 @@ function otherColor(color) {
   }
   
   function movePiece(chessPiece, currPosition, nextPosition) {
-    console.log('movePiece');
+    console.log('movePiece DANTE DANTE');
     currPosition.removeChild(chessPiece);
     nextPosition.appendChild(chessPiece);
   }
@@ -238,6 +242,7 @@ function otherColor(color) {
   function captureOpponentPiece(currSquare, pieceColor) {
     console.log('captureOpponentPiece');
     // Check if drop occurs with a capture
+
     if (currSquare.firstElementChild) {
   
       const capturedPiece = currSquare.firstElementChild;
@@ -333,19 +338,18 @@ function otherColor(color) {
   
   const whiteTurn = playerTurn("white");
   const blackTurn = playerTurn("black");
-  
+
+
   const startDelay = setTimeout(() => {
     whiteTurn.start();
     disableAndEnablePieces("black", "white");
   }, 3000);
 
+  
  
   
   
   function endGame(color, endedByTime) {
-
-   
-  
     whiteTurn.stop();
     blackTurn.stop();
     disableAll("white", "black");
@@ -399,17 +403,12 @@ function otherColor(color) {
   function applyPawnExceptions(chessPiece, currSquare, pieceColor, isKingCaptured) {
     // Update pawn movement 
     chessPiece.piece.v = 1;
-    console.log('----------***---');
-    console.log(chessPiece);
-    console.log('----------***---');
+
     // Check if pawn arrived at the other side of the chessboard
     const chessboardSide = chessPiece.piece.local;
     const opponentSide = chessboardSide === "bottom" ? "l8" : "l1";
 
-    console.log('*********** opo');
-    console.log(opponentSide);
-    console.log(currSquare);
-    console.log('***********');
+
   
   
     if (currSquare.parentNode.classList.contains(opponentSide)) {
@@ -453,7 +452,6 @@ function otherColor(color) {
   function finishMove(event, selectedPiece) {
 
     const target = checkDropZones(event);
-
     if (target) {
   
       const pieceColor = selectedPiece.classList[0];
@@ -494,13 +492,14 @@ function otherColor(color) {
   });
   
   document.addEventListener("dragstart", event => {
-    console.log('addEventListener123');
+    console.log('Iniciar el movimiento');
 
     if (event.target.draggable) {
       draggedPiece = event.target;
       showPossibleDropZones(draggedPiece);
       draggedPiece.classList.add("dragging");
     }
+
   });
   
   document.addEventListener("dragover", event => {
@@ -518,5 +517,8 @@ function otherColor(color) {
     finishMove(event, draggedPiece);
     draggedPiece = null;
 
+    console.log('----FINAL-----');
+    // const dante = document.querySelectorAll('.white');
+    // console.log(JSON.stringify(dante));
     console.log('FINAL');
   });

@@ -230,7 +230,7 @@
     
     @push('js')
 
-    <script src="{{asset('js/ajedrez.js')}}"></script>
+   <script src="{{asset('js/ajedrez.js')}}"></script> 
 
     
         <script>

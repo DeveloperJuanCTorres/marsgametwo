@@ -83,12 +83,6 @@ class Ajedrez extends Component
         }); 
     }
 
-    //Game
-    public function play(){
-        $pop = rand(1,6);
-        $this->dispatch('dados',pop: $pop);
-    }
-
     public function render()
     {
         return view('livewire.ajedrez')->layout('layouts.ajedrez');
