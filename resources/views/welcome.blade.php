@@ -147,7 +147,7 @@
                             <label style="width: 100px;" class="btn btn-outline-mars" for="btnradio3"><i style="font-size: 32px;" class="las la-address-book"></i></label>
 
                             <input type="radio" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off">
-                            <label style="width: 100px;" class="btn btn-outline-mars" for="btnradio4"><a href="/login"><i style="font-size: 32px;" class="las la-user"></i></a></label>
+                            <label style="width: 100px;" class="btn btn-outline-mars open_perfil1" for="btnradio4"><i style="font-size: 32px;" class="las la-user"></i></label>
                         </div>
                     </nav>
                 </div>
@@ -196,10 +196,14 @@
                                                     <i class="las la-chess text-white" style="font-size: 30px;"></i>
                                                     <span class="text-white ml-2">Salas Disponibles</span>
                                                 </a>
-                                                <a href="/store" class="w-100 rounded btn btn-warning d-flex align-items-center p-3 mb-2">
+                                                <!-- <a href="/store" class="w-100 rounded btn btn-warning d-flex align-items-center p-3 mb-2">
                                                     <i class="las la-store-alt text-white" style="font-size: 30px;"></i>
                                                     <span class="text-white ml-2">Tienda</span>
-                                                </a>      
+                                                </a>       -->
+                                                <a href="javascript:void(0)" class="w-100 rounded btn btn-warning d-flex align-items-center p-3 mb-2 open_store">
+                                                    <i class="las la-store-alt text-white" style="font-size: 30px;"></i>
+                                                    <span class="text-white ml-2">Tienda</span>
+                                                </a> 
                                                 <a href="javascript:void(0)" class="w-100 rounded btn btn-secondary d-flex align-items-center p-3 mb-2 open_loby">
                                                     <i class="lab la-rocketchat text-white" style="font-size: 30px;"></i>
                                                     <span class="text-white ml-2">Loby</span>  
@@ -322,6 +326,9 @@
                                 </div>                                
                             </div>                            
                         </div>
+                        <!-- CONTENIDO DE STORE -->
+                        <x-store></x-store>
+                        <!-- FIN DEL CONTENIDO DE STORE -->
                         <!-- CONTENIDO DE LOBY -->
                         <div class="col-lg-6 col-xl-7 loby d-none" id="loby" style="margin-top: 100px;">
                             
@@ -355,22 +362,6 @@
                                             </div>
                                         </div>
                                     </div>
-
-                                    <!-- <div class="msg right-msg">
-                                        <div class="msg-img" style="background-image: url(https://image.flaticon.com/icons/svg/145/145867.svg)">
-                                        </div>
-
-                                        <div class="msg-bubble">
-                                            <div class="msg-info">
-                                            <div class="msg-info-name">Sajad</div>
-                                            <div class="msg-info-time">12:46</div>
-                                            </div>
-
-                                            <div class="msg-text">
-                                            You can change your name in JS section!
-                                            </div>
-                                        </div>
-                                    </div> -->
                                 </main>
 
                                 <form class="msger-inputarea">
@@ -489,6 +480,51 @@
                             </ul>
                         </div>
                         <!-- FIN CONTENIDO DE PREMIOS -->
+                        <!-- CONTENIDO PERFIL DESTOCK -->
+                        <div class="col-lg-6 col-xl-7 perfil d-none" id="perfil" style="margin-top: 100px;">
+                            <div class="border-bottom mb-4">
+                                <h2 class="my-4 claseh2 text-azul">Perfil</h2>
+                            </div>
+                            <div class="mobile_menu_2 text-center">
+                                <div class="img-perfil">
+                                    <img src="https://p.w3layouts.com/demos/june-2016/01-06-2016/model_profile_widget/web/images/p1.png" title="Aisha" alt="foto-perfil"></div>
+                                    @auth
+                                    <h4>
+                                        {{Auth::user()->name}}
+                                    </h4>
+                                    <h6>
+                                        UserName
+                                    </h6>
+                                    <p>{{Auth::user()->email}}</p>
+                                    @endauth
+                                    <hr>
+                                    <h5>Edad : 31 Años</h5>
+                                    <h5>Teléfono: <span class="h6">978209130</span></h5>
+                                    <div class="caja-gris">
+                                    <div class="sobre">
+                                        <img style="display: inline !important;" src="img/marscoin.png">
+                                        <p style="margin-bottom: 0 !important;">1086</p> 
+                                    </div>
+                                    <div class="sobre">
+                                        <img style="display: inline !important;" src="img/ticket.png">
+                                        <p style="margin-bottom: 0 !important;">1582</p> 
+                                    </div>
+                                    <div class="sobre">
+                                        <img style="display: inline !important;" src="img/level.png">
+                                        <p style="margin-bottom: 0 !important;">1468</p> 
+                                    </div>
+                                    </div> 
+                                    
+                                    <div class="redes face"><a href="#"></a></div>
+                                    <div class="redes twitter"><a href="#"></a></div>
+                                    <div class="redes instagram"><a href="#"></a></div>
+                                    <div class="redes youtube"><a href="#"></a></div>
+                                    <div class="boton p-2">
+                                        <a href="#">Editar Perfil</a>
+                                    </div>             
+                            </div>
+                        </div>             
+                        <!-- FIN DEL CONTENIDO PERFIL DESTOCK -->
                         <div class="col-lg-3 col-xl-3 scroll container m-block m-none bg-white" style="position: fixed;z-index: 9999;right:0;" id="div-right">
                             <div class="row g-4">
                                 <div class="col-12">
@@ -735,20 +771,6 @@
                 </span>
                 <span class="icon_text text-white">Perfil</span>
             </a>
-
-            <!-- <a href="javascript:void(0)" class="icon_wrp text-center" id="src_icon">
-                <span class="icon">
-                   <i class="icon-search-left"></i>
-                </span>
-                <span class="icon_text">Search</span>
-            </a>
-            <a href="javascript:void(0)" class="icon_wrp crt text-center" id="openCart">
-                <span class="icon">
-                    <i class="icon-cart"></i>
-                </span>
-                <span class="icon_text">Cart</span>
-                <span class="pops">8</span>
-            </a> -->
         </div>
     </div>
 
@@ -771,7 +793,7 @@
                         <i class="las la-chess text-white mx-4" style="font-size: 30px;"></i>
                         <span class="text-white">Salas Disponibles</span>
                     </a>
-                    <a href="/store" class="w-100 rounded btn btn-warning d-flex align-items-center p-3 mb-2">
+                    <a href="javascript:void(0)" class="w-100 rounded btn btn-warning d-flex align-items-center p-3 mb-2 open_store">
                         <i class="las la-store-alt text-white mx-4" style="font-size: 30px;"></i>
                         <span class="text-white">Tienda</span>
                     </a>      
@@ -891,23 +913,18 @@
             </h5>
             <div class="img-perfil">
                 <img src="https://p.w3layouts.com/demos/june-2016/01-06-2016/model_profile_widget/web/images/p1.png" title="Aisha" alt="foto-perfil"></div>
+                @auth
                 <h4>
-                    @auth
-                        {{Auth::user()->name}}
-                    @else
-                        Name
-                    @endauth
+                    {{Auth::user()->name}}
                 </h4>
-                <p>
-                    @auth
-                        UserName
-                    @else
-                        UserName
-                    @endauth
-                </p>
+                <h6>
+                    UserName
+                </h6>
+                <p>{{Auth::user()->email}}</p>
+                @endauth
                 <hr>
-                <h3>Nivel : 85%</h3>
-                <p>Lorem ipsum dolor sit amet consectetur</p>
+                <h5>Edad : 31 Años</h5>
+                <h5>Teléfono: <span class="h6">978209130</span></h5>
                 <div class="caja-gris">
                 <div class="sobre">
                     <img style="display: inline !important;" src="img/marscoin.png">
@@ -968,7 +985,7 @@
                 </div>
             </div>   -->
         </div>
-    </div>
+    </div>     
 
     <!-- Modal Crear sala -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

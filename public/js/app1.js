@@ -303,8 +303,12 @@
         $('#nosotros').addClass('d-none')
         $('#contactanos').removeClass('d-block')
         $('#contactanos').addClass('d-none')
+        $('#store').removeClass('d-block')
+        $('#store').addClass('d-none')
         $('#premios').removeClass('d-block')
         $('#premios').addClass('d-none')
+        $('#perfil').removeClass('d-block')
+        $('#perfil').addClass('d-none')
     })
 
     // Loby
@@ -318,8 +322,12 @@
         $('#nosotros').addClass('d-none')
         $('#contactanos').removeClass('d-block')
         $('#contactanos').addClass('d-none')
+        $('#store').removeClass('d-block')
+        $('#store').addClass('d-none')
         $('#premios').removeClass('d-block')
         $('#premios').addClass('d-none')
+        $('#perfil').removeClass('d-block')
+        $('#perfil').addClass('d-none')
     })
 
     // Nosotros
@@ -335,8 +343,12 @@
         $('#juegos').addClass('d-none')
         $('#contactanos').removeClass('d-block')
         $('#contactanos').addClass('d-none')
+        $('#store').removeClass('d-block')
+        $('#store').addClass('d-none')
         $('#premios').removeClass('d-block')
         $('#premios').addClass('d-none')
+        $('#perfil').removeClass('d-block')
+        $('#perfil').addClass('d-none')
     })
 
     // Contactanos
@@ -352,8 +364,12 @@
         $('#juegos').addClass('d-none')
         $('#nosotros').removeClass('d-block')
         $('#nosotros').addClass('d-none')
+        $('#store').removeClass('d-block')
+        $('#store').addClass('d-none')
         $('#premios').removeClass('d-block')
         $('#premios').addClass('d-none')
+        $('#perfil').removeClass('d-block')
+        $('#perfil').addClass('d-none')
     })
 
     // Premios
@@ -372,7 +388,49 @@
         $('#juegos').addClass('d-none')
         $('#nosotros').removeClass('d-block')
         $('#nosotros').addClass('d-none')
+        $('#store').removeClass('d-block')
+        $('#store').addClass('d-none')
         $('#mobile_menwrap').removeClass('active')
+        $('#perfil').removeClass('d-block')
+        $('#perfil').addClass('d-none')
+    })
+
+    // Store
+    $('.open_store').click(function () {
+        $('#store').removeClass('d-none')
+        $('#store').addClass('d-block')
+        $('#loby').removeClass('d-block')
+        $('#loby').addClass('d-none')
+        $('#mobile_menwrap').removeClass('active')
+        $('#juegos').removeClass('d-block')
+        $('#juegos').addClass('d-none')
+        $('#nosotros').removeClass('d-block')
+        $('#nosotros').addClass('d-none')
+        $('#contactanos').removeClass('d-block')
+        $('#contactanos').addClass('d-none')
+        $('#premios').removeClass('d-block')
+        $('#premios').addClass('d-none')
+        $('#perfil').removeClass('d-block')
+        $('#perfil').addClass('d-none')
+    })
+
+    // Store
+    $('.open_perfil1').click(function () {
+        $('#perfil').removeClass('d-none')
+        $('#perfil').addClass('d-block')
+        $('#store').removeClass('d-block')
+        $('#store').addClass('d-none')
+        $('#loby').removeClass('d-block')
+        $('#loby').addClass('d-none')
+        $('#mobile_menwrap').removeClass('active')
+        $('#juegos').removeClass('d-block')
+        $('#juegos').addClass('d-none')
+        $('#nosotros').removeClass('d-block')
+        $('#nosotros').addClass('d-none')
+        $('#contactanos').removeClass('d-block')
+        $('#contactanos').addClass('d-none')
+        $('#premios').removeClass('d-block')
+        $('#premios').addClass('d-none')
     })
 
     //CREAR SALA
