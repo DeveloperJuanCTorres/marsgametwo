@@ -1,8 +1,8 @@
-<div  class="bg-gray-100 shadow border border-gray-300 overflow-hidden ">
+<div x-data="data()"   class="bg-gray-100 shadow border border-gray-300 overflow-hidden ">
     <div class="grid grid-cols-6 divide-x divide-gray-200">
         <div class="col-span-6 sm:col-span-4 bg-white bg-gamer" >
                 <div wire:ignore>
-                    <div class="container">
+                    <div class="container" id="boardDiv">
                         <div class="extra-zone">
                           <div class="captured-zone" id="czblack"></div>
                           <div class="countdown-timer" id="ctblack">05:00</div>
@@ -223,16 +223,60 @@
     @endpush
     
     @push('js')
-     <script src="{{asset('js/ajedrez.js')}}?v=1993.1.1"></script>  
+      <script src="{{asset('js/ajedrez.js')}}?v=1993.1.1"></script> 
+
       <script>
-         console.log('cargar tabla 0000');
             document.addEventListener('livewire:initialized', function () {
-                console.log('cargar tabla 1111');
                 var pieces = @this.draughts;
                 var playercolor = @this.player;
                 playGame(pieces,playercolor);
               })
       </script> 
+
+        <script>
+            function data(){
+                return{
+                    init(){
+                    
+                    Echo.private('App.Models.User.' + {{ auth()->id() }}).notification((notification) => {
+
+                        if (notification.type == 'App\\Notifications\\NewMessage') {
+                            Livewire.dispatch('render')  
+                        }
+
+                        if (notification.type == 'App\\Notifications\\NewMove') {
+                            Livewire.dispatch('playGame')   
+                        }
+
+                    });
+                    }
+                }    
+            }
+        </script>
+
+
+
+      <script>
+            Livewire.on('iniliziateJs', (event) => {
+                if(event[1] == event[2]){
+                    //Activo el tablero para el turno que le coresponde
+                    document.getElementById('boardDiv').classList.remove('elementor-toggle');
+                }else{
+                    document.getElementById('boardDiv').classList.add('elementor-toggle');
+                }
+            });
+
+            Livewire.on('notificateEchoJs', (event) => {
+                console.log('movimiento del oponente desde js ----OP1');
+                if(event[1] == event[2]){
+                    console.log('js Sin velo');
+                    //Activo el tablero para el turno que le coresponde
+                    document.getElementById('boardDiv').classList.remove('elementor-toggle');
+                }
+                opponentMove(event[0]);
+                // app.opponent(event[2]);
+            });
+      </script>
 
       <script>
           function copiarEmoji(emoji) {

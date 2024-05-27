@@ -36,8 +36,8 @@ function otherColor(color) {
   }
   
   function applyPropOneChessPiece(chessPiece, chessboardPosition) {
-
-    console.log('applyPropOneChessPiece');
+    // console.log('applyPropOneChessPiece');
+     
     
     const chessPiecesProp = ["pawn", 0, 2, 0,
                              "rook", 7, 7, 0,
@@ -65,36 +65,20 @@ function otherColor(color) {
   
   //En esta funcio se inicializan las pieza
   function applyPropChessPieces(piecesColor, chessboardPosition) {
-
-    console.log('*********** position');
-    console.log(chessboardPosition);
-    console.log('***********');
-  
-    console.log('applyPropChessPieces');
-    
+    // console.log('applyPropChessPieces');
     const chessPiecesClass = document.querySelectorAll(`.${piecesColor}`);
-
-
-
     chessPiecesClass.forEach(chessPiece => {
       applyPropOneChessPiece(chessPiece, chessboardPosition);
     });
-
-    console.log('*********** positiona');
-    console.log(chessboardPosition);
-    console.log('***********');
-  
   }
   
   function clearZonesByClassName(...classNames) {
     console.log('clearZonesByClassName');
+
     classNames.forEach(className => {
       const zones = document.querySelectorAll(`.${className}`);
       const removeClassName = className.split(".");
       zones.forEach(zone => zone.classList.remove(removeClassName[0]));
-
-      console.log('zones xsxsxsxsxsxs');
-      console.log(zones);
     });
   }
   
@@ -123,8 +107,7 @@ function otherColor(color) {
   
   const showPossibleDropZones = function (el) {
     
-    console.log(el);
-    console.log('-+-+-+-+-+-+-+-');
+    console.log('showPossibleDropZones');
     clearZonesByClassName("dropzone", "capture");
   
     const elColor = el.classList[0];
@@ -237,7 +220,9 @@ function otherColor(color) {
   
   //quitar y colocar la pize en la otra casilla
   function movePiece(chessPiece, currPosition, nextPosition) {
-    console.log('movePiece');
+    console.log('>>>>>  movePiece a extra zona');
+    console.log(nextPosition);
+
     currPosition.removeChild(chessPiece);
     nextPosition.appendChild(chessPiece);
   }
@@ -246,7 +231,6 @@ function otherColor(color) {
   function captureOpponentPiece(currSquare, pieceColor) {
     console.log('captureOpponentPiece');
     // Check if drop occurs with a capture
-
     if (currSquare.firstElementChild) {
       const capturedPiece = currSquare.firstElementChild;
       disableDrag(capturedPiece);
@@ -347,22 +331,76 @@ function otherColor(color) {
   /* 
     Main
   */
-  console.log('MAIN');
-  applyPropChessPieces("white", "bottom");
-  applyPropChessPieces("black", "top");
-  let draggedPiece = null;
-  
-  const whiteTurn = playerTurn("white");
-  const blackTurn = playerTurn("black");
-  
-  const startDelay = setTimeout(() => {
-    whiteTurn.start();
-    disableAndEnablePieces("black", "white");
-  }, 3000);
+    // var pieces = [
+    //     {name: "rook",line: "l1",square: "c1",figure: '♜',color: 'white',state: 1},
+    //     {name: "knight",line: "l1",square: "c2",figure: '♞',color: 'white',state: 1},
+    //     {name: "bishop",line: "l1",square: "c3",figure: '♝',color: 'white',state: 1},
+    //     {name: "queen",line: "l1",square: "c4",figure: '♛',color: 'white',state: 1},
+    //     {name: "king",line: "l1",square: "c5",figure: '♚',color: 'white',state: 1},
+    //     {name: "bishop",line: "l1",square: "c6",figure: '♝',color: 'white',state: 1},
+    //     {name: "knight",line: "l1",square: "c7",figure: '♞',color: 'white',state: 1},
+    //     {name: "rook",line: "l1",square: "c8",figure: '♜',color: 'white',state: 1},
+    //     {name: "pawn",line: "l2",square: "c1",figure: '♙',color: 'white',state: 1},
+    //     {name: "pawn",line: "l2",square: "c2",figure: '♙',color: 'white',state: 1},
+    //     {name: "pawn",line: "l2",square: "c3",figure: '♙',color: 'white',state: 1},
+    //     {name: "pawn",line: "l2",square: "c4",figure: '♙',color: 'white',state: 1},
+    //     {name: "pawn",line: "l2",square: "c5",figure: '♙',color: 'white',state: 1},
+    //     {name: "pawn",line: "l2",square: "c6",figure: '♙',color: 'white',state: 1},
+    //     {name: "pawn",line: "l2",square: "c7",figure: '♙',color: 'white',state: 1},
+    //     {name: "pawn",line: "l2",square: "c8",figure: '♙',color: 'white',state: 1},
+    //     {name: "pawn",line: "l7",square: "c1",figure: '♙',color: 'black',state: 1},
+    //     {name: "pawn",line: "l7",square: "c2",figure: '♙',color: 'black',state: 1},
+    //     {name: "pawn",line: "l7",square: "c3",figure: '♙',color: 'black',state: 1},
+    //     {name: "pawn",line: "l7",square: "c4",figure: '♙',color: 'black',state: 1},
+    //     {name: "pawn",line: "l7",square: "c5",figure: '♙',color: 'black',state: 1},
+    //     {name: "pawn",line: "l7",square: "c6",figure: '♙',color: 'black',state: 1},
+    //     {name: "pawn",line: "l7",square: "c7",figure: '♙',color: 'black',state: 1},
+    //     {name: "pawn",line: "l7",square: "c8",figure: '♙',color: 'black',state: 1},
+    //     {name: "rook",line: "l8",square: "c1",figure: '♜',color: 'black',state: 1},
+    //     {name: "knight",line: "l8",square: "c2",figure: '♞',color: 'black',state: 1},
+    //     {name: "bishop",line: "l8",square: "c3",figure: '♝',color: 'black',state: 1},
+    //     {name: "queen",line: "l8",square: "c4",figure: '♛',color: 'black',state: 1},
+    //     {name: "king",line: "l8",square: "c5",figure: '♚',color: 'black',state: 1},
+    //     {name: "bishop",line: "l8",square: "c6",figure: '♝',color: 'black',state: 1},
+    //     {name: "knight",line: "l8",square: "c7",figure: '♞',color: 'black',state: 1},
+    //     {name: "rook",line: "l8",square: "c8",figure: '♜',color: 'black',state: 1},
+    // ];
 
+    console.log('MAIN');
+    var draughts;
+  
+    const whiteTurn = playerTurn("white");
+    const blackTurn = playerTurn("black");
+
+    function playGame(pieces,playercolor){
+      console.log('Turno color Dante');
+      console.log(playercolor);
+      
+      draughts = pieces;
+      createParts(pieces);
+      applyPropChessPieces("white", "bottom");
+      applyPropChessPieces("black", "top");
+      let draggedPiece = null;
+
+      if (playercolor === "white") {
+        console.log('Inicia fichas Negras');
+        whiteTurn.stop();
+        blackTurn.start();
+        disableAndEnablePieces("white", "black");
+  
+      } else if (playercolor === "black") {
+        console.log('Inicia fichas Blancas');
+        blackTurn.stop();
+        whiteTurn.start();
+        disableAndEnablePieces("black", "white");
+      }
+
+      // const startDelay = setTimeout(() => {
+      //   whiteTurn.start();
+      //   disableAndEnablePieces("white", "black");
+      // }, 3000);
+   }
  
-
-
   function endGame(color, endedByTime) {
     whiteTurn.stop();
     blackTurn.stop();
@@ -420,18 +458,9 @@ function otherColor(color) {
     console.log(currSquare);
     // Update pawn movement 
     chessPiece.piece.v = 1;
-    console.log('----------***---');
-    console.log(chessPiece);
-    console.log('----------***---');
     // Check if pawn arrived at the other side of the chessboard
     const chessboardSide = chessPiece.piece.local;
     const opponentSide = chessboardSide === "bottom" ? "l8" : "l1";
-
-    console.log('*********** opo');
-    console.log(opponentSide);
-    console.log(currSquare);
-    console.log('***********');
-  
   
     if (currSquare.parentNode.classList.contains(opponentSide)) {
 
@@ -470,15 +499,14 @@ function otherColor(color) {
   
   function finishMove(event, selectedPiece) {
     console.log('finish Move <<<<<<<<');
-   
     const target = checkDropZones(event);
+
     if (target) {
       const pieceColor = selectedPiece.classList[0];
       const isKingCaptured = captureOpponentPiece(target, pieceColor);
   
       movePiece(selectedPiece, selectedPiece.parentNode, target);
       if (selectedPiece.classList.contains("pawn")) {
-        
         applyPawnExceptions(selectedPiece, target, pieceColor, isKingCaptured);
       } else {
         
@@ -497,14 +525,22 @@ function otherColor(color) {
       //Guardar en la BD 
       draughts[key].line = line;
       draughts[key].square = square;
-      Livewire.dispatch('move', {move: draughts,color:pieceColor})
+
+      document.getElementById('boardDiv').classList.add('elementor-toggle');
+      Livewire.dispatch('move', {move: draughts,color:pieceColor,jump:key})
     }
     clearZonesByClassName("dropzone", "capture");
   }
 
 
-  
-  
+  function opponentMove(key) {
+      console.log('opponentMove');
+      const node = document.getElementById(key);
+      // if (node.parentNode) {
+      //   node.parentNode.removeChild(node);
+      // }
+  }
+
   /* Event Listeners */
   document.addEventListener("click", event => {
     console.log('<-----------------click------------->');
@@ -521,14 +557,14 @@ function otherColor(color) {
   });
   
   document.addEventListener("dragstart", event => {
-    console.log('addEventListener123');
+    console.log('dragstart');
+    // console.log(event.target);
 
     if (event.target.draggable) {
       draggedPiece = event.target;
       showPossibleDropZones(draggedPiece);
       draggedPiece.classList.add("dragging");
     }
-
   });
   
   document.addEventListener("dragover", event => {
@@ -545,6 +581,5 @@ function otherColor(color) {
     event.preventDefault();
     finishMove(event, draggedPiece);
     draggedPiece = null;
-
     console.log('FINAL');
   });

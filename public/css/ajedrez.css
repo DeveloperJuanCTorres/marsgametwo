@@ -1,4 +1,10 @@
 /* Definimos los estilos del tablero*/
+
+.elementor-toggle {
+  pointer-events: none;
+background: #2b88068c;
+}
+
 .bg-gamer{
 	background: url('/img/papel_tapiz.png');
 	background-repeat: no-repeat;
