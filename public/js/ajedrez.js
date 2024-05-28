@@ -331,41 +331,7 @@ function otherColor(color) {
   /* 
     Main
   */
-    // var pieces = [
-    //     {name: "rook",line: "l1",square: "c1",figure: '♜',color: 'white',state: 1},
-    //     {name: "knight",line: "l1",square: "c2",figure: '♞',color: 'white',state: 1},
-    //     {name: "bishop",line: "l1",square: "c3",figure: '♝',color: 'white',state: 1},
-    //     {name: "queen",line: "l1",square: "c4",figure: '♛',color: 'white',state: 1},
-    //     {name: "king",line: "l1",square: "c5",figure: '♚',color: 'white',state: 1},
-    //     {name: "bishop",line: "l1",square: "c6",figure: '♝',color: 'white',state: 1},
-    //     {name: "knight",line: "l1",square: "c7",figure: '♞',color: 'white',state: 1},
-    //     {name: "rook",line: "l1",square: "c8",figure: '♜',color: 'white',state: 1},
-    //     {name: "pawn",line: "l2",square: "c1",figure: '♙',color: 'white',state: 1},
-    //     {name: "pawn",line: "l2",square: "c2",figure: '♙',color: 'white',state: 1},
-    //     {name: "pawn",line: "l2",square: "c3",figure: '♙',color: 'white',state: 1},
-    //     {name: "pawn",line: "l2",square: "c4",figure: '♙',color: 'white',state: 1},
-    //     {name: "pawn",line: "l2",square: "c5",figure: '♙',color: 'white',state: 1},
-    //     {name: "pawn",line: "l2",square: "c6",figure: '♙',color: 'white',state: 1},
-    //     {name: "pawn",line: "l2",square: "c7",figure: '♙',color: 'white',state: 1},
-    //     {name: "pawn",line: "l2",square: "c8",figure: '♙',color: 'white',state: 1},
-    //     {name: "pawn",line: "l7",square: "c1",figure: '♙',color: 'black',state: 1},
-    //     {name: "pawn",line: "l7",square: "c2",figure: '♙',color: 'black',state: 1},
-    //     {name: "pawn",line: "l7",square: "c3",figure: '♙',color: 'black',state: 1},
-    //     {name: "pawn",line: "l7",square: "c4",figure: '♙',color: 'black',state: 1},
-    //     {name: "pawn",line: "l7",square: "c5",figure: '♙',color: 'black',state: 1},
-    //     {name: "pawn",line: "l7",square: "c6",figure: '♙',color: 'black',state: 1},
-    //     {name: "pawn",line: "l7",square: "c7",figure: '♙',color: 'black',state: 1},
-    //     {name: "pawn",line: "l7",square: "c8",figure: '♙',color: 'black',state: 1},
-    //     {name: "rook",line: "l8",square: "c1",figure: '♜',color: 'black',state: 1},
-    //     {name: "knight",line: "l8",square: "c2",figure: '♞',color: 'black',state: 1},
-    //     {name: "bishop",line: "l8",square: "c3",figure: '♝',color: 'black',state: 1},
-    //     {name: "queen",line: "l8",square: "c4",figure: '♛',color: 'black',state: 1},
-    //     {name: "king",line: "l8",square: "c5",figure: '♚',color: 'black',state: 1},
-    //     {name: "bishop",line: "l8",square: "c6",figure: '♝',color: 'black',state: 1},
-    //     {name: "knight",line: "l8",square: "c7",figure: '♞',color: 'black',state: 1},
-    //     {name: "rook",line: "l8",square: "c8",figure: '♜',color: 'black',state: 1},
-    // ];
-
+  
     console.log('MAIN');
     var draughts;
   
@@ -381,24 +347,28 @@ function otherColor(color) {
       applyPropChessPieces("white", "bottom");
       applyPropChessPieces("black", "top");
       let draggedPiece = null;
-
-      if (playercolor === "white") {
-        console.log('Inicia fichas Negras');
-        whiteTurn.stop();
-        blackTurn.start();
-        disableAndEnablePieces("white", "black");
-  
-      } else if (playercolor === "black") {
-        console.log('Inicia fichas Blancas');
-        blackTurn.stop();
-        whiteTurn.start();
-        disableAndEnablePieces("black", "white");
-      }
+      changeEcho(playercolor);
+     
 
       // const startDelay = setTimeout(() => {
       //   whiteTurn.start();
       //   disableAndEnablePieces("white", "black");
       // }, 3000);
+   }
+
+   function changeEcho(playercolor){
+    if (playercolor === "white") {
+      console.log('Inicia fichas Negras');
+      whiteTurn.stop();
+      blackTurn.start();
+      disableAndEnablePieces("white", "black");
+
+    } else if (playercolor === "black") {
+      console.log('Inicia fichas Blancas');
+      blackTurn.stop();
+      whiteTurn.start();
+      disableAndEnablePieces("black", "white");
+    }
    }
  
   function endGame(color, endedByTime) {
@@ -420,7 +390,6 @@ function otherColor(color) {
     console.log('changeTurn <--->');
     if (isKingCaptured) {
       endGame(color, false);
-  
     } else {
   
       let justKing = "";
@@ -429,19 +398,15 @@ function otherColor(color) {
       }
   
       if (color === "white") {
-  
         whiteTurn.stop();
         blackTurn.start();
         disableAndEnablePieces("white", `black${justKing}`);
-  
       } else if (color === "black") {
-  
         blackTurn.stop();
         whiteTurn.start();
         disableAndEnablePieces("black", `white${justKing}`);
-  
       }
-  
+
     }
   
   }
@@ -526,19 +491,28 @@ function otherColor(color) {
       draughts[key].line = line;
       draughts[key].square = square;
 
+      console.log('**********-square-************');
+      console.log(draughts[key].square);
+
       document.getElementById('boardDiv').classList.add('elementor-toggle');
-      Livewire.dispatch('move', {move: draughts,color:pieceColor,jump:key})
+      Livewire.dispatch('move', {move: draughts,color:pieceColor,jump:key,line:line,square:square});
     }
     clearZonesByClassName("dropzone", "capture");
   }
 
 
-  function opponentMove(key) {
-      console.log('opponentMove');
+  function opponentMove(key,line,square,playercolor) {
+      console.log('opponentMove-----move');
       const node = document.getElementById(key);
+      const casilla = document.querySelector(`.${line} .${square}`);
+      casilla.appendChild(node);
+      
+      changeEcho(playercolor);
       // if (node.parentNode) {
       //   node.parentNode.removeChild(node);
       // }
+      
+      //cambio de turno
   }
 
   /* Event Listeners */

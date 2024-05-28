@@ -20,6 +20,9 @@ class Ajedrez extends Component
     public $userAdversary;
     public $jump;
 
+    public $line;
+    public $square;
+
     public function mount(Game $game){
         
         $this->game = $game;
@@ -74,15 +77,19 @@ class Ajedrez extends Component
             $this->draughts = json_decode($stringMove->move);
             $this->player =  $stringMove->color;
             $this->jump =  $stringMove->jump;
+            $this->line =  $stringMove->line;
+            $this->square =  $stringMove->square;
         } else{
             $this->player = 'black';
             $this->draughts = json_decode($draughtsInitial);
             $this->jump =  0;
+            $this->line =  '';
+            $this->square =  '';
         }
     }
 
     #[On('move')] 
-    public function move($move,$color,$jump){
+    public function move($move,$color,$jump,$line,$square){
         $now = date('H:i:s');
         $jsonString = json_encode($move);
         $this->game->moves()->create([
@@ -90,6 +97,8 @@ class Ajedrez extends Component
             'move'=>$jsonString,
             'color'=>$color,
             'jump'=>$jump,
+            'line'=>$line,
+            'square'=>$square,
             'timer_end'=>$now,
         ]);
         Notification::send($this->userAdversary, new \App\Notifications\NewMove());
@@ -147,7 +156,7 @@ class Ajedrez extends Component
     #[On('playGame')] 
     public function playGame(){
         $this->InitBoard();
-        $this->dispatch('notificateEchoJs',$this->jump, $this->player,$this->myColor);
+        $this->dispatch('notificateEchoJs',$this->jump, $this->player,$this->myColor,$this->line,$this->square);
     }
 
     public function render()

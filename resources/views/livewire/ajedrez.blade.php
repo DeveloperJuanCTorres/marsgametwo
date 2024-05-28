@@ -254,9 +254,7 @@
             }
         </script>
 
-
-
-      <script>
+        <script>
             Livewire.on('iniliziateJs', (event) => {
                 if(event[1] == event[2]){
                     //Activo el tablero para el turno que le coresponde
@@ -272,11 +270,13 @@
                     console.log('js Sin velo');
                     //Activo el tablero para el turno que le coresponde
                     document.getElementById('boardDiv').classList.remove('elementor-toggle');
+                }else{
+                    console.log('Se movio pero se quedo el  velo');
                 }
-                opponentMove(event[0]);
+                opponentMove(event[0],event[3],event[4],event[1]);
                 // app.opponent(event[2]);
             });
-      </script>
+        </script>
 
       <script>
           function copiarEmoji(emoji) {
