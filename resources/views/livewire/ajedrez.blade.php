@@ -268,13 +268,12 @@
                 console.log('movimiento del oponente desde js ----OP1');
                 if(event[1] == event[2]){
                     console.log('js Sin velo');
+                    console.log(event[0]);
                     //Activo el tablero para el turno que le coresponde
                     document.getElementById('boardDiv').classList.remove('elementor-toggle');
-                }else{
-                    console.log('Se movio pero se quedo el  velo');
                 }
-                opponentMove(event[0],event[3],event[4],event[1]);
-                // app.opponent(event[2]);
+                // opponentMove(event[0],event[3],event[4],event[1]);
+                opponentMove(event[0],event[1]);
             });
         </script>
 

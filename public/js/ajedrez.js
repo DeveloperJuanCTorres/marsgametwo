@@ -220,9 +220,6 @@ function otherColor(color) {
   
   //quitar y colocar la pize en la otra casilla
   function movePiece(chessPiece, currPosition, nextPosition) {
-    console.log('>>>>>  movePiece a extra zona');
-    console.log(nextPosition);
-
     currPosition.removeChild(chessPiece);
     nextPosition.appendChild(chessPiece);
   }
@@ -234,16 +231,11 @@ function otherColor(color) {
     if (currSquare.firstElementChild) {
       const capturedPiece = currSquare.firstElementChild;
       disableDrag(capturedPiece);
-      
       const capturedZone = document.getElementById(`cz${pieceColor}`);
       movePiece(capturedPiece, currSquare, capturedZone);
-      
       return capturedPiece.classList.contains("king");
-  
     }
-    
     return false;
-  
   }
   
   
@@ -318,6 +310,7 @@ function otherColor(color) {
   //funcion creado por Dante Para crear las piezas
   function createParts(pieces){
     for(i=0; i< pieces.length; i++){
+      if(pieces[i].state == 1){
         const square = document.querySelector(`.${pieces[i].line} .${pieces[i].square}`);
         var div = document.createElement("div");
         div.classList.add(pieces[i].color)
@@ -325,6 +318,7 @@ function otherColor(color) {
         div.setAttribute('id',i)
         div.innerHTML  = pieces[i].figure;
         square.appendChild(div);
+      }
     }
   }
   
@@ -419,8 +413,11 @@ function otherColor(color) {
   }
   
   function applyPawnExceptions(chessPiece, currSquare, pieceColor, isKingCaptured) {
-    console.log('applyPawnExceptions');
-    console.log(currSquare);
+    console.log('applyPawnExceptions cambio de pieza');
+    var keyChange = chessPiece.id;
+    console.log(keyChange);
+
+
     // Update pawn movement 
     chessPiece.piece.v = 1;
     // Check if pawn arrived at the other side of the chessboard
@@ -445,12 +442,16 @@ function otherColor(color) {
         const chosenPieceName = e.target.name;
         const chosenPiece = e.target.innerHTML;
   
-        let newPiece = `<div class=`;
+        let newPiece = `<div  id=`;
+
+        newPiece += `"${keyChange}" class=`;
         newPiece += `"${pieceColor} ${chosenPieceName}">`;
         newPiece += `${chosenPiece}</div>`;
   
         currSquare.innerHTML = newPiece;
   
+        console.log('Cambio de piezasssss');
+        console.log(newPiece);
        
         applyPropOneChessPiece(currSquare.firstElementChild, chessboardSide);
 
@@ -465,54 +466,55 @@ function otherColor(color) {
   function finishMove(event, selectedPiece) {
     console.log('finish Move <<<<<<<<');
     const target = checkDropZones(event);
-
     if (target) {
       const pieceColor = selectedPiece.classList[0];
+      //Conseguir el ID de la pieza que se va a comer
+      if (target.firstElementChild) {
+        const capture = target.firstElementChild;
+        var keyCapture = capture.id;
+        draughts[keyCapture].state = 0;
+      }
+      //----------------
       const isKingCaptured = captureOpponentPiece(target, pieceColor);
-  
       movePiece(selectedPiece, selectedPiece.parentNode, target);
       if (selectedPiece.classList.contains("pawn")) {
         applyPawnExceptions(selectedPiece, target, pieceColor, isKingCaptured);
       } else {
-        
         verifyCheckmateAndChangeTurn(selectedPiece, pieceColor, isKingCaptured);
       }
       
       selectedPiece.classList.remove("dragging");
       target.classList.remove("dragover");
 
-      //Caprurar datos necesarios para guardar en la BDs
+      //Caprurar datos necesarios para guardar en la BD y 
       var line = target.parentElement.classList[1];
       var square =  target.classList[1];
       var key = selectedPiece.id;
       // var color = selectedPiece.classList[0]; 
       // var name = selectedPiece.classList[1]; 
-      //Guardar en la BD 
       draughts[key].line = line;
       draughts[key].square = square;
-
-      console.log('**********-square-************');
-      console.log(draughts[key].square);
-
-      document.getElementById('boardDiv').classList.add('elementor-toggle');
+      // document.getElementById('boardDiv').classList.add('elementor-toggle');
       Livewire.dispatch('move', {move: draughts,color:pieceColor,jump:key,line:line,square:square});
     }
     clearZonesByClassName("dropzone", "capture");
   }
 
 
-  function opponentMove(key,line,square,playercolor) {
+  function opponentMove(move,playercolor) {
       console.log('opponentMove-----move');
-      const node = document.getElementById(key);
+      let line = move['line'];
+      let square = move['square'];
+      const node = document.getElementById(move['jump']);
+
       const casilla = document.querySelector(`.${line} .${square}`);
+      while (casilla.firstChild) {
+        casilla.removeChild(casilla.firstChild);
+      }
       casilla.appendChild(node);
-      
+
+      //comer pieza a la que va a mover
       changeEcho(playercolor);
-      // if (node.parentNode) {
-      //   node.parentNode.removeChild(node);
-      // }
-      
-      //cambio de turno
   }
 
   /* Event Listeners */
