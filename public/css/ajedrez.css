@@ -2,22 +2,25 @@
 
 .elementor-toggle {
   pointer-events: none;
-background: #2b88068c;
 }
 
-.bg-gamer{
+/* .bg-gamer{
 	background: url('/img/papel_tapiz.png');
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
-
+} */
+.bg-gamer{
+	background: #37cf71;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #5051a4, #37cf71);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #5051a4, #37cf71); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 /*=====BOARD GAME=================*/
 .container {
   display: grid;
 	place-items: center;
   width: 100%;
-  height: 100vmin;
+  height: 95vmin;
   margin: 0;
   padding: 0;
 }
@@ -42,9 +45,8 @@ background: #2b88068c;
   margin-left: 8%;
   height: 100%;
   float: left;
-  background-color: white;
   text-align: center;
-  font-size: 3.2vmin;
+  font-size: 2.5vmin;
   font-family: Poppins;
   font-weight: 600;
   border-radius: 0.5vmin;
@@ -192,3 +194,26 @@ footer a:active {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+
+@media (min-width: 1000px) {
+	.chat-desktop{
+		display: block;
+	}
+	.chat-mobil{
+		display: none;
+	}
+
+
+  }
+
+  
+  @media (max-width: 999px) {
+	.chat-desktop{
+		display: none;
+	}
+	.chat-mobil{
+		display: block;
+	}
+
+  }

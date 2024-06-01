@@ -13,22 +13,26 @@
         @livewireStyles
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
-        <link rel="stylesheet" href="{{asset('assets/css/line-awesome.css')}}">
-        <link rel="stylesheet" href="{{asset('css/ajedrez.css')}}">
+        <link rel="stylesheet" href="{{asset('assets/css/line-awesome.css')}}?v=1993.1.10">
+        <link rel="stylesheet" href="{{asset('css/ajedrez.css')}}?v=1993.1.10">
         <script>
             window.PUSHER_APP_KEY = '{{ config('broadcasting.connections.pusher.key') }}';
             window.APP_ENV = {{ config('app.env') == 'production' ? true : false }};
         </script>
         @stack('game')
     </head>
-    <body class="font-sans antialiased">
+    <body class="font-sans antialiased" x-data="{sidebarOpen:false}">
         <x-banner />
             <div class="min-h-screen bg-gray-100">
-                
                 {{ $slot }}
             </div>
         @stack('modals')
         @livewireScripts
         @stack('js')
+        <div class="2xl:hidden xl:hidden lg:hidden"
+        :class="{
+        'bg-gray-900/50  fixed inset-0 z-30': sidebarOpen,
+        '': !sidebarOpen
+        }"></div>
     </body>
 </html>

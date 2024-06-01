@@ -160,6 +160,7 @@ class Ajedrez extends Component
         $this->dispatch('notificateEchoJs',$this->move, $this->player,$this->myColor);
     }
 
+    #[On('render')] 
     public function render()
     {
         if( $this->player <> $this->myColor){

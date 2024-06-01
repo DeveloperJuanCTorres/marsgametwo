@@ -335,6 +335,7 @@ function otherColor(color) {
     function playGame(pieces,playercolor){
       console.log('Turno color Dante');
       console.log(playercolor);
+
       
       draughts = pieces;
       createParts(pieces);
@@ -357,11 +358,16 @@ function otherColor(color) {
       blackTurn.start();
       disableAndEnablePieces("white", "black");
 
+      infoDiv.innerHTML = "Es tu turno de Negras";
+
     } else if (playercolor === "black") {
       console.log('Inicia fichas Blancas');
       blackTurn.stop();
       whiteTurn.start();
       disableAndEnablePieces("black", "white");
+      
+      infoDiv.innerHTML = "Es tu turno de Blancas";
+      
     }
    }
  
