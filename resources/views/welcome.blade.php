@@ -912,8 +912,11 @@
             </h5>
             <div class="img-perfil">
              @auth
+                @if(Auth::user()->profile_photo_url != null)
                 <img src="{{ Auth::user()->profile_photo_url }}" title="Aisha" alt="foto-perfil"></div>
-                
+                @else
+                    <img src="img/minilogo.png" title="Aisha" alt="foto-perfil"></div>
+                @endif
                 <h4>
                     {{Auth::user()->name}}
                 </h4>
