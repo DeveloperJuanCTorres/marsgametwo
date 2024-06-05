@@ -911,8 +911,9 @@
                 </span>
             </h5>
             <div class="img-perfil">
+             @auth
                 <img src="{{ Auth::user()->profile_photo_url }}" title="Aisha" alt="foto-perfil"></div>
-                @auth
+                
                 <h4>
                     {{Auth::user()->name}}
                 </h4>
