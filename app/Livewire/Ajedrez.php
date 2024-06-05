@@ -16,13 +16,25 @@ class Ajedrez extends Component
 
     public $draughts;
     public $player;
+    public $myColor;
+    public $userAdversary;
+
+    // public $jump;
+    // public $line;
+    // public $square;
+
+    public $move;
 
     public function mount(Game $game){
         $this->game = $game;
+        $this->userAdversary = $game->userAdversary; 
         $this->adversary = $game->users->where('id', '!=', auth()->id())->first();
         $this->users = collect();
         $this->chat = $this->game->messages()->get();
-        // $this->dispatch('playgame');
+        //-------------Obtener el color que se asignó------
+        $myUser = $this->game->myUser;
+        $this->myColor = $myUser->pivot->color;
+         //----------------------
         $this->InitBoard();
     }
 
@@ -64,39 +76,41 @@ class Ajedrez extends Component
         if($stringMove) {
             $this->draughts = json_decode($stringMove->move);
             $this->player =  $stringMove->color;
+            $this->move = [
+                'jump' => $stringMove->jump,
+                'line' => $stringMove->line,
+                'square' => $stringMove->square,
+                'eat' =>  $stringMove->position,
+            ];
         } else{
             $this->player = 'black';
             $this->draughts = json_decode($draughtsInitial);
+            $this->move = [
+                'jump' => 0,
+                'line' => '',
+                'square' => '',
+                'eat' => 0,
+            ];
         }
     }
 
     #[On('move')] 
-    public function move($move,$color){
+    public function move($move,$color,$jump,$line,$square,$eat){
         $now = date('H:i:s');
         $jsonString = json_encode($move);
         $this->game->moves()->create([
             'user_id'=> auth()->user()->id,
             'move'=>$jsonString,
             'color'=>$color,
+            'jump'=>$jump,
+            'position'=>$eat,
+            'line'=>$line,
+            'square'=>$square,
             'timer_end'=>$now,
         ]);
-       
-
-        // Notification::send($this->rival, new \App\Notifications\NewMove());
+        Notification::send($this->userAdversary, new \App\Notifications\NewMove());
     }
 
-    //Oyentes
-    public function getListeners()
-    {
-        $user_id = auth()->user()->id;
-
-        return [
-            "echo-notification:App.Models.User.{$user_id},notification" => 'render',
-            "echo-presence:chat.1,here" => 'chatHere',
-            "echo-presence:chat.1,joining" => 'chatJoining',
-            "echo-presence:chat.1,leaving" => 'chatLeaving',
-        ];
-    }
     //Propiedad computadas
     public function getMessagesProperty(){
         return $this->chat ? $this->game->messages()->get(): [];
@@ -134,14 +148,21 @@ class Ajedrez extends Component
         }); 
     }
 
-    //Game
-    public function play(){
-        $pop = rand(1,6);
-        $this->dispatch('dados',pop: $pop);
+    #[On('playGame')] 
+    public function playGame(){
+        $this->InitBoard();
+        $this->dispatch('notificateEchoJs',$this->move, $this->player,$this->myColor);
     }
 
+    #[On('render')] 
     public function render()
     {
+        if( $this->player <> $this->myColor){
+            $this->InitBoard();
+            $this->dispatch('iniliziateJs',$this->draughts, $this->player,$this->myColor);
+        }
+
+        $this->dispatch('scrollIntoView');
         return view('livewire.ajedrez')->layout('layouts.ajedrez');
     }
 }

@@ -26,12 +26,22 @@ class Hall extends Component
             'type'=>$type,
             'active'=>1
         ]);
-        if( $type== 'Serpientes'){
-            $game->users()->attach([auth()->user()->id =>['color'=>'cyan'], $user_id=>['color'=>'red']]);
-        }else{
-            $game->users()->attach([auth()->user()->id =>['color'=>'B'], $user_id=>['color'=>'W']]);
+
+        // switch($type)
+
+        switch($type) {
+            case 'Serpientes':
+                $game->users()->attach([auth()->user()->id =>['color'=>'cyan'], $user_id=>['color'=>'red']]);
+                break;
+
+            case 'Ajedrez':
+                $game->users()->attach([auth()->user()->id =>['color'=>'black'], $user_id=>['color'=>'white']]);
+                break;
+            
+            default:
+                $game->users()->attach([auth()->user()->id =>['color'=>'B'], $user_id=>['color'=>'W']]);
+                break;
         }
-        
         //$game->users()->attach([auth()->user()->id, $user_id]);
     }
 
