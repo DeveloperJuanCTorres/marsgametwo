@@ -23,6 +23,14 @@ class AdminController extends Controller
         }
     }
 
+    public function storage(){
+        try {
+            return Artisan::call('storage:link');
+        } catch (\Throwable $th) {
+        return ['error'=>'Error! storage link'];
+        }
+    }
+
     public function store(){
         return view('store');
     }
