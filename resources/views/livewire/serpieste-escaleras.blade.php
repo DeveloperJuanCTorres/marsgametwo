@@ -224,10 +224,7 @@
             app.play();
           }
 
-          //
-
           Livewire.on('iniliziateJs',function(event){
-            console.log('movimiento del oponente desde js ----OP2');
               if(event[0] == event[1]){
                 console.log('js mover');
                     document.getElementById('boardDiv').classList.remove('elementor-toggle');
@@ -241,13 +238,8 @@
                 console.log('movimiento del oponente desde js ----OP1');
                 if(event[1] == event[3]){
                     console.log('js Sin velo');
-                    //Activo el tablero para el turno que le coresponde
                     document.getElementById('boardDiv').classList.remove('elementor-toggle');
                 }
-                // else{
-                //   console.log('js Con velo verde');
-                //   document.getElementById('boardDiv').classList.add('elementor-toggle');
-                // }
                 app.opponent(event[2]);
             });
 
@@ -260,7 +252,6 @@
           }
 
           Livewire.on('scrollIntoView', function() {
-            
               var desktop = document.getElementById('final');
               var movil = document.getElementById('final-movil');
               if(desktop){

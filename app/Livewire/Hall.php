@@ -35,7 +35,7 @@ class Hall extends Component
                 break;
 
             case 'Ajedrez':
-                $game->users()->attach([auth()->user()->id =>['color'=>'white'], $user_id=>['color'=>'black']]);
+                $game->users()->attach([auth()->user()->id =>['color'=>'black'], $user_id=>['color'=>'white']]);
                 break;
             
             default:
