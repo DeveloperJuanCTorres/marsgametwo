@@ -76,28 +76,28 @@
         <!-- Telefono -->
         <div class="col-span-6 sm:col-span-4">
             <x-label for="telefono" value="Teléfono" />
-            <x-input id="telefono" type="text" class="mt-1 block w-full" wire:model="state.telefono" required autocomplete="telefono" />
+            <x-input id="telefono" type="text" class="mt-1 block w-full" wire:model="state.telefono" autocomplete="telefono" />
             <x-input-error for="telefono" class="mt-2" />
         </div>
 
         <!-- Facebook -->
         <div class="col-span-6 sm:col-span-4">
             <x-label for="link_facebook" value="Facebook" />
-            <x-input id="link_facebook" type="text" class="mt-1 block w-full" wire:model="state.link_facebook" required autocomplete="link_facebook" />
+            <x-input id="link_facebook" type="text" class="mt-1 block w-full" wire:model="state.link_facebook" autocomplete="link_facebook" />
             <x-input-error for="link_facebook" class="mt-2" />
         </div>
 
         <!-- Instagram -->
         <div class="col-span-6 sm:col-span-4">
             <x-label for="link_instagram" value="Instagram" />
-            <x-input id="link_instagram" type="text" class="mt-1 block w-full" wire:model="state.link_instagram" required autocomplete="link_instagram" />
+            <x-input id="link_instagram" type="text" class="mt-1 block w-full" wire:model="state.link_instagram" autocomplete="link_instagram" />
             <x-input-error for="link_instagram" class="mt-2" />
         </div>
 
         <!-- TikTok -->
         <div class="col-span-6 sm:col-span-4">
             <x-label for="link_tiktok" value="TikTok" />
-            <x-input id="link_tiktok" type="text" class="mt-1 block w-full" wire:model="state.link_tiktok" required autocomplete="link_tiktok" />
+            <x-input id="link_tiktok" type="text" class="mt-1 block w-full" wire:model="state.link_tiktok" autocomplete="link_tiktok" />
             <x-input-error for="link_tiktok" class="mt-2" />
         </div>
 
