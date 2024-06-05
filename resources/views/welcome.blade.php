@@ -487,9 +487,6 @@
                             </div>
                             <div class="mobile_menu_2 text-center">
                                 <div class="img-perfil">
-                                    <!-- <div class="">
-                                        <img src="{{ Auth::user()->profile_photo_url }}">
-                                    </div> -->
                                     <img src="{{ Auth::user()->profile_photo_url }}" title="Aisha" alt="foto-perfil"></div>
                                     @auth
                                     <h4>
@@ -914,19 +911,19 @@
                 </span>
             </h5>
             <div class="img-perfil">
-                <img src="https://p.w3layouts.com/demos/june-2016/01-06-2016/model_profile_widget/web/images/p1.png" title="Aisha" alt="foto-perfil"></div>
+                <img src="{{ Auth::user()->profile_photo_url }}" title="Aisha" alt="foto-perfil"></div>
                 @auth
                 <h4>
                     {{Auth::user()->name}}
                 </h4>
                 <h6>
-                    UserName
+                    {{Auth::user()->username}}
                 </h6>
                 <p>{{Auth::user()->email}}</p>
                 @endauth
                 <hr>
-                <h5>Edad : 31 Años</h5>
-                <h5>Teléfono: <span class="h6">978209130</span></h5>
+                <h5>Edad : {{Auth::user()->edad}} Años</h5>
+                <h5>Teléfono: <span class="h6">{{Auth::user()->telefono}}</span></h5>
                 <div class="caja-gris">
                 <div class="sobre">
                     <img style="display: inline !important;" src="img/marscoin.png">
@@ -942,12 +939,11 @@
                 </div>
                 </div> 
                 
-                <div class="redes face"><a href="#"></a></div>
-                <div class="redes twitter"><a href="#"></a></div>
-                <div class="redes instagram"><a href="#"></a></div>
-                <div class="redes youtube"><a href="#"></a></div>
+                <div class="redes face"><a href="{{Auth::user()->link_facebook}}" target="_blank"></a></div>
+                <div class="redes instagram"><a href="{{Auth::user()->link_instagram}}" target="_blank"></a></div>
+                <div class="redes youtube"><a href="{{Auth::user()->link_tiktok}}" target="_blank"></a></div>
                 <div class="boton p-2">
-					<a href="#">Editar Perfil</a>
+					<a href="{{ route('profile.show') }}">Editar Perfil</a>
 			    </div> 
             <!-- <h5 class="mobile_title claseh2">
                 Perfil
