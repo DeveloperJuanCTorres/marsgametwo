@@ -263,12 +263,11 @@ function otherColor(color) {
   }
   
   function playerTurn(color) {
-    console.log('playerTurn');
+ 
     const countdownTimer = document.getElementById(`ct${color}`);
     const time = countdownTimer.innerHTML;
     let minutes = parseInt(time.split(":")[0]);
     let seconds = parseInt(time.split(":")[1]);
-  
     let timer;
   
     function turn() {
@@ -328,9 +327,10 @@ function otherColor(color) {
   
     console.log('MAIN');
     var draughts;
-  
-    const whiteTurn = playerTurn("white");
-    const blackTurn = playerTurn("black");
+    var changePawn = true;
+    var keyCapture;
+    // const whiteTurn = playerTurn("white");
+    // const blackTurn = playerTurn("black");
 
     function playGame(pieces,playercolor){
       console.log('Turno color Dante');
@@ -351,16 +351,16 @@ function otherColor(color) {
    function changeEcho(playercolor){
     if (playercolor === "white") {
       console.log('Inicia fichas Negras');
-      whiteTurn.stop();
-      blackTurn.start();
+      // whiteTurn.stop();
+      // blackTurn.start();
       disableAndEnablePieces("white", "black");
 
       infoDiv.innerHTML = "Es tu turno de Negras";
 
     } else if (playercolor === "black") {
       console.log('Inicia fichas Blancas');
-      blackTurn.stop();
-      whiteTurn.start();
+      // blackTurn.stop();
+      // whiteTurn.start();
       disableAndEnablePieces("black", "white");
       
       infoDiv.innerHTML = "Es tu turno de Blancas";
@@ -369,8 +369,8 @@ function otherColor(color) {
    }
  
   function endGame(color, endedByTime) {
-    whiteTurn.stop();
-    blackTurn.stop();
+    // whiteTurn.stop();
+    // blackTurn.stop();
     disableAll("white", "black");
   
     if (endedByTime) {
@@ -395,12 +395,12 @@ function otherColor(color) {
       }
   
       if (color === "white") {
-        whiteTurn.stop();
-        blackTurn.start();
+        // whiteTurn.stop();
+        // blackTurn.start();
         disableAndEnablePieces("white", `black${justKing}`);
       } else if (color === "black") {
-        blackTurn.stop();
-        whiteTurn.start();
+        // blackTurn.stop();
+        // whiteTurn.start();
         disableAndEnablePieces("black", `white${justKing}`);
       }
 
@@ -418,11 +418,9 @@ function otherColor(color) {
   }
   
   function applyPawnExceptions(chessPiece, currSquare, pieceColor, isKingCaptured) {
-    console.log('applyPawnExceptions cambio de pieza');
+    console.log('MOVIMINETO ESPECIAL modulo<<<<<<<<');
+    
     var keyChange = chessPiece.id;
-    console.log(keyChange);
-
-
     // Update pawn movement 
     chessPiece.piece.v = 1;
     // Check if pawn arrived at the other side of the chessboard
@@ -431,22 +429,29 @@ function otherColor(color) {
   
     if (currSquare.parentNode.classList.contains(opponentSide)) {
 
+      console.log('MOVIMINETO ESPECIAL if<<<<<<<<');
+
       let dropDownSelector = '<div id="piece-selector">';
       dropDownSelector += '<a name="knight">♞</a>';
       dropDownSelector += '<a name="queen">♛</a>';
       dropDownSelector += '<a name="rook">♜</a>';
       dropDownSelector += '<a name="bishop">♝</a>';
       dropDownSelector += '</div>';
-  
       currSquare.innerHTML = dropDownSelector;
-  
       const pieceSelector = document.getElementById("piece-selector");
       pieceSelector.style.color = pieceColor;
   
       pieceSelector.addEventListener("click", e => {
+
+        changePawn = false;
+        console.log('Movimiento especial Click <<<<<<<');
         const chosenPieceName = e.target.name;
         const chosenPiece = e.target.innerHTML;
   
+
+        var line = draughts[keyChange].line;
+        var square =  draughts[keyChange].square;
+
         let newPiece = `<div  id=`;
 
         newPiece += `"${keyChange}" class=`;
@@ -454,24 +459,26 @@ function otherColor(color) {
         newPiece += `${chosenPiece}</div>`;
   
         currSquare.innerHTML = newPiece;
-  
-        console.log('Cambio de piezasssss');
-        console.log(newPiece);
-       
+        draughts[keyChange].name = chosenPieceName;
+        draughts[keyChange].figure = chosenPiece;
         applyPropOneChessPiece(currSquare.firstElementChild, chessboardSide);
-
         verifyCheckmateAndChangeTurn(currSquare.firstElementChild, pieceColor, isKingCaptured);
-  
+        
+        
+        console.log('Cambio de piezassssszz xxxxx99xxx');
+        document.getElementById('boardDiv').classList.add('elementor-toggle');
+        Livewire.dispatch('move', {move: draughts,color:pieceColor,jump:keyChange,line:line,square:square,eat:keyCapture});
       });
     } else {
+      console.log('NO NO NO NO Ckick chlick <<<<<<<<');
       verifyCheckmateAndChangeTurn(chessPiece, pieceColor, isKingCaptured);
     }
   }
   
   function finishMove(event, selectedPiece) {
-    console.log('finish Move <<<<<<<<');
+    console.log('Finish Move <<<<<<<<');
     const target = checkDropZones(event);
-    var keyCapture = null;
+    keyCapture = null;
     if (target) {
       const pieceColor = selectedPiece.classList[0];
       //Conseguir el ID de la pieza que se va a comer
@@ -481,12 +488,16 @@ function otherColor(color) {
         draughts[keyCapture].state = 0;
       }
       //----------------
+     
       const isKingCaptured = captureOpponentPiece(target, pieceColor);
+    
       movePiece(selectedPiece, selectedPiece.parentNode, target);
       if (selectedPiece.classList.contains("pawn")) {
+        console.log('move move move -*-*-*-*-*-')
         applyPawnExceptions(selectedPiece, target, pieceColor, isKingCaptured);
       } else {
         verifyCheckmateAndChangeTurn(selectedPiece, pieceColor, isKingCaptured);
+        console.log('sin comer -*-*-*-*-*-')
       }
       
       selectedPiece.classList.remove("dragging");
@@ -500,9 +511,16 @@ function otherColor(color) {
       // var name = selectedPiece.classList[1]; 
       draughts[key].line = line;
       draughts[key].square = square;
+      console.log('Funcion Livewire <<<<<<<<');
 
-      document.getElementById('boardDiv').classList.add('elementor-toggle');
-      Livewire.dispatch('move', {move: draughts,color:pieceColor,jump:key,line:line,square:square,eat:keyCapture});
+      if(changePawn){
+        changePawn = true;
+        document.getElementById('boardDiv').classList.add('elementor-toggle');
+        Livewire.dispatch('move', {move: draughts,color:pieceColor,jump:key,line:line,square:square,eat:keyCapture});
+      }else{
+        console.log('No se esta haciendo movimiento :(')
+      }
+     
     }
     clearZonesByClassName("dropzone", "capture");
   }

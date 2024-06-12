@@ -23,7 +23,7 @@
                 <div class="container" id="boardDiv">
                     <div class="extra-zone">
                         <div class="captured-zone" id="czblack"></div>
-                        <div class="countdown-timer" id="ctblack">10:00</div>
+                        <!-- <div class="countdown-timer" id="ctblack">10:00</div> -->
                     </div>
                     <div class="chessboard">
                         <div class="line l8">
@@ -173,7 +173,7 @@
                     </div>
                     <div class="extra-zone">
                         <div class="captured-zone" id="czwhite"></div>
-                        <div class="countdown-timer" id="ctwhite">10:00</div>
+                        <!-- <div class="countdown-timer" id="ctwhite">10:00</div> -->
                     </div>
                     </div> 
             </div>
@@ -290,7 +290,7 @@
                 </div>
             </div>
         </div>
-      </div>
+    </div>
 
 </div>
 
