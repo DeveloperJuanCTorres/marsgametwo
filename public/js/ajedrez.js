@@ -329,6 +329,7 @@ function otherColor(color) {
     var draughts;
     var changePawn = true;
     var keyCapture;
+    let draggedPiece = null;
     // const whiteTurn = playerTurn("white");
     // const blackTurn = playerTurn("black");
 
@@ -338,7 +339,7 @@ function otherColor(color) {
       createParts(pieces);
       applyPropChessPieces("white", "bottom");
       applyPropChessPieces("black", "top");
-      let draggedPiece = null;
+       draggedPiece = null;
       changeEcho(playercolor);
      
 
@@ -375,9 +376,11 @@ function otherColor(color) {
   
     if (endedByTime) {
       const opponentColor = otherColor(color);
-      alert(`${opponentColor.toUpperCase()} WINS!!!`);
+      winerGame.innerHTML = `${opponentColor.toUpperCase()} 🎉Ganador🎉 !!!`;
+      // alert(`${opponentColor.toUpperCase()} WINS!!!`);
     } else {
-      alert(`${color.toUpperCase()} WINS!!!`);
+      // alert(`${color.toUpperCase()} WINS!!!`);
+      winerGame.innerHTML = `${color.toUpperCase()} 🎉Ganador🎉 !!!`;
     }
   
   }
@@ -470,7 +473,7 @@ function otherColor(color) {
         Livewire.dispatch('move', {move: draughts,color:pieceColor,jump:keyChange,line:line,square:square,eat:keyCapture});
       });
     } else {
-      console.log('NO NO NO NO Ckick chlick <<<<<<<<');
+      
       verifyCheckmateAndChangeTurn(chessPiece, pieceColor, isKingCaptured);
     }
   }
@@ -556,8 +559,9 @@ function otherColor(color) {
 
   /* Event Listeners */
   document.addEventListener("click", event => {
-    console.log('<-----------------click------------->');
+    console.log('<-----------------click 1------------->');
     if (event.target.draggable) {
+      console.log('<-----------------o :------------->');
       if (event.target !== draggedPiece) {
         console.log('showPossibleDropZones');
         draggedPiece = event.target;
@@ -570,6 +574,7 @@ function otherColor(color) {
   });
   
   document.addEventListener("dragstart", event => {
+    console.log('<-----------------click 2------------->');
     console.log('dragstart');
     // console.log(event.target);
 

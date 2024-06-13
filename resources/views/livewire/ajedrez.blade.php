@@ -4,7 +4,7 @@
     <div class="grid grid-cols-6 divide-x divide-gray-200">    
         
         <div class="h-100 col-span-6 xl:col-span-4 lg:col-span-4 sm:col-span-6 bg-white bg-gamer" wire:ignore>
-            <div class="text-center pt-3">
+            <div class="text-center pt-2">
                 <p class="text-2xl ">Tus piezas son
                     @switch($myColor)
                         @case('white')
@@ -17,6 +17,7 @@
                     @endswitch 
                     : <span id="infoDiv" class="text-xl font-bold"></span>
                 </p>
+                <p id="winerGame" class="mt-2 text-3xl"></p>
             </div>
             <div>
                 
