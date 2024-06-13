@@ -297,7 +297,7 @@
 
     
     @push('js')
-      <script src="{{asset('js/ajedrez.js')}}?v=1993.1.1"></script> 
+      <script src="{{asset('js/ajedrez.js')}}?v=1993.1.12"></script> 
 
       <script>
             document.addEventListener('livewire:initialized', function () {
