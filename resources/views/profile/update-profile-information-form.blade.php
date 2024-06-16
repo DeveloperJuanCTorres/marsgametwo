@@ -1,15 +1,15 @@
 <x-form-section submit="updateProfileInformation">
     <x-slot name="title">
-        {{ __('Profile Information') }}
+        Información del Perfil
     </x-slot>
 
     <x-slot name="description">
-        {{ __('Update your account\'s profile information and email address.') }}
+        Actualice su información de perfil.
     </x-slot>
 
     <x-slot name="form">
         <!-- Profile Photo -->
-        @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
+        <!-- if (Laravel\Jetstream\Jetstream::managesProfilePhotos()) -->
             <div x-data="{photoName: null, photoPreview: null}" class="col-span-6 sm:col-span-4">
                 <!-- Profile Photo File Input -->
                 <input type="file" id="photo" class="hidden"
@@ -50,7 +50,7 @@
 
                 <x-input-error for="photo" class="mt-2" />
             </div>
-        @endif
+        <!-- endif -->
 
         <!-- Name -->
         <div class="col-span-6 sm:col-span-4">
@@ -59,10 +59,52 @@
             <x-input-error for="name" class="mt-2" />
         </div>
 
+        <!-- User Name -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-label for="username" value="User Name" />
+            <x-input id="username" type="text" class="mt-1 block w-full" wire:model="state.username" required autocomplete="username" />
+            <x-input-error for="username" class="mt-2" />
+        </div>
+        
+        <!-- Edad -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-label for="edad" value="Edad" />
+            <x-input id="edad" type="text" class="mt-1 block w-full" wire:model="state.edad" required autocomplete="edad" />
+            <x-input-error for="edad" class="mt-2" />
+        </div>
+
+        <!-- Telefono -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-label for="telefono" value="Teléfono" />
+            <x-input id="telefono" type="text" class="mt-1 block w-full" wire:model="state.telefono" autocomplete="telefono" />
+            <x-input-error for="telefono" class="mt-2" />
+        </div>
+
+        <!-- Facebook -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-label for="link_facebook" value="Facebook" />
+            <x-input id="link_facebook" type="text" class="mt-1 block w-full" wire:model="state.link_facebook" autocomplete="link_facebook" />
+            <x-input-error for="link_facebook" class="mt-2" />
+        </div>
+
+        <!-- Instagram -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-label for="link_instagram" value="Instagram" />
+            <x-input id="link_instagram" type="text" class="mt-1 block w-full" wire:model="state.link_instagram" autocomplete="link_instagram" />
+            <x-input-error for="link_instagram" class="mt-2" />
+        </div>
+
+        <!-- TikTok -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-label for="link_tiktok" value="TikTok" />
+            <x-input id="link_tiktok" type="text" class="mt-1 block w-full" wire:model="state.link_tiktok" autocomplete="link_tiktok" />
+            <x-input-error for="link_tiktok" class="mt-2" />
+        </div>
+
         <!-- Email -->
         <div class="col-span-6 sm:col-span-4">
             <x-label for="email" value="{{ __('Email') }}" />
-            <x-input id="email" type="email" class="mt-1 block w-full" wire:model="state.email" required autocomplete="username" />
+            <x-input id="email" type="email" class="mt-1 block w-full" wire:model="state.email" disabled required autocomplete="username" />
             <x-input-error for="email" class="mt-2" />
 
             @if (Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::emailVerification()) && ! $this->user->hasVerifiedEmail())

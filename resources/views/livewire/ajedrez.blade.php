@@ -3,9 +3,9 @@
 <div x-data="data()" class="bg-gray-100 shadow border border-gray-300 overflow-hidden ">
     <div class="grid grid-cols-6 divide-x divide-gray-200">    
         
-        <div class="h-[calc(98vh)] col-span-6 xl:col-span-4 lg:col-span-4 sm:col-span-6 bg-white bg-gamer" wire:ignore>
-            <div class="text-center pt-3">
-                <p class="text-2xl ">Tu eres piezas
+        <div class="h-100 col-span-6 xl:col-span-4 lg:col-span-4 sm:col-span-6 bg-white bg-gamer" wire:ignore>
+            <div class="text-center pt-2">
+                <p class="text-2xl ">Tus piezas son
                     @switch($myColor)
                         @case('white')
                              negras ♜ 
@@ -15,15 +15,16 @@
                             @break
                         @default
                     @endswitch 
+                    : <span id="infoDiv" class="text-xl font-bold"></span>
                 </p>
-                <p id="infoDiv" class="text-xl font-bold"></p>
+                <p id="winerGame" class="mt-2 text-3xl"></p>
             </div>
             <div>
                 
                 <div class="container" id="boardDiv">
                     <div class="extra-zone">
                         <div class="captured-zone" id="czblack"></div>
-                        <div class="countdown-timer" id="ctblack">10:00</div>
+                        <!-- <div class="countdown-timer" id="ctblack">10:00</div> -->
                     </div>
                     <div class="chessboard">
                         <div class="line l8">
@@ -173,7 +174,7 @@
                     </div>
                     <div class="extra-zone">
                         <div class="captured-zone" id="czwhite"></div>
-                        <div class="countdown-timer" id="ctwhite">10:00</div>
+                        <!-- <div class="countdown-timer" id="ctwhite">10:00</div> -->
                     </div>
                     </div> 
             </div>
@@ -290,13 +291,13 @@
                 </div>
             </div>
         </div>
-      </div>
+    </div>
 
 </div>
 
     
     @push('js')
-      <script src="{{asset('js/ajedrez.js')}}?v=1993.1.1"></script> 
+      <script src="{{asset('js/ajedrez.js')}}?v=1993.1.12"></script> 
 
       <script>
             document.addEventListener('livewire:initialized', function () {

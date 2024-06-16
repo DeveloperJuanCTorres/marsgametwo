@@ -147,7 +147,12 @@
                             <label style="width: 100px;" class="btn btn-outline-mars" for="btnradio3"><i style="font-size: 32px;" class="las la-address-book"></i></label>
 
                             <input type="radio" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off">
+                            @auth
                             <label style="width: 100px;" class="btn btn-outline-mars open_perfil1" for="btnradio4"><i style="font-size: 32px;" class="las la-user"></i></label>
+                            @else
+                            <a href="login" style="width: 100px;" class="btn btn-outline-mars">
+                            <i style="font-size: 32px;" class="las la-user"></i></a>
+                                @endauth
                         </div>
                     </nav>
                 </div>
@@ -487,19 +492,23 @@
                             </div>
                             <div class="mobile_menu_2 text-center">
                                 <div class="img-perfil">
-                                    <img src="https://p.w3layouts.com/demos/june-2016/01-06-2016/model_profile_widget/web/images/p1.png" title="Aisha" alt="foto-perfil"></div>
-                                    @auth
+                                @auth
+                                    
+                                    <img src="{{ Auth::user()->profile_photo_url }}" title="Aisha" alt="foto-perfil"></div>
+                                    
+                                    
                                     <h4>
                                         {{Auth::user()->name}}
                                     </h4>
                                     <h6>
-                                        UserName
+                                        {{Auth::user()->username}}
                                     </h6>
                                     <p>{{Auth::user()->email}}</p>
-                                    @endauth
+                                    
                                     <hr>
-                                    <h5>Edad : 31 Años</h5>
-                                    <h5>Teléfono: <span class="h6">978209130</span></h5>
+                                    <h5>Edad : {{Auth::user()->edad}} Años</h5>
+                                    <h5>Teléfono: <span class="h6">{{Auth::user()->telefono}}</span></h5>
+                                    
                                     <div class="caja-gris">
                                     <div class="sobre">
                                         <img style="display: inline !important;" src="img/marscoin.png">
@@ -515,12 +524,12 @@
                                     </div>
                                     </div> 
                                     
-                                    <div class="redes face"><a href="#"></a></div>
-                                    <div class="redes twitter"><a href="#"></a></div>
-                                    <div class="redes instagram"><a href="#"></a></div>
-                                    <div class="redes youtube"><a href="#"></a></div>
+                                    <div class="redes face"><a href="{{Auth::user()->link_facebook}}" target="_blank"></a></div>
+                                    <div class="redes instagram"><a href="{{Auth::user()->link_instagram}}" target="_blank"></a></div>
+                                    <div class="redes youtube"><a href="{{Auth::user()->link_tiktok}}" target="_blank"></a></div>
+                                    @endauth
                                     <div class="boton p-2">
-                                        <a href="#">Editar Perfil</a>
+                                        <a href="{{ route('profile.show') }}">Editar Perfil</a>
                                     </div>             
                             </div>
                         </div>             
@@ -912,19 +921,20 @@
                 </span>
             </h5>
             <div class="img-perfil">
-                <img src="https://p.w3layouts.com/demos/june-2016/01-06-2016/model_profile_widget/web/images/p1.png" title="Aisha" alt="foto-perfil"></div>
-                @auth
+             @auth
+                <img src="{{ Auth::user()->profile_photo_url }}" title="Aisha" alt="foto-perfil"></div>
                 <h4>
                     {{Auth::user()->name}}
                 </h4>
                 <h6>
-                    UserName
+                    {{Auth::user()->username}}
                 </h6>
                 <p>{{Auth::user()->email}}</p>
-                @endauth
+                
                 <hr>
-                <h5>Edad : 31 Años</h5>
-                <h5>Teléfono: <span class="h6">978209130</span></h5>
+                <h5>Edad : {{Auth::user()->edad}} Años</h5>
+                <h5>Teléfono: <span class="h6">{{Auth::user()->telefono}}</span></h5>
+                
                 <div class="caja-gris">
                 <div class="sobre">
                     <img style="display: inline !important;" src="img/marscoin.png">
@@ -940,50 +950,13 @@
                 </div>
                 </div> 
                 
-                <div class="redes face"><a href="#"></a></div>
-                <div class="redes twitter"><a href="#"></a></div>
-                <div class="redes instagram"><a href="#"></a></div>
-                <div class="redes youtube"><a href="#"></a></div>
+                <div class="redes face"><a href="{{Auth::user()->link_facebook}}" target="_blank"></a></div>
+                <div class="redes instagram"><a href="{{Auth::user()->link_instagram}}" target="_blank"></a></div>
+                <div class="redes youtube"><a href="{{Auth::user()->link_tiktok}}" target="_blank"></a></div>
+                @endauth
                 <div class="boton p-2">
-					<a href="#">Editar Perfil</a>
+					<a href="{{ route('profile.show') }}">Editar Perfil</a>
 			    </div> 
-            <!-- <h5 class="mobile_title claseh2">
-                Perfil
-                <span class="sidebarclose" id="perfilclose">
-                    <i class="las la-times"></i>
-                </span>
-            </h5>
-            <div class="row bg-white p-4">
-                <div class="col-12">
-                    <div class="row g-4 align-items-center features-item">
-                        <div class="col-12">
-                            <div class="position-relative">
-                                <div class="overflow-hidden text-center">
-                                    <img src="img/features-sports-1.jpg" class="img-zoomin img-fluid rounded-circle estilos-img-mobil" alt="">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="features-content d-flex flex-column text-center">
-                                <h6>
-                                    @auth
-                                    {{Auth::user()->name}}
-                                    @endauth
-                                </h6>
-                                <h6 class="text-body">
-                                    UserName
-                                </h6>
-                                <small class="text-body d-block clase-font">
-                                    <i class="fas fa-envelope me-1"></i> jctorresdelcastillo@gmail.com</small>
-                            </div>
-                            <a href="#" class="w-100 rounded btn btn-info mt-4 d-flex align-items-center p-3 mb-2">
-                                <i class="las la-edit text-white mx-4" style="font-size: 30px;"></i>
-                                <span class="text-white">Editar perfil</span>  
-                            </a> 
-                        </div>
-                    </div>
-                </div>
-            </div>   -->
         </div>
     </div>     
 

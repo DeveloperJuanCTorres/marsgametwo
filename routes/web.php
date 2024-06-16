@@ -34,6 +34,8 @@ Route::middleware([
     })->name('dashboard');
 });
 
+
+Route::get('/storage', [AdminController::class, 'storage']);
 Route::get('/work', [AdminController::class, 'work']);
 Route::get('/websocket', [AdminController::class, 'websocket']);
 Route::get('login/{provider}', [LoginController::class, 'redirectToProvider']);

@@ -29,6 +29,12 @@ class User extends Authenticatable
         'password',
         'provider', 
         'provider_id',
+        'username',
+        'edad',
+        'telefono',
+        'link_facebook',
+        'link_instagram',
+        'link_tiktok'
     ];
 
     /**

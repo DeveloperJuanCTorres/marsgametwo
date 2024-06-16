@@ -77,21 +77,15 @@ class Ajedrez extends Component
         if($stringMove) {
             $this->draughts = json_decode($stringMove->move);
             $this->player =  $stringMove->color;
-            // $this->jump =  $stringMove->jump;
-            // $this->line =  $stringMove->line;
-            // $this->square =  $stringMove->square;
             $this->move = [
                 'jump' => $stringMove->jump,
                 'line' => $stringMove->line,
                 'square' => $stringMove->square,
-                'eat' => 0,
+                'eat' =>  $stringMove->position,
             ];
         } else{
             $this->player = 'black';
             $this->draughts = json_decode($draughtsInitial);
-            // $this->jump =  0;
-            // $this->line =  '';
-            // $this->square =  '';
             $this->move = [
                 'jump' => 0,
                 'line' => '',
@@ -102,7 +96,7 @@ class Ajedrez extends Component
     }
 
     #[On('move')] 
-    public function move($move,$color,$jump,$line,$square){
+    public function move($move,$color,$jump,$line,$square,$eat){
         $now = date('H:i:s');
         $jsonString = json_encode($move);
         $this->game->moves()->create([
@@ -110,6 +104,7 @@ class Ajedrez extends Component
             'move'=>$jsonString,
             'color'=>$color,
             'jump'=>$jump,
+            'position'=>$eat,
             'line'=>$line,
             'square'=>$square,
             'timer_end'=>$now,
@@ -157,7 +152,6 @@ class Ajedrez extends Component
     #[On('playGame')] 
     public function playGame(){
         $this->InitBoard();
-        // $this->dispatch('notificateEchoJs',$this->jump, $this->player,$this->myColor,$this->line,$this->square);
         $this->dispatch('notificateEchoJs',$this->move, $this->player,$this->myColor);
     }
 
