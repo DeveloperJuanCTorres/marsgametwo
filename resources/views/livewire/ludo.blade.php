@@ -3,151 +3,235 @@
     <div class="grid grid-cols-6 divide-x divide-gray-200">
         <div class="col-span-6 sm:col-span-4 bg-white bg-gamer" >
             
+          <div class="ludo">
+          <h1>4 Player Ludo Game</h1>
+          <div class="contain">
+          <div class="main-container">
+              <div class="sizing">
+                  <div class="homeA">
+                      <div class="circle" id="red">
+                          <div>
+                              <div class="innercircle" id="red101">
+                                  <button class="red" id="101" onclick="move(this.id)" disabled>1</button>
+                              </div>
+                              <div class="innercircle" id="red102">
+                                  <button class="red" id="102" onclick="move(102)" disabled>2</button>
+                              </div>
+                          </div>    
+                          <div>
+                              <div class="innercircle" id="red103">
+                                  <button class="red" id="103" onclick="move(103)" disabled>3</button>
+                              </div>
+                              <div class="innercircle" id="red104">
+                                  <button class="red" id="104" onclick="move(104)" disabled>4</button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col">
+                      <img src="https://i.postimg.cc/bvgcKvBz/u-turn.png">
+                      <div class="first">
+                          <div class="col-one" id=11></div>
+                          <div class="col-one" id=10></div>
+                          <div class="col-one" id=9>
+                              <i class="props fa-solid fa-star-of-david"></i></div>
+                          <div class="col-one" id=8></div>
+                          <div class="col-one" id=7></div>
+                          <div class="col-one" id=6></div>
+                      </div>
+                      <div class="winyellow">
+                          <div class="col-two" id=12 style="background-color: #EEEEEE;"></div>
+                          <div class="col-two" id="210"></div>
+                          <div class="col-two" id="211"></div>
+                          <div class="col-two" id="212"></div>
+                          <div class="col-two" id="213"></div>
+                          <div class="col-two" id="214"></div>
+                      </div>
+                      <div class="second">
+                          <div class="col-third" id=13></div>
+                          <div class="col-third" id=14 style="background-color: #F6F54D;">
+                              <i class="props fa-solid fa-flag-checkered"></i>
+                          </div>
+                          <div class="col-third" id=15></div>
+                          <div class="col-third" id=16></div>
+                          <div class="col-third" id=17></div>
+                          <div class="col-third" id=18></div>
+                      </div>
+                  </div>
+                  <div class="homeB">
+                      <div class="circle" id="yellow">
+                          <div>
+                              <div class="innercircle" id="yellow201">
+                                  <button class="yellow" id="201" onclick="move(this.id)" disabled>1</button>
+                              </div>
+                              <div class="innercircle" id="yellow202">
+                                  <button class="yellow" id="202" onclick="move(202)" disabled>2</button>
+                              </div>
+                          </div>    
+                          <div>
+                              <div class="innercircle" id="yellow203">
+                                  <button class="yellow" id="203" onclick="move(203)" disabled>3</button>
+                              </div>
+                              <div class="innercircle" id="yellow204">
+                                  <button class="yellow" id="204" onclick="move(204)" disabled>4</button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="sizing">
+                  <div class="row">
+                      <div class="four">
+                          <div class="row-one" id=52></div>
+                          <div class="row-one" id=1 style="background-color: #FF1700;">
+                              <i class="props fa-solid fa-flag-checkered" style="transform: rotate(-90deg);"></i>
+                          </div>
+                          <div class="row-one" id=2></div>
+                          <div class="row-one" id=3></div>
+                          <div class="row-one" id=4></div>
+                          <div class="row-one" id=5></div>
+                      </div>
+                      <div class="winred">
+                          <div class="row-two" id=51 style="background-color: #EEEEEE;">
+                              <img src="https://i.postimg.cc/bvgcKvBz/u-turn.png" class="props ">
+                          </div>
+                          <div class="row-two" id="110"></div>
+                          <div class="row-two" id="111"></div>
+                          <div class="row-two" id="112"></div>
+                          <div class="row-two" id="113"></div>
+                          <div class="row-two" id="114"></div>
+                      </div>
+                      <div class="six">
+                          <div class="row-third" id=50></div>
+                          <div class="row-third" id=49></div>
+                          <div class="row-third" id=48>
+                              <i class="props fa-solid fa-star-of-david"></i>
+                          </div>
+                          <div class="row-third" id=47></div>
+                          <div class="row-third" id=46></div>
+                          <div class="row-third" id=45></div>
+                      </div>
+                  </div>
+                  <div class="winnerBox" id="win">
+                   <i class="fa-solid fa-trophy"></i>
+                  </div>
+                  <div class="row">
+                      <div class="four">
+                          <div class="row-one" id=19></div>
+                          <div class="row-one" id=20></div>
+                          <div class="row-one" id=21></div>
+                          <div class="row-one" id=22>
+                              <i class="props fa-solid fa-star-of-david"></i>
+                          </div>
+                          <div class="row-one" id=23>
+                              <img src="https://i.postimg.cc/bvgcKvBz/u-turn.png" class="props ">
+                          </div>
+                          <div class="row-one" id=24></div>
+                      </div>
+                      <div class="winblue">
+                          <div class="row-two" id="314"></div>
+                          <div class="row-two" id="313"></div>
+                          <div class="row-two" id="312"></div>
+                          <div class="row-two" id="311"></div>
+                          <div class="row-two" id="310"></div>
+                          <div class="row-two" id=25 style="background-color: #EEEEEE;"></div>
+                      </div>
+                      <div class="six">
+                          <div class="row-third" id=31></div>
+                          <div class="row-third" id=30></div>
+                          <div class="row-third" id=29></div>
+                          <div class="row-third" id=28></div>
+                          <div class="row-third" id=27 style="background-color: #516BEB;">
+                              <i class="props fa-solid fa-flag-checkered" style="transform: rotate(90deg);"></i>
+                          </div>
+                          <div class="row-third" id=26></div>
+                      </div>
+                  </div>
+              </div>
+              <div class="sizing">
+                  <div class="homeC">
+                      <div class="circle" id="green">
+                          <div>
+                              <div class="innercircle" id="green401" >
+                                  <button class="green" id="401" onclick="move(this.id)" disabled>1</button>
+                              </div>
+                              <div class="innercircle" id="green402">
+                                  <button class="green" id="402" onclick="move(402)" disabled>2</button>
+                              </div>
+                          </div>    
+                          <div>
+                              <div class="innercircle" id="green403">
+                                  <button class="green" id="403" onclick="move(403)" disabled>3</button>
+                              </div>
+                              <div class="innercircle" id="green404">
+                                  <button class="green" id="404" onclick="move(404)" disabled>4</button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col">
+                      <div class="first">
+                          <div class="col-one" id=44></div>
+                          <div class="col-one" id=43></div>
+                          <div class="col-one" id=42></div>
+                          <div class="col-one" id=41></div>
+                          <div class="col-one" id=40 style="background-color: #019267;">
+                              <i class="props fa-solid fa-flag-checkered" style="transform: rotate(180deg);"></i>
+                          </div>
+                          <div class="col-one" id=39 style="border-bottom: none;"></div>
+                      </div>
+                      <div class="wingreen">
+                          <div class="col-two" id="414"></div>
+                          <div class="col-two" id="413"></div>
+                          <div class="col-two" id="412"></div>
+                          <div class="col-two" id="411"></div>
+                          <div class="col-two" id="410">
+                              <img src="https://i.postimg.cc/bvgcKvBz/u-turn.png" class="props ">
+                          </div>
+                          <div class="col-two" id=38 style="background-color: #EEEEEE; border-bottom: 3px solid black;"></div>
+                      </div>
+                      <div class="second">
+                          <div class="col-third" id=32></div>
+                          <div class="col-third" id=33></div>
+                          <div class="col-third" id=34></div>
+                          <div class="col-third" id=35>
+                              <i class="props fa-solid fa-star-of-david"></i>
+                          </div>
+                          <div class="col-third" id=36></div>
+                          <div class="col-third" id=37 style="border-bottom: none;"></div>
+                      </div>
+                  </div>
+                  <div class="homeD">
+                      <div class="circle" id="blue">
+                          <div>
+                              <div class="innercircle" id="blue301" >
+                                  <button class="blue" id="301" onclick="move(this.id)" disabled>1</button>
+                              </div>
+                              <div class="innercircle" id="blue302">
+                                  <button class="blue" id="302" onclick="move(302)" disabled>2</button>
+                              </div>
+                          </div>    
+                          <div>
+                              <div class="innercircle" id="blue303">
+                                  <button class="blue" id="303" onclick="move(303)" disabled>3</button>
+                              </div>
+                              <div class="innercircle" id="blue304">
+                                  <button class="blue" id="304" onclick="move(304)" disabled>4</button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="control-dice">
+              <div class="diceImage" id="goti">Dice Will Show Up Here</div>
+              <input type="button" value="Start Game" onclick="generaterandom()" id="roll">
+          </div>
+      </div>
+          
 
-        <div class="body-ludo">
-
-
-        <div class="ludo">
-  <div class="Cuadro-yellow">
-    <div class="cuadrado-t-y">
-      <div class="circulo1 y"></div>
-      <div class="circulo2 y"></div>
-      <div class="circulo3 y"></div>
-      <div class="circulo4 y"></div>
-    </div>
-  </div>
-  <div class="cuadradost1"></div>
-  <div class="cuadradost2"></div>
-  <div class="cuadradost3">
-    <i class="far fa-star"></i>
-  </div>
-  <div class="cuadradost4"></div>
-  <div class="cuadradost5"></div>
-  <div class="cuadradost6"></div>
-  <div class="cuadradost7">
-    <i class="fas fa-chevron-down"></i>
-  </div>
-  <div class="cuadradost8"></div>
-  <div class="cuadradost9"></div>
-  <div class="cuadradost10"></div>
-  <div class="cuadradost11"></div>
-  <div class="cuadradost12"></div>
-  <div class="cuadradost13"></div>
-  <div class="cuadradost14">
-    <i class="far fa-star"></i>
-  </div>
-  <div class="cuadradost15"></div>
-  <div class="cuadradost16"></div>
-  <div class="cuadradost17"></div>
-  <div class="cuadradost18"></div>
-
-  <div class="Cuadro-red">
-    <div class="cuadrado-t-r">
-      <div class="circulo1 r"></div>
-      <div class="circulo2 r"></div>
-      <div class="circulo3 r"></div>
-      <div class="circulo4 r"></div>
-    </div>
-  </div>
-  <div class="cuadradosl1"></div>
-  <div class="cuadradosl2">
-    <i class="far fa-star"></i>
-  </div>
-  <div class="cuadradosl3"></div>
-  <div class="cuadradosl4"></div>
-  <div class="cuadradosl5"></div>
-  <div class="cuadradosl6"></div>
-  <div class="cuadradosl7">
-    <i class="fas fa-chevron-right"></i>
-  </div>
-  <div class="cuadradosl8"></div>
-  <div class="cuadradosl9"></div>
-  <div class="cuadradosl10"></div>
-  <div class="cuadradosl11"></div>
-  <div class="cuadradosl12"></div>
-  <div class="cuadradosl13"></div>
-  <div class="cuadradosl14"></div>
-  <div class="cuadradosl15">
-    <i class="far fa-star"></i>
-  </div>
-  <div class="cuadradosl16"></div>
-  <div class="cuadradosl17"></div>
-  <div class="cuadradosl18"></div>
-
-  <div class="Cuadro-blue">
-    <div class="cuadrado-t-b">
-      <div class="circulo1 b"></div>
-      <div class="circulo2 b"></div>
-      <div class="circulo3 b"></div>
-      <div class="circulo4 b"></div>
-    </div>
-  </div>
-  <div class="cuadradosb1"></div>
-  <div class="cuadradosb2"></div>
-  <div class="cuadradosb3"></div>
-  <div class="cuadradosb4"></div>
-  <div class="cuadradosb5">
-    <i class="far fa-star"></i>
-  </div>
-  <div class="cuadradosb6"></div>
-  <div class="cuadradosb7"></div>
-  <div class="cuadradosb8"></div>
-  <div class="cuadradosb9"></div>
-  <div class="cuadradosb10"></div>
-  <div class="cuadradosb11"></div>
-  <div class="cuadradosb12">
-    <i class="fas fa-chevron-up"></i>
-  </div>
-  <div class="cuadradosb13"></div>
-  <div class="cuadradosb14"></div>
-  <div class="cuadradosb15"></div>
-  <div class="cuadradosb16">
-    <i class="far fa-star"></i>
-  </div>
-  <div class="cuadradosb17"></div>
-  <div class="cuadradosb18"></div>
-
-  <div class="Cuadro-green">
-    <div class="cuadrado-t-g">
-      <div class="circulo1 g"></div>
-      <div class="circulo2 g"></div>
-      <div class="circulo3 g"></div>
-      <div class="circulo4 g"></div>
-    </div>
-  </div>
-
-  <div class="cuadradosr1"></div>
-  <div class="cuadradosr2"></div>
-  <div class="cuadradosr3"></div>
-  <div class="cuadradosr4">
-    <i class="far fa-star"></i>
-  </div>
-  <div class="cuadradosr5"></div>
-  <div class="cuadradosr6"></div>
-  <div class="cuadradosr7"></div>
-  <div class="cuadradosr8"></div>
-  <div class="cuadradosr9"></div>
-  <div class="cuadradosr10"></div>
-  <div class="cuadradosr11"></div>
-  <div class="cuadradosr12">
-    <i class="fas fa-chevron-left"></i>
-  </div>
-  <div class="cuadradosr13"></div>
-  <div class="cuadradosr14"></div>
-  <div class="cuadradosr15"></div>
-  <div class="cuadradosr16"></div>
-  <div class="cuadradosr17">
-    <i class="far fa-star"></i>
-  </div>
-  <div class="cuadradosr18"></div>
-
-  <div class="cuadro-medio"></div>
-</div>
         </div>
-
-
-        </div>
-
+      </div>
         <div class="col-span-6 sm:col-span-2 bg-white">
                 <div class="bg-gray-50 h-16 flex items-center px-4 border-b-2 border-gray-200 justify-between">
                     <img src="{{asset('img/logo.png')}}"  alt="logo" class="max-w-40">
@@ -208,6 +292,7 @@
 
     
     @push('js')
+      <script src="{{asset('js/ludo.js')}}?v=1993.1.8"></script>
         <script>
 
             function copiarEmoji(emoji) {

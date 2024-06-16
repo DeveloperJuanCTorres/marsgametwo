@@ -36,6 +36,7 @@
             </div>
 
             <!-- <a class='card-link' href='https://codepen.io/mog13/full/OJyVaEO' target="_blank"> click here for bingo cards</a> -->
+       
         </div>
 
         </div>

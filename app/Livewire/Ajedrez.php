@@ -9,6 +9,7 @@ use Livewire\Attributes\On;
 
 class Ajedrez extends Component
 {
+    //Falta El cambio de pieza cuando el peon llega al otro lado
     public $game, $adversary,$contact_id;
     public $chat;
     public $users;
