@@ -22,7 +22,7 @@
         </script>
         @stack('game')
     </head>
-    <body class="font-sans antialiased">
+    <body class="font-sans antialiased" x-data="{sidebarOpen:false}">
         <x-banner />
             <div class="min-h-screen bg-gray-100">
               
@@ -31,5 +31,10 @@
         @stack('modals')
         @livewireScripts
         @stack('js')
+        <div class="2xl:hidden xl:hidden lg:hidden"
+        :class="{
+        'bg-gray-900/50  fixed inset-0 z-30': sidebarOpen,
+        '': !sidebarOpen
+        }"></div>
     </body>
 </html>

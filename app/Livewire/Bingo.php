@@ -11,7 +11,7 @@ use Livewire\Attributes\On;
 class Bingo extends Component
 {
 
-    public $game, $userAdversary;
+    public $game, $adversary,$userAdversary;
     public $chat;
     public $users;
     public $bodyMessage;
@@ -24,6 +24,7 @@ class Bingo extends Component
     public function mount(Game $game){
         $this->game = $game;
         $this->userAdversary = $game->userAdversary; //obtengo el adversarion con un mutador que programe en el modelo
+        $this->adversary = $game->users->where('id', '!=', auth()->id())->first();
         $this->users = collect(); //se inicializa los usuario en una coleccion para usarce despues en ECHO
         $this->chat = $this->game->messages()->get();
         //-------------Obtener el color que se asignó------
