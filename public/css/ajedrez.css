@@ -54,7 +54,7 @@
 
 .chessboard {
   background: linear-gradient(120deg, rgba(27,13,9,1) 50%, #4e261c 100%);
-  padding: 3vmin 2vmin;
+  padding: 20px 20px 20px 10px;
   min-width: 81.5vmin;
 }
 
@@ -73,27 +73,29 @@
 }
 
 .line:nth-child(even) .square:nth-child(odd) {
-  background-color: #366650;
+  background-color: #5788a8;
 }
 
 .line:nth-child(even) .square:nth-child(even) {
-  background-color: #dbd3bc;
+  background-color: #e2e1dc;
 }
 
 .line:nth-child(odd) .square:nth-child(odd) {
-  background-color: #dbd3bc;
+  background-color: #e2e1dc;
 }
 
 .line:nth-child(odd) .square:nth-child(even) {
-  background-color: #366650;
+  background-color: #5788a8;
 }
 
 .white {
   color: white;
+  text-shadow: #000000bf 2px 0 10px;
 }
 
 .black {
   color: black;
+  text-shadow: #00000086 2px 0 10px;
 }
 
 .white, .black {
@@ -102,7 +104,7 @@
 }
 
 .square > .white, .square > .black {
-  font-size: 10vmin;
+  font-size: 9.5vmin;
 }
 
 .captured-zone > .white, .captured-zone > .black{
@@ -124,9 +126,11 @@
 }
 
 .dropzone {
-  background: radial-gradient(circle at center, rgba(0, 0, 0, 0.1) 25.5%, transparent 25%);
-  background-size: 100% 100%;
-  background-position: 50% 50%;
+ 
+  background: radial-gradient(circle at center, rgb(139 195 74 / 40%) 100%, transparent 25%);
+   /* background: radial-gradient(circle at center, rgba(0, 0, 0, 0.1) 25.5%, transparent 25%); */
+  /* background-size: 100% 100%;
+  background-position: 50% 50%; */
 }
 
 .dragover {

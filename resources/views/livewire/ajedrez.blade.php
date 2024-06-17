@@ -1,21 +1,12 @@
 
 
 <div x-data="data()" class="bg-gray-100 shadow border border-gray-300 overflow-hidden ">
-    <div class="grid grid-cols-6 divide-x divide-gray-200">    
+    <div class="grid grid-cols-7 divide-x divide-gray-200">    
         
-        <div class="h-100 col-span-6 xl:col-span-4 lg:col-span-4 sm:col-span-6 bg-white bg-gamer" wire:ignore>
+        <div class="h-[calc(98vh)] col-span-7 xl:col-span-4 lg:col-span-5 sm:col-span-7 bg-white bg-gamer" wire:ignore>
             <div class="text-center pt-2">
-                <p class="text-2xl ">Tus piezas son
-                    @switch($myColor)
-                        @case('white')
-                             negras ♜ 
-                            @break
-                        @case('black')
-                            blancas <span class="text-white">♜</span>
-                            @break
-                        @default
-                    @endswitch 
-                    : <span id="infoDiv" class="text-xl font-bold"></span>
+                <p> 
+                    <span id="infoDiv" class="text-2xl"></span>
                 </p>
                 <p id="winerGame" class="mt-2 text-3xl"></p>
             </div>
@@ -29,19 +20,14 @@
                     <div class="chessboard">
                         <div class="line l8">
                         <div class="square c1">
-                            
                         </div>
                         <div class="square c2">
-                            
                         </div>
                         <div class="square c3">
-                            
                         </div>
                         <div class="square c4">
-                            
                         </div>
                         <div class="square c5">
-                            
                         </div>
                         <div class="square c6">
                             
@@ -180,10 +166,45 @@
             </div>
         </div>
 
-        <div class="col-span-6 xl:col-span-2 lg:col-span-2 sm:col-span-6 chat-desktop">
+        <div class="col-span-7 xl:col-span-1 sm:col-span-1 bg-white bg-white p-3 content-center" >
+           
+            <div class="w-full p-2 bg-green-100 border border-gray-200 rounded-lg shadow my-5">
+                <strong >Tú:</strong>
+                <p class="my-2 font-normal text-gray-700 text-center">
+                    @switch($myColor)
+                    @case('white')
+                         Piezas negras ♜ 
+                        @break
+                    @case('black')
+                        Piezas Blancas <span class="text-white">♜</span>
+                        @break
+                    @default
+                @endswitch 
+                </p>
+                <h5 class="text-xl font-bold tracking-tight text-gray-900 text-center mb-2"><i class="las la-stopwatch"></i> 1:00</h5>
+            </div> 
+            <div class="text-center font-bold">VS</div>
+            <div class="w-full p-2 bg-white border border-gray-200 rounded-lg shadow my-5">
+                <strong> {{ $adversary->name }}:</strong>
+                <p class="my-2 font-normal text-gray-700 text-center">
+                    @switch($myColor)
+                    @case('black')
+                         Piezas negras ♜ 
+                        @break
+                    @case('white')
+                         Piezas Blancas  <span class="text-gray-300">♜</span>
+                        @break
+                    @default
+                @endswitch 
+                </p>
+                <h5 class="text-xl font-bold tracking-tight text-gray-900 text-center mb-2"><i class="las la-stopwatch"></i> 1:00</h5>
+            </div> 
+        </div>
+
+        <div class="col-span-7 xl:col-span-2 lg:col-span-1 sm:col-span-7 chat-desktop">
             <div class="bg-gray-50 h-16 flex items-center px-4 border-b-2 border-gray-200 justify-between">
                 <img src="{{asset('img/logo.png')}}"  alt="logo" class="max-w-40">
-                <a href="/" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Salir del juego</a>
+                <a href="/" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Abandonar </a>
             </div>
             <div class="bg-gray-100 h-16 flex items-center px-3">
                 <img class="w-10 h-10 object-cover object-center rounded-full" src="{{ $adversary->profile_photo_url }}" alt="{{ $adversary->name }}">
