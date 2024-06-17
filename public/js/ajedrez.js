@@ -374,13 +374,15 @@ function otherColor(color) {
     // blackTurn.stop();
     disableAll("white", "black");
   
+   document.getElementById("modalWiner").classList.remove("hidden");
+
     if (endedByTime) {
       const opponentColor = otherColor(color);
-      winerGame.innerHTML = `${opponentColor.toUpperCase()} 🎉Ganador🎉 !!!`;
+      winerGame.innerHTML = `${opponentColor.toUpperCase()}`;
       // alert(`${opponentColor.toUpperCase()} WINS!!!`);
     } else {
       // alert(`${color.toUpperCase()} WINS!!!`);
-      winerGame.innerHTML = `${color.toUpperCase()} 🎉Ganador🎉 !!!`;
+      winerGame.innerHTML = `${color.toUpperCase()}`;
     }
   
   }
@@ -467,9 +469,15 @@ function otherColor(color) {
         applyPropOneChessPiece(currSquare.firstElementChild, chessboardSide);
         verifyCheckmateAndChangeTurn(currSquare.firstElementChild, pieceColor, isKingCaptured);
         
-        
-        console.log('Cambio de piezassssszz xxxxx99xxx');
         document.getElementById('boardDiv').classList.add('elementor-toggle');
+        //Cambio de color del turno
+        const cardYou = document.getElementById("cardYou");
+        const cardOpo = document.getElementById("cardOpo");
+        cardYou.classList.remove("bg-green-300");
+        cardYou.classList.add("bg-white");
+        cardOpo.classList.remove("bg-white");
+        cardOpo.classList.add("bg-green-300");
+       
         Livewire.dispatch('move', {move: draughts,color:pieceColor,jump:keyChange,line:line,square:square,eat:keyCapture});
       });
     } else {
@@ -519,6 +527,14 @@ function otherColor(color) {
       if(changePawn){
         changePawn = true;
         document.getElementById('boardDiv').classList.add('elementor-toggle');
+         //Cambio de color del turno
+         const cardYou = document.getElementById("cardYou");
+         const cardOpo = document.getElementById("cardOpo");
+         cardYou.classList.remove("bg-green-300");
+         cardYou.classList.add("bg-white");
+         cardOpo.classList.remove("bg-white");
+         cardOpo.classList.add("bg-green-300");
+
         Livewire.dispatch('move', {move: draughts,color:pieceColor,jump:key,line:line,square:square,eat:keyCapture});
       }else{
         console.log('No se esta haciendo movimiento :(')

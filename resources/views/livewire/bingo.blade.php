@@ -50,6 +50,24 @@
             </tr>
         </table>
             
+<<<<<<< HEAD
+=======
+            <h2 class="text-xl mb-2">Cartilla</h2>
+            <!-- <div id="bingo-grid-title">
+                    <div class="bingo-ball__container" style="grid-row:1">B</div>
+                    <div class="bingo-ball__container" style="grid-row:1">I</div>
+                    <div class="bingo-ball__container" style="grid-row:1">N</div>
+                    <div class="bingo-ball__container" style="grid-row:1">G</div>
+                    <div class="bingo-ball__container" style="grid-row:1">O</div>
+            </div> -->
+            <div id='bingo-grid'>
+               
+
+            </div>
+
+            <!-- <a class='card-link' href='https://codepen.io/mog13/full/OJyVaEO' target="_blank"> click here for bingo cards</a> -->
+       
+>>>>>>> d7c93fef4b858b4d2aaf6f536da275d0a2677e87
         </div>
 
         <div class="col-span-6 xl:col-span-2 lg:col-span-2 sm:col-span-6 chat-desktop">

@@ -9,20 +9,15 @@ use Livewire\Attributes\On;
 
 class Ajedrez extends Component
 {
-    public $game, $adversary,$contact_id;
+    //Falta El cambio de pieza cuando el peon llega al otro lado
+    public $game, $adversary, $contact_id;
     public $chat;
     public $users;
     public $bodyMessage;
-
     public $draughts;
     public $player;
     public $myColor;
     public $userAdversary;
-
-    // public $jump;
-    // public $line;
-    // public $square;
-
     public $move;
 
     public function mount(Game $game){
@@ -72,7 +67,7 @@ class Ajedrez extends Component
             {"name": "knight","line": "l8","square": "c7","figure": "♞","color": "black","state": 1},
             {"name": "rook","line": "l8","square": "c8","figure": "♜","color": "black","state": 1}]';
         //consulto el ultimo movimiento para dibujar el tablero si no hay moviemeos agrego el tablero inicial
-        $stringMove = $this->game->moves()->get()->last()?? [];
+        $stringMove = $this->game->moves()->get()->last() ?? [];
         if($stringMove) {
             $this->draughts = json_decode($stringMove->move);
             $this->player =  $stringMove->color;
@@ -151,7 +146,7 @@ class Ajedrez extends Component
     #[On('playGame')] 
     public function playGame(){
         $this->InitBoard();
-        $this->dispatch('notificateEchoJs',$this->move, $this->player,$this->myColor);
+        $this->dispatch('notificateEchoJs',$this->move, $this->player, $this->myColor);
     }
 
     #[On('render')] 
@@ -161,7 +156,6 @@ class Ajedrez extends Component
             $this->InitBoard();
             $this->dispatch('iniliziateJs',$this->draughts, $this->player,$this->myColor);
         }
-
         $this->dispatch('scrollIntoView');
         return view('livewire.ajedrez')->layout('layouts.ajedrez');
     }

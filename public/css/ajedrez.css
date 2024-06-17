@@ -33,14 +33,13 @@
   float: left;
   text-align: center;
   font-size: 2.5vmin;
-  font-family: Poppins;
   font-weight: 600;
   border-radius: 0.5vmin;
 }
 
 .chessboard {
   background: linear-gradient(120deg, rgba(27,13,9,1) 50%, #4e261c 100%);
-  padding: 3vmin 2vmin;
+  padding: 20px 20px 20px 10px;
   min-width: 81.5vmin;
 }
 
@@ -59,27 +58,29 @@
 }
 
 .line:nth-child(even) .square:nth-child(odd) {
-  background-color: #366650;
+  background-color: #5788a8;
 }
 
 .line:nth-child(even) .square:nth-child(even) {
-  background-color: #dbd3bc;
+  background-color: #e2e1dc;
 }
 
 .line:nth-child(odd) .square:nth-child(odd) {
-  background-color: #dbd3bc;
+  background-color: #e2e1dc;
 }
 
 .line:nth-child(odd) .square:nth-child(even) {
-  background-color: #366650;
+  background-color: #5788a8;
 }
 
 .white {
   color: white;
+  text-shadow: #000000bf 2px 0 10px;
 }
 
 .black {
   color: black;
+  text-shadow: #00000086 2px 0 10px;
 }
 
 .white, .black {
@@ -88,7 +89,7 @@
 }
 
 .square > .white, .square > .black {
-  font-size: 10vmin;
+  font-size: 9.5vmin;
 }
 
 .captured-zone > .white, .captured-zone > .black{
@@ -110,9 +111,11 @@
 }
 
 .dropzone {
-  background: radial-gradient(circle at center, rgba(0, 0, 0, 0.1) 25.5%, transparent 25%);
-  background-size: 100% 100%;
-  background-position: 50% 50%;
+ 
+  background: radial-gradient(circle at center, rgb(139 195 74 / 40%) 100%, transparent 25%);
+   /* background: radial-gradient(circle at center, rgba(0, 0, 0, 0.1) 25.5%, transparent 25%); */
+  /* background-size: 100% 100%;
+  background-position: 50% 50%; */
 }
 
 .dragover {
@@ -157,7 +160,6 @@ footer p {
   margin: 15px;
   text-align: center;
   color: #F5F5F5;
-  font-family: Poppins;
 }
 
 footer a:link {
@@ -192,6 +194,9 @@ footer a:active {
     background: -webkit-linear-gradient(to right, #5051a4, #37cf71);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #5051a4, #37cf71); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   }
+  .bg-blue-mars{
+    background-color: #2D2E83;
+  }
 
   @media (min-width: 1000px) {
     .chat-desktop{
@@ -210,3 +215,27 @@ footer a:active {
       display: block;
     }
   }
+
+  /* Congratulation  */
+
+  .congratulation {
+    height: 100vh;
+    background-color: #2d2f83dc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  .title {
+    font-size: clamp(36px, 0.6rem, 100px);
+    color: #fff;
+    text-shadow: 6px 4px #2d2f83;
+    width: 100%;
+  }
+  .sub-title{
+    width: 100%;
+    text-align: center;
+  }
+  
+  
