@@ -471,13 +471,25 @@ function otherColor(color) {
         
         document.getElementById('boardDiv').classList.add('elementor-toggle');
         //Cambio de color del turno
-        const cardYou = document.getElementById("cardYou");
-        const cardOpo = document.getElementById("cardOpo");
-        cardYou.classList.remove("bg-green-300");
-        cardYou.classList.add("bg-white");
-        cardOpo.classList.remove("bg-white");
-        cardOpo.classList.add("bg-green-300");
-       
+         const cardBlack = document.getElementById("cardBlack");
+         const cardwhite = document.getElementById("cardwhite");
+         if(pieceColor == 'white'){
+          cardBlack.classList.remove("bg-white");
+          cardBlack.classList.add("bg-green-300");
+          cardwhite.classList.remove("bg-green-300");
+          cardwhite.classList.add("bg-white");
+          console.log('livewire ecucheeeee white 9898989');
+        }
+        if(pieceColor == 'black'){
+          cardBlack.classList.remove("bg-green-300");
+          cardBlack.classList.add("bg-white");
+          cardwhite.classList.remove("bg-white");
+          cardwhite.classList.add("bg-green-300");
+          console.log('livewire ecucheeeee black 98989');
+        }
+
+        
+        console.log('livewire js ecucheeeee white');
         Livewire.dispatch('move', {move: draughts,color:pieceColor,jump:keyChange,line:line,square:square,eat:keyCapture});
       });
     } else {
@@ -522,19 +534,28 @@ function otherColor(color) {
       // var name = selectedPiece.classList[1]; 
       draughts[key].line = line;
       draughts[key].square = square;
-      console.log('Funcion Livewire <<<<<<<<');
 
       if(changePawn){
         changePawn = true;
         document.getElementById('boardDiv').classList.add('elementor-toggle');
          //Cambio de color del turno
-         const cardYou = document.getElementById("cardYou");
-         const cardOpo = document.getElementById("cardOpo");
-         cardYou.classList.remove("bg-green-300");
-         cardYou.classList.add("bg-white");
-         cardOpo.classList.remove("bg-white");
-         cardOpo.classList.add("bg-green-300");
-
+         const cardBlack = document.getElementById("cardBlack");
+         const cardwhite = document.getElementById("cardwhite");
+        if(pieceColor == 'white'){
+          cardBlack.classList.remove("bg-white");
+          cardBlack.classList.add("bg-green-300");
+          cardwhite.classList.remove("bg-green-300");
+          cardwhite.classList.add("bg-white");
+          console.log('livewire ecucheeeee white 9898989');
+        }
+        if(pieceColor == 'black'){
+          cardBlack.classList.remove("bg-green-300");
+          cardBlack.classList.add("bg-white");
+          cardwhite.classList.remove("bg-white");
+          cardwhite.classList.add("bg-green-300");
+          console.log('livewire ecucheeeee black 98989');
+        }
+        
         Livewire.dispatch('move', {move: draughts,color:pieceColor,jump:key,line:line,square:square,eat:keyCapture});
       }else{
         console.log('No se esta haciendo movimiento :(')
@@ -547,9 +568,6 @@ function otherColor(color) {
 
   function opponentMove(move,playercolor) {
       console.log('opponentMove-----move');
-
-   
-
       let line = move['line'];
       let square = move['square'];
       let keypiece = move['jump'];

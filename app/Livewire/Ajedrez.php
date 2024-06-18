@@ -9,7 +9,6 @@ use Livewire\Attributes\On;
 
 class Ajedrez extends Component
 {
-    //Falta El cambio de pieza cuando el peon llega al otro lado
     public $game, $adversary, $contact_id;
     public $chat;
     public $users;
@@ -29,7 +28,6 @@ class Ajedrez extends Component
         //-------------Obtener el color que se asignó------
         $myUser = $this->game->myUser;
         $this->myColor = $myUser->pivot->color;
-         //----------------------
         $this->InitBoard();
     }
 

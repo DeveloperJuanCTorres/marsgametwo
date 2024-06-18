@@ -1,20 +1,42 @@
 
 
 <div x-data="data()" class="bg-gray-100 shadow border border-gray-300 overflow-hidden ">
-    <div class="grid grid-cols-7 divide-x divide-gray-200">    
-        <div class="h-[calc(98vh)] col-span-7 xl:col-span-4 lg:col-span-5 sm:col-span-7 bg-white bg-gamer" wire:ignore>
-            <!-- <div class="text-center pt-2">
-                <p> 
-                    <i class="las la-hand-point-right me-1"></i> <span id="infoDiv" class="text-2xl"></span>
-                </p>
-                <p id="winerGame" class="mt-2 text-3xl"></p> 
-            </div>  -->
+    <div class="grid grid-cols-6 divide-x divide-gray-200 ">    
+        <div class=" col-span-6 xl:col-span-4 lg:col-span-5 sm:col-span-6 bg-gamer" wire:ignore>
+            <div class="h-[calc(100vh)] grid grid-cols-1  content-between">
             <div>
-                <div class="container" id="boardDiv">
+                <p class="bg-blue-mars text-center font-bold text-white p-1">
+                    <i class="las la-hand-point-right me-1"></i>
+                    <span id="infoDiv"></span> 
+                </p> 
+                <div id="cardBlack" class="{{'white' == $player ?  'bg-green-300' : 'bg-white'}} ">
+                    <div class="h-16 flex items-center px-3">
+                        @if($myColor=="white")
+                            <img class="w-10 h-10 object-cover object-center rounded-full" src="{{ Auth::user()->profile_photo_url }}" alt="{{ $adversary->name }}">
+                        @else
+                            <img class="w-10 h-10 object-cover object-center rounded-full" src="{{ $adversary->profile_photo_url }}" alt="{{ $adversary->name }}">
+                        @endif
+                        <div class="ml-4">
+                            @if($myColor=="white")
+                            <p class="text-gray-800 text-xl"> {{ Auth::user()->name }}</p>
+                            @else
+                            <p class="text-gray-800 text-xl"> {{ $adversary->name }}</p>
+                            @endif
+                            <span class="text-black">
+                                Piezas negras ♚ 
+                            </span>
+                        </div>
+                    </div>
                     <div class="extra-zone">
                         <div class="captured-zone" id="czblack"></div>
                         <!-- <div class="countdown-timer" id="ctblack">10:00</div> -->
                     </div>
+                </div>
+            </div>
+
+            <div>
+                <div class="container" id="boardDiv">
+                    
                     <div class="chessboard">
                         <div class="line l8">
                             <div class="square c1"></div>
@@ -97,60 +119,46 @@
                             <div class="square c8"></div>
                         </div>
                     </div>
-                    <div class="extra-zone">
-                        <div class="captured-zone" id="czwhite"></div>
-                        <!-- <div class="countdown-timer" id="ctwhite">10:00</div> -->
-                    </div>
+                    
                 </div> 
             </div>
-        </div>
 
-        <div class="col-span-7 xl:col-span-1 sm:col-span-1 p-3 content-center bg-slate-200" wire:ignore >
-            <p class="text-center mb-2 font-bold text-green-800">
-                <i class="las la-hand-point-right me-1"></i>
-                <span id="infoDiv"></span> 
-            </p> 
-            <div id="cardYou" class="w-full p-2  border border-gray-200 rounded-lg shadow my-5 {{$myColor == $player ? 'bg-green-300' : 'bg-white'}}">
-                <p class="text-center font-bold">Tú</p>
-                <p class="my-2 font-normal text-gray-700 text-center">
-                    @if($myColor == 'white')
-                        Piezas negras ♜ 
-                    @else
-                        Piezas Blancas <span class="text-white">♜</span>
-                    @endif
-                </p>
-                <h5 class="text-xl font-bold tracking-tight text-gray-900 text-center mb-2">
-                    <i class="las la-stopwatch"></i> 1:00
-                </h5>
-            </div> 
-            <div class="text-center font-bold">VS</div>
-            <div id="cardOpo" class="w-full p-2 border border-gray-200 rounded-lg shadow my-5 {{$myColor != $player ?  'bg-green-300' : 'bg-white'}}">
-                <p class="text-center font-bold">{{ $adversary->name }}</p>
-                <p class="my-2 font-normal text-gray-700 text-center">
-                    @if($myColor = 'black')
-                        Piezas negras ♜ 
-                    @else
-                        Piezas Blancas  <span class="text-gray-300">♜</span>
-                    @endif
-                </p>
-                <h5 class="text-xl font-bold tracking-tight text-gray-900 text-center mb-2">
-                    <i class="las la-stopwatch"></i> 1:00
-                </h5>
-            </div> 
-           
-            <div class="text-center my-5">
-                <a href="/" class=" text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 "> 
-                    <i class="las la-skull-crossbones"></i> Abandonar
-                </a>
+            <div>
+                <div id="cardwhite" class="{{'black' == $player ? 'bg-green-300' : 'bg-white'}} ">
+                    <div class="h-16 flex items-center px-3">
+                        @if($myColor=="black")
+                            <img class="w-10 h-10 object-cover object-center rounded-full" src="{{ Auth::user()->profile_photo_url }}" alt="{{ $adversary->name }}">
+                        @else
+                            <img class="w-10 h-10 object-cover object-center rounded-full" src="{{ $adversary->profile_photo_url }}" alt="{{ $adversary->name }}">
+                        @endif
+                        
+                        <div class="ml-4">
+                            @if($myColor=="black")
+                                <p class="text-gray-800 text-xl"> {{ Auth::user()->name}}</p>
+                            @else
+                                <p class="text-gray-800 text-xl"> {{ $adversary->name }}</p>
+                            @endif
+                            <span class="text-black">
+                                Piezas Blancas <span class="text-gray-400">♚</span>  
+                            </span>
+                        </div>
+                    </div>
+                    <div class="extra-zone">
+                        <div class="captured-zone" id="czwhite"></div>
+                        <!-- <div class="countdown-timer" id="ctblack">10:00</div> -->
+                    </div>
+                </div>
             </div>
         </div>
+    </div>
+       
 
         <div class="col-span-7 xl:col-span-2 lg:col-span-1 sm:col-span-7 chat-desktop">
             <div class="bg-gray-50 h-16 flex items-center px-4 border-b-2 border-gray-200 justify-between">
                 <img src="{{asset('img/logo.png')}}"  alt="logo" class="max-w-40">
-                <!-- <a href="/" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"> 
+                <a href="/" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"> 
                     <i class="las la-skull-crossbones"></i> Abandonar
-                </a> -->
+                </a> 
             </div>
             <div class="bg-gray-100 h-16 flex items-center px-3">
                 <img class="w-10 h-10 object-cover object-center rounded-full" src="{{ $adversary->profile_photo_url }}" alt="{{ $adversary->name }}">
@@ -180,7 +188,8 @@
             </div>
 
             <div class="py-2 px-4 bg-gray-100 border-t-2">
-                <span class="mx-2 cursor-pointer" onclick="copiarEmoji('😀')">😀</span>
+            <span class="mx-2 cursor-pointer" onclick="copiarEmoji('😀')">😀</span>
+                <span class="mx-2 cursor-pointer"  onclick="copiarEmoji('😁')">😁</span>
                 <span class="mx-2 cursor-pointer"  onclick="copiarEmoji('😂')">😂</span>
                 <span class="mx-2 cursor-pointer"  onclick="copiarEmoji('😅')">😅</span>
                 <span class="mx-2 cursor-pointer" onclick="copiarEmoji('😍')">😍</span>
@@ -188,6 +197,7 @@
                 <span class="mx-2 cursor-pointer" onclick="copiarEmoji('😉')">😉</span>
                 <span class="mx-2 cursor-pointer" onclick="copiarEmoji('😡')">😡</span>
                 <span class="mx-2 cursor-pointer" onclick="copiarEmoji('😭')">😭</span>
+                <span class="mx-2 cursor-pointer" onclick="copiarEmoji('🤑')">🤑</span>
                 <span class="mx-2 cursor-pointer" onclick="copiarEmoji('🤩')">🤩</span>
             </div>
             <form class="bg-gray-100 h-16 flex items-center px-4" wire:submit.prevent="sendMessage()">
@@ -296,12 +306,26 @@
                     //Activo el tablero para el turno que le coresponde
                     document.getElementById('boardDiv').classList.remove('elementor-toggle');
                     //Cambiar el color del turno
-                    var cardYou = document.getElementById('cardYou');
-                    var cardOpo = document.getElementById('cardOpo');
-                    cardYou.classList.remove('bg-white');
-                    cardYou.classList.add('bg-green-300')
-                    cardOpo.classList.remove('bg-green-300');
-                    cardOpo.classList.add('bg-white')
+                    let cardBlack = document.getElementById("cardBlack");
+                    let cardwhite = document.getElementById("cardwhite");
+                  
+                    if(event[1] == 'white'){
+                        cardBlack.classList.remove("bg-white");
+                        cardBlack.classList.add("bg-green-300");
+                        cardwhite.classList.remove("bg-green-300");
+                        cardwhite.classList.add("bg-white");
+                        console.log('white ----------------->local');
+                    }
+
+                    if(event[1] == 'black'){
+                    cardBlack.classList.remove("bg-green-300");
+                    cardBlack.classList.add("bg-white");
+                    cardwhite.classList.remove("bg-white");
+                    cardwhite.classList.add("bg-green-300");
+                    console.log('black ----------------->local');
+                    }
+        
+
                 }
                 opponentMove(event[0],event[1]);
             });
