@@ -474,17 +474,17 @@ function otherColor(color) {
          const cardBlack = document.getElementById("cardBlack");
          const cardwhite = document.getElementById("cardwhite");
          if(pieceColor == 'white'){
-          cardBlack.classList.remove("bg-white");
-          cardBlack.classList.add("bg-green-300");
-          cardwhite.classList.remove("bg-green-300");
-          cardwhite.classList.add("bg-white");
+          cardBlack.classList.remove("bg-gray-800");
+          cardBlack.classList.add("bg-green-400");
+          cardwhite.classList.remove("bg-green-400");
+          cardwhite.classList.add("bg-gray-800");
           console.log('livewire ecucheeeee white 9898989');
         }
         if(pieceColor == 'black'){
-          cardBlack.classList.remove("bg-green-300");
-          cardBlack.classList.add("bg-white");
-          cardwhite.classList.remove("bg-white");
-          cardwhite.classList.add("bg-green-300");
+          cardBlack.classList.remove("bg-green-400");
+          cardBlack.classList.add("bg-gray-800");
+          cardwhite.classList.remove("bg-gray-800");
+          cardwhite.classList.add("bg-green-400");
           console.log('livewire ecucheeeee black 98989');
         }
 
@@ -542,17 +542,17 @@ function otherColor(color) {
          const cardBlack = document.getElementById("cardBlack");
          const cardwhite = document.getElementById("cardwhite");
         if(pieceColor == 'white'){
-          cardBlack.classList.remove("bg-white");
-          cardBlack.classList.add("bg-green-300");
-          cardwhite.classList.remove("bg-green-300");
-          cardwhite.classList.add("bg-white");
+          cardBlack.classList.remove("bg-gray-800");
+          cardBlack.classList.add("bg-green-400");
+          cardwhite.classList.remove("bg-green-400");
+          cardwhite.classList.add("bg-gray-800");
           console.log('livewire ecucheeeee white 9898989');
         }
         if(pieceColor == 'black'){
-          cardBlack.classList.remove("bg-green-300");
-          cardBlack.classList.add("bg-white");
-          cardwhite.classList.remove("bg-white");
-          cardwhite.classList.add("bg-green-300");
+          cardBlack.classList.remove("bg-green-400");
+          cardBlack.classList.add("bg-gray-800");
+          cardwhite.classList.remove("bg-gray-800");
+          cardwhite.classList.add("bg-green-400");
           console.log('livewire ecucheeeee black 98989');
         }
         

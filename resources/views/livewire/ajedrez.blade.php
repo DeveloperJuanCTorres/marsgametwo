@@ -5,26 +5,47 @@
         <div class=" col-span-6 xl:col-span-4 lg:col-span-5 sm:col-span-6 bg-gamer" wire:ignore>
             <div class="h-[calc(100vh)] grid grid-cols-1  content-between">
             <div>
-                <p class="bg-blue-mars text-center font-bold text-white p-1">
-                    <i class="las la-hand-point-right me-1"></i>
-                    <span id="infoDiv"></span> 
-                </p> 
-                <div id="cardBlack" class="{{'white' == $player ?  'bg-green-300' : 'bg-white'}} ">
-                    <div class="h-16 flex items-center px-3">
-                        @if($myColor=="white")
-                            <img class="w-10 h-10 object-cover object-center rounded-full" src="{{ Auth::user()->profile_photo_url }}" alt="{{ $adversary->name }}">
-                        @else
-                            <img class="w-10 h-10 object-cover object-center rounded-full" src="{{ $adversary->profile_photo_url }}" alt="{{ $adversary->name }}">
-                        @endif
-                        <div class="ml-4">
+                <div class="py-2 bg-blue-mars  flex justify-center text-white">
+                    <p class="ml-4"> 
+                        <i class="las la-hand-point-right me-1"></i>
+                        <span id="infoDiv"></span> 
+                    </p>
+                     
+                    <a href="/" class="focus:outline-none text-white bg-gray-800 hover:bg-red-800 focus:ring-4 focus:ring-red-300 rounded-full text-sm py-1 px-3 ml-4"> 
+                        <i class="las la-door-open"></i> Salir
+                    </a>  
+                    <a href="/" class="focus:outline-none text-white bg-gray-800 hover:bg-red-800 focus:ring-4 focus:ring-red-300 rounded-full text-sm py-1 px-3 ml-2"> 
+                        <i class="las la-handshake"></i> Tablas
+                    </a>  
+                </div>
+                <div class="bg-gray-800">
+                    <div class="h-14 flex justify-between px-3">
+                        <div class="flex items-center">
                             @if($myColor=="white")
-                            <p class="text-gray-800 text-xl"> {{ Auth::user()->name }}</p>
+                                <img class="w-10 h-10 object-cover object-center rounded-full" src="{{ Auth::user()->profile_photo_url }}" alt="{{ $adversary->name }}">
                             @else
-                            <p class="text-gray-800 text-xl"> {{ $adversary->name }}</p>
+                                <img class="w-10 h-10 object-cover object-center rounded-full" src="{{ $adversary->profile_photo_url }}" alt="{{ $adversary->name }}">
                             @endif
-                            <span class="text-black">
-                                Piezas negras ♚ 
-                            </span>
+                            <div class="ml-4">
+                                <p class="text-white text-xl leading-4"> 
+                                    @if($myColor=="white")
+                                        {{ Auth::user()->name }}
+                                    @else
+                                    {{ $adversary->name }}
+                                    @endif
+                                </p>
+                                <span class="text-white text-sm">
+                                    <span class="text-black">♚</span> Piezas negras 
+                                </span>
+                            </div>
+                            <div class="ml-2">  
+                                <div id="cardBlack" class="text-gray-800  {{'white' == $player ?  'bg-green-400' : 'bg-gray-800'}} ">
+                                    My turno
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center text-2xl text-white">
+                            5:00
                         </div>
                     </div>
                     <div class="extra-zone">
@@ -124,30 +145,44 @@
             </div>
 
             <div>
-                <div id="cardwhite" class="{{'black' == $player ? 'bg-green-300' : 'bg-white'}} ">
-                    <div class="h-16 flex items-center px-3">
-                        @if($myColor=="black")
-                            <img class="w-10 h-10 object-cover object-center rounded-full" src="{{ Auth::user()->profile_photo_url }}" alt="{{ $adversary->name }}">
-                        @else
-                            <img class="w-10 h-10 object-cover object-center rounded-full" src="{{ $adversary->profile_photo_url }}" alt="{{ $adversary->name }}">
-                        @endif
-                        
-                        <div class="ml-4">
-                            @if($myColor=="black")
-                                <p class="text-gray-800 text-xl"> {{ Auth::user()->name}}</p>
-                            @else
-                                <p class="text-gray-800 text-xl"> {{ $adversary->name }}</p>
-                            @endif
-                            <span class="text-black">
-                                Piezas Blancas <span class="text-gray-400">♚</span>  
-                            </span>
+                    <div class="bg-gray-800 ">
+                        <div class="h-14 flex justify-between  px-3">
+
+                            <div class="flex items-center">
+                                @if($myColor=="black")
+                                    <img class="w-10 h-10 object-cover object-center rounded-full" src="{{ Auth::user()->profile_photo_url }}" alt="{{ $adversary->name }}">
+                                @else
+                                    <img class="w-10 h-10 object-cover object-center rounded-full" src="{{ $adversary->profile_photo_url }}" alt="{{ $adversary->name }}">
+                                @endif
+                                <div class="ml-4">
+                                    <p class="text-white text-xl leading-4">
+                                        @if($myColor=="black")
+                                            {{ Auth::user()->name}}
+                                        @else
+                                            {{ $adversary->name }}
+                                        @endif
+                                    </p>
+                                    <span class="text-gray-300 text-sm">
+                                        ♚ Piezas Blancas   
+                                    </span>
+                                </div>
+                                <div class="ml-2">  
+                                <div id="cardwhite" class="text-gray-800 {{'black' == $player ? 'bg-green-400' : 'bg-gray-800'}} ">
+                                    My turno
+                                </div>
+                            </div>
+                             </div>  
+                            <div class="flex items-center text-2xl text-white">
+                                5:00
+                            </div>
                         </div>
-                    </div>
+                  
                     <div class="extra-zone">
                         <div class="captured-zone" id="czwhite"></div>
                         <!-- <div class="countdown-timer" id="ctblack">10:00</div> -->
                     </div>
                 </div>
+                <div class="py-10 bg-gray-option"></div>
             </div>
         </div>
     </div>
@@ -156,9 +191,6 @@
         <div class="col-span-7 xl:col-span-2 lg:col-span-1 sm:col-span-7 chat-desktop">
             <div class="bg-gray-50 h-16 flex items-center px-4 border-b-2 border-gray-200 justify-between">
                 <img src="{{asset('img/logo.png')}}"  alt="logo" class="max-w-40">
-                <a href="/" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"> 
-                    <i class="las la-skull-crossbones"></i> Abandonar
-                </a> 
             </div>
             <div class="bg-gray-100 h-16 flex items-center px-3">
                 <img class="w-10 h-10 object-cover object-center rounded-full" src="{{ $adversary->profile_photo_url }}" alt="{{ $adversary->name }}">
@@ -310,17 +342,17 @@
                     let cardwhite = document.getElementById("cardwhite");
                   
                     if(event[1] == 'white'){
-                        cardBlack.classList.remove("bg-white");
+                        cardBlack.classList.remove("bg-gray-800");
                         cardBlack.classList.add("bg-green-300");
                         cardwhite.classList.remove("bg-green-300");
-                        cardwhite.classList.add("bg-white");
+                        cardwhite.classList.add("bg-gray-800");
                         console.log('white ----------------->local');
                     }
 
                     if(event[1] == 'black'){
                     cardBlack.classList.remove("bg-green-300");
-                    cardBlack.classList.add("bg-white");
-                    cardwhite.classList.remove("bg-white");
+                    cardBlack.classList.add("bg-gray-800");
+                    cardwhite.classList.remove("bg-gray-800");
                     cardwhite.classList.add("bg-green-300");
                     console.log('black ----------------->local');
                     }
