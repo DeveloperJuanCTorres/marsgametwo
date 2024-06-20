@@ -35,12 +35,12 @@
                                     @endif
                                 </p>
                                 <span class="text-white text-sm">
-                                    <span class="text-black">♚</span> Piezas negras 
+                                    <i class="text-xl text-black las la-chess"></i> Piezas negras 
                                 </span>
                             </div>
                             <div class="ml-2">  
-                                <div id="cardBlack" class="text-gray-800  {{'white' == $player ?  'bg-green-400' : 'bg-gray-800'}} ">
-                                    My turno
+                                <div id="cardBlack" class="text-gray-800 rounded-full p-1  {{'white' == $player ?  'bg-green-400' : 'bg-gray-800'}} ">
+                                    <i class="text-2xl las la-hand-paper"></i>
                                 </div>
                             </div>
                         </div>
@@ -163,12 +163,12 @@
                                         @endif
                                     </p>
                                     <span class="text-gray-300 text-sm">
-                                        ♚ Piezas Blancas   
+                                        <i class="text-xl  las la-chess"></i> Piezas Blancas   
                                     </span>
                                 </div>
                                 <div class="ml-2">  
-                                <div id="cardwhite" class="text-gray-800 {{'black' == $player ? 'bg-green-400' : 'bg-gray-800'}} ">
-                                    My turno
+                                <div id="cardwhite" class="text-gray-800 rounded-full p-1 {{'black' == $player ? 'bg-green-400' : 'bg-gray-800'}} ">
+                                    <i class="text-2xl las la-hand-paper"></i>
                                 </div>
                             </div>
                              </div>  
@@ -186,8 +186,7 @@
             </div>
         </div>
     </div>
-       
-
+    
         <div class="col-span-7 xl:col-span-2 lg:col-span-1 sm:col-span-7 chat-desktop">
             <div class="bg-gray-50 h-16 flex items-center px-4 border-b-2 border-gray-200 justify-between">
                 <img src="{{asset('img/logo.png')}}"  alt="logo" class="max-w-40">
@@ -239,6 +238,7 @@
                 </button>
             </form>
         </div>
+
     </div>
 
     <div class="chat-mobil">
@@ -298,7 +298,7 @@
 </div>
 
     @push('js')
-      <script src="{{asset('js/ajedrez.js')}}?v=1993.1.12"></script> 
+      <script src="{{asset('js/ajedrez.js')}}?v=1993.1.13"></script> 
       <script>
             document.addEventListener('livewire:initialized', function () {
                 var pieces = @this.draughts;

@@ -222,14 +222,14 @@ footer a:active {
     }
 
     .square {
-      width: 9.5vmin;
-      height: 9.5vmin;
+      width: 11vmin;
+      height: 11vmin;
     }
     .container{
-      height: 80vmin;
+      height: 90vmin;
     }
     .square > .white, .square > .black {
-      font-size: 8.5vmin;
+      font-size: 10.5vmin;
     }
     .bg-gray-option{
       display: block;
