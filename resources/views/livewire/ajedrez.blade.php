@@ -19,15 +19,15 @@
                     </a>  
                 </div>
                 <div class="bg-gray-800">
-                    <div class="h-14 flex justify-between px-3">
+                    <div class="h-12 flex justify-between px-3">
                         <div class="flex items-center">
                             @if($myColor=="white")
-                                <img class="w-10 h-10 object-cover object-center rounded-full" src="{{ Auth::user()->profile_photo_url }}" alt="{{ $adversary->name }}">
+                                <img class="w-9 h-9 object-cover object-center rounded-full" src="{{ Auth::user()->profile_photo_url }}" alt="{{ $adversary->name }}">
                             @else
-                                <img class="w-10 h-10 object-cover object-center rounded-full" src="{{ $adversary->profile_photo_url }}" alt="{{ $adversary->name }}">
+                                <img class="w-9 h-9 object-cover object-center rounded-full" src="{{ $adversary->profile_photo_url }}" alt="{{ $adversary->name }}">
                             @endif
                             <div class="ml-4">
-                                <p class="text-white text-xl leading-4"> 
+                                <p class="text-white text-lg leading-3"> 
                                     @if($myColor=="white")
                                         {{ Auth::user()->name }}
                                     @else
@@ -146,16 +146,16 @@
 
             <div>
                     <div class="bg-gray-800 ">
-                        <div class="h-14 flex justify-between  px-3">
-
+                        <div class="h-12 flex justify-between  px-3">
+                      
                             <div class="flex items-center">
                                 @if($myColor=="black")
-                                    <img class="w-10 h-10 object-cover object-center rounded-full" src="{{ Auth::user()->profile_photo_url }}" alt="{{ $adversary->name }}">
+                                    <img class="w-9 h-9 object-cover object-center rounded-full" src="{{ Auth::user()->profile_photo_url }}" alt="{{ $adversary->name }}">
                                 @else
-                                    <img class="w-10 h-10 object-cover object-center rounded-full" src="{{ $adversary->profile_photo_url }}" alt="{{ $adversary->name }}">
+                                    <img class="w-9 h-9 object-cover object-center rounded-full" src="{{ $adversary->profile_photo_url }}" alt="{{ $adversary->name }}">
                                 @endif
                                 <div class="ml-4">
-                                    <p class="text-white text-xl leading-4">
+                                    <p class="text-white text-lg leading-3">
                                         @if($myColor=="black")
                                             {{ Auth::user()->name}}
                                         @else
@@ -163,7 +163,7 @@
                                         @endif
                                     </p>
                                     <span class="text-gray-300 text-sm">
-                                        <i class="text-xl  las la-chess"></i> Piezas Blancas   
+                                        <i class="text-lg  las la-chess"></i> Piezas Blancas   
                                     </span>
                                 </div>
                                 <div class="ml-2">  
