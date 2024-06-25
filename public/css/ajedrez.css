@@ -36,13 +36,33 @@
 
 .chessboard {
   background: linear-gradient(120deg, rgb(71 37 27) 50%, #5c342a 100%);
-  padding: 10px 18px 10px 10px;
-  min-width: 67.5vmin; 
+  padding: 15px 20px 10px 5px;
+  min-width: 67.5vmin;
 }
 
 .line {
   margin-left: 1%;
   min-width: 100%;
+}
+
+.boardNum {
+    width: 2vmin;
+    height: 8vmin;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #e2e1dd;
+    font-size: small;
+}
+
+.boardAlf{
+    width: 8vmin;
+    height: 1.5vmin;
+    float: left;
+    text-align: center;
+    color: #e2e1dd;
+    font-size: small;
 }
 
 .square {
@@ -189,7 +209,7 @@ footer a:active {
 
   .bg-gamer{
     background: #08141b;  /* fallback for old browsers */
-   
+
   }
   .bg-blue-mars{
     background-color: #2D2E83;
@@ -210,6 +230,9 @@ footer a:active {
     }
     .chat-mobil{
       display: block;
+    }
+    .boardAlf {
+        height: 11vmin;
     }
     .square {
       width: 11vmin;
@@ -251,5 +274,4 @@ footer a:active {
     width: 100%;
     text-align: center;
   }
-  
-  
+

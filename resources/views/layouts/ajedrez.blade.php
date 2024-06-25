@@ -13,8 +13,8 @@
         @livewireStyles
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
-        <link rel="stylesheet" href="{{asset('assets/css/line-awesome.css')}}?v=1993.1.14">
-        <link rel="stylesheet" href="{{asset('css/ajedrez.css')}}?v=1993.1.14">
+        <link rel="stylesheet" href="{{asset('assets/css/line-awesome.css')}}?v=1993.1.15">
+        <link rel="stylesheet" href="{{asset('css/ajedrez.css')}}?v=1993.1.15">
         <script>
             window.PUSHER_APP_KEY = '{{ config('broadcasting.connections.pusher.key') }}';
             window.APP_ENV = {{ config('app.env') == 'production' ? true : false }};
@@ -40,7 +40,7 @@
                <div>
                     <div class="title"> 🎉Ganador <span id="winerGame"></span>🎉 </div>
                     <div class="sub-title mt-5">
-                        <a href="/" class=" focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-greb-300 font-medium rounded-lg text-sm px-5 py-2.5"> 
+                        <a href="/" class=" focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-greb-300 font-medium rounded-lg text-sm px-5 py-2.5">
                             Regresar al inicio
                         </a>
                     </div>
