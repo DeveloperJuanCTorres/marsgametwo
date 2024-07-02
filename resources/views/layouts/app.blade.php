@@ -47,6 +47,8 @@
         <link href="{{asset('css/nice-select.css')}}?v=<?php echo $version ?>" rel="stylesheet">
         <link href="{{asset('css/responsive.css')}}?v=<?php echo $version ?>" rel="stylesheet">
 
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
         
         @stack('css')
 
