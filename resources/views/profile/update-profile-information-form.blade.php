@@ -95,7 +95,7 @@
                 <option value="">-Seleccionar-</option>
                 <option value="M">Masculino</option>
                 <option value="F">Femenino</option>
-                <option value="O">Otro</option>
+                <option value="O">LGBTIQ+</option>
             </select>            
         </div>
         
