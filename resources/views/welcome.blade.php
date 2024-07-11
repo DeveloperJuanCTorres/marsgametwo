@@ -197,7 +197,7 @@
                                                     <span class="text-white ml-2">Crear Sala</span>
                                                 </a>
                                                 
-                                                <a href="#" class="w-100 rounded btn btn-danger d-flex align-items-center p-3 mb-2">
+                                                <a href="javascript:void(0)" class="w-100 rounded btn btn-danger d-flex align-items-center p-3 mb-2 open_salas">
                                                     <i class="las la-chess text-white" style="font-size: 30px;"></i>
                                                     <span class="text-white ml-2">Salas Disponibles</span>
                                                 </a>
@@ -377,6 +377,708 @@
                             </div>
                         </div>
                         <!-- FIN DEL CONTENIDO DE LOBY -->
+
+                        <!-- CONTENIDO DE SALAS DISPONIBLES -->
+                        <div class="col-lg-6 col-xl-7 salas d-none" id="salas" style="margin-top: 100px;">
+                            
+                            <div class="border-bottom mb-4">
+                                <h2 class="my-4 claseh2 text-azul">Salas</h2>
+                            </div>
+                            <div class="sala">
+                                <ul class="tabMenu">
+                                    <li class="star">
+                                    <a href="#tab1" class="current"><span class="typeMark bg-star"><i class="fas fa-star"></i></span>Libres</a>
+                                    </li>
+                                    <li class="shine">
+                                    <a href="#tab2" class=""><span class="typeMark bg-shine"><i class="fas fa-certificate"></i></span>Privados</a>
+                                    </li>
+                                    <li class="dream">
+                                    <a href="#tab3" class=""><span class="typeMark bg-dream"><i class="fas fa-moon"></i></span>Master</a>
+                                    </li>
+                                </ul>
+                                <div id="contents">
+                                    <!-- STAR -->
+                                    <div class="typeBox" id="tab1">
+                                    
+                                    <div class="specBox da">
+                                        <p class="specTitle"><span>Jugando</span></p>
+                                        <dl>
+                                        <dt>
+                                            <img src="img/serpientes.png" style="width: 100px;" alt="SSS syo">
+                                        </dt>
+                                        <dd>
+                                            <ul class="appeal">
+                                            <li class="da">2126</li>
+                                            <li class="vo">1434</li>
+                                            <li class="ac">1676</li>
+                                            </ul>
+                                            <div class="skill">
+                                            <span class="main">スコアノーツ</span>
+                                            <span class="sub">L60 +13000</span>
+                                            </div>
+                                            <div class="option">
+                                            <span class="icon star">3</span>
+                                            <!-- <span class="icon crown">1</span> -->
+                                            </div>
+                                        </dd>
+                                        </dl>
+                                        <dl>
+                                        <dt>
+                                            <img src="img/ajedrez1.png" style="width: 90px;" alt="evSC ai">
+                                        </dt>
+                                        <dd>
+                                            <ul class="appeal">
+                                            <li class="da">1830</li>
+                                            <li class="vo">1014</li>
+                                            <li class="ac">1506</li>
+                                            </ul>
+                                            <div class="skill">
+                                            <span class="main">ライフノーツ</span>
+                                            <span class="sub">未開放</span>
+                                            </div>
+                                            <div class="option">
+                                            <span class="icon star">1</span>
+                                            <!-- <span class="icon crown">1</span> -->
+                                            </div>
+                                        </dd>
+                                        </dl>
+                                        <dl>
+                                        <dt>
+                                            <img src="img/ludo.png" style="width: 75px;" alt="MOP camus">
+                                        </dt>
+                                        <dd>
+                                            <ul class="appeal">
+                                            <li class="da">1853</li>
+                                            <li class="vo">1573</li>
+                                            <li class="ac">956</li>
+                                            </ul>
+                                            <div class="skill">
+                                            <span class="main">JP</span>
+                                            <span class="sub">未開放</span>
+                                            </div>
+                                            <div class="option">
+                                            <span class="icon star">0</span>
+                                            <!-- <span class="icon crown">1</span> -->
+                                            </div>
+                                        </dd>
+                                        </dl>                                        
+                                    </div>
+
+                                    <!-- <div class="specBox vo">
+                                        <p class="specTitle"><span>VOCAL</span></p>
+                                        <dl>
+                                        <dt>
+                                            <img src="https://placehold.jp/50x50.png" alt="evCC camus">
+                                        </dt>
+                                        <dd>
+                                            <ul class="appeal">
+                                            <li class="da">1540</li>
+                                            <li class="vo">2080</li>
+                                            <li class="ac specialstatus">2190</li>
+                                            </ul>
+                                            <div class="skill">
+                                            <span class="main">スコアノーツ</span>
+                                            <span class="sub">L60 +30000</span>
+                                            </div>
+                                            <div class="option">
+                                            <span class="icon crown silver"></span>
+                                            </div>
+                                        </dd>
+                                        </dl>
+                                        <dl>
+                                        <dt>
+                                            <img src="https://placehold.jp/50x50.png" alt="SL reiji">
+                                        </dt>
+                                        <dd>
+                                            <ul class="appeal">
+                                            <li class="da">1840</li>
+                                            <li class="vo">2110</li>
+                                            <li class="ac">1660</li>
+                                            </ul>
+                                            <div class="skill">
+                                            <span class="main">カットイン</span>
+                                            <span class="sub">F +28000</span>
+                                            </div>
+                                            <div class="option">
+                                            <span class="icon star">4</span>
+                                            </div>
+                                        </dd>
+                                        </dl>
+                                        <dl>
+                                        <dt>
+                                            <img src="https://placehold.jp/50x50.png" alt="SL cecil">
+                                        </dt>
+                                        <dd>
+                                            <ul class="appeal">
+                                            <li class="da">1469</li>
+                                            <li class="vo">1559</li>
+                                            <li class="ac">1469</li>
+                                            </ul>
+                                            <div class="skill">
+                                            <span class="main">カットイン</span>
+                                            <span class="sub">F +28000</span>
+                                            </div>
+                                            <div class="option">
+                                            <span class="icon star">1</span>
+                                            </div>
+                                        </dd>
+                                        </dl>
+                                        <dl>
+                                        <dt>
+                                            <img src="https://placehold.jp/50x50.png" alt="evGM masato">
+                                        </dt>
+                                        <dd>
+                                            <ul class="appeal">
+                                            <li class="da">1533</li>
+                                            <li class="vo">1633</li>
+                                            <li class="ac">1129</li>
+                                            </ul>
+                                            <div class="skill">
+                                            <span class="main">BGP</span>
+                                            <span class="sub">未開放</span>
+                                            </div>
+                                            <div class="option">
+                                            <span class="icon star">0</span>
+                                            </div>
+                                        </dd>
+                                        </dl>
+                                        <dl>
+                                        <dt>
+                                            <img src="https://placehold.jp/50x50.png" alt="evCJ otoya">
+                                        </dt>
+                                        <dd>
+                                            <ul class="appeal">
+                                            <li class="da">1317</li>
+                                            <li class="vo">1777</li>
+                                            <li class="ac">1113</li>
+                                            </ul>
+                                            <div class="skill">
+                                            <span class="main">BGP</span>
+                                            <span class="sub">未開放</span>
+                                            </div>
+                                            <div class="option">
+                                            <span class="icon star">0</span>
+                                            </div>
+                                        </dd>
+                                        </dl>
+                                        <dl>
+                                        <dt>
+                                            <img src="https://placehold.jp/50x50.png" alt="evSD tokiya">
+                                        </dt>
+                                        <dd>
+                                            <ul class="appeal">
+                                            <li class="da">1458</li>
+                                            <li class="vo">1728</li>
+                                            <li class="ac">939</li>
+                                            </ul>
+                                            <div class="skill">
+                                            <span class="main">スコアノーツ</span>
+                                            <span class="sub">未開放</span>
+                                            </div>
+                                            <div class="option">
+                                            <span class="icon star">0</span>
+                                            </div>
+                                        </dd>
+                                        </dl>
+                                        <dl>
+                                        <dt>
+                                            <img src="https://placehold.jp/50x50.png" alt="evNE ren">
+                                        </dt>
+                                        <dd>
+                                            <ul class="appeal">
+                                            <li class="da">1458</li>
+                                            <li class="vo">1548</li>
+                                            <li class="ac">1119</li>
+                                            </ul>
+                                            <div class="skill">
+                                            <span class="main">スコアノーツ</span>
+                                            <span class="sub">未開放</span>
+                                            </div>
+                                            <div class="option">
+                                            <span class="icon star">0</span>
+                                            </div>
+                                        </dd>
+                                        </dl>
+                                    </div> -->
+                                    
+                                    <div class="specBox ac">
+                                        <p class="specTitle"><span>Sin jugar</span></p>
+                                        <dl>
+                                        <dt>
+                                            <img src="img/bingo.png" style="width: 80px;" alt="SSS camus">
+                                        </dt>
+                                        <dd>
+                                            <ul class="appeal">
+                                            <li class="da">2080</li>
+                                            <li class="vo">1450</li>
+                                            <li class="ac">2480</li>
+                                            </ul>
+                                            <div class="skill">
+                                            <span class="main">カットイン</span>
+                                            <span class="sub">F +12000</span>
+                                            </div>
+                                            <div class="option">
+                                            <span class="icon crown gold"></span>
+                                            </div>
+                                        </dd>
+                                        </dl>
+                                        <dl>
+                                        <dt>
+                                            <img src="img/ludo.png" style="width: 80px;" alt="evTV natsuki">
+                                        </dt>
+                                        <dd>
+                                            <ul class="appeal">
+                                            <li class="da">1840</li>
+                                            <li class="vo">1840</li>
+                                            <li class="ac">2130</li>
+                                            </ul>
+                                            <div class="skill">
+                                            <span class="main">スコアノーツ</span>
+                                            <span class="sub">L60 +30000</span>
+                                            </div>
+                                            <div class="option">
+                                            <span class="icon crown silver"></span>
+                                            </div>
+                                        </dd>
+                                        </dl>                                                                                
+                                    </div>
+
+                                    </div><!-- typeBox -->
+
+                                    <!-- SHINE -->
+                                    <div class="typeBox" id="tab2">
+                                    <div class="specBox da">
+                                        <p class="specTitle"><span>Jugando</span></p> <!-- - - - - - - - - - - - - - - - - - - - - - - - -DANCE - - - - - - - - - - - - - - - - - - - - - -->
+                                        <dl>
+                                        <dt>
+                                            <img src="img/bingo.png" style="width: 80px;" alt="SL ranmaru">
+                                        </dt>
+                                        <dd>
+                                            <ul class="appeal">
+                                            <li class="da">2130</li>
+                                            <li class="vo">1840</li>
+                                            <li class="ac">1840</li>
+                                            </ul>
+                                            <div class="skill">
+                                            <span class="main">カットイン</span>
+                                            <span class="sub">F +55000</span>
+                                            </div>
+                                            <div class="option">
+                                            <span class="icon crown silver"></span>
+                                            </div>
+                                        </dd>
+                                        </dl>
+                                        <dl>
+                                        <dt>
+                                            <img src="img/ludo.png" style="width: 80px;" alt="USL ren">
+                                        </dt>
+                                        <dd>
+                                            <ul class="appeal">
+                                            <li class="da">2080</li>
+                                            <li class="vo">1990</li>
+                                            <li class="ac">1540</li>
+                                            </ul>
+                                            <div class="skill">
+                                            <span class="main">BP</span>
+                                            <span class="sub">F +28000</span>
+                                            </div>
+                                            <div class="option">
+                                            <span class="icon crown silver"></span>
+                                            </div>
+                                        </dd>
+                                        </dl>                                        
+                                    </div>
+
+                                    <!-- <div class="specBox vo">
+                                        <p class="specTitle"><span>VOCAL</span></p>
+                                        <dl>
+                                        <dt>
+                                            <img src="https://placehold.jp/50x50.png" alt="SK natsuki">
+                                        </dt>
+                                        <dd>
+                                            <ul class="appeal">
+                                            <li class="da">1224</li>
+                                            <li class="vo">1860</li>
+                                            <li class="ac">1410</li>
+                                            </ul>
+                                            <div class="skill">
+                                            <span class="main">JP</span>
+                                            <span class="sub">未開放</span>
+                                            </div>
+                                            <div class="option">
+                                            <span class="icon crown silver"></span>
+                                            </div>
+                                        </dd>
+                                        </dl>
+                                        <dl>
+                                        <dt>
+                                            <img src="https://placehold.jp/50x50.png" alt="SC camus">
+                                        </dt>
+                                        <dd>
+                                            <ul class="appeal">
+                                            <li class="da">1590</li>
+                                            <li class="vo">1860</li>
+                                            <li class="ac">1044</li>
+                                            </ul>
+                                            <div class="skill">
+                                            <span class="main">ライフノーツ</span>
+                                            <span class="sub">未開放</span>
+                                            </div>
+                                            <div class="option">
+                                            <span class="icon star">1</span>
+                                            </div>
+                                        </dd>
+                                        </dl>
+                                        <dl>
+                                        <dt>
+                                            <img src="https://placehold.jp/50x50.png" alt="MOP tokiya">
+                                        </dt>
+                                        <dd>
+                                            <ul class="appeal">
+                                            <li class="da">956</li>
+                                            <li class="vo">1853</li>
+                                            <li class="ac">1573</li>
+                                            </ul>
+                                            <div class="skill">
+                                            <span class="main">JP</span>
+                                            <span class="sub">未開放</span>
+                                            </div>
+                                            <div class="option">
+                                            <span class="icon star">0</span>
+                                            </div>
+                                        </dd>
+                                        </dl>
+                                        <dl>
+                                        <dt>
+                                            <img src="https://placehold.jp/50x50.png" alt="MOP ren">
+                                        </dt>
+                                        <dd>
+                                            <ul class="appeal">
+                                            <li class="da">1573</li>
+                                            <li class="vo">1853</li>
+                                            <li class="ac">956</li>
+                                            </ul>
+                                            <div class="skill">
+                                            <span class="main">JP</span>
+                                            <span class="sub">未開放</span>
+                                            </div>
+                                            <div class="option">
+                                            <span class="icon star">0</span>
+                                            </div>
+                                        </dd>
+                                        </dl>
+                                        <dl>
+                                        <dt>
+                                            <img src="https://placehold.jp/50x50.png" alt="MOP cecil">
+                                        </dt>
+                                        <dd>
+                                            <ul class="appeal">
+                                            <li class="da">1573</li>
+                                            <li class="vo">1853</li>
+                                            <li class="ac">956</li>
+                                            </ul>
+                                            <div class="skill">
+                                            <span class="main">JP</span>
+                                            <span class="sub">未開放</span>
+                                            </div>
+                                            <div class="option">
+                                            <span class="icon star">0</span>
+                                            </div>
+                                        </dd>
+                                        </dl>
+                                        <dl>
+                                        <dt>
+                                            <img src="https://placehold.jp/50x50.png" alt="HVD ren">
+                                        </dt>
+                                        <dd>
+                                            <ul class="appeal">
+                                            <li class="da">1113</li>
+                                            <li class="vo">1777</li>
+                                            <li class="ac">1317</li>
+                                            </ul>
+                                            <div class="skill">
+                                            <span class="main">ライフノーツ</span>
+                                            <span class="sub">未開放</span>
+                                            </div>
+                                            <div class="option">
+                                            <span class="icon star">0</span>
+                                            </div>
+                                        </dd>
+                                        </dl>
+                                        <dl>
+                                        <dt>
+                                            <img src="https://placehold.jp/50x50.png" alt="evPR ranmaru">
+                                        </dt>
+                                        <dd>
+                                            <ul class="appeal">
+                                            <li class="da">933</li>
+                                            <li class="vo">1777</li>
+                                            <li class="ac">1497</li>
+                                            </ul>
+                                            <div class="skill">
+                                            <span class="main">スコアノーツ</span>
+                                            <span class="sub">未開放</span>
+                                            </div>
+                                            <div class="option">
+                                            <span class="icon star">0</span>
+                                            </div>
+                                        </dd>
+                                        </dl>
+                                        <dl>
+                                        <dt>
+                                            <img src="https://placehold.jp/50x50.png" alt="NYP ai">
+                                        </dt>
+                                        <dd>
+                                            <ul class="appeal">
+                                            <li class="da">933</li>
+                                            <li class="vo">1777</li>
+                                            <li class="ac">1497</li>
+                                            </ul>
+                                            <div class="skill">
+                                            <span class="main">スコアノーツ</span>
+                                            <span class="sub">未開放</span>
+                                            </div>
+                                            <div class="option">
+                                            <span class="icon star">0</span>
+                                            </div>
+                                        </dd>
+                                        </dl>
+                                        <dl>
+                                        <dt>
+                                            <img src="https://placehold.jp/50x50.png" alt="evJH syo">
+                                        </dt>
+                                        <dd>
+                                            <ul class="appeal">
+                                            <li class="da">1346</li>
+                                            <li class="vo">1436</li>
+                                            <li class="ac">1346</li>
+                                            </ul>
+                                            <div class="skill">
+                                            <span class="main">スコアノーツ</span>
+                                            <span class="sub">未開放</span>
+                                            </div>
+                                            <div class="option">
+                                            <span class="icon star">0</span>
+                                            </div>
+                                        </dd>
+                                        </dl>
+                                        <dl>
+                                        <dt>
+                                            <img src="https://placehold.jp/50x50.png" alt="evSK masato">
+                                        </dt>
+                                        <dd>
+                                            <ul class="appeal">
+                                            <li class="da">1458</li>
+                                            <li class="vo">1548</li>
+                                            <li class="ac">1119</li>
+                                            </ul>
+                                            <div class="skill">
+                                            <span class="main">スコアノーツ</span>
+                                            <span class="sub">未開放</span>
+                                            </div>
+                                            <div class="option">
+                                            <span class="icon star">0</span>
+                                            </div>
+                                        </dd>
+                                        </dl>
+                                    </div> -->
+
+                                    <div class="specBox ac">
+                                        <p class="specTitle"><span>Sin jugar</span></p> <!-- - - - - - - - - - - - - - - - - - - - - - - ACT - - - - - - - - - - - - - - - - - - - - - - - -->
+                                        <dl>
+                                        <dt>
+                                            <img src="img/ludo.png" style="width: 80px;" alt="SL syo">
+                                        </dt>
+                                        <dd>
+                                            <ul class="appeal">
+                                            <li class="da">1840</li>
+                                            <li class="vo">1660</li>
+                                            <li class="ac">2310</li>
+                                            </ul>
+                                            <div class="skill">
+                                            <span class="main">カットイン</span>
+                                            <span class="sub">F +52000</span>
+                                            </div>
+                                            <div class="option">
+                                            <span class="icon crown silver"></span>
+                                            </div>
+                                        </dd>
+                                        </dl>
+                                        <dl>
+                                        <dt>
+                                            <img src="img/ajedrez1.png" style="width: 80px;" alt="SL syo 2">
+                                        </dt>
+                                        <dd>
+                                            <ul class="appeal">
+                                            <li class="da">1653</li>
+                                            <li class="vo">1473</li>
+                                            <li class="ac">1923</li>
+                                            </ul>
+                                            <div class="skill">
+                                            <span class="main">カットイン</span>
+                                            <span class="sub">F +28000</span>
+                                            </div>
+                                            <div class="option">
+                                            <span class="icon star">2</span>
+                                            </div>
+                                        </dd>
+                                        </dl>                                        
+                                    </div>
+
+                                    </div><!-- typeBox -->
+                                    
+                                    <!-- DREAM -->
+                                    <div class="typeBox" id="tab3">
+                                    <div class="specBox da">
+                                        <p class="specTitle"><span>Jugando</span></p>
+                                        <dl>
+                                        <dt>
+                                            <img src="img/bingo.png" style="width: 80px;" alt="SL camus">
+                                        </dt>
+                                        <dd>
+                                            <ul class="appeal">
+                                            <li class="da">2510</li>
+                                            <li class="vo">1840</li>
+                                            <li class="ac">1660</li>
+                                            </ul>
+                                            <div class="skill">
+                                            <span class="main">カットイン</span>
+                                            <span class="sub">F +55000</span>
+                                            </div>
+                                            <div class="option">
+                                            <span class="icon crown gold"></span>
+                                            </div>
+                                        </dd>
+                                        </dl>
+                                        <dl>
+                                        <dt>
+                                            <img src="img/bingo.png" style="width: 80px;" alt="SL camus">
+                                        </dt>
+                                        <dd>
+                                            <ul class="appeal">
+                                            <li class="da">2130</li>
+                                            <li class="vo">1750</li>
+                                            <li class="ac">1930</li>
+                                            </ul>
+                                            <div class="skill">
+                                            <span class="main">カットイン</span>
+                                            <span class="sub">F +55000</span>
+                                            </div>
+                                            <div class="option">
+                                            <span class="icon crown silver"></span>
+                                            </div>
+                                        </dd>
+                                        </dl>
+                                        <dl>
+                                        <dt>
+                                            <img src="img/ludo.png" style="width: 80px;" alt="SSS reiji">
+                                        </dt>
+                                        <dd>
+                                            <ul class="appeal">
+                                            <li class="da">2280</li>
+                                            <li class="vo">1540</li>
+                                            <li class="ac">1990</li>
+                                            </ul>
+                                            <div class="skill">
+                                            <span class="main">スコアノーツ</span>
+                                            <span class="sub">L60 +37000</span>
+                                            </div>
+                                            <div class="option">
+                                            <span class="icon crown silver"></span>
+                                            </div>
+                                        </dd>
+                                        </dl>                                        
+                                    </div>
+
+                                    <!-- <div class="specBox vo">
+                                        <p class="specTitle"><span>VOCAL</span></p>
+                                        <dl>
+                                        <dt>
+                                            <img src="https://placehold.jp/50x50.png" alt="SL masato">
+                                        </dt>
+                                        <dd>
+                                            <ul class="appeal">
+                                            <li class="da">1840</li>
+                                            <li class="vo">1840</li>
+                                            <li class="ac specialstatus">2130</li>
+                                            </ul>
+                                            <div class="skill">
+                                            <span class="main">カットイン</span>
+                                            <span class="sub">F +55000</span>
+                                            </div>
+                                            <div class="option">
+                                            <span class="icon crown silver"></span>
+                                            </div>
+                                        </dd>
+                                        </dl>
+                                        <dl>
+                                        <dt>
+                                            <img src="https://placehold.jp/50x50.png" alt="SL masato">
+                                        </dt>
+                                        <dd>
+                                            <ul class="appeal">
+                                            <li class="da">1224</li>
+                                            <li class="vo">1860</li>
+                                            <li class="ac">1410</li>
+                                            </ul>
+                                            <div class="skill">
+                                            <span class="main">カットイン</span>
+                                            <span class="sub">未開放</span>
+                                            </div>
+                                            <div class="option">
+                                            <span class="icon star">0</span>
+                                            </div>
+                                        </dd>
+                                        </dl>
+                                        <dl>
+                                        <dt>
+                                            <img src="https://placehold.jp/50x50.png" alt="evLC ai">
+                                        </dt>
+                                        <dd>
+                                            <ul class="appeal">
+                                            <li class="da">1346</li>
+                                            <li class="vo">1616</li>
+                                            <li class="ac">1166</li>
+                                            </ul>
+                                            <div class="skill">
+                                            <span class="main">BGP</span>
+                                            <span class="sub">未開放</span>
+                                            </div>
+                                            <div class="option">
+                                            <span class="icon star">0</span>
+                                            </div>
+                                        </dd>
+                                        </dl>
+                                    </div> -->
+
+                                    <div class="specBox ac">
+                                        <p class="specTitle"><span>Sin jugar</span></p>
+                                        <dl>
+                                        <dt>
+                                            <img src="img/ludo.png" style="width: 80px;" alt="evAC camus">
+                                        </dt>
+                                        <dd>
+                                            <ul class="appeal">
+                                            <li class="da">1540</li>
+                                            <li class="vo">1990</li>
+                                            <li class="ac">2280</li>
+                                            </ul>
+                                            <div class="skill">
+                                            <span class="main">BGP</span>
+                                            <span class="sub">F +45000</span>
+                                            </div>
+                                            <div class="option">
+                                            <span class="icon crown silver"></span>
+                                            </div>
+                                        </dd>
+                                        </dl>                                        
+                                    </div>
+
+                                    </div><!-- typeBox -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- FIN DEL CONTENIDO DE SALAS DISPONIBLES -->
 
                         <!-- CONTENIDO DE NOSOTROS -->
                         <div class="col-lg-6 col-xl-7 nosotros d-none" id="nosotros" style="margin-top: 100px;">
@@ -986,7 +1688,7 @@
                         <i class="lab la-playstation text-white mx-4" style="font-size: 30px;"></i>
                         <span class="text-white">Crear Sala</span>
                     </a>
-                    <a href="#" class="w-100 rounded btn btn-danger d-flex align-items-center p-3 mb-2">
+                    <a href="javascript:void(0)" class="w-100 rounded btn btn-danger d-flex align-items-center p-3 mb-2 open_salas">
                         <i class="las la-chess text-white mx-4" style="font-size: 30px;"></i>
                         <span class="text-white">Salas Disponibles</span>
                     </a>

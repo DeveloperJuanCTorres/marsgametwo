@@ -309,12 +309,37 @@
         $('#premios').addClass('d-none')
         $('#perfil').removeClass('d-block')
         $('#perfil').addClass('d-none')
+        $('#salas').removeClass('d-block')
+        $('#salas').addClass('d-none')
     })
 
     // Loby
-    $('.open_loby').click(function () {
+    $('.open_loby').click(function () {        
         $('#loby').removeClass('d-none')
         $('#loby').addClass('d-block')
+        $('#mobile_menwrap').removeClass('active')
+        $('#juegos').removeClass('d-block')
+        $('#juegos').addClass('d-none')
+        $('#nosotros').removeClass('d-block')
+        $('#nosotros').addClass('d-none')
+        $('#contactanos').removeClass('d-block')
+        $('#contactanos').addClass('d-none')
+        $('#store').removeClass('d-block')
+        $('#store').addClass('d-none')
+        $('#premios').removeClass('d-block')
+        $('#premios').addClass('d-none')
+        $('#perfil').removeClass('d-block')
+        $('#perfil').addClass('d-none')
+        $('#salas').removeClass('d-block')
+        $('#salas').addClass('d-none')
+    })
+
+    // Salas
+    $('.open_salas').click(function () {
+        $('#salas').removeClass('d-none')
+        $('#salas').addClass('d-block')
+        $('#loby').removeClass('d-block')
+        $('#loby').addClass('d-none')
         $('#mobile_menwrap').removeClass('active')
         $('#juegos').removeClass('d-block')
         $('#juegos').addClass('d-none')
@@ -349,6 +374,8 @@
         $('#premios').addClass('d-none')
         $('#perfil').removeClass('d-block')
         $('#perfil').addClass('d-none')
+        $('#salas').removeClass('d-block')
+        $('#salas').addClass('d-none')
     })
 
     // Contactanos
@@ -370,6 +397,8 @@
         $('#premios').addClass('d-none')
         $('#perfil').removeClass('d-block')
         $('#perfil').addClass('d-none')
+        $('#salas').removeClass('d-block')
+        $('#salas').addClass('d-none')
     })
 
     // Premios
@@ -393,6 +422,8 @@
         $('#mobile_menwrap').removeClass('active')
         $('#perfil').removeClass('d-block')
         $('#perfil').addClass('d-none')
+        $('#salas').removeClass('d-block')
+        $('#salas').addClass('d-none')
     })
 
     // Store
@@ -412,6 +443,8 @@
         $('#premios').addClass('d-none')
         $('#perfil').removeClass('d-block')
         $('#perfil').addClass('d-none')
+        $('#salas').removeClass('d-block')
+        $('#salas').addClass('d-none')
     })
 
     // Store
@@ -431,6 +464,8 @@
         $('#contactanos').addClass('d-none')
         $('#premios').removeClass('d-block')
         $('#premios').addClass('d-none')
+        $('#salas').removeClass('d-block')
+        $('#salas').addClass('d-none')
     })
 
     //CREAR SALA

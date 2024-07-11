@@ -1,3 +1,12 @@
+@php
+use App\Models\Departament;
+use App\Models\Province;
+use App\Models\District;
+
+$departamentos = Departament::all();
+$provincias = Province::all();
+$distritos = District::all();
+@endphp
 <x-form-section submit="updateProfileInformation">
     <x-slot name="title">
         Información del Perfil
@@ -113,6 +122,39 @@
             <x-input-error for="telefono" class="mt-2" />
         </div>
 
+         <!-- Departamentos -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-label for="departamento" value="Departamento" />
+            <select class="mt-1 block w-full" id="tipo_doc" wire:model="state.departamento">
+                <option value="">-Seleccionar-</option>
+                @foreach($departamentos as $value)
+                <option value="{{$value->id}}">{{$value->name}}</option>
+                @endforeach
+            </select>            
+        </div>
+
+        <!-- Provincias -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-label for="provincia" value="Provincia" />
+            <select class="mt-1 block w-full" id="tipo_doc" wire:model="state.provincia">
+                <option value="">-Seleccionar-</option>
+                @foreach($provincias as $value)
+                <option value="{{$value->id}}">{{$value->name}}</option>
+                @endforeach
+            </select>            
+        </div>
+
+        <!-- Distritos -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-label for="distrito" value="Distrito" />
+            <select class="mt-1 block w-full" id="tipo_doc" wire:model="state.distrito">
+                <option value="">-Seleccionar-</option>
+                @foreach($distritos as $value)
+                <option value="{{$value->id}}">{{$value->name}}</option>
+                @endforeach
+            </select>            
+        </div>
+
         <!-- Facebook -->
         <div class="col-span-6 sm:col-span-4">
             <x-label for="link_facebook" value="Facebook" />
@@ -168,3 +210,5 @@
         </x-button>
     </x-slot>
 </x-form-section>
+<script src="js/jquery.min.js"></script>
+<script src="js/select.js"></script>

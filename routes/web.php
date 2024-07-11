@@ -9,6 +9,7 @@ use App\Livewire\Damas;
 use App\Livewire\Ajedrez;
 use App\Livewire\Ludo;
 use App\Livewire\Bingo;
+use App\Http\Controllers\ProfileController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -49,4 +50,6 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/damas/{game}',Damas::class)->name('game.damas');
     Route::get('/ludo/{game}',Ludo::class)->name('game.ludo');
     Route::get('/bingo/{game}',Bingo::class)->name('bingo.ludo');
+
+    // Route::get('perfil',ProfileController::class,'perfil');
 });
