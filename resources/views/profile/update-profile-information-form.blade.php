@@ -155,6 +155,13 @@ $distritos = District::all();
             </select>            
         </div>
 
+        <!-- Direccion -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-label for="direccion" value="Dirección" />
+            <x-input id="direccion" type="text" class="mt-1 block w-full" wire:model="state.direccion" autocomplete="address" />
+            <x-input-error for="direccion" class="mt-2" />
+        </div>
+
         <!-- Facebook -->
         <div class="col-span-6 sm:col-span-4">
             <x-label for="link_facebook" value="Facebook" />
