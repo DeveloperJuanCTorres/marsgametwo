@@ -40,17 +40,17 @@
                             </div>
                             <div class="ml-2">
                                 <div id="cardBlack" class="text-gray-800 rounded-full p-1  {{'white' == $player ?  'bg-green-400' : 'bg-gray-800'}} ">
-                                    <i class="text-2xl las la-hand-paper"></i>
+                                   <i class="text-2xl las la-hand-paper"></i>
                                 </div>
                             </div>
                         </div>
-                        <div class="flex items-center text-2xl text-white">
-                            5:00
+                        <div class="flex items-center text-2xl text-white" id="ctwhite">
+                            {{$timeWhite}}
                         </div>
                     </div>
                     <div class="extra-zone">
                         <div class="captured-zone" id="czblack"></div>
-                        <!-- <div class="countdown-timer" id="ctblack">10:00</div> -->
+                        {{-- <div class="countdown-timer" id="ctblack"></div> --}}
                     </div>
                 </div>
             </div>
@@ -189,14 +189,14 @@
                                 </div>
                             </div>
                              </div>
-                            <div class="flex items-center text-2xl text-white">
-                                5:00
+                            <div class="flex items-center text-2xl text-white" id="ctblack">
+                                {{$timeBlack}}
                             </div>
                         </div>
 
                     <div class="extra-zone">
                         <div class="captured-zone" id="czwhite"></div>
-                        <!-- <div class="countdown-timer" id="ctblack">10:00</div> -->
+                       {{-- <div class="countdown-timer" id="ctblack"></div>  --}}
                     </div>
                 </div>
                 <div class="py-10 bg-gray-option"></div>
@@ -315,13 +315,19 @@
 </div>
 
     @push('js')
-      <script src="{{asset('js/ajedrez.js')}}?v=1993.1.13"></script>
+      <script src="{{asset('js/ajedrez.js')}}?v=1993.1.16"></script>
       <script>
             document.addEventListener('livewire:initialized', function () {
                 var pieces = @this.draughts;
                 var playercolor = @this.player;
                 playGame(pieces,playercolor);
-              })
+
+
+                if(playercolor == 'white')
+                    whiteTurn.start();
+                else
+                    blackTurn.start();
+              });
       </script>
       <script>
             function data(){
@@ -359,19 +365,33 @@
                     let cardwhite = document.getElementById("cardwhite");
 
                     if(event[1] == 'white'){
+                       
+
                         cardBlack.classList.remove("bg-gray-800");
-                        cardBlack.classList.add("bg-green-300");
-                        cardwhite.classList.remove("bg-green-300");
+                        cardBlack.classList.add("bg-green-400");
+                        cardwhite.classList.remove("bg-green-400");
                         cardwhite.classList.add("bg-gray-800");
+
+
                         console.log('white ----------------->local');
+                        blackTurn.end();
+                        whiteTurn.restart();
+                        
                     }
 
                     if(event[1] == 'black'){
-                    cardBlack.classList.remove("bg-green-300");
-                    cardBlack.classList.add("bg-gray-800");
-                    cardwhite.classList.remove("bg-gray-800");
-                    cardwhite.classList.add("bg-green-300");
-                    console.log('black ----------------->local');
+
+                        cardBlack.classList.remove("bg-green-400");
+                        cardBlack.classList.add("bg-gray-800");
+                        cardwhite.classList.remove("bg-gray-800");
+                        cardwhite.classList.add("bg-green-400");
+
+                        
+
+                        console.log('black ----------------->local');
+                        whiteTurn.end();
+                        blackTurn.restart();
+                      
                     }
 
 

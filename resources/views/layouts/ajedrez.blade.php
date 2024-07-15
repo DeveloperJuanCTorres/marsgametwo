@@ -13,8 +13,8 @@
         @livewireStyles
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
-        <link rel="stylesheet" href="{{asset('assets/css/line-awesome.css')}}?v=1993.1.15">
-        <link rel="stylesheet" href="{{asset('css/ajedrez.css')}}?v=1993.1.15">
+        <link rel="stylesheet" href="{{asset('assets/css/line-awesome.css')}}?v=1993.1.16">
+        <link rel="stylesheet" href="{{asset('css/ajedrez.css')}}?v=1993.1.16">
         <script>
             window.PUSHER_APP_KEY = '{{ config('broadcasting.connections.pusher.key') }}';
             window.APP_ENV = {{ config('app.env') == 'production' ? true : false }};
