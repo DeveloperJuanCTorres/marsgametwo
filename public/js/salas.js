@@ -1,15 +1,17 @@
-$(function(){
-    $('#contents .typeBox[id != "tab1"]').hide();
+// $(function(){
+//     $('#contents .typeBox[id != "tab1"]').hide();
     
-    $("a").click(function(){
+    
+//     $("a").click(function(){
       
-      $("#contents .typeBox").hide();
       
-      $($(this).attr("href")).show();
+//       $("#contents .typeBox").hide();
       
-      $(".current").removeClass("current");
+//       $($(this).attr("href")).show();       
       
-      $(this).addClass("current");
-      return false;
-     });
-  });
+//       $(".current").removeClass("current");
+      
+//       $(this).addClass("current");
+//       return false;
+//      });
+//   });

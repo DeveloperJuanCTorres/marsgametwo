@@ -393,7 +393,7 @@
                                     <a href="#tab2" class=""><span class="typeMark bg-shine"><i class="fas fa-certificate"></i></span>Privados</a>
                                     </li>
                                     <li class="dream">
-                                    <a href="#tab3" class=""><span class="typeMark bg-dream"><i class="fas fa-moon"></i></span>Master</a>
+                                    <a href="#tab3" class=""><span class="typeMark bg-dream"><i class="fas fa-moon"></i></span>Campeonatos</a>
                                     </li>
                                 </ul>
                                 <div id="contents">
@@ -401,64 +401,72 @@
                                     <div class="typeBox" id="tab1">
                                     
                                     <div class="specBox da">
-                                        <p class="specTitle"><span>Jugando</span></p>
+                                        <p class="specTitle"><span>Sin jugar</span></p>
                                         <dl>
                                         <dt>
-                                            <img src="img/serpientes.png" style="width: 100px;" alt="SSS syo">
+                                            <img src="img/serpientes.png" style="width: 200px;"  alt="SSS syo">
                                         </dt>
                                         <dd>
                                             <ul class="appeal">
-                                            <li class="da">2126</li>
-                                            <li class="vo">1434</li>
-                                            <li class="ac">1676</li>
+                                                <li class="h4">Serpientes</li>
+                                                <div class="row" style="margin-left: 50px;">
+                                                    <img class="p-0" src="img/jugador.png" style="width: 25px;" alt="">
+                                                    <img class="p-0" src="img/jugador.png" style="width: 25px;" alt="">
+                                                    <img class="p-0" src="img/jugador.png" style="width: 25px;" alt="">
+                                                    <img class="p-0" src="img/jugador.png" style="width: 25px;" alt="">                                                   
+                                                </div>
                                             </ul>
-                                            <div class="skill">
-                                            <span class="main">スコアノーツ</span>
-                                            <span class="sub">L60 +13000</span>
-                                            </div>
-                                            <div class="option">
-                                            <span class="icon star">3</span>
-                                            <!-- <span class="icon crown">1</span> -->
+                                            <ul class="appeal mt-3">
+                                            <li class="ac">S/. 5.00</li>
+                                            <li class="da">10</li>
+                                            </ul>
+                                            
+                                            <div class="option py-2">
+                                                <button class="btn btn-warning" style="width: 240px">Unirse</button>
                                             </div>
                                         </dd>
                                         </dl>
                                         <dl>
                                         <dt>
-                                            <img src="img/ajedrez1.png" style="width: 90px;" alt="evSC ai">
+                                            <img src="img/ajedrez1.png" style="width: 200px;" alt="evSC ai">
                                         </dt>
                                         <dd>
                                             <ul class="appeal">
-                                            <li class="da">1830</li>
-                                            <li class="vo">1014</li>
-                                            <li class="ac">1506</li>
+                                                <li class="h4">Ajedrez</li>
+                                                <div class="row" style="margin-left: 120px;">
+                                                    <img class="p-0" src="img/jugador.png" style="width: 25px;" alt="">
+                                                    <img class="p-0" src="img/jugador.png" style="width: 25px;" alt="">                                                  
+                                                </div>
                                             </ul>
-                                            <div class="skill">
-                                            <span class="main">ライフノーツ</span>
-                                            <span class="sub">未開放</span>
-                                            </div>
-                                            <div class="option">
-                                            <span class="icon star">1</span>
-                                            <!-- <span class="icon crown">1</span> -->
+                                            <ul class="appeal mt-3">
+                                            <li class="ac">S/. 10.00</li>
+                                            <li class="da">10</li>
+                                            </ul>
+                                            
+                                            <div class="option pt-2">
+                                                <button class="btn btn-warning" style="width: 240px">Unirse</button>
                                             </div>
                                         </dd>
                                         </dl>
                                         <dl>
                                         <dt>
-                                            <img src="img/ludo.png" style="width: 75px;" alt="MOP camus">
+                                            <img src="img/damas1.png" style="width: 200px;" alt="MOP camus">
                                         </dt>
                                         <dd>
                                             <ul class="appeal">
-                                            <li class="da">1853</li>
-                                            <li class="vo">1573</li>
-                                            <li class="ac">956</li>
+                                                <li class="h4">Damas</li>
+                                                <div class="row" style="margin-left: 120px;">
+                                                    <img class="p-0" src="img/jugador.png" style="width: 25px;" alt="">
+                                                    <img class="p-0" src="img/jugador.png" style="width: 25px;" alt="">                                               
+                                                </div>
                                             </ul>
-                                            <div class="skill">
-                                            <span class="main">JP</span>
-                                            <span class="sub">未開放</span>
-                                            </div>
-                                            <div class="option">
-                                            <span class="icon star">0</span>
-                                            <!-- <span class="icon crown">1</span> -->
+                                            <ul class="appeal mt-3">
+                                            <li class="ac">S/. 8.00</li>
+                                            <li class="da">10</li>
+                                            </ul>
+                                            
+                                            <div class="option py-2">
+                                                <button class="btn btn-warning" style="width: 240px">Unirse</button>
                                             </div>
                                         </dd>
                                         </dl>                                        
@@ -602,42 +610,49 @@
                                     </div> -->
                                     
                                     <div class="specBox ac">
-                                        <p class="specTitle"><span>Sin jugar</span></p>
+                                        <p class="specTitle"><span>Jugando</span></p>
                                         <dl>
                                         <dt>
-                                            <img src="img/bingo.png" style="width: 80px;" alt="SSS camus">
+                                            <img src="img/bingo.png" style="width: 200px;" alt="SSS camus">
                                         </dt>
                                         <dd>
                                             <ul class="appeal">
-                                            <li class="da">2080</li>
-                                            <li class="vo">1450</li>
-                                            <li class="ac">2480</li>
+                                                <li class="h4">Bingo</li>
+                                                <div class="row" style="margin-left: 80px;">
+                                                    <li>Sin límite</li>                                                  
+                                                </div>
                                             </ul>
-                                            <div class="skill">
-                                            <span class="main">カットイン</span>
-                                            <span class="sub">F +12000</span>
-                                            </div>
-                                            <div class="option">
-                                            <span class="icon crown gold"></span>
+                                            <ul class="appeal mt-3">
+                                            <li class="ac">S/. 5.00</li>
+                                            <li class="da">10</li>
+                                            </ul>
+                                            
+                                            <div class="option py-2">
+                                                <button class="btn btn-danger" style="width: 240px">Bloqueado</button>
                                             </div>
                                         </dd>
                                         </dl>
                                         <dl>
                                         <dt>
-                                            <img src="img/ludo.png" style="width: 80px;" alt="evTV natsuki">
+                                            <img src="img/ludo.png" style="width: 200px;" alt="evTV natsuki">
                                         </dt>
                                         <dd>
                                             <ul class="appeal">
-                                            <li class="da">1840</li>
-                                            <li class="vo">1840</li>
-                                            <li class="ac">2130</li>
+                                                <li class="h4">Ludo</li>
+                                                <div class="row" style="margin-left: 80px;">
+                                                    <img class="p-0" src="img/jugador.png" style="width: 25px;" alt="">
+                                                    <img class="p-0" src="img/jugador.png" style="width: 25px;" alt="">
+                                                    <img class="p-0" src="img/jugador.png" style="width: 25px;" alt="">
+                                                    <img class="p-0" src="img/jugador.png" style="width: 25px;" alt="">                                                   
+                                                </div>
                                             </ul>
-                                            <div class="skill">
-                                            <span class="main">スコアノーツ</span>
-                                            <span class="sub">L60 +30000</span>
-                                            </div>
-                                            <div class="option">
-                                            <span class="icon crown silver"></span>
+                                            <ul class="appeal mt-3">
+                                            <li class="ac">S/. 8.00</li>
+                                            <li class="da">10</li>
+                                            </ul>
+                                            
+                                            <div class="option py-2">
+                                                <button class="btn btn-danger" style="width: 240px">Bloqueado</button>
                                             </div>
                                         </dd>
                                         </dl>                                                                                
@@ -648,42 +663,49 @@
                                     <!-- SHINE -->
                                     <div class="typeBox" id="tab2">
                                     <div class="specBox da">
-                                        <p class="specTitle"><span>Jugando</span></p> <!-- - - - - - - - - - - - - - - - - - - - - - - - -DANCE - - - - - - - - - - - - - - - - - - - - - -->
+                                        <p class="specTitle"><span>Sin jugar</span></p> <!-- - - - - - - - - - - - - - - - - - - - - - - - -DANCE - - - - - - - - - - - - - - - - - - - - - -->
                                         <dl>
                                         <dt>
-                                            <img src="img/bingo.png" style="width: 80px;" alt="SL ranmaru">
+                                            <img src="img/bingo.png" style="width: 200px;" alt="SL ranmaru">
                                         </dt>
                                         <dd>
-                                            <ul class="appeal">
-                                            <li class="da">2130</li>
-                                            <li class="vo">1840</li>
-                                            <li class="ac">1840</li>
+                                        <ul class="appeal">
+                                                <li class="h4">Bingo</li>
+                                                <div class="row" style="margin-left: 50px;">
+                                                    <li>Sin límite</li>                                                 
+                                                </div>
                                             </ul>
-                                            <div class="skill">
-                                            <span class="main">カットイン</span>
-                                            <span class="sub">F +55000</span>
-                                            </div>
-                                            <div class="option">
-                                            <span class="icon crown silver"></span>
+                                            <ul class="appeal mt-3">
+                                            <li class="ac">S/. 5.00</li>
+                                            <li class="da">10</li>
+                                            </ul>
+                                            
+                                            <div class="option py-2">
+                                                <button class="btn btn-warning" style="width: 240px">Unirse</button>
                                             </div>
                                         </dd>
                                         </dl>
                                         <dl>
                                         <dt>
-                                            <img src="img/ludo.png" style="width: 80px;" alt="USL ren">
+                                            <img src="img/ludo.png" style="width: 200px;" alt="USL ren">
                                         </dt>
                                         <dd>
-                                            <ul class="appeal">
-                                            <li class="da">2080</li>
-                                            <li class="vo">1990</li>
-                                            <li class="ac">1540</li>
+                                        <ul class="appeal">
+                                                <li class="h4">Ludo</li>
+                                                <div class="row" style="margin-left: 80px;">
+                                                    <img class="p-0" src="img/jugador.png" style="width: 25px;" alt="">
+                                                    <img class="p-0" src="img/jugador.png" style="width: 25px;" alt="">
+                                                    <img class="p-0" src="img/jugador.png" style="width: 25px;" alt="">
+                                                    <img class="p-0" src="img/jugador.png" style="width: 25px;" alt="">                                                   
+                                                </div>
                                             </ul>
-                                            <div class="skill">
-                                            <span class="main">BP</span>
-                                            <span class="sub">F +28000</span>
-                                            </div>
-                                            <div class="option">
-                                            <span class="icon crown silver"></span>
+                                            <ul class="appeal mt-3">
+                                            <li class="ac">S/. 8.00</li>
+                                            <li class="da">10</li>
+                                            </ul>
+                                            
+                                            <div class="option py-2">
+                                                <button class="btn btn-warning" style="width: 240px">Unirse</button>
                                             </div>
                                         </dd>
                                         </dl>                                        
@@ -884,42 +906,50 @@
                                     </div> -->
 
                                     <div class="specBox ac">
-                                        <p class="specTitle"><span>Sin jugar</span></p> <!-- - - - - - - - - - - - - - - - - - - - - - - ACT - - - - - - - - - - - - - - - - - - - - - - - -->
+                                        <p class="specTitle"><span>Jugando</span></p> <!-- - - - - - - - - - - - - - - - - - - - - - - ACT - - - - - - - - - - - - - - - - - - - - - - - -->
                                         <dl>
                                         <dt>
-                                            <img src="img/ludo.png" style="width: 80px;" alt="SL syo">
+                                            <img src="img/ludo.png" style="width: 200px;" alt="SL syo">
                                         </dt>
                                         <dd>
                                             <ul class="appeal">
-                                            <li class="da">1840</li>
-                                            <li class="vo">1660</li>
-                                            <li class="ac">2310</li>
+                                                <li class="h4">Ludo</li>
+                                                <div class="row" style="margin-left: 80px;">
+                                                    <img class="p-0" src="img/jugador.png" style="width: 25px;" alt="">
+                                                    <img class="p-0" src="img/jugador.png" style="width: 25px;" alt="">
+                                                    <img class="p-0" src="img/jugador.png" style="width: 25px;" alt="">
+                                                    <img class="p-0" src="img/jugador.png" style="width: 25px;" alt="">                                                   
+                                                </div>
                                             </ul>
-                                            <div class="skill">
-                                            <span class="main">カットイン</span>
-                                            <span class="sub">F +52000</span>
-                                            </div>
-                                            <div class="option">
-                                            <span class="icon crown silver"></span>
+                                            <ul class="appeal mt-3">
+                                            <li class="ac">S/. 8.00</li>
+                                            <li class="da">10</li>
+                                            </ul>
+                                            
+                                            <div class="option py-2">
+                                                <button class="btn btn-danger" style="width: 240px">Bloqueado</button>
                                             </div>
                                         </dd>
                                         </dl>
                                         <dl>
                                         <dt>
-                                            <img src="img/ajedrez1.png" style="width: 80px;" alt="SL syo 2">
+                                            <img src="img/ajedrez1.png" style="width: 200px;" alt="SL syo 2">
                                         </dt>
                                         <dd>
-                                            <ul class="appeal">
-                                            <li class="da">1653</li>
-                                            <li class="vo">1473</li>
-                                            <li class="ac">1923</li>
+                                        <ul class="appeal">
+                                                <li class="h4">Ajedrez</li>
+                                                <div class="row" style="margin-left: 120px;">
+                                                    <img class="p-0" src="img/jugador.png" style="width: 25px;" alt="">
+                                                    <img class="p-0" src="img/jugador.png" style="width: 25px;" alt="">                                                  
+                                                </div>
                                             </ul>
-                                            <div class="skill">
-                                            <span class="main">カットイン</span>
-                                            <span class="sub">F +28000</span>
-                                            </div>
-                                            <div class="option">
-                                            <span class="icon star">2</span>
+                                            <ul class="appeal mt-3">
+                                            <li class="ac">S/. 10.00</li>
+                                            <li class="da">10</li>
+                                            </ul>
+                                            
+                                            <div class="option pt-2">
+                                                <button class="btn btn-danger" style="width: 240px">Bloqueado</button>
                                             </div>
                                         </dd>
                                         </dl>                                        
@@ -930,61 +960,70 @@
                                     <!-- DREAM -->
                                     <div class="typeBox" id="tab3">
                                     <div class="specBox da">
-                                        <p class="specTitle"><span>Jugando</span></p>
+                                        <p class="specTitle"><span>Sin jugar</span></p>
                                         <dl>
                                         <dt>
-                                            <img src="img/bingo.png" style="width: 80px;" alt="SL camus">
+                                            <img src="img/bingo.png" style="width: 200px;" alt="SL camus">
                                         </dt>
                                         <dd>
-                                            <ul class="appeal">
-                                            <li class="da">2510</li>
-                                            <li class="vo">1840</li>
-                                            <li class="ac">1660</li>
+                                        <ul class="appeal">
+                                                <li class="h4">Bingo</li>
+                                                <div class="row" style="margin-left: 80px;">
+                                                    <li>Sin límite</li>                                                   
+                                                </div>
                                             </ul>
-                                            <div class="skill">
-                                            <span class="main">カットイン</span>
-                                            <span class="sub">F +55000</span>
-                                            </div>
-                                            <div class="option">
-                                            <span class="icon crown gold"></span>
+                                            <ul class="appeal mt-3">
+                                            <li class="ac">S/. 8.00</li>
+                                            <li class="da">10</li>
+                                            </ul>
+                                            
+                                            <div class="option py-2">
+                                                <button class="btn btn-warning" style="width: 240px">Bloqueado</button>
                                             </div>
                                         </dd>
                                         </dl>
                                         <dl>
                                         <dt>
-                                            <img src="img/bingo.png" style="width: 80px;" alt="SL camus">
+                                            <img src="img/bingo.png" style="width: 200px;" alt="SL camus">
                                         </dt>
                                         <dd>
                                             <ul class="appeal">
-                                            <li class="da">2130</li>
-                                            <li class="vo">1750</li>
-                                            <li class="ac">1930</li>
+                                                <li class="h4">Bingo</li>
+                                                <div class="row" style="margin-left: 80px;">
+                                                    <li>Sin límite</li>                                                 
+                                                </div>
                                             </ul>
-                                            <div class="skill">
-                                            <span class="main">カットイン</span>
-                                            <span class="sub">F +55000</span>
-                                            </div>
-                                            <div class="option">
-                                            <span class="icon crown silver"></span>
+                                            <ul class="appeal mt-3">
+                                            <li class="ac">S/. 8.00</li>
+                                            <li class="da">10</li>
+                                            </ul>
+                                            
+                                            <div class="option py-2">
+                                                <button class="btn btn-warning" style="width: 240px">Unirse</button>
                                             </div>
                                         </dd>
                                         </dl>
                                         <dl>
                                         <dt>
-                                            <img src="img/ludo.png" style="width: 80px;" alt="SSS reiji">
+                                            <img src="img/ludo.png" style="width: 200px;" alt="SSS reiji">
                                         </dt>
                                         <dd>
                                             <ul class="appeal">
-                                            <li class="da">2280</li>
-                                            <li class="vo">1540</li>
-                                            <li class="ac">1990</li>
+                                                <li class="h4">Ludo</li>
+                                                <div class="row" style="margin-left: 80px;">
+                                                    <img class="p-0" src="img/jugador.png" style="width: 25px;" alt="">
+                                                    <img class="p-0" src="img/jugador.png" style="width: 25px;" alt="">
+                                                    <img class="p-0" src="img/jugador.png" style="width: 25px;" alt="">
+                                                    <img class="p-0" src="img/jugador.png" style="width: 25px;" alt="">                                                   
+                                                </div>
                                             </ul>
-                                            <div class="skill">
-                                            <span class="main">スコアノーツ</span>
-                                            <span class="sub">L60 +37000</span>
-                                            </div>
-                                            <div class="option">
-                                            <span class="icon crown silver"></span>
+                                            <ul class="appeal mt-3">
+                                            <li class="ac">S/. 8.00</li>
+                                            <li class="da">10</li>
+                                            </ul>
+                                            
+                                            <div class="option py-2">
+                                                <button class="btn btn-warning" style="width: 240px">Unirse</button>
                                             </div>
                                         </dd>
                                         </dl>                                        

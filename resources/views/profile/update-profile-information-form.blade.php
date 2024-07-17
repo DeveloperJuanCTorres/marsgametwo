@@ -125,34 +125,43 @@ $distritos = District::all();
          <!-- Departamentos -->
         <div class="col-span-6 sm:col-span-4">
             <x-label for="departamento" value="Departamento" />
-            <select class="mt-1 block w-full" id="tipo_doc" wire:model="state.departamento">
+            <select name="cb_departamento" id="cb_departamento" class="mt-1 block w-full">
+                <option disabled selected>Seleccione departamento</option>
+            </select>
+            <!-- <select class="mt-1 block w-full" id="tipo_doc" wire:model="state.departamento">
                 <option value="">-Seleccionar-</option>
-                @foreach($departamentos as $value)
-                <option value="{{$value->id}}">{{$value->name}}</option>
-                @endforeach
-            </select>            
+                foreach($departamentos as $value)
+                <option value="$value->id">$value->name</option>
+                endforeach
+            </select>             -->
         </div>
 
         <!-- Provincias -->
         <div class="col-span-6 sm:col-span-4">
             <x-label for="provincia" value="Provincia" />
-            <select class="mt-1 block w-full" id="tipo_doc" wire:model="state.provincia">
+            <select name="cb_provincia" id="cb_provincia" class="mt-1 block w-full">
+                <option disabled selected>Seleccione provincia</option>
+            </select>
+            <!-- <select class="mt-1 block w-full" id="tipo_doc" wire:model="state.provincia">
                 <option value="">-Seleccionar-</option>
-                @foreach($provincias as $value)
-                <option value="{{$value->id}}">{{$value->name}}</option>
-                @endforeach
-            </select>            
+                foreach($provincias as $value)
+                <option value="$value->id">$value->name</option>
+                endforeach
+            </select>             -->
         </div>
 
         <!-- Distritos -->
         <div class="col-span-6 sm:col-span-4">
             <x-label for="distrito" value="Distrito" />
-            <select class="mt-1 block w-full" id="tipo_doc" wire:model="state.distrito">
+            <select name="cb_distrito" id="cb_distrito" class="mt-1 block w-full">
+                <option disabled selected>Seleccione distrito</option>
+            </select>
+            <!-- <select class="mt-1 block w-full" id="tipo_doc" wire:model="state.distrito">
                 <option value="">-Seleccionar-</option>
-                @foreach($distritos as $value)
-                <option value="{{$value->id}}">{{$value->name}}</option>
-                @endforeach
-            </select>            
+                foreach($distritos as $value)
+                <option value="$value->id">$value->name</option>
+                endforeach
+            </select>             -->
         </div>
 
         <!-- Direccion -->
@@ -217,5 +226,5 @@ $distritos = District::all();
         </x-button>
     </x-slot>
 </x-form-section>
-<script src="js/jquery.min.js"></script>
-<script src="js/select.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<!-- <script src="../../js/select.js"></script> -->

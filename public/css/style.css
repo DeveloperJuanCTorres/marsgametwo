@@ -823,6 +823,7 @@ footer {
   border-width: 15px 7px 0 7px;
 }
 
+
 .star .current { background: #fce035; }
 .star .current::after { border-color: #fce035 transparent transparent transparent; }
 .star .current .typeMark i { color: #fce035; }
@@ -946,6 +947,7 @@ footer {
   padding-bottom: 5px;
   border-bottom: 1px dotted #ccc;
   width: 100%;
+  padding-left: 0 !important;
 }
 .appeal li {
   display: flex;
@@ -961,13 +963,13 @@ footer {
   display: block;
   border-radius: 3px;
   padding: 3px 10px;
-  text-align: center;
+  /* text-align: center; */
   box-sizing: border-box;
   font-size: 10px;
   margin-right: 4px;
 }
 .appeal .da::before {
-  content: "DA";
+  content: "Marscoin";
   background: #fa799f;
 }
 .appeal .vo::before {
@@ -975,7 +977,7 @@ footer {
   background: #4beed2;
 }
 .appeal .ac::before {
-  content: "AC";
+  content: "Apuesta";
   background: #ffb13a;
 }
 
@@ -1061,10 +1063,14 @@ footer {
     border-bottom: 0;
   }
   .skill {
-    margin: 0 10px;
-    padding: 0 10px;
-    border-left: 1px solid #ccc;
-    border-right: 1px dotted #ccc;
+    width: auto;
+    margin-bottom: 0;
+    padding-bottom: 0; 
+    border-bottom: 0;
+    /* margin: 0 10px;
+    padding: 0 10px; */
+    /* border-left: 1px solid #ccc;
+    border-right: 1px dotted #ccc; */
   }
 }
 /* 681px以下の時の処理 */
