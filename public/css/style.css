@@ -1082,6 +1082,12 @@ footer {
     width: 100%;
   }
 }
+
+.img-redondo{
+  width: 140px;
+  height: 140px;
+  border-radius: 70px;
+}
 /* FIN SALAS DISPONIBLES */
 
   /* PREMIOS */    

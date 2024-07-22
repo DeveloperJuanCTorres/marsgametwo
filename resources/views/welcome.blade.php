@@ -1423,7 +1423,7 @@
                                 <div class="img-perfil">
                                 @auth
                                     
-                                    <img src="{{ Auth::user()->profile_photo_url }}" title="Aisha" alt="foto-perfil"></div>
+                                    <img src="{{ Auth::user()->profile_photo_url }}" class="img-redondo" title="Aisha" alt="foto-perfil"></div>
                                     
                                     
                                     <h4>
@@ -1851,7 +1851,7 @@
             </h5>
             <div class="img-perfil">
              @auth
-                <img src="{{ Auth::user()->profile_photo_url }}" title="Aisha" alt="foto-perfil"></div>
+                <img src="{{ Auth::user()->profile_photo_url }}" class="img-redondo" title="Aisha" alt="foto-perfil"></div>
                 <h4>
                     {{Auth::user()->name}}
                 </h4>
