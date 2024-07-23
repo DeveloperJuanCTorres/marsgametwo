@@ -843,7 +843,7 @@ footer {
 }
 
 .tabMenu a {
-  font-family: 'Baloo Da', cursive;
+  /* font-family: 'Baloo Da', cursive; */
   width: 100%;
   text-align: center;
   margin-bottom: 15px;
@@ -969,11 +969,11 @@ footer {
   margin-right: 4px;
 }
 .appeal .da::before {
-  content: "Marscoin";
+  content: "Jugadores";
   background: #fa799f;
 }
 .appeal .vo::before {
-  content: "VO";
+  content: "Gamer";
   background: #4beed2;
 }
 .appeal .ac::before {

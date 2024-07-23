@@ -417,8 +417,9 @@
                                                 </div>
                                             </ul>
                                             <ul class="appeal mt-3">
-                                            <li class="ac">S/. 5.00</li>
-                                            <li class="da">10</li>
+                                            <li class="ac"><img style="width: 20px;" src="img/marscoin1.png" alt=""> 10</li>
+                                            <li class="da">2/4</li>
+                                            <!-- <li class="vo">2/4</li> -->
                                             </ul>
                                             
                                             <div class="option py-2">
@@ -439,8 +440,8 @@
                                                 </div>
                                             </ul>
                                             <ul class="appeal mt-3">
-                                            <li class="ac">S/. 10.00</li>
-                                            <li class="da">10</li>
+                                            <li class="ac"><img style="width: 20px;" src="img/marscoin1.png" alt=""> 10</li>
+                                            <li class="da">1/2</li>
                                             </ul>
                                             
                                             <div class="option pt-2">
@@ -461,8 +462,8 @@
                                                 </div>
                                             </ul>
                                             <ul class="appeal mt-3">
-                                            <li class="ac">S/. 8.00</li>
-                                            <li class="da">10</li>
+                                            <li class="ac"><img style="width: 20px;" src="img/marscoin1.png" alt=""> 10</li>
+                                            <li class="da">1/2</li>
                                             </ul>
                                             
                                             <div class="option py-2">
@@ -623,8 +624,8 @@
                                                 </div>
                                             </ul>
                                             <ul class="appeal mt-3">
-                                            <li class="ac">S/. 5.00</li>
-                                            <li class="da">10</li>
+                                            <li class="ac"><img style="width: 20px;" src="img/marscoin1.png" alt=""> 10</li>
+                                            <li class="da">5/∞</li>
                                             </ul>
                                             
                                             <div class="option py-2">
@@ -647,8 +648,8 @@
                                                 </div>
                                             </ul>
                                             <ul class="appeal mt-3">
-                                            <li class="ac">S/. 8.00</li>
-                                            <li class="da">10</li>
+                                            <li class="ac"><img style="width: 20px;" src="img/marscoin1.png" alt=""> 10</li>
+                                            <li class="da">3/4</li>
                                             </ul>
                                             
                                             <div class="option py-2">
@@ -676,8 +677,8 @@
                                                 </div>
                                             </ul>
                                             <ul class="appeal mt-3">
-                                            <li class="ac">S/. 5.00</li>
-                                            <li class="da">10</li>
+                                            <li class="ac"><img style="width: 20px;" src="img/marscoin1.png" alt="">10</li>
+                                            <li class="da">8/∞</li>
                                             </ul>
                                             
                                             <div class="option py-2">
@@ -700,8 +701,8 @@
                                                 </div>
                                             </ul>
                                             <ul class="appeal mt-3">
-                                            <li class="ac">S/. 8.00</li>
-                                            <li class="da">10</li>
+                                            <li class="ac"><img style="width: 20px;" src="img/marscoin1.png" alt="">10</li>
+                                            <li class="da">1/4</li>
                                             </ul>
                                             
                                             <div class="option py-2">
@@ -922,8 +923,8 @@
                                                 </div>
                                             </ul>
                                             <ul class="appeal mt-3">
-                                            <li class="ac">S/. 8.00</li>
-                                            <li class="da">10</li>
+                                            <li class="ac"><img style="width: 20px;" src="img/marscoin1.png" alt="">10</li>
+                                            <li class="da">3/4</li>
                                             </ul>
                                             
                                             <div class="option py-2">
@@ -944,8 +945,8 @@
                                                 </div>
                                             </ul>
                                             <ul class="appeal mt-3">
-                                            <li class="ac">S/. 10.00</li>
-                                            <li class="da">10</li>
+                                            <li class="ac"><img style="width: 20px;" src="img/marscoin1.png" alt="">10</li>
+                                            <li class="da">1/2</li>
                                             </ul>
                                             
                                             <div class="option pt-2">
@@ -973,8 +974,8 @@
                                                 </div>
                                             </ul>
                                             <ul class="appeal mt-3">
-                                            <li class="ac">S/. 8.00</li>
-                                            <li class="da">10</li>
+                                            <li class="ac"><img style="width: 20px;" src="img/marscoin1.png" alt="">10</li>
+                                            <li class="da">10/∞</li>
                                             </ul>
                                             
                                             <div class="option py-2">
@@ -994,8 +995,8 @@
                                                 </div>
                                             </ul>
                                             <ul class="appeal mt-3">
-                                            <li class="ac">S/. 8.00</li>
-                                            <li class="da">10</li>
+                                            <li class="ac"><img style="width: 20px;" src="img/marscoin1.png" alt="">10</li>
+                                            <li class="da">9/∞</li>
                                             </ul>
                                             
                                             <div class="option py-2">
@@ -1018,8 +1019,8 @@
                                                 </div>
                                             </ul>
                                             <ul class="appeal mt-3">
-                                            <li class="ac">S/. 8.00</li>
-                                            <li class="da">10</li>
+                                            <li class="ac"><img style="width: 20px;" src="img/marscoin1.png" alt="">10</li>
+                                            <li class="da">1/4</li>
                                             </ul>
                                             
                                             <div class="option py-2">
@@ -1094,23 +1095,28 @@
                                         <p class="specTitle"><span>Sin jugar</span></p>
                                         <dl>
                                         <dt>
-                                            <img src="img/ludo.png" style="width: 80px;" alt="evAC camus">
+                                            <img src="img/ludo.png" style="width: 200px;" alt="SL camus">
                                         </dt>
                                         <dd>
                                             <ul class="appeal">
-                                            <li class="da">1540</li>
-                                            <li class="vo">1990</li>
-                                            <li class="ac">2280</li>
+                                                <li class="h4">Ludo</li>
+                                                <div class="row" style="margin-left: 80px;">
+                                                    <img class="p-0" src="img/jugador.png" style="width: 25px;" alt="">
+                                                    <img class="p-0" src="img/jugador.png" style="width: 25px;" alt="">
+                                                    <img class="p-0" src="img/jugador.png" style="width: 25px;" alt="">
+                                                    <img class="p-0" src="img/jugador.png" style="width: 25px;" alt="">                                                   
+                                                </div>
                                             </ul>
-                                            <div class="skill">
-                                            <span class="main">BGP</span>
-                                            <span class="sub">F +45000</span>
-                                            </div>
-                                            <div class="option">
-                                            <span class="icon crown silver"></span>
+                                            <ul class="appeal mt-3">
+                                            <li class="ac"><img style="width: 20px;" src="img/marscoin1.png" alt="">10</li>
+                                            <li class="da">3/4</li>
+                                            </ul>
+                                            
+                                            <div class="option py-2">
+                                                <button class="btn btn-danger" style="width: 240px">Bloqueado</button>
                                             </div>
                                         </dd>
-                                        </dl>                                        
+                                        </dl>                                       
                                     </div>
 
                                     </div><!-- typeBox -->

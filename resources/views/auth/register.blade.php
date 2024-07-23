@@ -21,8 +21,14 @@
             </div>
 
             <div class="mt-4">
-                <x-label for="user_name" value="User Name" />
-                <x-input id="user_name" class="block mt-1 w-full" type="text" name="user_name" :value="old('user_name')" autofocus autocomplete="user_name" />
+                <div class="row">
+                    <!-- <x-label for="user_name" value="User Name" />       -->
+                     <label style="width: auto;" for="">User Name</label>
+                     <span style="width: auto;" class="d-inline-block" tabindex="0" data-toggle="popover" data-trigger="hover focus" data-content="Disabled popover">
+                        <button class="btn btn-primary" type="button" disabled>!</button>
+                    </span>              
+                </div>
+                 <x-input id="user_name" class="block mt-1 w-full" type="text" name="user_name" :value="old('user_name')" autofocus autocomplete="user_name" />
             </div>
 
             <div class="mt-4">
