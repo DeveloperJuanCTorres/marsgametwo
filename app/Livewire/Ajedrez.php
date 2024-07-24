@@ -6,6 +6,7 @@ use Livewire\Component;
 use App\Models\Game;
 use Illuminate\Support\Facades\Notification;
 use Livewire\Attributes\On; 
+use Illuminate\Support\Carbon;
 
 class Ajedrez extends Component
 {
@@ -18,6 +19,9 @@ class Ajedrez extends Component
     public $myColor;
     public $userAdversary;
     public $move;
+
+    public $timeWhite='';
+    public $timeBlack='';
 
     public function mount(Game $game){
         $this->game = $game;
@@ -75,6 +79,24 @@ class Ajedrez extends Component
                 'square' => $stringMove->square,
                 'eat' =>  $stringMove->position,
             ];
+
+            //Obtener el tiempo de juego restante
+            $now = date('Y-m-d H:i:s');
+            $formatted_dt1 = Carbon::parse($stringMove->created_at)->addMinute(2);
+            $formatted_dt2 = Carbon::parse($now);
+            if($formatted_dt1->gt($formatted_dt2)){
+                 $date_diff = $formatted_dt1->diffInSeconds($formatted_dt2);
+                 $timer = gmdate('i:s', $date_diff);
+            }else{
+                 $timer = '00:02';
+            }
+
+            if($stringMove->color == 'white'){
+                $this->timeBlack =  $timer;
+            }else{
+                $this->timeWhite =  $timer;
+            }
+            //----------------------------
         } else{
             $this->player = 'black';
             $this->draughts = json_decode($draughtsInitial);
@@ -84,6 +106,17 @@ class Ajedrez extends Component
                 'square' => '',
                 'eat' => 0,
             ];
+            //Obtener el tiempo de juego restante
+            $now = date('Y-m-d H:i:s');
+            $formatted_dt1 = Carbon::parse($this->game->created_at)->addMinute(2);
+            $formatted_dt2 = Carbon::parse($now);
+            if($formatted_dt1->gt($formatted_dt2)){
+                 $date_diff = $formatted_dt1->diffInSeconds($formatted_dt2);
+                 $this->timeWhite = gmdate('i:s', $date_diff);
+            }else{
+                $this->timeWhite = '00:02';
+            }
+            //----------------------------
         }
     }
 
