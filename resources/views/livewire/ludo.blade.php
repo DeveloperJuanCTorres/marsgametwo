@@ -2,10 +2,8 @@
 
 <div x-data="data()" class="bg-gray-100 shadow border border-gray-300 overflow-hidden ">
     <div class="grid grid-cols-7 divide-x divide-gray-200">    
-        
+
         <div class="h-[calc(98vh)] col-span-6 xl:col-span-4 lg:col-span-4 sm:col-span-6 bg-white bg-gamer" wire:ignore>
-         
-            
             <div class="ludo mt-5">
                 <div class="contain">
                     <div class="main-container">
@@ -14,18 +12,18 @@
                                 <div class="circle" id="red">
                                     <div>
                                         <div class="innercircle" id="red101">
-                                            <button class="btn-ludo red" id="101" onclick="move(this.id)" disabled>1</button>
+                                           
                                         </div>
                                         <div class="innercircle" id="red102">
-                                            <button class="btn-ludo  red" id="102" onclick="move(102)" disabled>2</button>
+                                           
                                         </div>
                                     </div>    
                                     <div>
                                         <div class="innercircle" id="red103">
-                                            <button class="btn-ludo red" id="103" onclick="move(103)" disabled>3</button>
+                                          
                                         </div>
                                         <div class="innercircle" id="red104">
-                                            <button class=" btn-ludo red" id="104" onclick="move(104)" disabled>4</button>
+                                           
                                         </div>
                                     </div>
                                 </div>
@@ -64,18 +62,18 @@
                                 <div class="circle" id="yellow">
                                     <div>
                                         <div class="innercircle" id="yellow201">
-                                            <button class="btn-ludo yellow" id="201" onclick="move(this.id)" disabled>1</button>
+                                            
                                         </div>
                                         <div class="innercircle" id="yellow202">
-                                            <button class="btn-ludo yellow" id="202" onclick="move(202)" disabled>2</button>
+                                            
                                         </div>
                                     </div>    
                                     <div>
                                         <div class="innercircle" id="yellow203">
-                                            <button class="btn-ludo yellow" id="203" onclick="move(203)" disabled>3</button>
+                                          
                                         </div>
                                         <div class="innercircle" id="yellow204">
-                                            <button class="btn-ludo yellow" id="204" onclick="move(204)" disabled>4</button>
+                                          
                                         </div>
                                     </div>
                                 </div>
@@ -155,18 +153,18 @@
                                 <div class="circle" id="green">
                                     <div>
                                         <div class="innercircle" id="green401" >
-                                            <button class="btn-ludo green" id="401" onclick="move(this.id)" disabled>1</button>
+                                           
                                         </div>
                                         <div class="innercircle" id="green402">
-                                            <button class="btn-ludo green" id="402" onclick="move(402)" disabled>2</button>
+                                          
                                         </div>
                                     </div>    
                                     <div>
                                         <div class="innercircle" id="green403">
-                                            <button class="btn-ludo green" id="403" onclick="move(403)" disabled>3</button>
+                                          
                                         </div>
                                         <div class="innercircle" id="green404">
-                                            <button class="btn-ludo green" id="404" onclick="move(404)" disabled>4</button>
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -207,34 +205,30 @@
                                 <div class="circle" id="blue">
                                     <div>
                                         <div class="innercircle" id="blue301" >
-                                            <button class="btn-ludo blue" id="301" onclick="move(this.id)" disabled>1</button>
+                                         
                                         </div>
                                         <div class="innercircle" id="blue302">
-                                            <button class="btn-ludo blue" id="302" onclick="move(302)" disabled>2</button>
+                                          
                                         </div>
                                     </div>    
                                     <div>
                                         <div class="innercircle" id="blue303">
-                                            <button class="btn-ludo blue" id="303" onclick="move(303)" disabled>3</button>
+                                          
                                         </div>
                                         <div class="innercircle" id="blue304">
-                                            <button class="btn-ludo blue" id="304" onclick="move(304)" disabled>4</button>
+                                           
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    {{-- <div class="control-dice">
-                        <div class="diceImage" id="goti">Dice Will Show Up Here</div>
-                        <input type="button" value="Start Game" onclick="generaterandom()" id="roll">
-                    </div> --}}
                 </div>
             </div>
 
         </div>
 
-        <div class="col-span-8 sm:col-span-1 bg-white bg-white p-3 content-center" >
+        <div class="col-span-8 sm:col-span-1 bg-white  p-3 content-center" >
             <div class="control-dice">
                 <div class="diceImage" id="goti">Dice Will Show Up Here</div>
                 <input type="button" value="Start Game" onclick="generaterandom()" id="roll">
@@ -389,28 +383,35 @@
 
     
     @push('js')
-      <script src="{{asset('js/ludo.js')}}?v=1993.1.13"></script> 
+        <script src="{{asset('js/ludo.js')}}?v=1993.1.13"></script> 
+        <script>
+                document.addEventListener('livewire:initialized', function () {
+                    var pieces = @this.draughts;
+                    var playercolor = @this.player;
+                    playGame(pieces,playercolor);
+                });
+        </script>
 
-   
+        <script>
+                function data(){
+                
+                }
+        </script>
 
-       
-
-        
-
-      <script>
-          function copiarEmoji(emoji) {
-              if(@this.bodyMessage){
-                  @this.bodyMessage =  @this.bodyMessage + emoji;
-              }else{
-                  @this.bodyMessage =  emoji;
-              }
-          }
-          Livewire.on('scrollIntoView', function() {
-              var aux = document.getElementById('final');
-              if(aux){
-                  aux.scrollIntoView(true);
-              }
-          });
-      </script>
+        <script>
+            function copiarEmoji(emoji) {
+                if(@this.bodyMessage){
+                    @this.bodyMessage =  @this.bodyMessage + emoji;
+                }else{
+                    @this.bodyMessage =  emoji;
+                }
+            }
+            Livewire.on('scrollIntoView', function() {
+                var aux = document.getElementById('final');
+                if(aux){
+                    aux.scrollIntoView(true);
+                }
+            });
+        </script>
     @endpush
 </div>

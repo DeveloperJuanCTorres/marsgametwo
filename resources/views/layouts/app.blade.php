@@ -8,7 +8,7 @@
         <title>{{ config('app.name', 'Laravel') }}</title>
 
         <?php
-            $version = '1993.1.6';
+            $version = '1993.1.10';
         ?>
 
         <!-- Fonts -->
@@ -46,6 +46,8 @@
         <link href="{{asset('css/line-awesome.css')}}?v=<?php echo $version ?>" rel="stylesheet">
         <link href="{{asset('css/nice-select.css')}}?v=<?php echo $version ?>" rel="stylesheet">
         <link href="{{asset('css/responsive.css')}}?v=<?php echo $version ?>" rel="stylesheet">
+
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
         
         @stack('css')
@@ -95,6 +97,8 @@
         <script src="{{asset('js/slick.min.js')}}?v=<?php echo $version ?>"></script>
         <script src="{{asset('js/jquery.nice-select.min.js')}}?v=<?php echo $version ?>"></script>
         <script src="{{asset('js/app1.js')}}?v=<?php echo $version ?>"></script>
+        <script src="{{asset('js/salas.js')}}?v=<?php echo $version ?>"></script>
+        <script src="{{asset('js/ubigeo.js')}}?v=<?php echo $version ?>"></script>
 
         <script src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

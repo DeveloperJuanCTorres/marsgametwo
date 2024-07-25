@@ -53,6 +53,7 @@ class Player{
 
     activatePlayer(){
         for(let i=0; i<4; i++){
+            console.log( this.id[i]);
             this.id[i].disabled=false
             this.id[i].classList.add("btnzoom")
             console.log(this.id[i])
@@ -89,7 +90,6 @@ class Player{
         }
     }
     movePlayer(el,val){
-       
         let dest=0
         let fl=false
             for(let i = 0; i<4; i++){
@@ -135,10 +135,20 @@ class Player{
                     }
                     console.log(this.steps[i])
                     let ele = document.getElementById(dest)
-                    
                     console.log(ele)
+
+
+                    //Guardar moviento debajo del 6 
+                    let position = this.id[i].getAttribute('data-key');
+                    draughts[position].position = ele.id;
+                    Livewire.dispatch('move', {move: draughts, color:this.color, jump:ele.id, line:"", square:"", eat:0});
+                    //-------------
+                    
+                    
                     let lastChild = ele.lastElementChild
-                    console.log(lastChild)
+
+
+                  
                     
                     if(lastChild==null || lastChild.className==this.color || stopage.includes(ele.id)){
                         ele.appendChild(this.id[i])
@@ -166,7 +176,6 @@ class Player{
             for(let i=0;i<4; i++){
                 this.id[i].classList.remove("btnzoom")
                 this.id[i].disabled=true
-                
             }
         return
     }
@@ -188,38 +197,26 @@ function deactivateSubPlayer(){
             yellow.checkStatus()
             deactivate=false
         }
-        else if(declass=="blue"){
-            blue.setsubStatus(parseInt(deid)-301)
-            blue.setSteps(parseInt(deid)-301)
-            blue.checkStatus()
-            deactivate=false
-        }
-        else if(declass=="green"){
-            green.setsubStatus(parseInt(deid)-401)
-            green.setSteps(parseInt(deid)-401)
-            green.checkStatus()
-            deactivate=false
-        }
+        // else if(declass=="blue"){
+        //     blue.setsubStatus(parseInt(deid)-301)
+        //     blue.setSteps(parseInt(deid)-301)
+        //     blue.checkStatus()
+        //     deactivate=false
+        // }
+        // else if(declass=="green"){
+        //     green.setsubStatus(parseInt(deid)-401)
+        //     green.setSteps(parseInt(deid)-401)
+        //     green.checkStatus()
+        //     deactivate=false
+        // }
     }
     else{
         return
     }
 }
 
-let red = new Player("red",1,51,109)
-let yellow = new Player("yellow",14,12,209)
-let blue = new Player("blue",27,25,309)
-let green = new Player("green",40,38,409)
-let image = new Map([
-    [1, "https://i.postimg.cc/CM60tqym/1.jpg"],
-    [2, "https://i.postimg.cc/JhKvkfMP/2.jpg"],
-    [3, "https://i.postimg.cc/3NZnspN9/3.jpg"],
-    [4, "https://i.postimg.cc/Px7tmpT3/4.jpg"],
-    [5, "https://i.postimg.cc/pTCs7zpC/5.jpg"],
-    [6, "https://i.postimg.cc/SKD8brfn/6.jpg"],
-    [7, "https://i.postimg.cc/90qqTj59/dice.gif"]
-  ])
 
+//declaración
 function adddice(dice){
     return new Promise(resolve =>{
         setTimeout(() =>{
@@ -240,13 +237,63 @@ function removezoom(active){
     })
 }
 
-let die =0
-let active = "red"
-let btn = document.getElementById("roll")
 
- async function generaterandom(){
-    message(active)
-    
+function createParts(pieces){
+    for(i=0; i< pieces.length; i++){
+        // const square = document.querySelector(`#${pieces[i].position}`);
+        const square = document.getElementById(`${pieces[i].position}`);
+        var button = document.createElement("button")
+        button.classList.add("btn-ludo");
+        button.classList.add(pieces[i].color);
+        button.setAttribute('id',pieces[i].id);
+        button.setAttribute('data-key',i);
+        // button.onclick = move; 
+        button.setAttribute('onclick',`move(${pieces[i].id})`);
+        button.disabled = true;
+        button.textContent = pieces[i].value;
+        square.appendChild(button);
+    }
+  }
+
+//declaracion del color que inicia
+
+let red;
+let yellow;
+// let blue;
+// let green ;
+let image;
+
+
+let die =0
+let active = ""
+let btn = document.getElementById("roll");
+var draughts;
+
+function playGame(pieces,playercolor){
+    console.log('Turno color Dante');
+    draughts = pieces;
+    createParts(pieces);
+    active = playercolor;
+    message(active);
+
+    red = new Player("red",1,51,109)
+    yellow = new Player("yellow",14,12,209)
+    // blue = new Player("blue",27,25,309)
+    // green = new Player("green",40,38,409)
+    image = new Map([
+        [1, "https://i.postimg.cc/CM60tqym/1.jpg"],
+        [2, "https://i.postimg.cc/JhKvkfMP/2.jpg"],
+        [3, "https://i.postimg.cc/3NZnspN9/3.jpg"],
+        [4, "https://i.postimg.cc/Px7tmpT3/4.jpg"],
+        [5, "https://i.postimg.cc/pTCs7zpC/5.jpg"],
+        [6, "https://i.postimg.cc/SKD8brfn/6.jpg"],
+        [7, "https://i.postimg.cc/90qqTj59/dice.gif"]
+    ]);
+
+}
+
+async function generaterandom(){
+    // message(active)
     btn.disabled=true
     console.log(active)
     let dice = Math.floor(Math.random()*6)+1
@@ -257,9 +304,12 @@ let btn = document.getElementById("roll")
     await adddice(dice)
     await removezoom(active)
     die=dice
+    console.log('resultado:');
     console.log(die)
     activePlayer(die)
 }
+
+
 function message(msg){
     let ani = document.getElementById(msg)
     console.log(ani)
@@ -270,6 +320,8 @@ function message(msg){
     let el = document.getElementById("roll")
     el.value=msg + "'s turn"
 }
+
+
 function activePlayer(dice){
     
     if(active === "red"){
@@ -294,7 +346,8 @@ function activePlayer(dice){
             yellow.setStatus()
         }
         else if(yellow.getStatus()===false){
-            active = "blue"
+            // active = "blue"
+            active = "red"
             message(active)
             btn.disabled=false
         }
@@ -303,46 +356,47 @@ function activePlayer(dice){
         }
         console.log(active)
     }
-    else if(active === "blue"){
-        if(dice===6){
-            blue.activatePlayer()
-            blue.setStatus()
-        }
-        else if(blue.getStatus()===false){
-            active = "green"
-            message(active)
-            btn.disabled=false
-        }
-        else{
-            blue.enableBtn()
-        }
-        console.log(active)
+    // else if(active === "blue"){
+    //     if(dice===6){
+    //         blue.activatePlayer()
+    //         blue.setStatus()
+    //     }
+    //     else if(blue.getStatus()===false){
+    //         active = "green"
+    //         message(active)
+    //         btn.disabled=false
+    //     }
+    //     else{
+    //         blue.enableBtn()
+    //     }
+    //     console.log(active)
         
        
-    }
-    else if(active === "green"){
-        if(dice===6){
-            green.activatePlayer()
-            green.setStatus()
+    // }
+    // else if(active === "green"){
+    //     if(dice===6){
+    //         green.activatePlayer()
+    //         green.setStatus()
 
-        }
-        else if(green.getStatus()===false){
-            active = "red"
-            message(active)
-            btn.disabled=false
-        }
-        else{
-            green.enableBtn()
-        }
-        console.log(active)
-    }
+    //     }
+    //     else if(green.getStatus()===false){
+    //         active = "red"
+    //         message(active)
+    //         btn.disabled=false
+    //     }
+    //     else{
+    //         green.enableBtn()
+    //     }
+    //     console.log(active)
+    // }
 }
 
-function move(id){
-    
 
-    console.log("hi")
+// function move(event){
+function move(id){
+    // event.preventDefault();
     
+    // var id = event.target.id;
     switch (active){
         case 'red':
             if(red.getElementStatus(id-101)==false){
@@ -370,41 +424,41 @@ function move(id){
                 console.log("yel")
                 yellow.movePlayer(id,die)
                 deactivateSubPlayer()
-                active = "blue"
-                message(active)
-            }
-            console.log(active)
-            break
-        case 'blue':
-            if(blue.getElementStatus(id-301)==false){
-                blue.openMove(id)
-                die=0
-
-            }
-            else{
-                console.log("blu")
-                blue.movePlayer(id,die)
-                deactivateSubPlayer()
-                active = "green"
-                message(active)
-            }
-            console.log(active)
-            break
-        case 'green':
-            if(green.getElementStatus(id-401)==false){
-                green.openMove(id)
-                die=0
-
-            }
-            else{
-                console.log("gree")
-                green.movePlayer(id,die)
-                deactivateSubPlayer()
                 active = "red"
                 message(active)
             }
             console.log(active)
             break
+        // case 'blue':
+        //     if(blue.getElementStatus(id-301)==false){
+        //         blue.openMove(id)
+        //         die=0
+
+        //     }
+        //     else{
+        //         console.log("blu")
+        //         blue.movePlayer(id,die)
+        //         deactivateSubPlayer()
+        //         active = "green"
+        //         message(active)
+        //     }
+        //     console.log(active)
+        //     break
+        // case 'green':
+        //     if(green.getElementStatus(id-401)==false){
+        //         green.openMove(id)
+        //         die=0
+
+        //     }
+        //     else{
+        //         console.log("gree")
+        //         green.movePlayer(id,die)
+        //         deactivateSubPlayer()
+        //         active = "red"
+        //         message(active)
+        //     }
+        //     console.log(active)
+        //     break
         
     }
     btn.disabled=false

@@ -1,3 +1,12 @@
+@php
+use App\Models\Departament;
+use App\Models\Province;
+use App\Models\District;
+
+$departamentos = Departament::all();
+$provincias = Province::all();
+$distritos = District::all();
+@endphp
 <x-form-section submit="updateProfileInformation">
     <x-slot name="title">
         Información del Perfil
@@ -6,7 +15,7 @@
     <x-slot name="description">
         Actualice su información de perfil.
     </x-slot>
-
+    
     <x-slot name="form">
         <!-- Profile Photo -->
         <!-- if (Laravel\Jetstream\Jetstream::managesProfilePhotos()) -->
@@ -51,12 +60,19 @@
                 <x-input-error for="photo" class="mt-2" />
             </div>
         <!-- endif -->
-
+        
         <!-- Name -->
         <div class="col-span-6 sm:col-span-4">
-            <x-label for="name" value="{{ __('Name') }}" />
+            <x-label for="name" value="Nombres" />
             <x-input id="name" type="text" class="mt-1 block w-full" wire:model="state.name" required autocomplete="name" />
             <x-input-error for="name" class="mt-2" />
+        </div>
+
+        <!-- Last Name -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-label for="last_name" value="Apellidos" />
+            <x-input id="last_name" type="text" class="mt-1 block w-full" wire:model="state.last_name" />
+            <x-input-error for="last_name" class="mt-2" />
         </div>
 
         <!-- User Name -->
@@ -65,12 +81,38 @@
             <x-input id="username" type="text" class="mt-1 block w-full" wire:model="state.username" required autocomplete="username" />
             <x-input-error for="username" class="mt-2" />
         </div>
+
+        <div class="col-span-6 sm:col-span-4">
+            <x-label for="username" value="Tipo Documento" />
+            <select class="mt-1 block w-full" id="tipo_doc" wire:model="state.tipo_doc">
+                <option value="">-Seleccionar-</option>
+                <option value="DNI">DNI</option>
+                <option value="PASAPORTE">PASAPORTE</option>
+                <option value="CARNET">CARNET EXTRANJERIA</option>
+            </select>            
+        </div>
+        <div class="col-span-6 sm:col-span-4">
+            <x-label for="username" value="Número Documento" />
+            <x-input id="numero_doc" type="text" class="mt-1 block w-full" wire:model="state.numero_doc" />
+            <x-input-error for="numero_doc" class="mt-2" />
+        </div>
+       
+        <!-- Sexo -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-label for="sexo" value="Sexo" />
+            <select class="mt-1 block w-full" id="sexo" wire:model="state.sexo">
+                <option value="">-Seleccionar-</option>
+                <option value="M">Masculino</option>
+                <option value="F">Femenino</option>
+                <option value="O">LGBTIQ+</option>
+            </select>            
+        </div>
         
         <!-- Edad -->
         <div class="col-span-6 sm:col-span-4">
-            <x-label for="edad" value="Edad" />
-            <x-input id="edad" type="text" class="mt-1 block w-full" wire:model="state.edad" required autocomplete="edad" />
-            <x-input-error for="edad" class="mt-2" />
+            <x-label for="fecha_nac" value="Fecha de Nacimiento" />
+            <x-input id="fecha_nacimiento" type="date" class="mt-1 block w-full" wire:model="state.fecha_nacimiento" />
+            <x-input-error for="fecha_nac" class="mt-2" />
         </div>
 
         <!-- Telefono -->
@@ -78,6 +120,55 @@
             <x-label for="telefono" value="Teléfono" />
             <x-input id="telefono" type="text" class="mt-1 block w-full" wire:model="state.telefono" autocomplete="telefono" />
             <x-input-error for="telefono" class="mt-2" />
+        </div>
+
+         <!-- Departamentos -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-label for="departamento" value="Departamento" />
+            <select name="cb_departamento" id="cb_departamento" class="mt-1 block w-full">
+                <option disabled selected>Seleccione departamento</option>
+            </select>
+            <!-- <select class="mt-1 block w-full" id="tipo_doc" wire:model="state.departamento">
+                <option value="">-Seleccionar-</option>
+                foreach($departamentos as $value)
+                <option value="$value->id">$value->name</option>
+                endforeach
+            </select>             -->
+        </div>
+
+        <!-- Provincias -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-label for="provincia" value="Provincia" />
+            <select name="cb_provincia" id="cb_provincia" class="mt-1 block w-full">
+                <option disabled selected>Seleccione provincia</option>
+            </select>
+            <!-- <select class="mt-1 block w-full" id="tipo_doc" wire:model="state.provincia">
+                <option value="">-Seleccionar-</option>
+                foreach($provincias as $value)
+                <option value="$value->id">$value->name</option>
+                endforeach
+            </select>             -->
+        </div>
+
+        <!-- Distritos -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-label for="distrito" value="Distrito" />
+            <select name="cb_distrito" id="cb_distrito" class="mt-1 block w-full">
+                <option disabled selected>Seleccione distrito</option>
+            </select>
+            <!-- <select class="mt-1 block w-full" id="tipo_doc" wire:model="state.distrito">
+                <option value="">-Seleccionar-</option>
+                foreach($distritos as $value)
+                <option value="$value->id">$value->name</option>
+                endforeach
+            </select>             -->
+        </div>
+
+        <!-- Direccion -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-label for="direccion" value="Dirección" />
+            <x-input id="direccion" type="text" class="mt-1 block w-full" wire:model="state.direccion" autocomplete="address" />
+            <x-input-error for="direccion" class="mt-2" />
         </div>
 
         <!-- Facebook -->
@@ -135,3 +226,5 @@
         </x-button>
     </x-slot>
 </x-form-section>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<!-- <script src="../../js/select.js"></script> -->

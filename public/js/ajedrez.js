@@ -32,7 +32,6 @@ function otherColor(color) {
   
     const nextTurn = document.querySelectorAll(`.${nextColor}`);
     nextTurn.forEach(chessPiece => enableDrag(chessPiece));
-   
   }
   
   function applyPropOneChessPiece(chessPiece, chessboardPosition) {
@@ -296,6 +295,15 @@ function otherColor(color) {
     }
     
     return {
+      end(){
+        clearInterval(timer);
+        countdownTimer.innerHTML = '';
+      },
+      restart(){
+        minutes = 1;
+        seconds = 59;
+        timer = setInterval(turn, 1000)
+      },
       start() {
         timer = setInterval(turn, 1000)
       },
@@ -330,8 +338,8 @@ function otherColor(color) {
     var changePawn = true;
     var keyCapture;
     let draggedPiece = null;
-    // const whiteTurn = playerTurn("white");
-    // const blackTurn = playerTurn("black");
+    const whiteTurn = playerTurn("white");
+    const blackTurn = playerTurn("black");
 
     function playGame(pieces,playercolor){
       console.log('Turno color Dante');
@@ -400,12 +408,14 @@ function otherColor(color) {
       }
   
       if (color === "white") {
-        // whiteTurn.stop();
-        // blackTurn.start();
+        
+         blackTurn.end();
+         whiteTurn.restart();
         disableAndEnablePieces("white", `black${justKing}`);
       } else if (color === "black") {
-        // blackTurn.stop();
-        // whiteTurn.start();
+     
+        whiteTurn.end();
+        blackTurn.restart();
         disableAndEnablePieces("black", `white${justKing}`);
       }
 

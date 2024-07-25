@@ -766,3 +766,500 @@ hr{
     margin:20px 0;  
   }
   /* FIN PERFIL */
+
+
+/* INICIO SALAS DISPONIBLES */
+.icon {
+  font-family: "Font Awesome 5 Free",  helvetica, sans-serif;
+  font-weight: 900;
+}
+.bg-star { background: #fce035; }
+.bg-shine { background: #f83d80; }
+.bg-dream { background: #0f99bd; }
+
+.sala {
+  max-width: 1100px;
+  margin: 0 auto;
+  color: #1b1a18;
+}
+footer {
+  text-align: center;
+  padding: 50px 0 25px;
+}
+
+/* 切り替えナビ
+------------------- */
+.tabMenu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.tabMenu li {
+  width: calc(33.33% - 2px);
+}
+.tabMenu li a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 0;
+  text-decoration: none;
+  background: #fff;
+  color: #aaa;
+}
+.tabMenu li .current {
+  color: #fff;
+}
+.tabMenu li .current::after {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 15px 7px 0 7px;
+}
+
+
+.star .current { background: #fce035; }
+.star .current::after { border-color: #fce035 transparent transparent transparent; }
+.star .current .typeMark i { color: #fce035; }
+
+.shine .current { background: #f83d80; }
+.shine .current::after { border-color: #f83d80 transparent transparent transparent; }
+.shine .current .typeMark i { color: #f83d80; }
+
+.dream .current { background: #0f99bd; }
+.dream .current::after { border-color: #0f99bd transparent transparent transparent; }
+.dream .current .typeMark i { color: #0f99bd; }
+
+.star .current .bg-star,
+.shine .current .bg-shine,
+.dream .current .bg-dream {
+  background: #fff;
+}
+
+.tabMenu a {
+  /* font-family: 'Baloo Da', cursive; */
+  width: 100%;
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.typeMark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  height: 18px;
+  width: 18px;
+  margin-right: 5px;
+  position: relative;
+}
+.typeMark i {
+  color: #fff;
+  font-size: 10px;
+}
+
+
+/* メイン設定
+------------------- */
+#contents {
+  margin-top: -12px;
+  padding: 25px 25px 0;
+  background: #fff;
+}
+.typeBox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.specBox {
+  width: calc(50% - 10px);
+  font-size: 12px;
+  color: #999;
+  margin-bottom: 30px;
+}
+
+.specBox.ac .ac,
+.specBox.da .da,
+.specBox.vo .vo {
+  font-weight: bold;
+  color: #222;
+}
+.specBox .specialstatus {
+  color: red;
+}
+.specTitle {
+  font-family: 'Baloo Da', cursive;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+.specTitle span {
+  display: block;
+  width: 100px;
+  margin: 0 auto;
+  background: #ccc;
+  color: #fff;
+  border-radius: 20px;
+  padding: 3px;
+  box-sizing: border-box;
+}
+
+.da .specTitle span { background: #fa799f; }
+.vo .specTitle span { background: #4beed2; }
+.ac .specTitle span { background: #ffb13a; }
+
+.specBox dl {
+  display: flex;
+  padding: 10px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  border: 1px solid #eee;
+  margin-bottom: 15px;
+}
+
+.specBox dt {
+  margin-right: 10px;
+}
+.specBox dt img {
+  display: block;
+}
+.specBox dd {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* 数値 */
+.appeal {
+  display: flex;
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+  border-bottom: 1px dotted #ccc;
+  width: 100%;
+  padding-left: 0 !important;
+}
+.appeal li {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+.appeal li:not(:last-child) {
+  margin-right: 15px;
+}
+
+.appeal li::before {
+  color: #fff;
+  display: block;
+  border-radius: 3px;
+  padding: 3px 10px;
+  /* text-align: center; */
+  box-sizing: border-box;
+  font-size: 10px;
+  margin-right: 4px;
+}
+.appeal .da::before {
+  content: "Jugadores";
+  background: #fa799f;
+}
+.appeal .vo::before {
+  content: "Gamer";
+  background: #4beed2;
+}
+.appeal .ac::before {
+  content: "Apuesta";
+  background: #ffb13a;
+}
+
+/* スキル種別 */
+.skill span {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+}
+.skill .main {
+  background: #eee;
+  margin-right: 5px;
+}
+.skill .sub {
+  background: #eee;
+}
+
+/* 解放状況 */
+.option span:not(:last-child) {
+  margin-right: 5px;
+}
+.option span::before {
+  margin-right: 3px;
+}
+
+/* 重ねてる枚数 */
+.icon.star::before {
+  content: "\f005";
+  color: #fbc73f;
+}
+
+/* クラウンチャレンジ */
+.icon.crown::before {
+  content: "\f521";
+  background-image: linear-gradient(to top, lightgrey 0%, lightgrey 1%, #e0e0e0 26%, #efefef 48%, #d9d9d9 75%, #bcbcbc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.icon.crown.gold::before {
+  background-image: linear-gradient(to top, #e6b980 0%, #eacda3 100%);
+}
+.icon.crown.rainbow::before {
+  background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+}
+
+/* 使用ピース */
+.icon.peace::before {
+  content: "\f130";
+  color: #ddd;
+}
+.icon.peace.s01::before {color: #e32a32;}
+.icon.peace.s02::before {color: #315ba5;}
+.icon.peace.s03::before {color: #fbc73f;}
+.icon.peace.s04::before {color: #513f89;}
+.icon.peace.s05::before {color: #ec6d1e;}
+.icon.peace.s06::before {color: #e86378;}
+.icon.peace.s07::before {color: #9ec62f;}
+.icon.peace.s08::before {color: #5fb876;}
+.icon.peace.s09::before {color: #8f2033;}
+.icon.peace.s10::before {color: #ba99c4;}
+.icon.peace.s11::before {color: #b7e1f7;}
+
+/* 1100px以下の時の処理 */
+@media screen and (max-width:1100px) { 
+  .typeBox {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+ 
+/* 681px〜1100pxの間の処理 */
+@media screen and (min-width:681px) and (max-width:1100px) {
+  .specBox {
+    width: 600px;
+  }
+  .specBox dd {
+    align-items: center;
+  }
+  .appeal {
+    width: auto;
+    margin-bottom: 0;
+    padding-bottom: 0; 
+    border-bottom: 0;
+  }
+  .skill {
+    width: auto;
+    margin-bottom: 0;
+    padding-bottom: 0; 
+    border-bottom: 0;
+    /* margin: 0 10px;
+    padding: 0 10px; */
+    /* border-left: 1px solid #ccc;
+    border-right: 1px dotted #ccc; */
+  }
+}
+/* 681px以下の時の処理 */
+@media screen and (max-width:680px) {
+  #contents {
+    padding: 25px 10px;
+  }
+  .specBox {
+    width: 100%;
+  }
+}
+
+.img-redondo{
+  width: 140px;
+  height: 140px;
+  border-radius: 70px;
+}
+/* FIN SALAS DISPONIBLES */
+
+  /* PREMIOS */    
+  /* .center-premios {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+  }
+  
+  .card-premios {
+    width: 430px;
+    height: 180px;
+    background-color: #fff;
+    background: linear-gradient(#f8f8f8, #fff);
+    box-shadow: 0 8px 16px -8px rgba(0,0,0,0.4);
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+    margin: 1.5rem;
+  }
+  
+  .card-premios h1 {
+    text-align: center;
+  }
+  
+  .card-premios .additional {
+    position: absolute;
+    width: 150px;
+    height: 100%;
+    background: linear-gradient(#dE685E, #EE786E);
+    transition: width 0.4s;
+    overflow: hidden;
+    z-index: 2;
+  }
+  
+  .card-premios.green .additional {
+    background: linear-gradient(#92bCa6, #A2CCB6);
+  }
+  
+  
+  .card-premios:hover .additional {
+    width: 100%;
+    border-radius: 0 5px 5px 0;
+  }
+  
+  .card-premios .additional .user-card {
+    width: 150px;
+    height: 100%;
+    position: relative;
+    float: left;
+  }
+  
+  .card-premios .additional .user-card::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 10%;
+    right: -2px;
+    height: 80%;
+    border-left: 2px solid rgba(0,0,0,0.025);
+  }
+  
+  .card-premios .additional .user-card .level,
+  .card-premios .additional .user-card .points {
+    top: 15%;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 0.75em;
+    font-weight: bold;
+    background: rgba(0,0,0,0.15);
+    padding: 0.125rem 0.75rem;
+    border-radius: 100px;
+    white-space: nowrap;
+  }
+  
+  .card-premios .additional .user-card .points {
+    top: 85%;
+  }
+  
+  .card-premios .additional .user-card svg {
+    top: 50%;
+  }
+  
+  .card-premios .additional .more-info {
+    width: 300px;
+    float: left;
+    position: absolute;
+    left: 150px;
+    height: 100%;
+  }
+  
+  .card-premios .additional .more-info h1 {
+    color: #fff;
+    margin-bottom: 0;
+  }
+  
+  .card-premios.green .additional .more-info h1 {
+    color: #224C36;
+  }
+  
+  .card-premios .additional .coords {
+    margin: 0 1rem;
+    color: #fff;
+    font-size: 1rem;
+  }
+  
+  .card-premios.green .additional .coords {
+    color: #325C46;
+  }
+  
+  .card-premios .additional .coords span + span {
+    float: right;
+  }
+  
+  .card-premios .additional .stats {
+    font-size: 2rem;
+    display: flex;
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+    top: auto;
+    color: #fff;
+  }
+  
+  .card-premios.green .additional .stats {
+    color: #325C46;
+  }
+  
+  .card-premios .additional .stats > div {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .card-premios .additional .stats i {
+    display: block;
+  }
+  
+  .card-premios .additional .stats div.title {
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .card-premios .additional .stats div.value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1.5rem;
+  }
+  
+  .card-premios .additional .stats div.value.infinity {
+    font-size: 2.5rem;
+  }
+  
+  .card-premios .general {
+    width: 280px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    box-sizing: border-box;
+    padding: 1rem;
+    padding-top: 0;
+  }
+  
+  .card-premios .general .more {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    font-size: 0.9em;
+  } */
+  
+  /* FIN PREMIOS */

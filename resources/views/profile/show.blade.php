@@ -1,8 +1,11 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            Perfil
-        </h2>
+        <div class="row">
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+             Perfil
+            </h2>
+            <a href="/" style="color:#fff;background-color:#00983A;border-color:#00983A;padding: 8px;border-radius: 10px;float: right;margin-top: -35px;">Volver</a>
+        </div>
     </x-slot>
 
     <div>
