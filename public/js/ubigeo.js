@@ -4,7 +4,7 @@ var ubigeoPeru = {
 
 document.addEventListener('DOMContentLoaded', function() {
 	var request = new XMLHttpRequest;
-	request.open('GET', '../../ubigeo-peru.min.json', true);
+	request.open('GET', '../../ubigeo.json', true);
 	request.onload = onLoad_Request;
 	request.send();
 
@@ -56,7 +56,7 @@ function showProvincesList(departamento) {
 
 	ubigeoPeru.ubigeos.forEach(function(ubigeo) {
 
-		if (ubigeo.departamento === departamento && ubigeo.provincia !== 0 && ubigeo.distrito === '00') {
+		if (ubigeo.departamento === departamento && ubigeo.provincia !== '00' && ubigeo.distrito === '00') {
 
 			var option = document.createElement('option');
 
@@ -94,7 +94,7 @@ function showDistrictsList(departamento, provincia) {
 
 	ubigeoPeru.ubigeos.forEach(function(ubigeo) {
 
-		if (ubigeo.departamento === departamento && ubigeo.provincia === provincia && ubigeo.distrito !== 0) {
+		if (ubigeo.departamento === departamento && ubigeo.provincia === provincia && ubigeo.distrito !== '00') {
 			
 			var option = document.createElement('option');
 

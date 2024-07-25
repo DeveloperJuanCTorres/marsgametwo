@@ -417,9 +417,9 @@
                                                 </div>
                                             </ul>
                                             <ul class="appeal mt-3">
-                                            <li class="ac"><img style="width: 20px;" src="img/marscoin1.png" alt=""> 10</li>
+                                            <li class="ac">10</li>
                                             <li class="da">2/4</li>
-                                            <!-- <li class="vo">2/4</li> -->
+                                            <li class="vo">5 min</li>
                                             </ul>
                                             
                                             <div class="option py-2">
