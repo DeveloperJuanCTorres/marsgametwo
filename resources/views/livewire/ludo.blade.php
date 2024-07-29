@@ -4,8 +4,8 @@
     <div class="grid grid-cols-7 divide-x divide-gray-200">    
 
         <div class="h-[calc(98vh)] col-span-6 xl:col-span-4 lg:col-span-4 sm:col-span-6 bg-white bg-gamer" wire:ignore>
-            <div class="ludo mt-5">
-                <div class="contain">
+            <div class="ludo mt-5" >
+                <div class="contain" >
                     <div class="main-container">
                         <div class="sizing">
                             <div class="homeA">
@@ -228,40 +228,20 @@
 
         </div>
 
-        <div class="col-span-8 sm:col-span-1 bg-white  p-3 content-center" >
+        <div class="col-span-8 sm:col-span-1 bg-white  p-3 content-center" id="boardDiv">
             <div class="control-dice">
                 <div class="diceImage" id="goti">Dice Will Show Up Here</div>
                 <input type="button" value="Start Game" onclick="generaterandom()" id="roll">
             </div>
             <div class="w-full p-2 bg-green-100 border border-gray-200 rounded-lg shadow my-5">
-                <strong >Tú:</strong>
-                <p class="my-2 font-normal text-gray-700 text-center">
-                    @switch($myColor)
-                    @case('white')
-                         Piezas negras ♜ 
-                        @break
-                    @case('black')
-                        Piezas Blancas <span class="text-white">♜</span>
-                        @break
-                    @default
-                @endswitch 
-                </p>
+                <strong >Tú</strong>
+                
                 <h5 class="text-xl font-bold tracking-tight text-gray-900 text-center mb-2"><i class="las la-stopwatch"></i> 1:00</h5>
             </div> 
             <div class="text-center font-bold">VS</div>
             <div class="w-full p-2 bg-white border border-gray-200 rounded-lg shadow my-5">
-                <strong> {{ $adversary->name }}:</strong>
-                <p class="my-2 font-normal text-gray-700 text-center">
-                    @switch($myColor)
-                    @case('black')
-                         Piezas negras ♜ 
-                        @break
-                    @case('white')
-                         Piezas Blancas  <span class="text-gray-300">♜</span>
-                        @break
-                    @default
-                @endswitch 
-                </p>
+                <strong> {{ $adversary->name }}</strong>
+                
                 <h5 class="text-xl font-bold tracking-tight text-gray-900 text-center mb-2"><i class="las la-stopwatch"></i> 1:00</h5>
             </div> 
         </div>
@@ -391,12 +371,49 @@
                     playGame(pieces,playercolor);
                 });
         </script>
+        <script>
+            function data(){
+                return{
+                    init(){
+                        Echo.private('App.Models.User.' + {{ auth()->id() }}).notification((notification) => {
+                            if (notification.type == 'App\\Notifications\\NewMessage') {
+                                Livewire.dispatch('render')
+                            }
+                            if (notification.type == 'App\\Notifications\\NewMove') {
+                                Livewire.dispatch('playGame')
+                            }
+                        });
+                    }
+                }
+            }
+        </script>
 
         <script>
-                function data(){
-                
+            Livewire.on('iniliziateJs', (event) => {
+                if(event[1] == event[2]){
+                    //Activo el tablero para el turno que le coresponde
+                    console.log("quitar belo 1");
+                    document.getElementById('boardDiv').classList.remove('elementor-toggle');
+                }else{
+                    document.getElementById('boardDiv').classList.add('elementor-toggle');
                 }
+            });
+            Livewire.on('notificateEchoJs', (event) => {
+                if(event[1] == event[2]){
+                    console.log('js Sin velo');
+                    console.log(event[1]);
+                    console.log(event[2]);
+                    //Activo el tablero para el turno que le coresponde
+                    document.getElementById('boardDiv').classList.remove('elementor-toggle');
+                    console.log("quitar belo 2");
+                    changeColor(event[1])
+                    message(event[1]);
+
+                }
+                // opponentMove(event[0],event[1]);
+            });
         </script>
+
 
         <script>
             function copiarEmoji(emoji) {

@@ -138,8 +138,9 @@ class Player{
 
 
                     //Guardar moviento debajo del 6 
-                    let position = this.id[i].getAttribute('data-key');
+                    let position = this.id[i].getAttribute('data-list');
                     draughts[position].position = ele.id;
+                    draughts[position].status = 1;
                     Livewire.dispatch('move', {move: draughts, color:nextColor, jump:ele.id, line:"", square:"", eat:0});
                     //-------------
                     
@@ -240,14 +241,13 @@ function removezoom(active){
 function createParts(pieces){
     console.log(pieces);
     for(i=0; i< pieces.length; i++){
-        // const square = document.querySelector(`#${pieces[i].position}`);
         const square = document.getElementById(`${pieces[i].position}`);
         var button = document.createElement("button")
         button.classList.add("btn-ludo");
         button.classList.add(pieces[i].color);
         button.setAttribute('id',pieces[i].id);
         button.setAttribute('data-key',pieces[i].key);
-        // button.onclick = move; 
+        button.setAttribute('data-list',i)
         button.setAttribute('onclick',`move(${pieces[i].id})`);
         button.disabled = true;
         button.textContent = pieces[i].value;
@@ -265,7 +265,6 @@ function createParts(pieces){
                 //  red.id[(pieces[i].key)].classList.add("btnzoom")
             } 
         }
-
         if(yellow.color == pieces[i].color){
             if(pieces[i].status === 1){
                 yellow.status[pieces[i].key]=true;
@@ -273,7 +272,6 @@ function createParts(pieces){
             } 
         }
      }
-
   }
 
 //declaracion del color que inicia
@@ -290,12 +288,18 @@ let active = ""
 let btn = document.getElementById("roll");
 var draughts;
 
+function changeColor(color){
+    let ani = document.getElementById(active)
+    ani.classList.remove("zoom")
+    active = color;
+}
+
 function playGame(pieces,playercolor){
 
     draughts = pieces;
     createParts(pieces);
     active = playercolor;
-    message(active);
+     message(active);
     red = new Player("red",1,51,109)
     yellow = new Player("yellow",14,12,209)
     activeStatus(pieces);
@@ -331,7 +335,8 @@ async function generaterandom(){
     die=dice
     console.log('resultado:');
     console.log(die)
-    activePlayer(die)
+   
+    activePlayer(die);
 }
 
 
@@ -375,6 +380,7 @@ function activePlayer(dice){
         }
         console.log('active -*-*')
         console.log(active)
+        // document.getElementById('boardDiv').classList.add('elementor-toggle');
     }
     else if(active === "yellow"){
         if(dice===6){
@@ -382,7 +388,6 @@ function activePlayer(dice){
             yellow.setStatus()
         }
         else if(yellow.getStatus()===false){
-
             //Guardar registro cuando no hay movimiento ;
             Livewire.dispatch('move', {move: draughts, color:"red", jump:0, line:"", square:"", eat:0});
             //-------------
@@ -395,6 +400,7 @@ function activePlayer(dice){
             yellow.enableBtn()
         }
         console.log(active)
+        // document.getElementById('boardDiv').classList.add('elementor-toggle');
     }
     // else if(active === "blue"){
     //     if(dice===6){
@@ -431,18 +437,15 @@ function activePlayer(dice){
     // }
 }
 
-
 // function move(event){
 function move(id){
     // event.preventDefault();
-    
     // var id = event.target.id;
     switch (active){
         case 'red':
             if(red.getElementStatus(id-101)==false){
                 red.openMove(id)
                 die=0
-                console.log("move move moveS red")
             }
             else{
                 console.log("red")
@@ -450,15 +453,12 @@ function move(id){
                 deactivateSubPlayer()
                 active = "yellow"
                 message(active)
-                console.log("seleccionar red")
             }
-            console.log(active)
             break
         case 'yellow':
             if(yellow.getElementStatus(id-201)==false){
                 yellow.openMove(id)
                 die=0
-
             }
             else{
                 console.log("yel")
@@ -467,7 +467,6 @@ function move(id){
                 active = "red"
                 message(active)
             }
-            console.log(active)
             break
         // case 'blue':
         //     if(blue.getElementStatus(id-301)==false){

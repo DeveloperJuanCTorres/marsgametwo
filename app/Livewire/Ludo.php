@@ -19,7 +19,6 @@ class Ludo extends Component
      public $player;
      public $myColor;
      public $userAdversary;
- 
      // public $jump;
      // public $line;
      // public $square;
@@ -35,7 +34,7 @@ class Ludo extends Component
          //-------------Obtener el color que se asignó------
          $myUser = $this->game->myUser;
          $this->myColor = $myUser->pivot->color;
-          //----------------------
+         //----------------------
          $this->InitBoard();
      }
  
@@ -87,7 +86,7 @@ class Ludo extends Component
              'square'=>$square,
              'timer_end'=>$now,
          ]);
-        //  Notification::send($this->userAdversary, new \App\Notifications\NewMove());
+         Notification::send($this->userAdversary, new \App\Notifications\NewMove());
      }
  
      //Propiedad computadas

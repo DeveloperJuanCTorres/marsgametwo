@@ -37,6 +37,10 @@ class Hall extends Component
             case 'Ajedrez':
                 $game->users()->attach([auth()->user()->id =>['color'=>'black'], $user_id=>['color'=>'white']]);
                 break;
+
+            case 'Ludo':
+                $game->users()->attach([auth()->user()->id =>['color'=>'red'], $user_id=>['color'=>'yellow']]);
+                break;
             
             default:
                 $game->users()->attach([auth()->user()->id =>['color'=>'B'], $user_id=>['color'=>'W']]);
