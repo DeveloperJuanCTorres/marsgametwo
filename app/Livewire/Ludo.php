@@ -40,36 +40,16 @@ class Ludo extends Component
      }
  
      public function InitBoard(){
-        //  $draughtsInitial = 
-        //         '[{"color": "red", "id": 101,"position": "red101","value":"1"},
-        //         {"color": "red", "id": 102,"position": "red102","value":"2"},
-        //         {"color": "red", "id": 103,"position": "red103","value":"3"},
-        //         {"color": "red", "id": 104,"position": "red104","value":"4"},
-        //         {"color": "yellow", "id": 201,"position": "yellow201","value":"1"},
-        //         {"color": "yellow", "id": 202,"position": "yellow202","value":"2"},
-        //         {"color": "yellow", "id": 203,"position": "yellow203","value":"3"},
-        //         {"color": "yellow", "id": 204,"position": "yellow204","value":"4"},
-        //         {"color": "blue", "id": 301,"position": "blue301","value":"1"},
-        //         {"color": "blue", "id": 302,"position": "blue302","value":"2"},
-        //         {"color": "blue", "id": 303,"position": "blue303","value":"3"},
-        //         {"color": "blue", "id": 304,"position": "blue304","value":"4"},
-        //         {"color": "green", "id": 401,"position": "green401","value":"1"},
-        //         {"color": "green", "id": 402,"position": "green402","value":"2"},
-        //         {"color": "green", "id": 403,"position": "green403","value":"3"},
-        //         {"color": "green", "id": 404,"position": "green404","value":"4"}
-        //         ]';
-
-
-                $draughtsInitial = 
-                '[{"color": "red", "id": 101,"position": "red101","value":"1"},
-                {"color": "red", "id": 102,"position": "red102","value":"2"},
-                {"color": "red", "id": 103,"position": "red103","value":"3"},
-                {"color": "red", "id": 104,"position": "red104","value":"4"},
-                {"color": "yellow", "id": 201,"position": "yellow201","value":"1"},
-                {"color": "yellow", "id": 202,"position": "yellow202","value":"2"},
-                {"color": "yellow", "id": 203,"position": "yellow203","value":"3"},
-                {"color": "yellow", "id": 204,"position": "yellow204","value":"4"}
-                ]';
+            $draughtsInitial = 
+            '[{"color": "red", "id": 101,"position": "red101","value":"1","key":0,"status":0},
+            {"color": "red", "id": 102,"position": "red102","value":"2","key":1,"status":0},
+            {"color": "red", "id": 103,"position": "red103","value":"3","key":2,"status":0},
+            {"color": "red", "id": 104,"position": "red104","value":"4","key":3,"status":0},
+            {"color": "yellow", "id": 201,"position": "yellow201","value":"1","key":0,"status":0},
+            {"color": "yellow", "id": 202,"position": "yellow202","value":"2","key":1,"status":0},
+            {"color": "yellow", "id": 203,"position": "yellow203","value":"3","key":2,"status":0},
+            {"color": "yellow", "id": 204,"position": "yellow204","value":"4","key":3,"status":0}
+            ]';
          //consulto el ultimo movimiento para dibujar el tablero si no hay moviemeos agrego el tablero inicial
          $stringMove = $this->game->moves()->get()->last()?? [];
          if($stringMove) {

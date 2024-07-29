@@ -15,9 +15,10 @@ class Player{
         let elements = document.getElementsByClassName(el)
         for(let i = 0; i < elements.length; i++)
             {
-            this.id[i]=elements[i]
-            console.log(this.id[i])
-            console.log(this.id[i].id)
+                var index = elements[i].getAttribute('data-key');
+                this.id[index]=elements[i]
+                // console.log(this.id[i])
+                // console.log(this.id[i].id)
             }
         
         this.steps = new Array(4).fill(0)
@@ -74,22 +75,20 @@ class Player{
             }
         }
         for(let i=0;i<4; i++){
-            
-                this.id[i].disabled=true
-                this.id[i].classList.remove("btnzoom")
-            
+            this.id[i].disabled=true
+            this.id[i].classList.remove("btnzoom")
         }
     }
     enableBtn(){
+        console.log('enableBtn');
         for(let i=0;i<4; i++){
             if(this.status[i]==true){
                 this.id[i].disabled=false
-
                 this.id[i].classList.add("btnzoom")
             }
         }
     }
-    movePlayer(el,val){
+    movePlayer(el,val,nextColor){
         let dest=0
         let fl=false
             for(let i = 0; i<4; i++){
@@ -141,7 +140,7 @@ class Player{
                     //Guardar moviento debajo del 6 
                     let position = this.id[i].getAttribute('data-key');
                     draughts[position].position = ele.id;
-                    Livewire.dispatch('move', {move: draughts, color:this.color, jump:ele.id, line:"", square:"", eat:0});
+                    Livewire.dispatch('move', {move: draughts, color:nextColor, jump:ele.id, line:"", square:"", eat:0});
                     //-------------
                     
                     
@@ -239,6 +238,7 @@ function removezoom(active){
 
 
 function createParts(pieces){
+    console.log(pieces);
     for(i=0; i< pieces.length; i++){
         // const square = document.querySelector(`#${pieces[i].position}`);
         const square = document.getElementById(`${pieces[i].position}`);
@@ -246,13 +246,34 @@ function createParts(pieces){
         button.classList.add("btn-ludo");
         button.classList.add(pieces[i].color);
         button.setAttribute('id',pieces[i].id);
-        button.setAttribute('data-key',i);
+        button.setAttribute('data-key',pieces[i].key);
         // button.onclick = move; 
         button.setAttribute('onclick',`move(${pieces[i].id})`);
         button.disabled = true;
         button.textContent = pieces[i].value;
         square.appendChild(button);
     }
+  }
+
+  function activeStatus(pieces){
+    for(i=0; i< pieces.length; i++){
+        if(red.color == pieces[i].color){
+            if(pieces[i].status === 1){
+                red.status[pieces[i].key]=true;
+                red.setStatus();
+                // red.steps[pieces[i].key]=4;
+                //  red.id[(pieces[i].key)].classList.add("btnzoom")
+            } 
+        }
+
+        if(yellow.color == pieces[i].color){
+            if(pieces[i].status === 1){
+                yellow.status[pieces[i].key]=true;
+                yellow.setStatus();
+            } 
+        }
+     }
+
   }
 
 //declaracion del color que inicia
@@ -270,14 +291,17 @@ let btn = document.getElementById("roll");
 var draughts;
 
 function playGame(pieces,playercolor){
-    console.log('Turno color Dante');
+
     draughts = pieces;
     createParts(pieces);
     active = playercolor;
     message(active);
-
     red = new Player("red",1,51,109)
     yellow = new Player("yellow",14,12,209)
+    activeStatus(pieces);
+
+    console.log(yellow);
+
     // blue = new Player("blue",27,25,309)
     // green = new Player("green",40,38,409)
     image = new Map([
@@ -301,6 +325,7 @@ async function generaterandom(){
     goti.style.backgroundImage = 'url('+image.get(7)+')'
     goti.textContent=""
 
+    console.log('***************');
     await adddice(dice)
     await removezoom(active)
     die=dice
@@ -311,6 +336,7 @@ async function generaterandom(){
 
 
 function message(msg){
+    console.log('message');
     let ani = document.getElementById(msg)
     console.log(ani)
         ani.classList.add("zoom")
@@ -324,20 +350,30 @@ function message(msg){
 
 function activePlayer(dice){
     
+    console.log('activePlayer')
+
     if(active === "red"){
         
         if(dice===6){
+            console.log('*op-6');
             red.activatePlayer()
             red.setStatus()
         }
         else if(red.getStatus()===false){
+            console.log('*op----Nose');
+            //Guardar registro cuando no hay movimiento ;
+            Livewire.dispatch('move', {move: draughts, color:"yellow", jump:0, line:"", square:"", eat:0});
+            //-------------
             active = "yellow"
             message(active)
-            btn.disabled=false
+            btn.disabled=false;
         }
         else{
+            console.log('*op++++++UMM');
             red.enableBtn()
+            console.log(red);
         }
+        console.log('active -*-*')
         console.log(active)
     }
     else if(active === "yellow"){
@@ -346,6 +382,10 @@ function activePlayer(dice){
             yellow.setStatus()
         }
         else if(yellow.getStatus()===false){
+
+            //Guardar registro cuando no hay movimiento ;
+            Livewire.dispatch('move', {move: draughts, color:"red", jump:0, line:"", square:"", eat:0});
+            //-------------
             // active = "blue"
             active = "red"
             message(active)
@@ -402,15 +442,15 @@ function move(id){
             if(red.getElementStatus(id-101)==false){
                 red.openMove(id)
                 die=0
-
+                console.log("move move moveS red")
             }
             else{
                 console.log("red")
-                red.movePlayer(id,die)
+                red.movePlayer(id,die,"yellow")
                 deactivateSubPlayer()
                 active = "yellow"
                 message(active)
-                
+                console.log("seleccionar red")
             }
             console.log(active)
             break
@@ -422,7 +462,7 @@ function move(id){
             }
             else{
                 console.log("yel")
-                yellow.movePlayer(id,die)
+                yellow.movePlayer(id,die,"red")
                 deactivateSubPlayer()
                 active = "red"
                 message(active)
