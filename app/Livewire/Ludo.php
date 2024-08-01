@@ -10,18 +10,15 @@ use Livewire\Attributes\On;
 
 class Ludo extends Component
 {
-
      //Falta El cambio de pieza cuando el peon llega al otro lado
      public $game, $adversary,$contact_id;
      public $chat;
      public $users;
      public $bodyMessage;
- 
      public $draughts;
      public $player;
      public $myColor;
      public $userAdversary;
- 
      // public $jump;
      // public $line;
      // public $square;
@@ -37,43 +34,21 @@ class Ludo extends Component
          //-------------Obtener el color que se asignó------
          $myUser = $this->game->myUser;
          $this->myColor = $myUser->pivot->color;
-          //----------------------
+         //----------------------
          $this->InitBoard();
      }
  
      public function InitBoard(){
-         $draughtsInitial = '[{"name": "rook","line": "l1","square": "c1","figure": "♜","color": "white","state": 1},
-             {"name": "knight","line": "l1","square": "c2","figure": "♞","color": "white","state": 1},
-             {"name": "bishop","line": "l1","square": "c3","figure": "♝","color": "white","state": 1},
-             {"name": "queen","line": "l1","square": "c4","figure": "♛","color": "white","state": 1},
-             {"name": "king","line": "l1","square": "c5","figure": "♚","color": "white","state": 1},
-             {"name": "bishop","line": "l1","square": "c6","figure": "♝","color": "white","state": 1},
-             {"name": "knight","line": "l1","square": "c7","figure": "♞","color": "white","state": 1},
-             {"name": "rook","line": "l1","square": "c8","figure": "♜","color": "white","state": 1},
-             {"name": "pawn","line": "l2","square": "c1","figure": "♙","color": "white","state": 1},
-             {"name": "pawn","line": "l2","square": "c2","figure": "♙","color": "white","state": 1},
-             {"name": "pawn","line": "l2","square": "c3","figure": "♙","color": "white","state": 1},
-             {"name": "pawn","line": "l2","square": "c4","figure": "♙","color": "white","state": 1},
-             {"name": "pawn","line": "l2","square": "c5","figure": "♙","color": "white","state": 1},
-             {"name": "pawn","line": "l2","square": "c6","figure": "♙","color": "white","state": 1},
-             {"name": "pawn","line": "l2","square": "c7","figure": "♙","color": "white","state": 1},
-             {"name": "pawn","line": "l2","square": "c8","figure": "♙","color": "white","state": 1},
-             {"name": "pawn","line": "l7","square": "c1","figure": "♙","color": "black","state": 1},
-             {"name": "pawn","line": "l7","square": "c2","figure": "♙","color": "black","state": 1},
-             {"name": "pawn","line": "l7","square": "c3","figure": "♙","color": "black","state": 1},
-             {"name": "pawn","line": "l7","square": "c4","figure": "♙","color": "black","state": 1},
-             {"name": "pawn","line": "l7","square": "c5","figure": "♙","color": "black","state": 1},
-             {"name": "pawn","line": "l7","square": "c6","figure": "♙","color": "black","state": 1},
-             {"name": "pawn","line": "l7","square": "c7","figure": "♙","color": "black","state": 1},
-             {"name": "pawn","line": "l7","square": "c8","figure": "♙","color": "black","state": 1},
-             {"name": "rook","line": "l8","square": "c1","figure": "♜","color": "black","state": 1},
-             {"name": "knight","line": "l8","square": "c2","figure": "♞","color": "black","state": 1},
-             {"name": "bishop","line": "l8","square": "c3","figure": "♝","color": "black","state": 1},
-             {"name": "queen","line": "l8","square": "c4","figure": "♛","color": "black","state": 1},
-             {"name": "king","line": "l8","square": "c5","figure": "♚","color": "black","state": 1},
-             {"name": "bishop","line": "l8","square": "c6","figure": "♝","color": "black","state": 1},
-             {"name": "knight","line": "l8","square": "c7","figure": "♞","color": "black","state": 1},
-             {"name": "rook","line": "l8","square": "c8","figure": "♜","color": "black","state": 1}]';
+            $draughtsInitial = 
+            '[{"color": "red", "id": 101,"position": "red101","value":"1","key":0,"status":0},
+            {"color": "red", "id": 102,"position": "red102","value":"2","key":1,"status":0},
+            {"color": "red", "id": 103,"position": "red103","value":"3","key":2,"status":0},
+            {"color": "red", "id": 104,"position": "red104","value":"4","key":3,"status":0},
+            {"color": "yellow", "id": 201,"position": "yellow201","value":"1","key":0,"status":0},
+            {"color": "yellow", "id": 202,"position": "yellow202","value":"2","key":1,"status":0},
+            {"color": "yellow", "id": 203,"position": "yellow203","value":"3","key":2,"status":0},
+            {"color": "yellow", "id": 204,"position": "yellow204","value":"4","key":3,"status":0}
+            ]';
          //consulto el ultimo movimiento para dibujar el tablero si no hay moviemeos agrego el tablero inicial
          $stringMove = $this->game->moves()->get()->last()?? [];
          if($stringMove) {
@@ -86,7 +61,7 @@ class Ludo extends Component
                  'eat' =>  $stringMove->position,
              ];
          } else{
-             $this->player = 'black';
+             $this->player = 'red';
              $this->draughts = json_decode($draughtsInitial);
              $this->move = [
                  'jump' => 0,

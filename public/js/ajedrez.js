@@ -32,7 +32,6 @@ function otherColor(color) {
   
     const nextTurn = document.querySelectorAll(`.${nextColor}`);
     nextTurn.forEach(chessPiece => enableDrag(chessPiece));
-   
   }
   
   function applyPropOneChessPiece(chessPiece, chessboardPosition) {

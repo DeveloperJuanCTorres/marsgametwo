@@ -2,30 +2,28 @@
 
 <div x-data="data()" class="bg-gray-100 shadow border border-gray-300 overflow-hidden ">
     <div class="grid grid-cols-7 divide-x divide-gray-200">    
-        
+
         <div class="h-[calc(98vh)] col-span-6 xl:col-span-4 lg:col-span-4 sm:col-span-6 bg-white bg-gamer" wire:ignore>
-         
-            
-            <div class="ludo mt-5">
-                <div class="contain">
+            <div class="ludo mt-5" >
+                <div class="contain" >
                     <div class="main-container">
                         <div class="sizing">
                             <div class="homeA">
                                 <div class="circle" id="red">
                                     <div>
                                         <div class="innercircle" id="red101">
-                                            <button class="btn-ludo red" id="101" onclick="move(this.id)" disabled>1</button>
+                                           
                                         </div>
                                         <div class="innercircle" id="red102">
-                                            <button class="btn-ludo  red" id="102" onclick="move(102)" disabled>2</button>
+                                           
                                         </div>
                                     </div>    
                                     <div>
                                         <div class="innercircle" id="red103">
-                                            <button class="btn-ludo red" id="103" onclick="move(103)" disabled>3</button>
+                                          
                                         </div>
                                         <div class="innercircle" id="red104">
-                                            <button class=" btn-ludo red" id="104" onclick="move(104)" disabled>4</button>
+                                           
                                         </div>
                                     </div>
                                 </div>
@@ -64,18 +62,18 @@
                                 <div class="circle" id="yellow">
                                     <div>
                                         <div class="innercircle" id="yellow201">
-                                            <button class="btn-ludo yellow" id="201" onclick="move(this.id)" disabled>1</button>
+                                            
                                         </div>
                                         <div class="innercircle" id="yellow202">
-                                            <button class="btn-ludo yellow" id="202" onclick="move(202)" disabled>2</button>
+                                            
                                         </div>
                                     </div>    
                                     <div>
                                         <div class="innercircle" id="yellow203">
-                                            <button class="btn-ludo yellow" id="203" onclick="move(203)" disabled>3</button>
+                                          
                                         </div>
                                         <div class="innercircle" id="yellow204">
-                                            <button class="btn-ludo yellow" id="204" onclick="move(204)" disabled>4</button>
+                                          
                                         </div>
                                     </div>
                                 </div>
@@ -155,18 +153,18 @@
                                 <div class="circle" id="green">
                                     <div>
                                         <div class="innercircle" id="green401" >
-                                            <button class="btn-ludo green" id="401" onclick="move(this.id)" disabled>1</button>
+                                           
                                         </div>
                                         <div class="innercircle" id="green402">
-                                            <button class="btn-ludo green" id="402" onclick="move(402)" disabled>2</button>
+                                          
                                         </div>
                                     </div>    
                                     <div>
                                         <div class="innercircle" id="green403">
-                                            <button class="btn-ludo green" id="403" onclick="move(403)" disabled>3</button>
+                                          
                                         </div>
                                         <div class="innercircle" id="green404">
-                                            <button class="btn-ludo green" id="404" onclick="move(404)" disabled>4</button>
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -207,67 +205,43 @@
                                 <div class="circle" id="blue">
                                     <div>
                                         <div class="innercircle" id="blue301" >
-                                            <button class="btn-ludo blue" id="301" onclick="move(this.id)" disabled>1</button>
+                                         
                                         </div>
                                         <div class="innercircle" id="blue302">
-                                            <button class="btn-ludo blue" id="302" onclick="move(302)" disabled>2</button>
+                                          
                                         </div>
                                     </div>    
                                     <div>
                                         <div class="innercircle" id="blue303">
-                                            <button class="btn-ludo blue" id="303" onclick="move(303)" disabled>3</button>
+                                          
                                         </div>
                                         <div class="innercircle" id="blue304">
-                                            <button class="btn-ludo blue" id="304" onclick="move(304)" disabled>4</button>
+                                           
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    {{-- <div class="control-dice">
-                        <div class="diceImage" id="goti">Dice Will Show Up Here</div>
-                        <input type="button" value="Start Game" onclick="generaterandom()" id="roll">
-                    </div> --}}
                 </div>
             </div>
 
         </div>
 
-        <div class="col-span-8 sm:col-span-1 bg-white bg-white p-3 content-center" >
+        <div class="col-span-8 sm:col-span-1 bg-white  p-3 content-center" id="boardDiv">
             <div class="control-dice">
                 <div class="diceImage" id="goti">Dice Will Show Up Here</div>
                 <input type="button" value="Start Game" onclick="generaterandom()" id="roll">
             </div>
             <div class="w-full p-2 bg-green-100 border border-gray-200 rounded-lg shadow my-5">
-                <strong >Tú:</strong>
-                <p class="my-2 font-normal text-gray-700 text-center">
-                    @switch($myColor)
-                    @case('white')
-                         Piezas negras ♜ 
-                        @break
-                    @case('black')
-                        Piezas Blancas <span class="text-white">♜</span>
-                        @break
-                    @default
-                @endswitch 
-                </p>
+                <strong >Tú</strong>
+                
                 <h5 class="text-xl font-bold tracking-tight text-gray-900 text-center mb-2"><i class="las la-stopwatch"></i> 1:00</h5>
             </div> 
             <div class="text-center font-bold">VS</div>
             <div class="w-full p-2 bg-white border border-gray-200 rounded-lg shadow my-5">
-                <strong> {{ $adversary->name }}:</strong>
-                <p class="my-2 font-normal text-gray-700 text-center">
-                    @switch($myColor)
-                    @case('black')
-                         Piezas negras ♜ 
-                        @break
-                    @case('white')
-                         Piezas Blancas  <span class="text-gray-300">♜</span>
-                        @break
-                    @default
-                @endswitch 
-                </p>
+                <strong> {{ $adversary->name }}</strong>
+                
                 <h5 class="text-xl font-bold tracking-tight text-gray-900 text-center mb-2"><i class="las la-stopwatch"></i> 1:00</h5>
             </div> 
         </div>
@@ -389,28 +363,72 @@
 
     
     @push('js')
-      <script src="{{asset('js/ludo.js')}}?v=1993.1.13"></script> 
+        <script src="{{asset('js/ludo.js')}}?v=1993.1.13"></script> 
+        <script>
+                document.addEventListener('livewire:initialized', function () {
+                    var pieces = @this.draughts;
+                    var playercolor = @this.player;
+                    playGame(pieces,playercolor);
+                });
+        </script>
+        <script>
+            function data(){
+                return{
+                    init(){
+                        Echo.private('App.Models.User.' + {{ auth()->id() }}).notification((notification) => {
+                            if (notification.type == 'App\\Notifications\\NewMessage') {
+                                Livewire.dispatch('render')
+                            }
+                            if (notification.type == 'App\\Notifications\\NewMove') {
+                                Livewire.dispatch('playGame')
+                            }
+                        });
+                    }
+                }
+            }
+        </script>
 
-   
+        <script>
+            Livewire.on('iniliziateJs', (event) => {
+                if(event[1] == event[2]){
+                    //Activo el tablero para el turno que le coresponde
+                    console.log("quitar belo 1");
+                    document.getElementById('boardDiv').classList.remove('elementor-toggle');
+                }else{
+                    document.getElementById('boardDiv').classList.add('elementor-toggle');
+                }
+            });
+            Livewire.on('notificateEchoJs', (event) => {
+                if(event[1] == event[2]){
+                    console.log('js Sin velo');
+                    console.log(event[1]);
+                    console.log(event[2]);
+                    //Activo el tablero para el turno que le coresponde
+                    document.getElementById('boardDiv').classList.remove('elementor-toggle');
+                    console.log("quitar belo 2");
+                    changeColor(event[1])
+                    message(event[1]);
 
-       
+                }
+                // opponentMove(event[0],event[1]);
+            });
+        </script>
 
-        
 
-      <script>
-          function copiarEmoji(emoji) {
-              if(@this.bodyMessage){
-                  @this.bodyMessage =  @this.bodyMessage + emoji;
-              }else{
-                  @this.bodyMessage =  emoji;
-              }
-          }
-          Livewire.on('scrollIntoView', function() {
-              var aux = document.getElementById('final');
-              if(aux){
-                  aux.scrollIntoView(true);
-              }
-          });
-      </script>
+        <script>
+            function copiarEmoji(emoji) {
+                if(@this.bodyMessage){
+                    @this.bodyMessage =  @this.bodyMessage + emoji;
+                }else{
+                    @this.bodyMessage =  emoji;
+                }
+            }
+            Livewire.on('scrollIntoView', function() {
+                var aux = document.getElementById('final');
+                if(aux){
+                    aux.scrollIntoView(true);
+                }
+            });
+        </script>
     @endpush
 </div>

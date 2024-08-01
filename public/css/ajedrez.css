@@ -233,14 +233,14 @@ footer a:active {
       display: block;
     }
     .boardAlf {
-        height: 11vmin;
+        width: 11vmin;
     }
     .square {
       width: 11vmin;
       height: 11vmin;
     }
     .container{
-      height: 90vmin;
+      height: 93vmin;
     }
     .square > .white, .square > .black {
       font-size: 10.5vmin;
@@ -275,4 +275,3 @@ footer a:active {
     width: 100%;
     text-align: center;
   }
-
