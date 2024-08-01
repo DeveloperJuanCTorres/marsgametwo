@@ -217,7 +217,7 @@
                                                     <i class="las la-award text-white" style="font-size: 30px;"></i>   
                                                     <span class="text-white ml-2">Premios</span>  
                                                 </a>     
-                                                <a href="javascript:void(0)" type="button" class="w-100 rounded btn btn-primary d-flex align-items-center p-3 mb-2 crear_campeonato">
+                                                <a href="javascript:void(0)" type="button" class="w-100 rounded btn btn-dark d-flex align-items-center p-3 mb-2 crear_campeonato">
                                                     <i class="lab la-playstation text-white" style="font-size: 30px;"></i>
                                                     <span class="text-white ml-2">Campeonatos</span>
                                                 </a>                                         
