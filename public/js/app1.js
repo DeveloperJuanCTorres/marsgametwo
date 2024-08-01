@@ -491,6 +491,13 @@
         $('#exampleModal').modal('show')
     })
 
+    //CREAR CAMPEONATO
+    $('.crear_campeonato').click(function (){
+        $('#mobile_menwrap').removeClass('active')
+        $('#juego').val('0').selected
+        $('#campeonatoModal').modal('show')
+    })
+
     //SALA AJEDREZ
     $('.sala_ajedrez').click(function (){
         $('#juego').val('1').selected

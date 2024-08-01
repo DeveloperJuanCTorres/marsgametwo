@@ -216,7 +216,11 @@
                                                 <a href="javascript:void(0)" class="w-100 rounded btn btn-info d-flex align-items-center p-3 mb-2 open_premios">
                                                     <i class="las la-award text-white" style="font-size: 30px;"></i>   
                                                     <span class="text-white ml-2">Premios</span>  
-                                                </a>                                               
+                                                </a>     
+                                                <a href="javascript:void(0)" type="button" class="w-100 rounded btn btn-primary d-flex align-items-center p-3 mb-2 crear_campeonato">
+                                                    <i class="lab la-playstation text-white" style="font-size: 30px;"></i>
+                                                    <span class="text-white ml-2">Campeonatos</span>
+                                                </a>                                         
                                             </div>  
                                         </div>                                                                           
                                     </div>
@@ -1910,7 +1914,7 @@
                         <div class="row p-2">
                             <div class="col-md-6 col-sm-12">
                                 <label for="tipo">Juego</label>
-                                <select class="form-select" id="juego" aria-label="Default select example">                                
+                                <select class="form-select" id="juego" aria-label="Default select example" onclick="myFunction()">                                
                                     <option value="0" selected disabled>-Seleccionar-</option>
                                     <option value="1">Ajedrez</option>
                                     <option value="2">Damas</option>
@@ -1931,14 +1935,31 @@
                         <div class="row p-2">
                             <div class="col-md-6 col-sm-12">
                                 <label for="tiempo">Tiempo por Jugador</label>
-                                <input require type="number" class="form-control" id="tiempo" placeholder="Rango: 1min - 5min">
+                                <select require class="form-select" aria-label="Default select example">
+                                    <option value="0" selected disabled>-Seleccionar-</option>
+                                    <option value="1" >5 min</option>
+                                    <option value="2">10 min</option>
+                                    <option value="3">15 min</option>
+                                </select>
+                                <!-- <input require type="number" class="form-control" id="tiempo" placeholder="Rango: 1min - 5min"> -->
                             </div>
                             <div class="col-md-6 col-sm-12">
                                 <label for="apuesta">Monto de Apuesta</label>
-                                <div class="input-group mb-3">
+                                <div class="input-group">
                                     <span class="input-group-text" id="basic-addon1">S/.</span>
                                     <input require type="number" class="form-control" placeholder="Min: 1.00">
                                 </div>
+                            </div>
+                        </div>
+                        <div class="row p-2 d-none" id="color">
+                            <div class="col-md-6 col-sm-12">
+                                <label for="tiempo">Color de Ficha</label>
+                                <select require class="form-select" aria-label="Default select example">
+                                    <option value="0" selected disabled>-Seleccionar-</option>
+                                    <option value="1" >Aleatorio</option>
+                                    <option value="2">Blancas / Negras</option>
+                                    <option value="3">Negras / Blancas</option>
+                                </select>
                             </div>
                         </div>
                     </div>
@@ -1953,7 +1974,186 @@
     </div>
     <!-- Fin Modal -->
 
-        <script type="text/javascript">
+    <!-- Modal Crear campeonato -->
+    <div class="modal fade" id="campeonatoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Crear Campeonato</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form method="GET" action="{{route('hall')}}" >
+            @csrf
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row p-2">
+                            <div class="col-md-6 col-sm-12">
+                                <label for="tipo">Juego</label>
+                                <select class="form-select" id="juego1" aria-label="Default select example" onclick="myFunction1()">                                
+                                    <option value="0" selected disabled>-Seleccionar-</option>
+                                    <option value="1">Ajedrez</option>
+                                    <option value="2">Damas</option>
+                                    <option value="3">Serpientes</option>
+                                    <option value="4">Ludo</option>
+                                    <option value="5">Ocho Loco</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                                <label for="tipo">Tipo de Campeonato</label>
+                                <select require class="form-select" aria-label="Default select example">
+                                    <option value="1">Pública</option>
+                                    <option value="2">Privada</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row p-2">
+                            <div class="col-md-6 col-sm-12">
+                                <label for="tiempo">Tiempo por Jugador</label>
+                                <select require class="form-select" aria-label="Default select example">
+                                    <option value="0" selected disabled>-Seleccionar-</option>
+                                    <option value="1" >5 min</option>
+                                    <option value="2">10 min</option>
+                                    <option value="3">15 min</option>
+                                </select>
+                                <!-- <input require type="number" class="form-control" id="tiempo" placeholder="Rango: 1min - 5min"> -->
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                                <label for="apuesta">Monto de Apuesta</label>
+                                <div class="input-group">
+                                    <span class="input-group-text" id="basic-addon1">S/.</span>
+                                    <input require type="number" class="form-control" placeholder="Min: 1.00">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row p-2" >
+                            <div class="col-md-6 col-sm-12 d-none" id="color1">
+                                <label for="ficha">Color de Ficha</label>
+                                <select require class="form-select" aria-label="Default select example">
+                                    <option value="0" selected disabled>-Seleccionar-</option>
+                                    <option value="1" >Aleatorio</option>
+                                    <option value="2">Blancas / Negras</option>
+                                    <option value="3">Negras / Blancas</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6 col-sm-12 d-none" id="opcion1">
+                                <label for="cantidad">Cantidad de Jugadores</label>
+                                <select require class="form-select" aria-label="Default select example">
+                                    <option value="0" selected disabled>-Seleccionar-</option>
+                                    <option value="1" >8 jugadores</option>
+                                    <option value="2">16 jugadores</option>
+                                    <option value="3">32 jugadores</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6 col-sm-12 d-none" id="opcion2">
+                                <label for="cantidad">Cantidad de Jugadores</label>
+                                <select require class="form-select" aria-label="Default select example">
+                                    <option value="0" selected disabled>-Seleccionar-</option>
+                                    <option value="4" >16 jugadores</option>
+                                    <option value="5">64 jugadores</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                                <label for="apuesta">Fecha y Hora</label>
+                                <input require type="datetime-local" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">Crear Sala</button>
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+    <!-- Fin Modal -->
+
+    <script type="text/javascript">
+
+        function myFunction() {
+            if ($("#juego").val() == 1){
+                $('#color').removeClass('d-none')
+                $('#color').addClass('d-block')
+            } 
+            if ($("#juego").val() == 2){
+                $('#color').removeClass('d-none')
+                $('#color').addClass('d-block')
+            }
+            if ($("#juego").val() == 3){
+                $('#color').removeClass('d-block')
+                $('#color').addClass('d-none')
+            }
+            if ($("#juego").val() == 4){
+                $('#color').removeClass('d-block')
+                $('#color').addClass('d-none')
+            }
+            if ($("#juego").val() == 5){
+                $('#color').removeClass('d-block')
+                $('#color').addClass('d-none')
+            }
+            if ($("#juego").val() == 6){
+                $('#color').removeClass('d-block')
+                $('#color').addClass('d-none')
+            }
+        }
+
+        function myFunction1() {
+            if ($("#juego1").val() == 1){
+                $('#color1').removeClass('d-none')
+                $('#color1').addClass('d-block')
+
+                $('#opcion1').removeClass('d-none')
+                $('#opcion1').addClass('d-block')
+                $('#opcion2').removeClass('d-block')
+                $('#opcion2').addClass('d-none')
+            } 
+            if ($("#juego1").val() == 2){
+                $('#color1').removeClass('d-none')
+                $('#color1').addClass('d-block')
+
+                $('#opcion1').removeClass('d-none')
+                $('#opcion1').addClass('d-block')
+                $('#opcion2').removeClass('d-block')
+                $('#opcion2').addClass('d-none')
+            }
+            if ($("#juego1").val() == 3){
+                $('#color1').removeClass('d-block')
+                $('#color1').addClass('d-none')
+
+                $('#opcion1').removeClass('d-block')
+                $('#opcion1').addClass('d-none')
+                $('#opcion2').removeClass('d-none')
+                $('#opcion2').addClass('d-block')
+            }
+            if ($("#juego1").val() == 4){
+                $('#color1').removeClass('d-block')
+                $('#color1').addClass('d-none')
+
+                $('#opcion1').removeClass('d-block')
+                $('#opcion1').addClass('d-none')
+                $('#opcion2').removeClass('d-none')
+                $('#opcion2').addClass('d-block')
+            }
+            if ($("#juego1").val() == 5){
+                $('#color1').removeClass('d-block')
+                $('#color1').addClass('d-none')
+
+                $('#opcion1').removeClass('d-block')
+                $('#opcion1').addClass('d-none')
+                $('#opcion2').removeClass('d-none')
+                $('#opcion2').addClass('d-block')
+            }
+            if ($("#juego1").val() == 6){
+                $('#color1').removeClass('d-block')
+                $('#color1').addClass('d-none')
+
+                $('#opcion1').removeClass('d-block')
+                $('#opcion1').addClass('d-none')
+                $('#opcion2').removeClass('d-none')
+                $('#opcion2').addClass('d-block')
+            }
+        }
 
         $(document).ready(function(){
 
