@@ -141,7 +141,7 @@ class Player{
                     let position = this.id[i].getAttribute('data-list');
                     draughts[position].position = ele.id;
                     draughts[position].status = 1;
-                    Livewire.dispatch('move', {move: draughts, color:nextColor, jump:ele.id, line:"", square:"", eat:0});
+                    Livewire.dispatch('move', {move: draughts, color:nextColor, jump:val, line:"", square:ele.id, eat:0});
                     //-------------
                     
                     
@@ -347,7 +347,7 @@ function message(msg){
         ani.classList.add("zoom")
     let goti = document.getElementById("goti")
     goti.style.backgroundImage=""
-    goti.textContent="Roll Dice"
+    goti.textContent="Tirar dados"
     let el = document.getElementById("roll")
     el.value=msg + "'s turn"
 }
@@ -365,16 +365,17 @@ function activePlayer(dice){
             red.setStatus()
         }
         else if(red.getStatus()===false){
-            console.log('*op----Nose');
+            console.log('*No hay movimineto');
             //Guardar registro cuando no hay movimiento ;
             Livewire.dispatch('move', {move: draughts, color:"yellow", jump:0, line:"", square:"", eat:0});
+            document.getElementById('boardDiv').classList.add('elementor-toggle');
             //-------------
             active = "yellow"
             message(active)
             btn.disabled=false;
         }
         else{
-            console.log('*op++++++UMM');
+            console.log('*Hay movimineto de una ficha ya activa');
             red.enableBtn()
             console.log(red);
         }
@@ -389,12 +390,14 @@ function activePlayer(dice){
         }
         else if(yellow.getStatus()===false){
             //Guardar registro cuando no hay movimiento ;
+            console.log('*No hay movimineto');
+            //Guardar registro cuando no hay movimiento ;
             Livewire.dispatch('move', {move: draughts, color:"red", jump:0, line:"", square:"", eat:0});
+            document.getElementById('boardDiv').classList.add('elementor-toggle');
             //-------------
-            // active = "blue"
             active = "red"
             message(active)
-            btn.disabled=false
+            btn.disabled=false;
         }
         else{
             yellow.enableBtn()

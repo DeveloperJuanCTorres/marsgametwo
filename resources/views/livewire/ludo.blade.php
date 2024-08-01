@@ -228,9 +228,9 @@
 
         </div>
 
-        <div class="col-span-8 sm:col-span-1 bg-white  p-3 content-center" id="boardDiv">
+        <div class="col-span-8 sm:col-span-1 bg-white  p-3 content-center" id="boardDiv" wire:ignore>
             <div class="control-dice">
-                <div class="diceImage" id="goti">Dice Will Show Up Here</div>
+                <div class="diceImage" id="goti">Dados</div>
                 <input type="button" value="Start Game" onclick="generaterandom()" id="roll">
             </div>
             <div class="w-full p-2 bg-green-100 border border-gray-200 rounded-lg shadow my-5">

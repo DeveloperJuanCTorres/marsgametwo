@@ -334,18 +334,20 @@ h1{
   border: 1px solid black; */
 }
 .diceImage{
-  height: 18vh;
+  height: 22vh;
   width: auto;
   margin-bottom: 1vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: xx-large;
-  font-family: 'Titillium Web', sans-serif;
+  font-size:x-large;
   background-color: white;
   border-radius: 5px;
   background-size: contain;
   border: 5px solid red;
+
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 
