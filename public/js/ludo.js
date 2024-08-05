@@ -139,9 +139,10 @@ class Player{
 
                     //Guardar moviento debajo del 6 
                     let position = this.id[i].getAttribute('data-list');
+                    let keyFicha = this.id[i].getAttribute('data-key');
                     draughts[position].position = ele.id;
                     draughts[position].status = 1;
-                    Livewire.dispatch('move', {move: draughts, color:nextColor, jump:val, line:"", square:ele.id, eat:0});
+                    Livewire.dispatch('move', {move: draughts, color:nextColor, jump:val, line:el, square:ele.id, eat:keyFicha});
                     //-------------
                     
                     
@@ -272,79 +273,100 @@ function createParts(pieces){
             } 
         }
      }
+
+     console.log('***********Yellow Status***********')
+     console.log(yellow.status)
+     console.log(yellow.id)
   }
 
-//declaracion del color que inicia
+    //declaracion del color que inicia
 
-let red;
-let yellow;
-// let blue;
-// let green ;
-let image;
+    let red;
+    let yellow;
+    // let blue;
+    // let green ;
+    let image;
 
 
-let die =0
-let active = ""
-let btn = document.getElementById("roll");
-var draughts;
+    let die =0
+    let active = ""
+    let btn = document.getElementById("roll");
+    var draughts;
 
-function changeColor(color){
-    let ani = document.getElementById(active)
-    ani.classList.remove("zoom")
-    active = color;
-}
+    function changeColor(move,color){
 
-function playGame(pieces,playercolor){
+        let idSquare = move['square'];
+        let jump = move['jump'];
+        let ficha = move['line'];
 
-    draughts = pieces;
-    createParts(pieces);
-    active = playercolor;
-     message(active);
-    red = new Player("red",1,51,109)
-    yellow = new Player("yellow",14,12,209)
-    activeStatus(pieces);
+        if(jump != ''){
+            const node = document.getElementById(ficha);
+            const casilla = document.getElementById(`${idSquare}`);
+            while (casilla.firstChild) {
+                casilla.removeChild(casilla.firstChild);
+              }
+              casilla.appendChild(node);
+        }
 
-    console.log(yellow);
+       
 
-    // blue = new Player("blue",27,25,309)
-    // green = new Player("green",40,38,409)
-    image = new Map([
-        [1, "https://i.postimg.cc/CM60tqym/1.jpg"],
-        [2, "https://i.postimg.cc/JhKvkfMP/2.jpg"],
-        [3, "https://i.postimg.cc/3NZnspN9/3.jpg"],
-        [4, "https://i.postimg.cc/Px7tmpT3/4.jpg"],
-        [5, "https://i.postimg.cc/pTCs7zpC/5.jpg"],
-        [6, "https://i.postimg.cc/SKD8brfn/6.jpg"],
-        [7, "https://i.postimg.cc/90qqTj59/dice.gif"]
-    ]);
+        let ani = document.getElementById(active)
+        ani.classList.remove("zoom")
+        active = color;
 
-}
+    }
 
-async function generaterandom(){
-    // message(active)
-    btn.disabled=true
-    console.log(active)
-    let dice = Math.floor(Math.random()*6)+1
-    let goti = document.getElementById("goti")
-    goti.style.backgroundImage = 'url('+image.get(7)+')'
-    goti.textContent=""
+    function playGame(pieces,playercolor){
 
-    console.log('***************');
-    await adddice(dice)
-    await removezoom(active)
-    die=dice
-    console.log('resultado:');
-    console.log(die)
-   
-    activePlayer(die);
-}
+        draughts = pieces;
+        createParts(pieces);
+        active = playercolor;
+        message(active);
+        red = new Player("red",1,51,109)
+        yellow = new Player("yellow",14,12,209)
+        activeStatus(pieces);
+
+        console.log(yellow);
+
+        // blue = new Player("blue",27,25,309)
+        // green = new Player("green",40,38,409)
+        image = new Map([
+            [1, "https://i.postimg.cc/CM60tqym/1.jpg"],
+            [2, "https://i.postimg.cc/JhKvkfMP/2.jpg"],
+            [3, "https://i.postimg.cc/3NZnspN9/3.jpg"],
+            [4, "https://i.postimg.cc/Px7tmpT3/4.jpg"],
+            [5, "https://i.postimg.cc/pTCs7zpC/5.jpg"],
+            [6, "https://i.postimg.cc/SKD8brfn/6.jpg"],
+            [7, "https://i.postimg.cc/90qqTj59/dice.gif"]
+        ]);
+
+    }
+
+    async function generaterandom(){
+        // message(active)
+        btn.disabled=true
+        console.log(active)
+        let dice = Math.floor(Math.random()*6)+1
+        let goti = document.getElementById("goti")
+        goti.style.backgroundImage = 'url('+image.get(7)+')'
+        goti.textContent=""
+
+        console.log('***************');
+        await adddice(dice)
+        await removezoom(active)
+        die=dice
+        console.log('resultado:');
+        console.log(die)
+    
+        activePlayer(die);
+    }
 
 
 function message(msg){
     console.log('message');
     let ani = document.getElementById(msg)
     console.log(ani)
-        ani.classList.add("zoom")
+    ani.classList.add("zoom")
     let goti = document.getElementById("goti")
     goti.style.backgroundImage=""
     goti.textContent="Tirar dados"

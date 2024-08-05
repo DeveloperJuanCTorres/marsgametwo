@@ -406,7 +406,7 @@
                     //Activo el tablero para el turno que le coresponde
                     document.getElementById('boardDiv').classList.remove('elementor-toggle');
                     console.log("quitar belo 2");
-                    changeColor(event[1])
+                    changeColor(event[0],event[1])
                     message(event[1]);
 
                 }

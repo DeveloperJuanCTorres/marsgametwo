@@ -583,7 +583,7 @@ function otherColor(color) {
       let keypiece = move['jump'];
       let eat = move['eat'];
       const node = document.getElementById(keypiece);
-
+      
       // Registrar cambios en el array local del tablero
       draughts[keypiece].line = line;
       draughts[keypiece].square = square;
