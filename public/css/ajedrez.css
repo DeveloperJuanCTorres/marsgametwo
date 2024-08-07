@@ -51,7 +51,7 @@
     height: 8vmin;
     float: left;
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     color: #e2e1dd;
     font-size: small;
@@ -234,13 +234,18 @@ footer a:active {
     }
     .boardAlf {
         width: 11vmin;
+        font-size: 10px;
     }
+    .boardNum {
+        font-size: 10px;
+    }
+
     .square {
       width: 11vmin;
       height: 11vmin;
     }
     .container{
-      height: 93vmin;
+      height: 98vmin;
     }
     .square > .white, .square > .black {
       font-size: 10.5vmin;

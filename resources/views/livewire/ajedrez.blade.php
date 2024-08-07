@@ -147,7 +147,7 @@
                             <div class="square c7"></div>
                             <div class="square c8"></div>
                         </div>
-                        <div class="line">
+                        <div class="line px-1">
                             <div class="boardAlf">A</div>
                             <div class="boardAlf">B</div>
                             <div class="boardAlf">C</div>
